@@ -1,0 +1,20 @@
+/* PrelaunchUAE: brand tokens from the Brand Guidelines v1.0 (November 2026). Source: theme/tokens.json.
+   The --nc-* names are the engine's role names (kept so every component reads the same way):
+   datum = Midnight Ink, survey = Launch Amber, sand = Desert Sand, muted = Slate, sage/muted-on-deep = Mist. */
+:root{
+  /* colour: Ink 60%, Sand 25%, Amber 10% (shapes, large type, buttons with Ink text), Slate 4%, Mist 1% */
+  --nc-ink:#0B1F33; --nc-datum:#0B1F33; --nc-datum-soft:#163554;
+  --nc-survey:#E07A2E; --nc-survey-deep:#A4510F; --nc-survey-hover:#EB8F4A; --nc-sage:#A9B4C2; --nc-plot:#E3E8EE;
+  --nc-sand:#F4EFE6; --nc-concrete:#CDD3DB; --nc-white:#FFFFFF;
+  --nc-line:#E4DDCD; --nc-line-strong:#7A8594; --nc-muted:#5A6573; --nc-muted-on-deep:#A9B4C2;
+  --nc-danger:#B42318;
+  /* type: Sora for headlines (SemiBold; ExtraBold for the hero), Manrope for text */
+  --nc-serif:'Sora',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --nc-sans:'Manrope',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --nc-track-label:.12em;
+  /* shape: soft corners like the towers (rx 2 on an 11-wide tower) */
+  --nc-radius-sm:6px; --nc-radius:10px; --nc-radius-lg:16px;
+  --nc-shadow-lift:0 18px 40px -20px rgb(11 31 51 / 0.35);
+  /* motion: transform and opacity only */
+  --nc-ease:cubic-bezier(.2,.7,.2,1); --nc-dur-fast:200ms; --nc-dur:600ms; --nc-dur-slow:800ms;
+}

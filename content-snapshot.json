@@ -1,0 +1,42 @@
+{
+ "generatedAt": "2026-11-02T07:17:09.855Z",
+ "apiUrl": "https://mbrbackend.wellnessz.in",
+ "contentKey": "prelaunchuae",
+ "cards": [],
+ "posts": {},
+ "categories": [
+  {
+   "name": "Market updates",
+   "slug": "market-updates",
+   "description": "",
+   "count": 0
+  },
+  {
+   "name": "Off-plan guides",
+   "slug": "off-plan-guides",
+   "description": "",
+   "count": 0
+  },
+  {
+   "name": "Dubai South",
+   "slug": "dubai-south",
+   "description": "",
+   "count": 0
+  },
+  {
+   "name": "Investor guides",
+   "slug": "investor-guides",
+   "description": "",
+   "count": 0
+  },
+  {
+   "name": "Developer news",
+   "slug": "developer-news",
+   "description": "",
+   "count": 0
+  }
+ ],
+ "authors": {},
+ "redirects": [],
+ "sitemap": []
+}
