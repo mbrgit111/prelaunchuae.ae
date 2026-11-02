@@ -1,0 +1,8 @@
+R2-BRD-001: Desktop header shows the primary horizontal logo at 160 px or wider
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[],"expect":[{"type":"attr","sel":"header img[width=\"208\"]","prop":"width","value":"160","op":"gte"},{"type":"attr","sel":"header img[width=\"208\"]","prop":"src","value":"prelaunchuae-horizontal","op":"contains"}],"shot":true}
+
+result: PASS
+
+
+attr header img[width="208"][width]: 208
+attr header img[width="208"][src]: /brand/prelaunchuae-horizontal.svg

@@ -1,0 +1,38 @@
+R2-CNT-005: Sitemap pages 129 to 160 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/projects/elyra-residences","/projects/elyra-residences-by-enaam","/projects/expo-valley-views-roudah","/projects/fleurs-de-jardin","/projects/flora-bay-residences","/projects/future-avenue","/projects/globna-by-crystal-bay-azure","/projects/hadley-hills","/projects/hado-by-beyond-phase-2","/projects/haus-of-tenet","/projects/holm-3","/projects/isla-private-residences","/projects/joud-residence","/projects/jura-terraces","/projects/jw-marriott","/projects/kyg-crown-residence","/projects/karl-lagerfeld-beach-residences","/projects/kore-by-imtiaz","/projects/latitude-25","/projects/lorevia-collection","/projects/lumina-by-vision","/projects/majid-al-futtaim-new-launch","/projects/magnolia","/projects/manchester-city-yas-residences-by-ohana-phase-2","/projects/mariana","/projects/marquis-aura","/projects/marriott-residences-jlt","/projects/merdan-residence","/projects/metropoint","/projects/mia-tower-by-stamn","/projects/mira-coral-bay","/projects/mira-hills"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET /projects/elyra-residences -> 200 (152108 bytes) text/html; charset=utf-8
+GET /projects/elyra-residences-by-enaam -> 200 (187950 bytes) text/html; charset=utf-8
+GET /projects/expo-valley-views-roudah -> 200 (177555 bytes) text/html; charset=utf-8
+GET /projects/fleurs-de-jardin -> 200 (164992 bytes) text/html; charset=utf-8
+GET /projects/flora-bay-residences -> 200 (189986 bytes) text/html; charset=utf-8
+GET /projects/future-avenue -> 200 (207912 bytes) text/html; charset=utf-8
+GET /projects/globna-by-crystal-bay-azure -> 200 (136684 bytes) text/html; charset=utf-8
+GET /projects/hadley-hills -> 200 (145692 bytes) text/html; charset=utf-8
+GET /projects/hado-by-beyond-phase-2 -> 200 (129023 bytes) text/html; charset=utf-8
+GET /projects/haus-of-tenet -> 200 (177296 bytes) text/html; charset=utf-8
+GET /projects/holm-3 -> 200 (151232 bytes) text/html; charset=utf-8
+GET /projects/isla-private-residences -> 200 (196566 bytes) text/html; charset=utf-8
+GET /projects/joud-residence -> 200 (176786 bytes) text/html; charset=utf-8
+GET /projects/jura-terraces -> 200 (218814 bytes) text/html; charset=utf-8
+GET /projects/jw-marriott -> 200 (197466 bytes) text/html; charset=utf-8
+GET /projects/kyg-crown-residence -> 200 (128819 bytes) text/html; charset=utf-8
+GET /projects/karl-lagerfeld-beach-residences -> 200 (185873 bytes) text/html; charset=utf-8
+GET /projects/kore-by-imtiaz -> 200 (195059 bytes) text/html; charset=utf-8
+GET /projects/latitude-25 -> 200 (172800 bytes) text/html; charset=utf-8
+GET /projects/lorevia-collection -> 200 (201252 bytes) text/html; charset=utf-8
+GET /projects/lumina-by-vision -> 200 (189172 bytes) text/html; charset=utf-8
+GET /projects/majid-al-futtaim-new-launch -> 200 (132364 bytes) text/html; charset=utf-8
+GET /projects/magnolia -> 200 (171150 bytes) text/html; charset=utf-8
+GET /projects/manchester-city-yas-residences-by-ohana-phase-2 -> 200 (206719 bytes) text/html; charset=utf-8
+GET /projects/mariana -> 200 (131632 bytes) text/html; charset=utf-8
+GET /projects/marquis-aura -> 200 (192800 bytes) text/html; charset=utf-8
+GET /projects/marriott-residences-jlt -> 200 (197595 bytes) text/html; charset=utf-8
+GET /projects/merdan-residence -> 200 (164951 bytes) text/html; charset=utf-8
+GET /projects/metropoint -> 200 (180664 bytes) text/html; charset=utf-8
+GET /projects/mia-tower-by-stamn -> 200 (171265 bytes) text/html; charset=utf-8
+GET /projects/mira-coral-bay -> 200 (179258 bytes) text/html; charset=utf-8
+GET /projects/mira-hills -> 200 (134679 bytes) text/html; charset=utf-8

@@ -1,0 +1,9 @@
+R2-BRK-002: developer address /developers/ALDAR never serves a second copy
+probe: {"kind":"http","path":"/developers/ALDAR","expectStatus":[404,301,308]}
+
+result: PASS
+
+
+GET /developers/ALDAR -> 308 (17 bytes) 
+---
+/developers/aldar

@@ -1,0 +1,9 @@
+R2-FRM-007: Filled honeypot field makes the form show Thank you without sending
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[{"do":"fill","sel":"input[name=\"mbr_hp\"]","value":"bot-text"},{"do":"click","sel":"form button[type=\"submit\"]","value":""}],"expect":[{"type":"text","sel":"body","value":"Thank you."}],"shot":true}
+
+result: PASS
+
+
+step fill input[name="mbr_hp"] bot-text: ok
+step click form button[type="submit"] : ok
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT

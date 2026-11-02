@@ -1,0 +1,11 @@
+R2-BRD-013: Rendered pages contain no Net Capital, Newsreader or Plus Jakarta names
+probe: {"kind":"http","paths":["/","/projects","/projects/celeste","/contact","/about"],"method":"GET","expectStatus":200,"bodyExcludes":["Net Capital","netcapital","Newsreader","Plus Jakarta"]}
+
+result: PASS
+
+
+GET / -> 200 (412218 bytes) text/html; charset=utf-8
+GET /projects -> 200 (263434 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8
+GET /contact -> 200 (75900 bytes) text/html; charset=utf-8
+GET /about -> 200 (79967 bytes) text/html; charset=utf-8

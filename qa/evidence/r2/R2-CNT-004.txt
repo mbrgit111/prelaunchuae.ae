@@ -1,0 +1,38 @@
+R2-CNT-004: Sitemap pages 97 to 128 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/projects/alain-new-launch","/projects/aras-development-new-launch","/projects/address-villas-tierra-new-phase","/projects/alfulaiti-residence","/projects/alva-the-valley","/projects/amali-residences","/projects/arche-residences","/projects/aris-by-grid","/projects/arthous-park-heights","/projects/aspin-grove","/projects/autograph-g-series","/projects/azizi-riviera-53","/projects/azizi-riviera-54","/projects/azure-park-residences","/projects/beachfront-collection","/projects/bearau-lamar-commercial-tower","/projects/berkeley-tower","/projects/breva","/projects/celeste","/projects/christian-a-rockefeller-business-tower","/projects/confident-adur","/projects/coralis-residences","/projects/damac-islands-1","/projects/damac-islands-2-mauritius","/projects/damac-islands-townhouses","/projects/dolce-residences-by-wyndham","/projects/dubai-creek-gardens","/projects/elan-tower","/projects/elyra","/projects/element-by-iman-dubai-science-park","/projects/elevia-residences-iii","/projects/eltiera-views-tower-4"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET /projects/alain-new-launch -> 200 (131759 bytes) text/html; charset=utf-8
+GET /projects/aras-development-new-launch -> 200 (144104 bytes) text/html; charset=utf-8
+GET /projects/address-villas-tierra-new-phase -> 200 (163687 bytes) text/html; charset=utf-8
+GET /projects/alfulaiti-residence -> 200 (193489 bytes) text/html; charset=utf-8
+GET /projects/alva-the-valley -> 200 (174358 bytes) text/html; charset=utf-8
+GET /projects/amali-residences -> 200 (176057 bytes) text/html; charset=utf-8
+GET /projects/arche-residences -> 200 (187652 bytes) text/html; charset=utf-8
+GET /projects/aris-by-grid -> 200 (181365 bytes) text/html; charset=utf-8
+GET /projects/arthous-park-heights -> 200 (170607 bytes) text/html; charset=utf-8
+GET /projects/aspin-grove -> 200 (194880 bytes) text/html; charset=utf-8
+GET /projects/autograph-g-series -> 200 (137305 bytes) text/html; charset=utf-8
+GET /projects/azizi-riviera-53 -> 200 (153480 bytes) text/html; charset=utf-8
+GET /projects/azizi-riviera-54 -> 200 (141369 bytes) text/html; charset=utf-8
+GET /projects/azure-park-residences -> 200 (178913 bytes) text/html; charset=utf-8
+GET /projects/beachfront-collection -> 200 (143518 bytes) text/html; charset=utf-8
+GET /projects/bearau-lamar-commercial-tower -> 200 (175879 bytes) text/html; charset=utf-8
+GET /projects/berkeley-tower -> 200 (177365 bytes) text/html; charset=utf-8
+GET /projects/breva -> 200 (205935 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8
+GET /projects/christian-a-rockefeller-business-tower -> 200 (188987 bytes) text/html; charset=utf-8
+GET /projects/confident-adur -> 200 (188356 bytes) text/html; charset=utf-8
+GET /projects/coralis-residences -> 200 (185651 bytes) text/html; charset=utf-8
+GET /projects/damac-islands-1 -> 200 (136815 bytes) text/html; charset=utf-8
+GET /projects/damac-islands-2-mauritius -> 200 (190496 bytes) text/html; charset=utf-8
+GET /projects/damac-islands-townhouses -> 200 (137852 bytes) text/html; charset=utf-8
+GET /projects/dolce-residences-by-wyndham -> 200 (181710 bytes) text/html; charset=utf-8
+GET /projects/dubai-creek-gardens -> 200 (153349 bytes) text/html; charset=utf-8
+GET /projects/elan-tower -> 200 (159818 bytes) text/html; charset=utf-8
+GET /projects/elyra -> 200 (169060 bytes) text/html; charset=utf-8
+GET /projects/element-by-iman-dubai-science-park -> 200 (151997 bytes) text/html; charset=utf-8
+GET /projects/elevia-residences-iii -> 200 (182770 bytes) text/html; charset=utf-8
+GET /projects/eltiera-views-tower-4 -> 200 (172451 bytes) text/html; charset=utf-8

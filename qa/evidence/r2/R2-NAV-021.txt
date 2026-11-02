@@ -1,0 +1,10 @@
+R2-NAV-021: Register interest in the header goes to the enquiry section
+probe: {"kind":"ui","path":"/projects/celeste","viewport":"desktop","steps":[{"do":"click","sel":"text=Register interest"},{"do":"wait","value":"800"}],"expect":[{"type":"url","value":"#register","op":"contains"},{"type":"visible","sel":"#register"}],"shot":true}
+
+result: PASS
+
+
+step click text=Register interest : ok
+step wait  800: ok
+url: /projects/celeste#register
+visible #register: true

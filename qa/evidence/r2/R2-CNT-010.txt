@@ -1,0 +1,31 @@
+R2-CNT-010: Sitemap pages 289 to 313 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/developers/meraki","/developers/ohana-development","/developers/one-development","/developers/one-yard","/developers/origami-developer","/developers/primrose-real-estate","/developers/radiant","/developers/rak-properties","/developers/reef-luxury-developments","/developers/royal-group","/developers/saas-properties","/developers/saba-properties","/developers/saeed-tarrad-real-estate-development","/developers/sol-properties","/developers/source-of-fate-properties","/developers/stamn-real-estate-development","/developers/sugee-group","/developers/tabeer","/developers/taraf","/developers/team-arcon","/developers/true-future-real-estate-development","/developers/valores-property-development","/developers/veha-development","/developers/vision-developments","/site-map"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET /developers/meraki -> 200 (93940 bytes) text/html; charset=utf-8
+GET /developers/ohana-development -> 200 (95293 bytes) text/html; charset=utf-8
+GET /developers/one-development -> 200 (94878 bytes) text/html; charset=utf-8
+GET /developers/one-yard -> 200 (94701 bytes) text/html; charset=utf-8
+GET /developers/origami-developer -> 200 (94965 bytes) text/html; charset=utf-8
+GET /developers/primrose-real-estate -> 200 (94761 bytes) text/html; charset=utf-8
+GET /developers/radiant -> 200 (94605 bytes) text/html; charset=utf-8
+GET /developers/rak-properties -> 200 (94465 bytes) text/html; charset=utf-8
+GET /developers/reef-luxury-developments -> 200 (95281 bytes) text/html; charset=utf-8
+GET /developers/royal-group -> 200 (94356 bytes) text/html; charset=utf-8
+GET /developers/saas-properties -> 200 (95103 bytes) text/html; charset=utf-8
+GET /developers/saba-properties -> 200 (95149 bytes) text/html; charset=utf-8
+GET /developers/saeed-tarrad-real-estate-development -> 200 (94967 bytes) text/html; charset=utf-8
+GET /developers/sol-properties -> 200 (94964 bytes) text/html; charset=utf-8
+GET /developers/source-of-fate-properties -> 200 (95374 bytes) text/html; charset=utf-8
+GET /developers/stamn-real-estate-development -> 200 (94773 bytes) text/html; charset=utf-8
+GET /developers/sugee-group -> 200 (94511 bytes) text/html; charset=utf-8
+GET /developers/tabeer -> 200 (93806 bytes) text/html; charset=utf-8
+GET /developers/taraf -> 200 (94176 bytes) text/html; charset=utf-8
+GET /developers/team-arcon -> 200 (94676 bytes) text/html; charset=utf-8
+GET /developers/true-future-real-estate-development -> 200 (95084 bytes) text/html; charset=utf-8
+GET /developers/valores-property-development -> 200 (95263 bytes) text/html; charset=utf-8
+GET /developers/veha-development -> 200 (95027 bytes) text/html; charset=utf-8
+GET /developers/vision-developments -> 200 (95084 bytes) text/html; charset=utf-8
+GET /site-map -> 200 (166345 bytes) text/html; charset=utf-8

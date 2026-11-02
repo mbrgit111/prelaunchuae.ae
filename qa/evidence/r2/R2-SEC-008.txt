@@ -1,0 +1,11 @@
+R2-SEC-008: Script markup typed in the explorer search does not run or render
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"fill","sel":"input[type='search']","value":"\"><img src=x onerror=alert(1)><script>alert(2)</script>"},{"do":"press","sel":"input[type='search']","value":"Enter"},{"do":"wait","value":"1000"}],"expect":[{"type":"count","sel":"img[src='x']","value":"0","op":"eq"},{"type":"textNot","value":"alert(1)","sel":"body"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+step fill input[type='search'] "><img src=x onerror=alert(1)><script>alert(2)</script>: ok
+step press input[type='search'] Enter: ok
+step wait  1000: ok
+count img[src='x']: 0
+console errors: 0

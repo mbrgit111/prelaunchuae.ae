@@ -1,0 +1,9 @@
+R2-PGS-021: POST to public pages is refused with 405
+probe: {"kind":"http","paths":["/","/projects","/projects/celeste"],"method":"POST","expectStatus":405}
+
+result: FAIL
+- /projects/celeste: status 200, wanted 405
+
+POST / -> 405 (18 bytes) 
+POST /projects -> 405 (18 bytes) 
+POST /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8

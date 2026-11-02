@@ -1,0 +1,7 @@
+R2-BRD-004: Logo aspect ratios in the site config match the supplied files
+probe: {"kind":"file","path":"sites/prelaunchuae/site.config.ts","exists":true,"includes":["406.38 / 71.35","377.48 / 47.1","321.34 / 190.35"]}
+
+result: PASS
+
+
+sites/prelaunchuae/site.config.ts exists=true size=3598

@@ -1,0 +1,10 @@
+R2-EXP-009: Arabic search text does not break the explorer
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"fill","sel":"input[type=\"search\"]","value":"دبي"},{"do":"wait","sel":"","value":"800"}],"expect":[{"type":"noConsoleErrors"},{"type":"visible","sel":"[role=\"status\"]"}],"shot":true}
+
+result: PASS
+
+
+step fill input[type="search"] دبي: ok
+step wait  800: ok
+console errors: 0
+visible [role="status"]: true

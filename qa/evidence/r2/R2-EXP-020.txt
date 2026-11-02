@@ -1,0 +1,8 @@
+R2-EXP-020: Project with a starting price shows From AED
+probe: {"kind":"ui","path":"/projects/dolce-residences-by-wyndham","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"body","value":"From AED"},{"type":"text","sel":"body","value":"1,400,000"}],"shot":true}
+
+result: PASS
+
+
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Al Marjan Is
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Al Marjan Is

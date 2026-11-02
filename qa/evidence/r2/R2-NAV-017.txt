@@ -1,0 +1,9 @@
+R2-NAV-017: Empty blog page renders cleanly with no console errors
+probe: {"kind":"ui","path":"/blog","viewport":"desktop","expect":[{"type":"visible","sel":"header"},{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+visible header: true
+overflow: scrollWidth 1440 vs clientWidth 1440
+console errors: 0

@@ -1,0 +1,8 @@
+R2-NAV-003: Desktop menu holds all ten pages
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[{"do":"click","sel":"nav[aria-label='Main'] summary"}],"expect":[{"type":"count","sel":"nav[aria-label='Main'] a","value":"10","op":"eq"}]}
+
+result: PASS
+
+
+step click nav[aria-label='Main'] summary : ok
+count nav[aria-label='Main'] a: 10

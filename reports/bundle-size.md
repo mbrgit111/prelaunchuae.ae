@@ -1,6 +1,6 @@
 # Bundle size report
 
-Generated 2026-11-02 07:40 from the production build. Sizes are gzip. Largest page per route type shown.
+Generated 2026-11-02 07:43 from the production build. Sizes are gzip. Largest page per route type shown.
 
 Budgets: total JS 195.0 KB, site-specific JS 20.0 KB, HTML 150.0 KB, inline CSS 15.0 KB.
 Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.

@@ -1,0 +1,7 @@
+R2-EXP-013: Opening /projects with a filter in the URL restores that filter
+probe: {"kind":"ui","path":"/projects?avail=coming-soon","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"button[aria-pressed=\"true\"]","value":"Coming soon"}],"shot":true}
+
+result: PASS
+
+
+text button[aria-pressed="true"]: Coming soon

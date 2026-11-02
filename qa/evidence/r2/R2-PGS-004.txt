@@ -1,0 +1,10 @@
+R2-PGS-004: Legal pages answer 200 with no placeholder text
+probe: {"kind":"http","paths":["/privacy","/terms","/disclaimer","/cookie-policy"],"method":"GET","expectStatus":200,"bodyExcludes":["Lorem ipsum","TODO","Net Capital"]}
+
+result: PASS
+
+
+GET /privacy -> 200 (69481 bytes) text/html; charset=utf-8
+GET /terms -> 200 (68829 bytes) text/html; charset=utf-8
+GET /disclaimer -> 200 (69004 bytes) text/html; charset=utf-8
+GET /cookie-policy -> 200 (69094 bytes) text/html; charset=utf-8

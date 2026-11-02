@@ -1,0 +1,7 @@
+R2-FRM-010: Submit button is disabled while a send is in flight (double-submit guard)
+probe: {"kind":"file","path":"src/components/forms/EnquiryForm.tsx","exists":true,"includes":["disabled={status === 'sending'}"]}
+
+result: PASS
+
+
+src/components/forms/EnquiryForm.tsx exists=true size=9901

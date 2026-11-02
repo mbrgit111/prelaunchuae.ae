@@ -1,0 +1,12 @@
+R2-FRM-006: About 200-character name and message do not break the layout at 375 px
+probe: {"kind":"ui","path":"/contact","viewport":"mobile","steps":[{"do":"fill","sel":"input[name=\"name\"]","value":"abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij"},{"do":"fill","sel":"textarea[name=\"message\"]","value":"abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij"},{"do":"fill","sel":"input[name=\"phone\"]","value":"12"},{"do":"click","sel":"form button[type=\"submit\"]","value":""}],"expect":[{"type":"text","sel":"body","value":"Please enter a valid phone number, with country code."},{"type":"noOverflow"}],"shot":true}
+
+result: PASS
+
+
+step fill input[name="name"] abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij: ok
+step fill textarea[name="message"] abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij: ok
+step fill input[name="phone"] 12: ok
+step click form button[type="submit"] : ok
+text body: Skip to content Home / Contact CONTACT Contact PrelaunchUAE Call, email or send an enquiry. An advisor replies with curr
+overflow: scrollWidth 375 vs clientWidth 375

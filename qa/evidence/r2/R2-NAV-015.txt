@@ -1,0 +1,8 @@
+R2-NAV-015: First Tab press focuses the Skip to content link
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"press","value":"Tab"}],"expect":[{"type":"focusable","sel":"a.skip-link"},{"type":"visible","sel":"a.skip-link"}],"shot":true}
+
+result: PASS
+
+
+step press  Tab: ok
+visible a.skip-link: true

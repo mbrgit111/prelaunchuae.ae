@@ -1,0 +1,38 @@
+R2-CNT-003: Sitemap pages 65 to 96 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/areas/damac-lagoons","/areas/dubai-creek","/areas/dubai-design-district","/areas/dubai-expo-city","/areas/dubai-industrial-city","/areas/dubai-science-park","/areas/dubai-sports-city","/areas/jazeerat-al-marjan","/areas/jebel-ali-industrial-2","/areas/jumeirah-islands","/areas/jumeirah-second","/areas/maritime-city","/areas/mbr-district-11-meydan-south","/areas/mina-al-arab","/areas/palm-jumeirah","/areas/ras-al-khor","/areas/sobha-hartland","/areas/wadi-al-safa-2","/areas/wadi-al-safa-4","/areas/world-of-islands","/areas/damac-islands","/areas/al-maryah-island","/areas/downtown-dubai","/areas/dubai-motor-city","/areas/emirates-living","/areas/jlt-jumeirah-lake-towers","/areas/khalifa-industrial-district","/areas/mbr-district-1","/areas/nad-al-sheba-gardens","/projects/06-life-residences","/projects/1970-office-tower","/projects/al-ghurair-new-launch"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET /areas/damac-lagoons -> 200 (148842 bytes) text/html; charset=utf-8
+GET /areas/dubai-creek -> 200 (142029 bytes) text/html; charset=utf-8
+GET /areas/dubai-design-district -> 200 (152631 bytes) text/html; charset=utf-8
+GET /areas/dubai-expo-city -> 200 (150401 bytes) text/html; charset=utf-8
+GET /areas/dubai-industrial-city -> 200 (150200 bytes) text/html; charset=utf-8
+GET /areas/dubai-science-park -> 200 (134554 bytes) text/html; charset=utf-8
+GET /areas/dubai-sports-city -> 200 (141945 bytes) text/html; charset=utf-8
+GET /areas/jazeerat-al-marjan -> 200 (155594 bytes) text/html; charset=utf-8
+GET /areas/jebel-ali-industrial-2 -> 200 (148560 bytes) text/html; charset=utf-8
+GET /areas/jumeirah-islands -> 200 (145203 bytes) text/html; charset=utf-8
+GET /areas/jumeirah-second -> 200 (149745 bytes) text/html; charset=utf-8
+GET /areas/maritime-city -> 200 (156413 bytes) text/html; charset=utf-8
+GET /areas/mbr-district-11-meydan-south -> 200 (145767 bytes) text/html; charset=utf-8
+GET /areas/mina-al-arab -> 200 (129789 bytes) text/html; charset=utf-8
+GET /areas/palm-jumeirah -> 200 (143938 bytes) text/html; charset=utf-8
+GET /areas/ras-al-khor -> 200 (152533 bytes) text/html; charset=utf-8
+GET /areas/sobha-hartland -> 200 (140923 bytes) text/html; charset=utf-8
+GET /areas/wadi-al-safa-2 -> 200 (146213 bytes) text/html; charset=utf-8
+GET /areas/wadi-al-safa-4 -> 200 (120880 bytes) text/html; charset=utf-8
+GET /areas/world-of-islands -> 200 (120794 bytes) text/html; charset=utf-8
+GET /areas/damac-islands -> 200 (140693 bytes) text/html; charset=utf-8
+GET /areas/al-maryah-island -> 200 (122512 bytes) text/html; charset=utf-8
+GET /areas/downtown-dubai -> 200 (150122 bytes) text/html; charset=utf-8
+GET /areas/dubai-motor-city -> 200 (123932 bytes) text/html; charset=utf-8
+GET /areas/emirates-living -> 200 (130584 bytes) text/html; charset=utf-8
+GET /areas/jlt-jumeirah-lake-towers -> 200 (155342 bytes) text/html; charset=utf-8
+GET /areas/khalifa-industrial-district -> 200 (128986 bytes) text/html; charset=utf-8
+GET /areas/mbr-district-1 -> 200 (122390 bytes) text/html; charset=utf-8
+GET /areas/nad-al-sheba-gardens -> 200 (132642 bytes) text/html; charset=utf-8
+GET /projects/06-life-residences -> 200 (137698 bytes) text/html; charset=utf-8
+GET /projects/1970-office-tower -> 200 (175331 bytes) text/html; charset=utf-8
+GET /projects/al-ghurair-new-launch -> 200 (139254 bytes) text/html; charset=utf-8

@@ -1,0 +1,8 @@
+R2-SEC-006: Security headers are sent on the home and a project page
+probe: {"kind":"http","paths":["/","/projects/celeste"],"method":"GET","expectStatus":200,"headers":{"x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","referrer-policy":"strict-origin-when-cross-origin","permissions-policy":"camera=\\(\\), microphone=\\(\\), geolocation=\\(\\)"}}
+
+result: PASS
+
+
+GET / -> 200 (412218 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8

@@ -15,7 +15,7 @@
     "actual": "expr: projects.length > 0 && projects.every(p => p.status === 'launch' || p.status === 'pending')",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-001.txt"
     ],
@@ -27,7 +27,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "projects.length > 0 && projects.every(p => p.status === 'launch' || p.status === 'pending')"
@@ -49,7 +49,7 @@
     "actual": "expr: !/\"status\"\\s*:\\s*\"(available|sold_out)\"/.test(JSON.stringify(list))",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-002.txt"
     ],
@@ -61,7 +61,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Shape of the list file was not read in design. If the list has no status field this passes trivially; the runner must confirm the list carries status before the result is trusted.",
+    "notes": "Shape of the list file was not read in design. If the list has no status field this passes trivially; the runner must confirm the list carries status before the result is trusted. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "!/\"status\"\\s*:\\s*\"(available|sold_out)\"/.test(JSON.stringify(list))"
@@ -83,7 +83,7 @@
     "actual": "GET /projects-index.json -> 200 (47986 bytes) application/json; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-003.txt"
     ],
@@ -95,7 +95,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects-index.json",
@@ -129,7 +129,7 @@
     "actual": "expr: index.length > 0 && index.length === projects.length",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-004.txt"
     ],
@@ -141,7 +141,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "index.length > 0 && index.length === projects.length"
@@ -162,7 +162,7 @@
     "actual": "expr: index.every(x => x.st === 'new-launch' || x.st === 'coming-soon') && index.some(x => x.st === 'coming-soon')",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-005.txt"
     ],
@@ -174,7 +174,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "index.every(x => x.st === 'new-launch' || x.st === 'coming-soon') && index.some(x => x.st === 'coming-soon')"
@@ -196,7 +196,7 @@
     "actual": "expr: (() => { const sl = s => s.normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); const set = new Set(projects.map(p => sl(p.slug))); return index.length > 0 && index.every(i => set.has(i.s)); })()",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-006.txt"
     ],
@@ -208,7 +208,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Raw slugs such as talay-&-talay-... or lorévia-collection are cleaned by slugify in src/data/normalise.ts; the site slug is the one that must match.",
+    "notes": "Raw slugs such as talay-&-talay-... or lorévia-collection are cleaned by slugify in src/data/normalise.ts; the site slug is the one that must match. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "(() => { const sl = s => s.normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); const set = new Set(projects.map(p => sl(p.slug))); return index.length > 0 && index.every(i => set.has(i.s)); })()"
@@ -230,7 +230,7 @@
     "actual": "expr: (() => { const ps = sitemap.filter(p => /^\\/projects\\/[^/]+$/.test(p)); return ps.length === projects.length && new Set(ps).size === ps.length; })()",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-007.txt"
     ],
@@ -242,7 +242,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "(() => { const ps = sitemap.filter(p => /^\\/projects\\/[^/]+$/.test(p)); return ps.length === projects.length && new Set(ps).size === ps.length; })()"
@@ -263,7 +263,7 @@
     "actual": "expr: !/sold[\\s_-]?out/i.test(JSON.stringify(projects))",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-008.txt"
     ],
@@ -275,7 +275,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "A match in a developer description is a content review item, not an automatic bug.",
+    "notes": "A match in a developer description is a content review item, not an automatic bug. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "!/sold[\\s_-]?out/i.test(JSON.stringify(projects))"
@@ -297,7 +297,7 @@
     "actual": "step wait  1500: ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-PRE-009.png",
       "../evidence/r1/R1-PRE-009.txt"
@@ -310,7 +310,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The URL filter parser in src/components/forms/explorer-types.ts accepts sold-out even though the chips do not offer it. First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun.",
+    "notes": "The URL filter parser in src/components/forms/explorer-types.ts accepts sold-out even though the chips do not offer it. First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?avail=sold-out",
@@ -357,7 +357,7 @@
     "actual": "step wait  1500: ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-PRE-010.png",
       "../evidence/r1/R1-PRE-010.txt"
@@ -370,7 +370,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?avail=selling",
@@ -411,7 +411,7 @@
     "actual": "step wait  1000: ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-PRE-011.png",
       "../evidence/r1/R1-PRE-011.txt"
@@ -424,7 +424,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Each card may hold two links (image and title), so the count is checked as a minimum. First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun.",
+    "notes": "Each card may hold two links (image and title), so the count is checked as a minimum. First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -467,7 +467,7 @@
     "actual": "GET /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-012.txt"
     ],
@@ -479,7 +479,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/celeste",
@@ -506,7 +506,7 @@
     "actual": "GET /projects/haus-of-tenet -> 200 (177308 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-013.txt"
     ],
@@ -518,7 +518,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/haus-of-tenet",
@@ -545,7 +545,7 @@
     "actual": "GET /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-014.txt"
     ],
@@ -557,7 +557,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -587,7 +587,7 @@
     "actual": "GET / -> 200 (412254 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-015.txt"
     ],
@@ -599,7 +599,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "A FAQ sentence that says sold-out projects are not listed would match. That is copy to review, not a rule breach. First run failed because the probe was wrong (test-design error, not a product bug): the home, FAQ and About copy explain that sold-out projects are not listed; the check now looks for a sold-out badge or status, not the explanation. Probe corrected and rerun.",
+    "notes": "A FAQ sentence that says sold-out projects are not listed would match. That is copy to review, not a rule breach. First run failed because the probe was wrong (test-design error, not a product bug): the home, FAQ and About copy explain that sold-out projects are not listed; the check now looks for a sold-out badge or status, not the explanation. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -633,7 +633,7 @@
     "actual": "step fill input[type='search'] sold out: ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-PRE-016.png",
       "../evidence/r1/R1-PRE-016.txt"
@@ -646,7 +646,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -700,7 +700,7 @@
     "actual": "step wait  1500: ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-PRE-017.png",
       "../evidence/r1/R1-PRE-017.txt"
@@ -713,7 +713,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?avail=ready",
@@ -752,7 +752,7 @@
     "actual": "expr: index.length > 0 && index.every(x => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(x.s))",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-018.txt"
     ],
@@ -764,7 +764,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "index.length > 0 && index.every(x => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(x.s))"
@@ -786,7 +786,7 @@
     "actual": "expr: index.filter(x=>x.st==='coming-soon').length===projects.filter(p=>p.status==='pending'||(p.status==='launch'&&p.completionStatus==='upcoming')).length",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-019.txt"
     ],
@@ -798,7 +798,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the site shows REM launch+upcoming projects as Coming soon too (rule in normalise.ts), so the counts differ by 16. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the site shows REM launch+upcoming projects as Coming soon too (rule in normalise.ts), so the counts differ by 16. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "index.filter(x=>x.st==='coming-soon').length===projects.filter(p=>p.status==='pending'||(p.status==='launch'&&p.completionStatus==='upcoming')).length"
@@ -820,7 +820,7 @@
     "actual": "expr: index.filter(x=>x.st==='new-launch').length===projects.filter(p=>p.status==='launch'&&p.completionStatus!=='upcoming').length",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-020.txt"
     ],
@@ -832,7 +832,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the same rule: launch projects with an upcoming status are Coming soon. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the same rule: launch projects with an upcoming status are Coming soon. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "index.filter(x=>x.st==='new-launch').length===projects.filter(p=>p.status==='launch'&&p.completionStatus!=='upcoming').length"
@@ -853,7 +853,7 @@
     "actual": "as expected",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PRE-021.txt"
     ],
@@ -865,7 +865,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Read tests/slim.test.ts before the run to confirm it includes an available and a sold_out row. If it does not, add that row as a fix item.",
+    "notes": "Read tests/slim.test.ts before the run to confirm it includes an available and a sold_out row. If it does not, add that row as a fix item. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "cmd",
       "run": "npx vitest run tests/slim.test.ts",
@@ -891,7 +891,7 @@
     "actual": "step wait  1500: ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-PRE-022.png",
       "../evidence/r1/R1-PRE-022.txt"
@@ -904,7 +904,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector, and the page lede legitimately says sold-out projects are not listed; the check now looks for Sold out badges on project cards. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?avail=sold_out",
@@ -943,7 +943,7 @@
     "actual": "GET / -> 200 (412254 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-001.txt"
     ],
@@ -955,7 +955,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -989,7 +989,7 @@
     "actual": "GET /faq -> 200 (105138 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-002.txt"
     ],
@@ -1001,7 +1001,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1035,7 +1035,7 @@
     "actual": "GET /apartments -> 200 (253831 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-003.txt"
     ],
@@ -1047,7 +1047,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "allRoutes in src/lib/routes.ts only lists a type when it has projects. If a type has none and still answers 200 with no projects, record it as a content finding, not a routing bug.",
+    "notes": "allRoutes in src/lib/routes.ts only lists a type when it has projects. If a type has none and still answers 200 with no projects, record it as a content finding, not a routing bug. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1083,7 +1083,7 @@
     "actual": "GET /privacy -> 200 (69481 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-004.txt"
     ],
@@ -1095,7 +1095,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Legal copy is a draft with review flags. The 200 and placeholder checks are what this case covers.",
+    "notes": "Legal copy is a draft with review flags. The 200 and placeholder checks are what this case covers. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1128,7 +1128,7 @@
     "actual": "GET /projects/page/2 -> 200 (264654 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-005.txt"
     ],
@@ -1140,7 +1140,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Six pages for 125 projects at 24 per page. If the catalogue grows past 144 projects, page 7 becomes valid and PGS-010 must be updated. First run failed because the probe was wrong (test-design error, not a product bug): the page lede says \"sold out\" in a sentence (\"not listed\"); the check now looks for a Sold out badge element. Probe corrected and rerun.",
+    "notes": "Six pages for 125 projects at 24 per page. If the catalogue grows past 144 projects, page 7 becomes valid and PGS-010 must be updated. First run failed because the probe was wrong (test-design error, not a product bug): the page lede says \"sold out\" in a sentence (\"not listed\"); the check now looks for a Sold out badge element. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1170,7 +1170,7 @@
     "actual": "GET /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-006.txt"
     ],
@@ -1182,7 +1182,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1216,7 +1216,7 @@
     "actual": "GET /areas/dubai-south -> 200 (222156 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-007.txt"
     ],
@@ -1228,7 +1228,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1260,7 +1260,7 @@
     "actual": "GET /projects/does-not-exist-xyz -> 404 (38778 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-008.txt"
     ],
@@ -1272,7 +1272,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/does-not-exist-xyz",
@@ -1298,7 +1298,7 @@
     "actual": "GET /projects/page/1 -> 404 (39507 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-009.txt"
     ],
@@ -1310,7 +1310,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/page/1",
@@ -1336,7 +1336,7 @@
     "actual": "GET /projects/page/0 -> 404 (39507 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-010.txt"
     ],
@@ -1348,7 +1348,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Page 7 is 404 only while the catalogue has 6 pages. Re-check the number when the count changes.",
+    "notes": "Page 7 is 404 only while the catalogue has 6 pages. Re-check the number when the count changes. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1377,7 +1377,7 @@
     "actual": "GET /areas/no-such-area-xyz -> 404 (62226 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-011.txt"
     ],
@@ -1389,7 +1389,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1419,7 +1419,7 @@
     "actual": "GET /blog -> 200 (75769 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-012.txt"
     ],
@@ -1431,7 +1431,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1458,7 +1458,7 @@
     "actual": "GET /blog/no-such-post-xyz -> 404 (38617 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-013.txt"
     ],
@@ -1470,7 +1470,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1497,7 +1497,7 @@
     "actual": "GET /projects/celeste/ -> 308 (17 bytes) ",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-014.txt"
     ],
@@ -1509,7 +1509,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/celeste/",
@@ -1533,7 +1533,7 @@
     "actual": "GET /projects/FLORA-BAY-RESIDENCES -> 308 (30 bytes) ",
     "status": "fail",
     "severity": "low",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-015.txt"
     ],
@@ -1545,7 +1545,7 @@
       "commit": "9ee926b"
     },
     "retest": "pass",
-    "notes": "If the team later prefers a 308 to lowercase, change expectStatus and redirectTo. The rule is one canonical address. First run failed because the probe was wrong (test-design error, not a product bug): the first run showed the real product bug (uppercase address served the page on first visit); expectation widened to 404 or a permanent redirect to the lowercase address. Probe corrected and rerun.",
+    "notes": "If the team later prefers a 308 to lowercase, change expectStatus and redirectTo. The rule is one canonical address. First run failed because the probe was wrong (test-design error, not a product bug): the first run showed the real product bug (uppercase address served the page on first visit); expectation widened to 404 or a permanent redirect to the lowercase address. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "method": "GET",
@@ -1576,7 +1576,7 @@
     "actual": "GET //projects -> 308 (9 bytes) ",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-016.txt"
     ],
@@ -1588,7 +1588,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Uncertain how Next.js normalises a leading double slash. If the first run gets 404 instead, record it as a finding for the team to decide; the case must not be silently changed to match.",
+    "notes": "Uncertain how Next.js normalises a leading double slash. If the first run gets 404 instead, record it as a finding for the team to decide; the case must not be silently changed to match. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "//projects",
@@ -1612,7 +1612,7 @@
     "actual": "GET /projects?page=999999 -> 200 (263434 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-017.txt"
     ],
@@ -1624,7 +1624,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1655,7 +1655,7 @@
     "actual": "GET /projects?budget=%ZZ -> 200 (263434 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-018.txt"
     ],
@@ -1667,7 +1667,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "QA round 1 (31 Oct) fixed this; this is the regression check.",
+    "notes": "QA round 1 (31 Oct) fixed this; this is the regression check. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects?budget=%ZZ",
@@ -1693,7 +1693,7 @@
     "actual": "GET /projects/celeste?utm_source=%3Cscript%3Ealert(1)%3C%2Fscript%3E -> 200 (174235 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-019.txt"
     ],
@@ -1705,7 +1705,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/celeste?utm_source=%3Cscript%3Ealert(1)%3C%2Fscript%3E",
@@ -1731,7 +1731,7 @@
     "actual": "HEAD /projects -> 200 (0 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-020.txt"
     ],
@@ -1743,7 +1743,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects",
@@ -1766,7 +1766,7 @@
     "actual": "/projects/celeste: status 200, wanted 405",
     "status": "fail",
     "severity": "low",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-021.txt"
     ],
@@ -1778,7 +1778,7 @@
       "commit": ""
     },
     "retest": "fail",
-    "notes": "Not fixed: harmless, framework behaviour; a block would need a proxy rule on every page.",
+    "notes": "Not fixed: harmless, framework behaviour; a block would need a proxy rule on every page. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1805,7 +1805,7 @@
     "actual": "GET /robots.txt -> 200 (101 bytes) text/plain",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-022.txt"
     ],
@@ -1817,7 +1817,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/robots.txt",
@@ -1845,7 +1845,7 @@
     "actual": "GET /sitemap.xml -> 200 (40008 bytes) application/xml",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-023.txt"
     ],
@@ -1857,7 +1857,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Raw slugs with & or | exist in the catalogue, but site slugs are ASCII only, so a bare & here would mean a slug bypassed slugify.",
+    "notes": "Raw slugs with & or | exist in the catalogue, but site slugs are ASCII only, so a bare & here would mean a slug bypassed slugify. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/sitemap.xml",
@@ -1886,7 +1886,7 @@
     "actual": "GET /feed.xml -> 200 (621 bytes) application/rss+xml; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-024.txt"
     ],
@@ -1898,7 +1898,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/feed.xml",
@@ -1926,7 +1926,7 @@
     "actual": "GET /manifest.webmanifest -> 200 (504 bytes) application/manifest+json",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-025.txt"
     ],
@@ -1938,7 +1938,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/manifest.webmanifest",
@@ -1967,7 +1967,7 @@
     "actual": "GET /projects/celeste/opengraph-image -> 200 (884380 bytes) image/png",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-026.txt"
     ],
@@ -1979,7 +1979,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/celeste/opengraph-image",
@@ -2005,7 +2005,7 @@
     "actual": "GET /projects/no-such-project-xyz/opengraph-image -> 404 (9 bytes) text/plain;charset=UTF-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-027.txt"
     ],
@@ -2017,7 +2017,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/no-such-project-xyz/opengraph-image",
@@ -2040,7 +2040,7 @@
     "actual": "GET /no-such-page-xyz -> 404 (62226 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-028.txt"
     ],
@@ -2052,7 +2052,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/no-such-page-xyz",
@@ -2079,7 +2079,7 @@
     "actual": "301 https://prelaunchuae.com/projects",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-029.txt"
     ],
@@ -2091,7 +2091,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Set in next.config.ts. Vercel may run its own domain redirect first; the 301 must still end on the apex address. First run failed because the probe was wrong (test-design error, not a product bug): fetch cannot set the Host header, so the www rule was never hit; now tested with curl and a Host header. Probe corrected and rerun.",
+    "notes": "Set in next.config.ts. Vercel may run its own domain redirect first; the 301 must still end on the apex address. First run failed because the probe was wrong (test-design error, not a product bug): fetch cannot set the Host header, so the www rule was never hit; now tested with curl and a Host header. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "cmd",
       "run": "curl -s -o /dev/null -w '%{http_code} %{redirect_url}' -H 'Host: www.prelaunchuae.com' http://localhost:3450/projects",
@@ -2116,7 +2116,7 @@
     "actual": "GET /favicon.ico -> 200 (15086 bytes) image/x-icon",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-PGS-030.txt"
     ],
@@ -2128,7 +2128,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -2160,7 +2160,7 @@
     "actual": "visible nav[aria-label='Main'] a[href='/projects']: true",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-001.png",
       "../evidence/r1/R1-NAV-001.txt"
@@ -2173,7 +2173,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2223,7 +2223,7 @@
     "actual": "step click nav[aria-label='Main'] summary : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-002.png",
       "../evidence/r1/R1-NAV-002.txt"
@@ -2236,7 +2236,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2285,7 +2285,7 @@
     "actual": "step click nav[aria-label='Main'] summary : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-003.png",
       "../evidence/r1/R1-NAV-003.txt"
@@ -2298,7 +2298,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Assumes the Main navigation holds only the ten NavLinks, no other anchors. Adjust the selector if the header adds one.",
+    "notes": "Assumes the Main navigation holds only the ten NavLinks, no other anchors. Adjust the selector if the header adds one. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2335,7 +2335,7 @@
     "actual": "attr nav[aria-label='Main'] a[href='/projects'][aria-current]: page",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-004.png",
       "../evidence/r1/R1-NAV-004.txt"
@@ -2348,7 +2348,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -2379,7 +2379,7 @@
     "actual": "attr nav[aria-label='Main'] summary[aria-current]: page",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-005.png",
       "../evidence/r1/R1-NAV-005.txt"
@@ -2392,7 +2392,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/news",
@@ -2422,7 +2422,7 @@
     "actual": "visible button[aria-label='Open menu']: true",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-006.png",
       "../evidence/r1/R1-NAV-006.txt"
@@ -2435,7 +2435,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2470,7 +2470,7 @@
     "actual": "step click button[aria-label='Open menu'] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-007.png",
       "../evidence/r1/R1-NAV-007.txt"
@@ -2483,7 +2483,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2570,7 +2570,7 @@
     "actual": "step click button[aria-label='Open menu'] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-008.png",
       "../evidence/r1/R1-NAV-008.txt"
@@ -2583,7 +2583,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2631,7 +2631,7 @@
     "actual": "step click button[aria-label='Open menu'] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-009.png",
       "../evidence/r1/R1-NAV-009.txt"
@@ -2644,7 +2644,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2707,7 +2707,7 @@
     "actual": "step click button[aria-label='Open menu'] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-010.png",
       "../evidence/r1/R1-NAV-010.txt"
@@ -2720,7 +2720,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2769,7 +2769,7 @@
     "actual": "step click button[aria-label='Open menu'] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-011.png",
       "../evidence/r1/R1-NAV-011.txt"
@@ -2782,7 +2782,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2829,7 +2829,7 @@
     "actual": "visible footer a[href='/projects']: true",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-012.png",
       "../evidence/r1/R1-NAV-012.txt"
@@ -2842,7 +2842,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2895,7 +2895,7 @@
     "actual": "visible footer a[href='/privacy']: true",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-013.png",
       "../evidence/r1/R1-NAV-013.txt"
@@ -2908,7 +2908,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -2949,7 +2949,7 @@
     "actual": "step click header a[aria-label='PrelaunchUAE, home'] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-014.png",
       "../evidence/r1/R1-NAV-014.txt"
@@ -2962,7 +2962,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/faq",
@@ -3002,7 +3002,7 @@
     "actual": "step press  Tab: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-015.png",
       "../evidence/r1/R1-NAV-015.txt"
@@ -3015,7 +3015,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -3055,7 +3055,7 @@
     "actual": "step press  Tab: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-016.png",
       "../evidence/r1/R1-NAV-016.txt"
@@ -3068,7 +3068,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -3114,7 +3114,7 @@
     "actual": "visible header: true",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-017.png",
       "../evidence/r1/R1-NAV-017.txt"
@@ -3127,7 +3127,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/blog",
@@ -3163,7 +3163,7 @@
     "actual": "visible nav[aria-label=\"Quick contact\"] a[href=\"#register\"]: true",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-018.png",
       "../evidence/r1/R1-NAV-018.txt"
@@ -3176,7 +3176,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the first #register link on the page is the header one (hidden on phones); the selector now targets the phone bottom bar. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the first #register link on the page is the header one (hidden on phones); the selector now targets the phone bottom bar. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -3210,7 +3210,7 @@
     "actual": "step click button[aria-label='Open menu'] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-019.png",
       "../evidence/r1/R1-NAV-019.txt"
@@ -3223,7 +3223,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -3265,7 +3265,7 @@
     "actual": "step press  Tab: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-020.png",
       "../evidence/r1/R1-NAV-020.txt"
@@ -3278,7 +3278,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -3321,7 +3321,7 @@
     "actual": "step click text=Register interest : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-021.png",
       "../evidence/r1/R1-NAV-021.txt"
@@ -3334,7 +3334,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -3379,7 +3379,7 @@
     "actual": "step dblclick button[aria-label='Open menu'] : ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-NAV-022.png",
       "../evidence/r1/R1-NAV-022.txt"
@@ -3392,7 +3392,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): a second click on the button is blocked by the open menu overlay, so Playwright timed out; the step is now a real double click. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): a second click on the button is blocked by the open menu overlay, so Playwright timed out; the step is now a real double click. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -3438,7 +3438,7 @@
     "actual": "GET /projects/meriden-gate -> 404 (38754 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-001.txt"
     ],
@@ -3450,7 +3450,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Developer notice 30 Oct 2026 (Green Horizon). Hidden in sites/prelaunchuae/compliance.ts. First run failed because the probe was wrong (test-design error, not a product bug): a 404 page includes the requested address in its data payload; the check now looks for the Page not found title and no project heading. Probe corrected and rerun. First run failed because the probe was wrong (test-design error, not a product bug): the share image of an unknown project answers a plain 404 without the words Page not found. Probe corrected and rerun.",
+    "notes": "Developer notice 30 Oct 2026 (Green Horizon). Hidden in sites/prelaunchuae/compliance.ts. First run failed because the probe was wrong (test-design error, not a product bug): a 404 page includes the requested address in its data payload; the check now looks for the Page not found title and no project heading. Probe corrected and rerun. First run failed because the probe was wrong (test-design error, not a product bug): the share image of an unknown project answers a plain 404 without the words Page not found. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -3481,7 +3481,7 @@
     "actual": "expr: !projects.some(p => ['meriden-gate', 'avior'].includes(p.slug)) && !index.some(x => ['meriden-gate', 'avior'].includes(x.s)) && !sitemap.some(s => /meriden-gate|avior/i.test(s))",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-002.txt"
     ],
@@ -3493,7 +3493,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "!projects.some(p => ['meriden-gate', 'avior'].includes(p.slug)) && !index.some(x => ['meriden-gate', 'avior'].includes(x.s)) && !sitemap.some(s => /meriden-gate|avior/i.test(s))"
@@ -3514,7 +3514,7 @@
     "actual": "400",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-003.txt"
     ],
@@ -3526,7 +3526,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Do NOT send a valid JSON enquiry: the prelaunchuae key is not registered and the desk is production. Only bodies that fail JSON parsing are safe here.",
+    "notes": "Do NOT send a valid JSON enquiry: the prelaunchuae key is not registered and the desk is production. Only bodies that fail JSON parsing are safe here. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "cmd",
       "run": "curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Content-Type: application/json' --data 'not-json{' http://localhost:3450/api/leads",
@@ -3551,7 +3551,7 @@
     "actual": "400",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-004.txt"
     ],
@@ -3563,7 +3563,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "An empty body fails request.json() in src/lib/forwardLead.ts, so the forwarder returns 400 before any outbound call.",
+    "notes": "An empty body fails request.json() in src/lib/forwardLead.ts, so the forwarder returns 400 before any outbound call. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "cmd",
       "run": "curl -s -o /dev/null -w '%{http_code}' -X POST --data '' http://localhost:3450/api/leads",
@@ -3588,7 +3588,7 @@
     "actual": "POST /api/revalidate -> 503 (37 bytes) application/json",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-005.txt"
     ],
@@ -3600,7 +3600,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "If REVALIDATE_SECRET is unset in this environment the route returns 503 not_configured. Confirm the environment has the secret set; a 503 here is a configuration finding. First run failed because the probe was wrong (test-design error, not a product bug): without REVALIDATE_SECRET the site answers 503 (refuses) instead of 401; both mean the call is refused. Probe corrected and rerun. First run failed because the probe was wrong (test-design error, not a product bug): the exact wording of the refusal was guessed. Probe corrected and rerun.",
+    "notes": "If REVALIDATE_SECRET is unset in this environment the route returns 503 not_configured. Confirm the environment has the secret set; a 503 here is a configuration finding. First run failed because the probe was wrong (test-design error, not a product bug): without REVALIDATE_SECRET the site answers 503 (refuses) instead of 401; both mean the call is refused. Probe corrected and rerun. First run failed because the probe was wrong (test-design error, not a product bug): the exact wording of the refusal was guessed. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/api/revalidate",
@@ -3635,7 +3635,7 @@
     "actual": "GET / -> 200 (412254 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-006.txt"
     ],
@@ -3647,7 +3647,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the header value contains parentheses that were used as an unescaped regex. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the header value contains parentheses that were used as an unescaped regex. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -3679,7 +3679,7 @@
     "actual": "absent",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-007.txt"
     ],
@@ -3691,7 +3691,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "cmd",
       "run": "curl -sI http://localhost:3450/ | tr 'A-Z' 'a-z' | awk '/^x-powered-by/{f=1} END{print f?\"present\":\"absent\"}'",
@@ -3718,7 +3718,7 @@
     "actual": "step fill input[type='search'] \"><img src=x onerror=alert(1)><script>alert(2)</script>: ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-SEC-008.png",
       "../evidence/r1/R1-SEC-008.txt"
@@ -3731,7 +3731,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): the text check had no selector. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -3786,7 +3786,7 @@
     "actual": "GET /media/..%2F..%2Fpackage.json -> 404 (62226 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-009.txt"
     ],
@@ -3798,7 +3798,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -3833,7 +3833,7 @@
     "actual": "as expected",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-SEC-010.txt"
     ],
@@ -3845,7 +3845,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Checks .next/static only after a production build exists. If that folder is missing, record the case as a test-setup error and re-run after the build.",
+    "notes": "Checks .next/static only after a production build exists. If that folder is missing, record the case as a test-setup error and re-run after the build. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "cmd",
       "run": "test -z \"$(find public .next/static -name '*.map' -o -name '.env*' 2>/dev/null)\" && ! grep -rIlE 'REVALIDATE_SECRET|CONTENT_STATUS_TOKEN|X-Site-Key|sk_live' public .next/static 2>/dev/null",
@@ -3867,7 +3867,7 @@
     "actual": "external requests: 0",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-SEC-011.png",
       "../evidence/r1/R1-SEC-011.txt"
@@ -3880,7 +3880,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Videos load only on click (LiteVideo). Pictures are local under public/media. Outbound links such as wa.me are only navigation, not page loads.",
+    "notes": "Videos load only on click (LiteVideo). Pictures are local under public/media. Outbound links such as wa.me are only navigation, not page loads. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",

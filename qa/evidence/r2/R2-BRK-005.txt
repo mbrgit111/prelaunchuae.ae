@@ -1,0 +1,9 @@
+R2-BRK-005: area trailing slash address /areas/dubai-south/ never serves a second copy
+probe: {"kind":"http","path":"/areas/dubai-south/","expectStatus":[404,301,308]}
+
+result: PASS
+
+
+GET /areas/dubai-south/ -> 308 (18 bytes) 
+---
+/areas/dubai-south

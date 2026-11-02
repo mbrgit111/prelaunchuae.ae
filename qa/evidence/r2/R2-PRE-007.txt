@@ -1,0 +1,9 @@
+R2-PRE-007: Sitemap lists each catalogue project once and nothing else under /projects
+probe: {"kind":"data","expr":"(() => { const ps = sitemap.filter(p => /^\\/projects\\/[^/]+$/.test(p)); return ps.length === projects.length && new Set(ps).size === ps.length; })()"}
+
+result: PASS
+
+
+expr: (() => { const ps = sitemap.filter(p => /^\/projects\/[^/]+$/.test(p)); return ps.length === projects.length && new Set(ps).size === ps.length; })()
+result: true
+projects=125 index=0 sitemap=313

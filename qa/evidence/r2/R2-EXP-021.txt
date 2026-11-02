@@ -1,0 +1,7 @@
+R2-EXP-021: Project marked price on request shows On request and no From AED
+probe: {"kind":"ui","path":"/projects/alain-new-launch","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"body","value":"On request"},{"type":"textNot","sel":"body","value":"From AED"}],"shot":true}
+
+result: PASS
+
+
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Al Maryah Is

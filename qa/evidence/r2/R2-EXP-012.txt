@@ -1,0 +1,8 @@
+R2-EXP-012: Script-like text in the q URL parameter is never executed or rendered as HTML
+probe: {"kind":"ui","path":"/projects?q=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"img[src=\"x\"]","value":"0","op":"eq"},{"type":"textNot","sel":"body","value":"<img"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+count img[src="x"]: 0
+console errors: 0

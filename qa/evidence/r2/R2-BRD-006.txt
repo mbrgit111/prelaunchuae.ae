@@ -1,0 +1,7 @@
+R2-BRD-006: Favicon uses the Midnight Ink ground and Desert Sand mark
+probe: {"kind":"file","path":"public/favicon.svg","exists":true,"includes":["#0B1F33","#F4EFE6"]}
+
+result: PASS
+
+
+public/favicon.svg exists=true size=534

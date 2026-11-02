@@ -1,0 +1,12 @@
+R2-PGS-002: Remaining menu pages answer 200 with no error text
+probe: {"kind":"http","paths":["/faq","/about","/contact","/blog","/news","/site-map"],"method":"GET","expectStatus":200,"bodyExcludes":["Net Capital","Application error"]}
+
+result: PASS
+
+
+GET /faq -> 200 (105138 bytes) text/html; charset=utf-8
+GET /about -> 200 (79967 bytes) text/html; charset=utf-8
+GET /contact -> 200 (75900 bytes) text/html; charset=utf-8
+GET /blog -> 200 (75769 bytes) text/html; charset=utf-8
+GET /news -> 200 (75697 bytes) text/html; charset=utf-8
+GET /site-map -> 200 (166345 bytes) text/html; charset=utf-8

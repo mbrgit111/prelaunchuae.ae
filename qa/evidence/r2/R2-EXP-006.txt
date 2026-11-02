@@ -1,0 +1,7 @@
+R2-EXP-006: Project cards show New launch or Coming soon status tags
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"visible","sel":"text=New launch"}],"shot":true}
+
+result: PASS
+
+
+visible text=New launch: true

@@ -1,0 +1,13 @@
+R2-PGS-030: Brand icon and share fallback files are served
+probe: {"kind":"http","paths":["/favicon.ico","/favicon.svg","/apple-touch-icon.png","/android-chrome-192.png","/android-chrome-512.png","/favicon-32.png","/og-image-1200x630.png"],"method":"GET","expectStatus":200}
+
+result: PASS
+
+
+GET /favicon.ico -> 200 (15086 bytes) image/x-icon
+GET /favicon.svg -> 200 (534 bytes) image/svg+xml
+GET /apple-touch-icon.png -> 200 (1540 bytes) image/png
+GET /android-chrome-192.png -> 200 (1593 bytes) image/png
+GET /android-chrome-512.png -> 200 (4224 bytes) image/png
+GET /favicon-32.png -> 200 (663 bytes) image/png
+GET /og-image-1200x630.png -> 200 (21672 bytes) image/png

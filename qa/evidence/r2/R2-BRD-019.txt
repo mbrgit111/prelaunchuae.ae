@@ -1,0 +1,7 @@
+R2-BRD-019: Slate text on white measures at least 5.9:1
+probe: {"kind":"contrast","fg":"#5A6573","bg":"#FFFFFF","min":5.9}
+
+result: PASS
+
+
+#5A6573 on #FFFFFF = 5.93:1

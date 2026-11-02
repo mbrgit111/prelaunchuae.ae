@@ -1,0 +1,11 @@
+R2-NAV-011: Escape key closes the phone menu
+probe: {"kind":"ui","path":"/","viewport":"mobile","steps":[{"do":"click","sel":"button[aria-label='Open menu']"},{"do":"wait","value":"400"},{"do":"press","value":"Escape"},{"do":"wait","value":"300"}],"expect":[{"type":"hidden","sel":"#site-menu"}]}
+
+result: PASS
+
+
+step click button[aria-label='Open menu'] : ok
+step wait  400: ok
+step press  Escape: ok
+step wait  300: ok
+hidden #site-menu: true

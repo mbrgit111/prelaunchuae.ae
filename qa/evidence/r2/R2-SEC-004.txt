@@ -1,0 +1,7 @@
+R2-SEC-004: Empty enquiry body is refused before it reaches the lead desk
+probe: {"kind":"cmd","run":"curl -s -o /dev/null -w '%{http_code}' -X POST --data '' http://localhost:3450/api/leads","expectExit":0,"outIncludes":["400"]}
+
+result: PASS
+
+
+400

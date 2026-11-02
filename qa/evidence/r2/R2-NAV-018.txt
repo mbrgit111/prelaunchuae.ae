@@ -1,0 +1,8 @@
+R2-NAV-018: Phone bottom bar offers the Register link on a project list page
+probe: {"kind":"ui","path":"/projects","viewport":"mobile","expect":[{"type":"visible","sel":"nav[aria-label=\"Quick contact\"] a[href=\"#register\"]"},{"type":"noOverflow"}],"shot":true}
+
+result: PASS
+
+
+visible nav[aria-label="Quick contact"] a[href="#register"]: true
+overflow: scrollWidth 375 vs clientWidth 375

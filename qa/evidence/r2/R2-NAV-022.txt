@@ -1,0 +1,11 @@
+R2-NAV-022: Double tap on the menu button leaves a consistent closed menu
+probe: {"kind":"ui","path":"/","viewport":"mobile","steps":[{"do":"dblclick","sel":"button[aria-label='Open menu']"},{"do":"wait","value":"500"}],"expect":[{"type":"hidden","sel":"#site-menu"},{"type":"visible","sel":"button[aria-label='Open menu']"},{"type":"noOverflow"}]}
+
+result: PASS
+
+
+step dblclick button[aria-label='Open menu'] : ok
+step wait  500: ok
+hidden #site-menu: true
+visible button[aria-label='Open menu']: true
+overflow: scrollWidth 375 vs clientWidth 375

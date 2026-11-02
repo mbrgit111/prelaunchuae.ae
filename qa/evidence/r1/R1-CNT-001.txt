@@ -1,13 +1,10 @@
 R1-CNT-001: Project pages do not say other projects are selling
 probe: {"kind":"http","paths":["/projects/celeste","/projects/wyndham-residences-al-marjan-island","/projects/voi-residence","/projects/the-views"],"expectStatus":200,"bodyNotRegex":"selling in the same area"}
 
-result: FAIL
-- /projects/celeste: body matches /selling in the same area/
-- /projects/wyndham-residences-al-marjan-island: body matches /selling in the same area/
-- /projects/voi-residence: body matches /selling in the same area/
-- /projects/the-views: body matches /selling in the same area/
+result: PASS
 
-GET /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8
-GET /projects/wyndham-residences-al-marjan-island -> 200 (178312 bytes) text/html; charset=utf-8
-GET /projects/voi-residence -> 200 (175947 bytes) text/html; charset=utf-8
-GET /projects/the-views -> 200 (174779 bytes) text/html; charset=utf-8
+
+GET /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8
+GET /projects/wyndham-residences-al-marjan-island -> 200 (178300 bytes) text/html; charset=utf-8
+GET /projects/voi-residence -> 200 (175935 bytes) text/html; charset=utf-8
+GET /projects/the-views -> 200 (174767 bytes) text/html; charset=utf-8

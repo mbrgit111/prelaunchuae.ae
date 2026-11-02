@@ -1,0 +1,10 @@
+R2-SEC-001: Taken-down project addresses answer 404 on pages and share images
+probe: {"kind":"http","paths":["/projects/meriden-gate","/projects/avior","/projects/meriden-gate/opengraph-image","/projects/avior/opengraph-image"],"method":"GET","expectStatus":404,"bodyExcludes":[],"bodyNotRegex":"<h1[^>]*>[^<]*(Meriden|Avior)","bodyRegex":"not found"}
+
+result: PASS
+
+
+GET /projects/meriden-gate -> 404 (38754 bytes) text/html; charset=utf-8
+GET /projects/avior -> 404 (38726 bytes) text/html; charset=utf-8
+GET /projects/meriden-gate/opengraph-image -> 404 (9 bytes) text/plain;charset=UTF-8
+GET /projects/avior/opengraph-image -> 404 (9 bytes) text/plain;charset=UTF-8

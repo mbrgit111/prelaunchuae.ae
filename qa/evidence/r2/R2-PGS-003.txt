@@ -1,0 +1,14 @@
+R2-PGS-003: Property type and bedroom pages answer 200
+probe: {"kind":"http","paths":["/apartments","/townhouses","/villas","/apartments/studio","/apartments/1-bedroom","/apartments/2-bedroom","/apartments/3-bedroom","/apartments/4-bedroom-plus"],"method":"GET","expectStatus":200,"bodyExcludes":["Application error"]}
+
+result: PASS
+
+
+GET /apartments -> 200 (253831 bytes) text/html; charset=utf-8
+GET /townhouses -> 200 (135034 bytes) text/html; charset=utf-8
+GET /villas -> 200 (193946 bytes) text/html; charset=utf-8
+GET /apartments/studio -> 200 (242267 bytes) text/html; charset=utf-8
+GET /apartments/1-bedroom -> 200 (252162 bytes) text/html; charset=utf-8
+GET /apartments/2-bedroom -> 200 (252052 bytes) text/html; charset=utf-8
+GET /apartments/3-bedroom -> 200 (234738 bytes) text/html; charset=utf-8
+GET /apartments/4-bedroom-plus -> 200 (150653 bytes) text/html; charset=utf-8

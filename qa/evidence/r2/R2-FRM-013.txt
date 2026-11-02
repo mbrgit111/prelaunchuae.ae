@@ -1,0 +1,9 @@
+R2-FRM-013: Bad email marks the field aria-invalid for assistive tech
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[{"do":"fill","sel":"input[name=\"email\"]","value":"a@b"},{"do":"press","sel":"input[name=\"email\"]","value":"Tab"}],"expect":[{"type":"attr","sel":"input[name=\"email\"]","prop":"aria-invalid","value":"true","op":"eq"}],"shot":true}
+
+result: PASS
+
+
+step fill input[name="email"] a@b: ok
+step press input[name="email"] Tab: ok
+attr input[name="email"][aria-invalid]: true

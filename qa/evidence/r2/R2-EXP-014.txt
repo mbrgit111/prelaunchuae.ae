@@ -1,0 +1,8 @@
+R2-EXP-014: Tampered URL values for status, sort and beds are ignored safely
+probe: {"kind":"ui","path":"/projects?avail=sold-out&sort=%3Cscript%3Ealert(1)%3C%2Fscript%3E&beds=-1","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"article :text-is(\"Sold out\")","value":"0","op":"eq"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+count article :text-is("Sold out"): 0
+console errors: 0

@@ -1,0 +1,9 @@
+R2-BRK-001: area address /areas/DUBAI-SOUTH never serves a second copy
+probe: {"kind":"http","path":"/areas/DUBAI-SOUTH","expectStatus":[404,301,308]}
+
+result: PASS
+
+
+GET /areas/DUBAI-SOUTH -> 308 (18 bytes) 
+---
+/areas/dubai-south

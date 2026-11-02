@@ -1,0 +1,7 @@
+R2-BRD-010: Project page headings compute to the Sora font
+probe: {"kind":"ui","path":"/projects/celeste","viewport":"desktop","steps":[],"expect":[{"type":"style","sel":"h1","prop":"font-family","value":"Sora","op":"contains"}],"shot":true}
+
+result: PASS
+
+
+style h1 font-family: "serif", "serif Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif

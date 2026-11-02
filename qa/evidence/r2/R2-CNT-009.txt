@@ -1,0 +1,38 @@
+R2-CNT-009: Sitemap pages 257 to 288 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/developers/chaimaa-holding","/developers/cityview-developments","/developers/confident-group","/developers/crystal-bay-development","/developers/danube-properties","/developers/deca-properties","/developers/deniz-real-estate-development","/developers/divine-one-group","/developers/east-west-properties","/developers/edomi-real-estate-development","/developers/emirates-developments","/developers/empire-developments","/developers/expo-city","/developers/fakhruddin-properties","/developers/forum-real-estate-development","/developers/galaxy-realty","/developers/gj-properties","/developers/global-partners","/developers/green-group","/developers/holm-developments","/developers/hvm-living","/developers/iman-developers","/developers/imtiaz-developments","/developers/jhk-developments","/developers/karma-developers","/developers/kyg-prestige","/developers/leos-developments","/developers/lmd","/developers/main-realty","/developers/majid-al-futtaim","/developers/majid-developments","/developers/marquis-developers"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET /developers/chaimaa-holding -> 200 (94953 bytes) text/html; charset=utf-8
+GET /developers/cityview-developments -> 200 (95184 bytes) text/html; charset=utf-8
+GET /developers/confident-group -> 200 (93795 bytes) text/html; charset=utf-8
+GET /developers/crystal-bay-development -> 200 (94532 bytes) text/html; charset=utf-8
+GET /developers/danube-properties -> 200 (95082 bytes) text/html; charset=utf-8
+GET /developers/deca-properties -> 200 (95100 bytes) text/html; charset=utf-8
+GET /developers/deniz-real-estate-development -> 200 (94280 bytes) text/html; charset=utf-8
+GET /developers/divine-one-group -> 200 (95044 bytes) text/html; charset=utf-8
+GET /developers/east-west-properties -> 200 (95319 bytes) text/html; charset=utf-8
+GET /developers/edomi-real-estate-development -> 200 (93465 bytes) text/html; charset=utf-8
+GET /developers/emirates-developments -> 200 (95215 bytes) text/html; charset=utf-8
+GET /developers/empire-developments -> 200 (95406 bytes) text/html; charset=utf-8
+GET /developers/expo-city -> 200 (94923 bytes) text/html; charset=utf-8
+GET /developers/fakhruddin-properties -> 200 (94875 bytes) text/html; charset=utf-8
+GET /developers/forum-real-estate-development -> 200 (94799 bytes) text/html; charset=utf-8
+GET /developers/galaxy-realty -> 200 (94726 bytes) text/html; charset=utf-8
+GET /developers/gj-properties -> 200 (95195 bytes) text/html; charset=utf-8
+GET /developers/global-partners -> 200 (94392 bytes) text/html; charset=utf-8
+GET /developers/green-group -> 200 (94453 bytes) text/html; charset=utf-8
+GET /developers/holm-developments -> 200 (94936 bytes) text/html; charset=utf-8
+GET /developers/hvm-living -> 200 (94665 bytes) text/html; charset=utf-8
+GET /developers/iman-developers -> 200 (94233 bytes) text/html; charset=utf-8
+GET /developers/imtiaz-developments -> 200 (95286 bytes) text/html; charset=utf-8
+GET /developers/jhk-developments -> 200 (95161 bytes) text/html; charset=utf-8
+GET /developers/karma-developers -> 200 (94948 bytes) text/html; charset=utf-8
+GET /developers/kyg-prestige -> 200 (94158 bytes) text/html; charset=utf-8
+GET /developers/leos-developments -> 200 (94870 bytes) text/html; charset=utf-8
+GET /developers/lmd -> 200 (94092 bytes) text/html; charset=utf-8
+GET /developers/main-realty -> 200 (94985 bytes) text/html; charset=utf-8
+GET /developers/majid-al-futtaim -> 200 (94307 bytes) text/html; charset=utf-8
+GET /developers/majid-developments -> 200 (95176 bytes) text/html; charset=utf-8
+GET /developers/marquis-developers -> 200 (94801 bytes) text/html; charset=utf-8

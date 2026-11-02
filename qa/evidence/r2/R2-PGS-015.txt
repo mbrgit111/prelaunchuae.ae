@@ -1,0 +1,9 @@
+R2-PGS-015: Uppercase project, area and developer addresses do not serve a second page
+probe: {"kind":"http","method":"GET","expectStatus":[404,301,308],"paths":["/projects/FLORA-BAY-RESIDENCES","/areas/DUBAI-SOUTH","/developers/ALDAR"]}
+
+result: PASS
+
+
+GET /projects/FLORA-BAY-RESIDENCES -> 308 (30 bytes) 
+GET /areas/DUBAI-SOUTH -> 308 (18 bytes) 
+GET /developers/ALDAR -> 308 (17 bytes) 

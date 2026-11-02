@@ -1,0 +1,7 @@
+R2-NAV-004: Current page is marked in the desktop menu
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","expect":[{"type":"attr","sel":"nav[aria-label='Main'] a[href='/projects']","prop":"aria-current","value":"page"}]}
+
+result: PASS
+
+
+attr nav[aria-label='Main'] a[href='/projects'][aria-current]: page

@@ -111,7 +111,7 @@ export function developerIntro(d: Developer, projects: Project[]): string {
   const selling = projects.filter(sellingNow).length;
   const emirates = [...new Set(projects.map((p) => p.emirate))];
   const parts = [
-    `${d.name} has ${projects.length === 1 ? 'one project' : `${projects.length} projects`} listed${emirates.length === 1 ? ` in ${emirates[0]}` : ` across ${list(emirates)}`}${areas.length === 1 ? `, in ${areas[0]}` : areas.length <= 4 ? `, in ${list(areas)}` : `, in ${areas.length} areas`}${projects.length > 1 ? `; ${selling ? `${selling} ${selling === 1 ? 'is' : 'are'} selling now` : 'none is selling now'}` : ''}.`,
+    `${d.name} has ${projects.length === 1 ? 'one project' : `${projects.length} projects`} listed${emirates.length === 1 ? ` in ${emirates[0]}` : ` across ${list(emirates)}`}${areas.length === 1 ? `, in ${areas[0]}` : areas.length <= 4 ? `, in ${list(areas)}` : `, in ${areas.length} areas`}${projects.length > 1 ? `; ${selling ? `${selling} ${selling === 1 ? 'is' : 'are'} launching now` : 'none is launching now'}` : ''}.`,
     years.length ? (Math.min(...years) === Math.max(...years) ? `Completion is scheduled for ${years[0]}.` : `Scheduled completions run from ${Math.min(...years)} to ${Math.max(...years)}.`) : null,
     prices.length ? `The lowest published price is ${aed(Math.min(...prices))}, subject to availability.` : null,
   ];
@@ -140,7 +140,7 @@ export function areaFaqs(area: string, projects: Project[]): { q: string; a: str
   const post = projects.filter((p) => p.hasPostHandover).length;
   const years = projects.filter((p) => p.completion !== 'ready' && p.handover.year).map((p) => p.handover.year!);
   const out = [
-    { q: `How many projects are selling in ${area}?`, a: `${projects.filter(sellingNow).length} of the ${plural(projects.length, 'project')} listed here, from ${plural(devs.length, 'developer')}. The list on this page shows each one with its price, plan and completion date.` },
+    { q: `How many projects are launching now in ${area}?`, a: `${projects.filter(sellingNow).length} of the ${plural(projects.length, 'project')} listed here, from ${plural(devs.length, 'developer')}. The list on this page shows each one with its price, plan and completion date.` },
     { q: `Who is building in ${area}?`, a: `${list(devs.slice(0, 6))}${devs.length > 6 ? `, and ${devs.length - 6} more` : ''}.` },
   ];
   if (prices.length) out.push({ q: `What do new homes in ${area} cost?`, a: `Published starting prices range from ${aed(Math.min(...prices))} to ${aed(Math.max(...prices))}, depending on the project and unit. All prices are subject to availability.` });

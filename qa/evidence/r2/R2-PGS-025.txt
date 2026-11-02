@@ -1,0 +1,9 @@
+R2-PGS-025: Web app manifest names the site and lists two icons
+probe: {"kind":"http","path":"/manifest.webmanifest","method":"GET","expectStatus":200,"jsonPath":{"expr":"body.name === 'PrelaunchUAE' && body.start_url === '/' && body.icons.length === 2"},"bodyIncludes":["android-chrome-192.png"]}
+
+result: PASS
+
+
+GET /manifest.webmanifest -> 200 (504 bytes) application/manifest+json
+---
+{"name":"PrelaunchUAE","short_name":"PrelaunchUAE","description":"See pre-launch and new-launch projects across Dubai and the UAE before the market does: area, developer, unit types, payment plan and handover date, then register your interest with PrelaunchUAE.","start_url":"/","display":"browser","background_color":"#F4EFE6","theme_color":"#0B1F33","icons":[{"src":"/android-chrome-192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512.png","sizes":"512x512","type":"image/png"}]}

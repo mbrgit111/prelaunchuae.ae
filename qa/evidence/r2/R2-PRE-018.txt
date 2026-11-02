@@ -1,0 +1,9 @@
+R2-PRE-018: Every index slug is clean lowercase with single hyphens
+probe: {"kind":"data","expr":"index.length > 0 && index.every(x => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(x.s))"}
+
+result: PASS
+
+
+expr: index.length > 0 && index.every(x => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(x.s))
+result: true
+projects=125 index=125 sitemap=0

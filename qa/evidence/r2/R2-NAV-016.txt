@@ -1,0 +1,10 @@
+R2-NAV-016: Skip link moves focus to the main content
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"press","value":"Tab"},{"do":"press","value":"Enter"}],"expect":[{"type":"url","value":"#main","op":"contains"},{"type":"count","sel":"#main","value":"1","op":"eq"}]}
+
+result: PASS
+
+
+step press  Tab: ok
+step press  Enter: ok
+url: /projects#main
+count #main: 1

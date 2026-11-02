@@ -1,0 +1,8 @@
+R2-EXP-011: Very long search text is capped and does not crash the page
+probe: {"kind":"ui","path":"/projects?q=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","viewport":"desktop","steps":[],"expect":[{"type":"noConsoleErrors"},{"type":"noOverflow"}],"shot":true}
+
+result: PASS
+
+
+console errors: 0
+overflow: scrollWidth 1440 vs clientWidth 1440

@@ -1,0 +1,9 @@
+R2-PRE-010: Explorer URL with avail=selling never shows a sold-out label
+probe: {"kind":"ui","path":"/projects?avail=selling","viewport":"desktop","steps":[{"do":"wait","value":"1500"}],"expect":[{"type":"count","sel":"article :text-is(\"Sold out\")","value":"0","op":"eq"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+step wait  1500: ok
+count article :text-is("Sold out"): 0
+console errors: 0

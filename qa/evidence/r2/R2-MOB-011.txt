@@ -1,0 +1,8 @@
+R2-MOB-011: Project page palm-01-by-binghatti has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/palm-01-by-binghatti","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0

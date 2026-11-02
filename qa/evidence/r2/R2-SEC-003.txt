@@ -1,0 +1,7 @@
+R2-SEC-003: Non-JSON enquiry body is refused before it reaches the lead desk
+probe: {"kind":"cmd","run":"curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Content-Type: application/json' --data 'not-json{' http://localhost:3450/api/leads","expectExit":0,"outIncludes":["400"]}
+
+result: PASS
+
+
+400

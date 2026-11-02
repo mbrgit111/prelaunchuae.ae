@@ -1,0 +1,8 @@
+R2-MOB-009: Project page sorrento-tower-c has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/sorrento-tower-c","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0

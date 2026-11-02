@@ -1,0 +1,10 @@
+R2-NAV-013: Footer links to the four legal pages
+probe: {"kind":"ui","path":"/","viewport":"desktop","expect":[{"type":"visible","sel":"footer a[href='/privacy']"},{"type":"visible","sel":"footer a[href='/terms']"},{"type":"visible","sel":"footer a[href='/disclaimer']"},{"type":"visible","sel":"footer a[href='/cookie-policy']"}]}
+
+result: PASS
+
+
+visible footer a[href='/privacy']: true
+visible footer a[href='/terms']: true
+visible footer a[href='/disclaimer']: true
+visible footer a[href='/cookie-policy']: true

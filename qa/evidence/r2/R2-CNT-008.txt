@@ -1,0 +1,53 @@
+R2-CNT-008: Sitemap pages 225 to 256 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/developers/alfulaiti-development","/developers/azizi-developments","/developers/binghatti-developers","/developers/bt-properties","/developers/centurion","/developers/ellington-properties","/developers/enaam-developers","/developers/evera-development","/developers/grid-properties","/developers/irth-group","/developers/lamar-development","/developers/mira-developments","/developers/osoul-properties","/developers/qube-development","/developers/rabdan-developments","/developers/samana-developers","/developers/aark-developers","/developers/ajmal-makan","/developers/al-ghurair-properties","/developers/al-habtoor","/developers/alain","/developers/alef","/developers/amali-properties","/developers/amis-development","/developers/aqua-developments","/developers/aras-development","/developers/ardee-developments","/developers/atara-development","/developers/azure-premier-developments","/developers/beyond-developments","/developers/blanco-thornton","/developers/bnw-developments"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: FAIL
+- /developers/alfulaiti-development: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/azizi-developments: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/binghatti-developers: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/bt-properties: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/centurion: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/ellington-properties: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/enaam-developers: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/evera-development: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/grid-properties: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/irth-group: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/lamar-development: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/mira-developments: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/osoul-properties: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/qube-development: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/rabdan-developments: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+- /developers/samana-developers: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+
+GET /developers/alfulaiti-development -> 200 (103032 bytes) text/html; charset=utf-8
+GET /developers/azizi-developments -> 200 (102250 bytes) text/html; charset=utf-8
+GET /developers/binghatti-developers -> 200 (102234 bytes) text/html; charset=utf-8
+GET /developers/bt-properties -> 200 (102601 bytes) text/html; charset=utf-8
+GET /developers/centurion -> 200 (102280 bytes) text/html; charset=utf-8
+GET /developers/ellington-properties -> 200 (102188 bytes) text/html; charset=utf-8
+GET /developers/enaam-developers -> 200 (100828 bytes) text/html; charset=utf-8
+GET /developers/evera-development -> 200 (102654 bytes) text/html; charset=utf-8
+GET /developers/grid-properties -> 200 (102912 bytes) text/html; charset=utf-8
+GET /developers/irth-group -> 200 (102260 bytes) text/html; charset=utf-8
+GET /developers/lamar-development -> 200 (102719 bytes) text/html; charset=utf-8
+GET /developers/mira-developments -> 200 (102875 bytes) text/html; charset=utf-8
+GET /developers/osoul-properties -> 200 (102274 bytes) text/html; charset=utf-8
+GET /developers/qube-development -> 200 (102710 bytes) text/html; charset=utf-8
+GET /developers/rabdan-developments -> 200 (102596 bytes) text/html; charset=utf-8
+GET /developers/samana-developers -> 200 (101980 bytes) text/html; charset=utf-8
+GET /developers/aark-developers -> 200 (95003 bytes) text/html; charset=utf-8
+GET /developers/ajmal-makan -> 200 (94994 bytes) text/html; charset=utf-8
+GET /developers/al-ghurair-properties -> 200 (94406 bytes) text/html; charset=utf-8
+GET /developers/al-habtoor -> 200 (94693 bytes) text/html; charset=utf-8
+GET /developers/alain -> 200 (93798 bytes) text/html; charset=utf-8
+GET /developers/alef -> 200 (94455 bytes) text/html; charset=utf-8
+GET /developers/amali-properties -> 200 (94913 bytes) text/html; charset=utf-8
+GET /developers/amis-development -> 200 (95027 bytes) text/html; charset=utf-8
+GET /developers/aqua-developments -> 200 (95062 bytes) text/html; charset=utf-8
+GET /developers/aras-development -> 200 (94758 bytes) text/html; charset=utf-8
+GET /developers/ardee-developments -> 200 (95138 bytes) text/html; charset=utf-8
+GET /developers/atara-development -> 200 (95258 bytes) text/html; charset=utf-8
+GET /developers/azure-premier-developments -> 200 (95217 bytes) text/html; charset=utf-8
+GET /developers/beyond-developments -> 200 (94367 bytes) text/html; charset=utf-8
+GET /developers/blanco-thornton -> 200 (94736 bytes) text/html; charset=utf-8
+GET /developers/bnw-developments -> 200 (95008 bytes) text/html; charset=utf-8

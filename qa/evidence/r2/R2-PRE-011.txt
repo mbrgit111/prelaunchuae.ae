@@ -1,0 +1,9 @@
+R2-PRE-011: Projects page 1 shows 24 project cards
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"wait","value":"1000"}],"expect":[{"type":"count","sel":"a[href^='/projects/']:not([href*='/page/'])","value":"24","op":"gte"},{"type":"count","sel":"article :text-is(\"Sold out\")","value":"0","op":"eq"}],"shot":true}
+
+result: PASS
+
+
+step wait  1000: ok
+count a[href^='/projects/']:not([href*='/page/']): 24
+count article :text-is("Sold out"): 0

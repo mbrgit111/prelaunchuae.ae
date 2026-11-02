@@ -1,0 +1,75 @@
+R2-PGS-023: Sitemap XML is valid: absolute locations and no raw ampersand
+probe: {"kind":"http","path":"/sitemap.xml","method":"GET","expectStatus":200,"bodyIncludes":["<loc>https://prelaunchuae.com/projects/celeste</loc>","<loc>https://prelaunchuae.com/projects</loc>"],"bodyRegex":"<urlset","bodyNotRegex":"&(?!amp;|lt;|gt;|quot;|apos;|#)"}
+
+result: PASS
+
+
+GET /sitemap.xml -> 200 (40008 bytes) application/xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://prelaunchuae.com/</loc>
+<lastmod>2026-10-30T14:32:48.747Z</lastmod>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/projects</loc>
+<lastmod>2026-10-30T14:32:48.747Z</lastmod>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/areas</loc>
+<lastmod>2026-10-30T14:32:48.747Z</lastmod>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/developers</loc>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/why-dubai</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/golden-visa</loc>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/faq</loc>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/about</loc>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/contact</loc>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/privacy</loc>
+<priority>0.2</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/terms</loc>
+<priority>0.2</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/disclaimer</loc>
+<priority>0.2</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/cookie-policy</loc>
+<priority>0.2</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/apartments</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.com/townhouses</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://prelaunchuae.

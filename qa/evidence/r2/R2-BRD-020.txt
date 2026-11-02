@@ -1,0 +1,7 @@
+R2-BRD-020: Mist text on Midnight Ink measures at least 7.9:1
+probe: {"kind":"contrast","fg":"#A9B4C2","bg":"#0B1F33","min":7.9}
+
+result: PASS
+
+
+#A9B4C2 on #0B1F33 = 7.94:1

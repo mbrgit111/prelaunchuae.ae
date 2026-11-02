@@ -1,0 +1,8 @@
+R2-NAV-006: Phone shows the menu button and hides the desktop bar
+probe: {"kind":"ui","path":"/","viewport":"mobile","expect":[{"type":"visible","sel":"button[aria-label='Open menu']"},{"type":"hidden","sel":"nav[aria-label='Main']"}],"shot":true}
+
+result: PASS
+
+
+visible button[aria-label='Open menu']: true
+hidden nav[aria-label='Main']: true

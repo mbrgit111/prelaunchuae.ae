@@ -1,0 +1,8 @@
+R2-EXP-023: Project page has the enquiry form
+probe: {"kind":"ui","path":"/projects/celeste","viewport":"desktop","steps":[],"expect":[{"type":"visible","sel":"text=Send it to me"},{"type":"visible","sel":"input[name=\"phone\"]"}],"shot":true}
+
+result: PASS
+
+
+visible text=Send it to me: true
+visible input[name="phone"]: true

@@ -1,0 +1,38 @@
+R2-CNT-006: Sitemap pages 161 to 192 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/projects/miraggio-phases-1-and-2","/projects/nad-al-sheba-gardens-phase-12","/projects/new-project-by-ays-developers","/projects/new-project-by-empire-developments","/projects/new-project-by-tarrad","/projects/new-project-by-yard","/projects/new-project-by-qube","/projects/osoul-upcoming-launch","/projects/osoul-upcoming-launch-1","/projects/palace-villas-ostra-new-phase","/projects/palm-01-by-binghatti","/projects/platinum-heights","/projects/prime-rose-1","/projects/qube-new-launch","/projects/rabdan-developments-new-launch","/projects/reef-995","/projects/radiant-legacy","/projects/radisson-residences-tower-3","/projects/raiha-stand-alone-villa-in-waada","/projects/regent-yacht","/projects/rise","/projects/rixos-al-reem-residences","/projects/rosewell-park","/projects/rove-home-the-greens","/projects/samana-collecta","/projects/sol-terra-gardens","/projects/samana-downtown-one","/projects/sea-mirror-residences","/projects/seef-residences","/projects/shahrukhz-residences-by-danube","/projects/sofitel-branded-residences","/projects/solaya-7"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET /projects/miraggio-phases-1-and-2 -> 200 (192221 bytes) text/html; charset=utf-8
+GET /projects/nad-al-sheba-gardens-phase-12 -> 200 (142545 bytes) text/html; charset=utf-8
+GET /projects/new-project-by-ays-developers -> 200 (180804 bytes) text/html; charset=utf-8
+GET /projects/new-project-by-empire-developments -> 200 (172621 bytes) text/html; charset=utf-8
+GET /projects/new-project-by-tarrad -> 200 (160254 bytes) text/html; charset=utf-8
+GET /projects/new-project-by-yard -> 200 (190084 bytes) text/html; charset=utf-8
+GET /projects/new-project-by-qube -> 200 (190715 bytes) text/html; charset=utf-8
+GET /projects/osoul-upcoming-launch -> 200 (144368 bytes) text/html; charset=utf-8
+GET /projects/osoul-upcoming-launch-1 -> 200 (144450 bytes) text/html; charset=utf-8
+GET /projects/palace-villas-ostra-new-phase -> 200 (164999 bytes) text/html; charset=utf-8
+GET /projects/palm-01-by-binghatti -> 200 (159629 bytes) text/html; charset=utf-8
+GET /projects/platinum-heights -> 200 (187427 bytes) text/html; charset=utf-8
+GET /projects/prime-rose-1 -> 200 (136762 bytes) text/html; charset=utf-8
+GET /projects/qube-new-launch -> 200 (132056 bytes) text/html; charset=utf-8
+GET /projects/rabdan-developments-new-launch -> 200 (135687 bytes) text/html; charset=utf-8
+GET /projects/reef-995 -> 200 (202408 bytes) text/html; charset=utf-8
+GET /projects/radiant-legacy -> 200 (195388 bytes) text/html; charset=utf-8
+GET /projects/radisson-residences-tower-3 -> 200 (173948 bytes) text/html; charset=utf-8
+GET /projects/raiha-stand-alone-villa-in-waada -> 200 (185827 bytes) text/html; charset=utf-8
+GET /projects/regent-yacht -> 200 (178685 bytes) text/html; charset=utf-8
+GET /projects/rise -> 200 (158579 bytes) text/html; charset=utf-8
+GET /projects/rixos-al-reem-residences -> 200 (213421 bytes) text/html; charset=utf-8
+GET /projects/rosewell-park -> 200 (148128 bytes) text/html; charset=utf-8
+GET /projects/rove-home-the-greens -> 200 (138801 bytes) text/html; charset=utf-8
+GET /projects/samana-collecta -> 200 (130747 bytes) text/html; charset=utf-8
+GET /projects/sol-terra-gardens -> 200 (164390 bytes) text/html; charset=utf-8
+GET /projects/samana-downtown-one -> 200 (273092 bytes) text/html; charset=utf-8
+GET /projects/sea-mirror-residences -> 200 (189102 bytes) text/html; charset=utf-8
+GET /projects/seef-residences -> 200 (163103 bytes) text/html; charset=utf-8
+GET /projects/shahrukhz-residences-by-danube -> 200 (212264 bytes) text/html; charset=utf-8
+GET /projects/sofitel-branded-residences -> 200 (184435 bytes) text/html; charset=utf-8
+GET /projects/solaya-7 -> 200 (191128 bytes) text/html; charset=utf-8

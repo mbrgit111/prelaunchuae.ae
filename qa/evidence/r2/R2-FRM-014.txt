@@ -1,0 +1,7 @@
+R2-FRM-014: Partial lead helper exists and only receives the typed phone or email
+probe: {"kind":"file","path":"src/components/forms/EnquiryForm.tsx","exists":true,"includes":["submitPartialLead"]}
+
+result: PASS
+
+
+src/components/forms/EnquiryForm.tsx exists=true size=9901

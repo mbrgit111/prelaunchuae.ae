@@ -1,0 +1,12 @@
+R2-PGS-001: Core pages answer 200 with no error text
+probe: {"kind":"http","paths":["/","/projects","/areas","/developers","/why-dubai","/golden-visa"],"method":"GET","expectStatus":200,"bodyExcludes":["Net Capital","Application error"]}
+
+result: PASS
+
+
+GET / -> 200 (412218 bytes) text/html; charset=utf-8
+GET /projects -> 200 (263434 bytes) text/html; charset=utf-8
+GET /areas -> 200 (216135 bytes) text/html; charset=utf-8
+GET /developers -> 200 (167858 bytes) text/html; charset=utf-8
+GET /why-dubai -> 200 (99560 bytes) text/html; charset=utf-8
+GET /golden-visa -> 200 (83853 bytes) text/html; charset=utf-8

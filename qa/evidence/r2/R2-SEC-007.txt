@@ -1,0 +1,8 @@
+R2-SEC-007: X-Powered-By header is not sent
+probe: {"kind":"cmd","run":"curl -sI http://localhost:3450/ | tr 'A-Z' 'a-z' | awk '/^x-powered-by/{f=1} END{print f?\"present\":\"absent\"}'","expectExit":0,"outIncludes":["absent"]}
+
+result: PASS
+
+
+absent
+

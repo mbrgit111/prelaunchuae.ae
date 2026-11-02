@@ -1,0 +1,20 @@
+R2-NAV-007: Phone menu opens with all ten pages and the legal links
+probe: {"kind":"ui","path":"/","viewport":"mobile","steps":[{"do":"click","sel":"button[aria-label='Open menu']"},{"do":"wait","value":"400"}],"expect":[{"type":"visible","sel":"#site-menu a[href='/projects']"},{"type":"visible","sel":"#site-menu a[href='/areas']"},{"type":"visible","sel":"#site-menu a[href='/developers']"},{"type":"visible","sel":"#site-menu a[href='/why-dubai']"},{"type":"visible","sel":"#site-menu a[href='/golden-visa']"},{"type":"visible","sel":"#site-menu a[href='/blog']"},{"type":"visible","sel":"#site-menu a[href='/news']"},{"type":"visible","sel":"#site-menu a[href='/faq']"},{"type":"visible","sel":"#site-menu a[href='/about']"},{"type":"visible","sel":"#site-menu a[href='/contact']"},{"type":"visible","sel":"#site-menu a[href='/privacy']"},{"type":"count","sel":"#site-menu nav a","value":"14","op":"gte"}],"shot":true}
+
+result: PASS
+
+
+step click button[aria-label='Open menu'] : ok
+step wait  400: ok
+visible #site-menu a[href='/projects']: true
+visible #site-menu a[href='/areas']: true
+visible #site-menu a[href='/developers']: true
+visible #site-menu a[href='/why-dubai']: true
+visible #site-menu a[href='/golden-visa']: true
+visible #site-menu a[href='/blog']: true
+visible #site-menu a[href='/news']: true
+visible #site-menu a[href='/faq']: true
+visible #site-menu a[href='/about']: true
+visible #site-menu a[href='/contact']: true
+visible #site-menu a[href='/privacy']: true
+count #site-menu nav a: 15

@@ -6,4 +6,4 @@ result: FAIL
 
 POST / -> 405 (18 bytes) 
 POST /projects -> 405 (18 bytes) 
-POST /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8
+POST /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8

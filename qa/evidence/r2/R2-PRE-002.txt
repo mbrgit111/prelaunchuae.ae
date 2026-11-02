@@ -1,0 +1,9 @@
+R2-PRE-002: Pre-launch list file has no available or sold-out status values
+probe: {"kind":"data","expr":"!/\"status\"\\s*:\\s*\"(available|sold_out)\"/.test(JSON.stringify(list))"}
+
+result: PASS
+
+
+expr: !/"status"\s*:\s*"(available|sold_out)"/.test(JSON.stringify(list))
+result: true
+projects=125 index=0 sitemap=0

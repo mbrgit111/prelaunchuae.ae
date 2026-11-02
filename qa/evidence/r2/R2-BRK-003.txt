@@ -1,0 +1,9 @@
+R2-BRK-003: project mixed case address /projects/Celeste never serves a second copy
+probe: {"kind":"http","path":"/projects/Celeste","expectStatus":[404,301,308]}
+
+result: PASS
+
+
+GET /projects/Celeste -> 308 (17 bytes) 
+---
+/projects/celeste

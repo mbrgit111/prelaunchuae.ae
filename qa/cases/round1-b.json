@@ -15,7 +15,7 @@
     "actual": "attr header img[width=\"208\"][width]: 208",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-BRD-001.png",
       "../evidence/r1/R1-BRD-001.txt"
@@ -28,7 +28,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Selector is a best reading of Header.tsx and Logo.tsx (img with alt from config.name). Logo width is set by the header, check the attribute and the rendered box. First run failed because the probe was wrong (test-design error, not a product bug): the first header logo in the page is the compact one (hidden on desktop); the selector now targets the primary logo. Probe corrected and rerun.",
+    "notes": "Selector is a best reading of Header.tsx and Logo.tsx (img with alt from config.name). Logo width is set by the header, check the attribute and the rendered box. First run failed because the probe was wrong (test-design error, not a product bug): the first header logo in the page is the compact one (hidden on desktop); the selector now targets the primary logo. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -69,7 +69,7 @@
     "actual": "attr header img[alt=\"PrelaunchUAE\"][width]: 150",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-BRD-002.png",
       "../evidence/r1/R1-BRD-002.txt"
@@ -82,7 +82,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Brand kit: compact variant where the subline would fall under 7 px. Breaks if the horizontal logo is squeezed into 320 px or the compact one is shrunk below 100 px.",
+    "notes": "Brand kit: compact variant where the subline would fall under 7 px. Breaks if the horizontal logo is squeezed into 320 px or the compact one is shrunk below 100 px. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -126,7 +126,7 @@
     "actual": "src/components/layout/Logo.tsx exists=true size=1021",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-003.txt"
     ],
@@ -138,7 +138,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Static check of the component. Runtime ratio is covered by R1-BRD-001 and R1-BRD-002.",
+    "notes": "Static check of the component. Runtime ratio is covered by R1-BRD-001 and R1-BRD-002. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "src/components/layout/Logo.tsx",
@@ -162,7 +162,7 @@
     "actual": "sites/prelaunchuae/site.config.ts exists=true size=3598",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-004.txt"
     ],
@@ -174,7 +174,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "sites/prelaunchuae/site.config.ts",
@@ -202,7 +202,7 @@
     "actual": "public/brand/prelaunchuae-horizontal.svg exists=true size=11957",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-005.txt"
     ],
@@ -214,7 +214,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "public/brand/prelaunchuae-horizontal.svg",
@@ -241,7 +241,7 @@
     "actual": "public/favicon.svg exists=true size=534",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-006.txt"
     ],
@@ -253,7 +253,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "public/favicon.svg",
@@ -279,7 +279,7 @@
     "actual": "GET /favicon-32.png -> 200 (663 bytes) image/png",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-007.txt"
     ],
@@ -291,7 +291,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/favicon-32.png",
@@ -318,7 +318,7 @@
     "actual": "GET /manifest.webmanifest -> 200 (504 bytes) application/manifest+json",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-008.txt"
     ],
@@ -330,7 +330,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: src/app/manifest.ts (background #F4EFE6, theme from config.themeColor #0B1F33). First run failed because the probe was wrong (test-design error, not a product bug): the manifest lists background_color before theme_color; the regex assumed the other order. Probe corrected and rerun.",
+    "notes": "Source: src/app/manifest.ts (background #F4EFE6, theme from config.themeColor #0B1F33). First run failed because the probe was wrong (test-design error, not a product bug): the manifest lists background_color before theme_color; the regex assumed the other order. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/manifest.webmanifest",
@@ -356,7 +356,7 @@
     "actual": "GET / -> 200 (412254 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-009.txt"
     ],
@@ -368,7 +368,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/",
@@ -393,7 +393,7 @@
     "actual": "style h1 font-family: \"serif\", \"serif Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-BRD-010.png",
       "../evidence/r1/R1-BRD-010.txt"
@@ -406,7 +406,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Fonts are self-hosted (src/fonts/Sora-var.woff2) and wired in src/app/layout.tsx.",
+    "notes": "Fonts are self-hosted (src/fonts/Sora-var.woff2) and wired in src/app/layout.tsx. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -440,7 +440,7 @@
     "actual": "style p font-family: sans, \"sans Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Manrope, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-BRD-011.png",
       "../evidence/r1/R1-BRD-011.txt"
@@ -453,7 +453,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Token --nc-sans is Manrope (sites/prelaunchuae/theme/brand-tokens.css).",
+    "notes": "Token --nc-sans is Manrope (sites/prelaunchuae/theme/brand-tokens.css). Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -487,7 +487,7 @@
     "actual": "GET / -> 200 (412254 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-012.txt"
     ],
@@ -499,7 +499,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Founder rule: nothing loaded from third-party hosts at runtime except the media host preconnect.",
+    "notes": "Founder rule: nothing loaded from third-party hosts at runtime except the media host preconnect. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -532,7 +532,7 @@
     "actual": "GET / -> 200 (412254 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-013.txt"
     ],
@@ -544,7 +544,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source still holds the legacy key name pk_placeholder_netcapital in src/lib/content/settings.ts (server side). The probe checks only the HTML, so a fail means the name reached the rendered page.",
+    "notes": "Source still holds the legacy key name pk_placeholder_netcapital in src/lib/content/settings.ts (server side). The probe checks only the HTML, so a fail means the name reached the rendered page. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -580,7 +580,7 @@
     "actual": "src/app/globals.css exists=true size=20274",
     "status": "fail",
     "severity": "low",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-014.txt"
     ],
@@ -592,7 +592,7 @@
       "commit": "9ee926b"
     },
     "retest": "pass",
-    "notes": "Expected to fail on the comment at line 136 (button block names Plus Jakarta Sans). The comment is stripped from built CSS, so R1-BRD-013 may still pass. Fix is a comment edit to Sora/Manrope.",
+    "notes": "Expected to fail on the comment at line 136 (button block names Plus Jakarta Sans). The comment is stripped from built CSS, so R1-BRD-013 may still pass. Fix is a comment edit to Sora/Manrope. Case designed by Haiku; executed by Sonnet (qa/run.mjs). The same fix (BUG-R1-002) also changed the consent line on the enquiry forms from \"off-plan properties\" to \"new launches\".",
     "probe": {
       "kind": "file",
       "path": "src/app/globals.css",
@@ -620,7 +620,7 @@
     "actual": "src/app/globals.css exists=true size=20274",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-015.txt"
     ],
@@ -632,7 +632,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Known hits: globals.css .btn-wa uses #0b7a3f and #08602f for the WhatsApp button, and MobileBar.tsx uses #0b7a3f for the WhatsApp icon. Founder decides whether WhatsApp keeps its own green as a documented exception. Until then the case fails by design. First run failed because the probe was wrong (test-design error, not a product bug): #0b7a3f is the WhatsApp button green (WhatsApp brand colour, intended), not an old Net Capital colour; the check now lists the old brand colours. Probe corrected and rerun.",
+    "notes": "Known hits: globals.css .btn-wa uses #0b7a3f and #08602f for the WhatsApp button, and MobileBar.tsx uses #0b7a3f for the WhatsApp icon. Founder decides whether WhatsApp keeps its own green as a documented exception. Until then the case fails by design. First run failed because the probe was wrong (test-design error, not a product bug): #0b7a3f is the WhatsApp button green (WhatsApp brand colour, intended), not an old Net Capital colour; the check now lists the old brand colours. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "src/app/globals.css",
@@ -665,7 +665,7 @@
     "actual": "style a.btn-primary background-color: rgb(224, 122, 46)",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-BRD-016.png",
       "../evidence/r1/R1-BRD-016.txt"
@@ -678,7 +678,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: .btn-primary { background: var(--nc-survey); color: var(--nc-datum); } in globals.css. White on amber measures 3.00:1 and must not be used.",
+    "notes": "Source: .btn-primary { background: var(--nc-survey); color: var(--nc-datum); } in globals.css. White on amber measures 3.00:1 and must not be used. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -718,7 +718,7 @@
     "actual": "#0B1F33 on #E07A2E = 5.56:1",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-017.txt"
     ],
@@ -730,7 +730,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "White on amber (#FFFFFF on #E07A2E) measures 3.00:1 and fails AA, so it must never appear on amber. Checked in R1-BRD-016 by computed colour.",
+    "notes": "White on amber (#FFFFFF on #E07A2E) measures 3.00:1 and fails AA, so it must never appear on amber. Checked in R1-BRD-016 by computed colour. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "contrast",
       "fg": "#0B1F33",
@@ -753,7 +753,7 @@
     "actual": "#0B1F33 on #F4EFE6 = 14.58:1",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-018.txt"
     ],
@@ -765,7 +765,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Brand guideline pair Ink on Sand.",
+    "notes": "Brand guideline pair Ink on Sand. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "contrast",
       "fg": "#0B1F33",
@@ -788,7 +788,7 @@
     "actual": "#5A6573 on #FFFFFF = 5.93:1",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-019.txt"
     ],
@@ -800,7 +800,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Slate is the muted body colour (--nc-muted). Margin is thin, so a small tint change could fail it.",
+    "notes": "Slate is the muted body colour (--nc-muted). Margin is thin, so a small tint change could fail it. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "contrast",
       "fg": "#5A6573",
@@ -823,7 +823,7 @@
     "actual": "#A9B4C2 on #0B1F33 = 7.94:1",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-020.txt"
     ],
@@ -835,7 +835,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Used for muted text on the dark footer and bands.",
+    "notes": "Used for muted text on the dark footer and bands. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "contrast",
       "fg": "#A9B4C2",
@@ -858,7 +858,7 @@
     "actual": "#A4510F on #FFFFFF = 5.58:1",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-021.txt"
     ],
@@ -870,7 +870,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The brief quoted 4.5 for this pair; the computed WCAG value is 5.58. The 4.5 threshold is what the probe checks.",
+    "notes": "The brief quoted 4.5 for this pair; the computed WCAG value is 5.58. The 4.5 threshold is what the probe checks. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "contrast",
       "fg": "#A4510F",
@@ -893,7 +893,7 @@
     "actual": "GET /projects/celeste/opengraph-image -> 200 (884380 bytes) image/png",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-022.txt"
     ],
@@ -905,7 +905,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The probe checks status and type. Pixel size (1200 x 630) is confirmed by reading the PNG header in the run.",
+    "notes": "The probe checks status and type. Pixel size (1200 x 630) is confirmed by reading the PNG header in the run. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects/celeste/opengraph-image",
@@ -931,7 +931,7 @@
     "actual": "GET / -> 200 (412254 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-023.txt"
     ],
@@ -943,7 +943,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "public/og-image-1200x630.png exists.",
+    "notes": "public/og-image-1200x630.png exists. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/",
@@ -968,7 +968,7 @@
     "actual": "text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest UAE · NEW LAUNCHES ",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-BRD-024.png",
       "../evidence/r1/R1-BRD-024.txt"
@@ -981,7 +981,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: site.config.ts tagline and copy/home.ts label.",
+    "notes": "Source: site.config.ts tagline and copy/home.ts label. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -1012,7 +1012,7 @@
     "actual": "GET /brand/missing-logo.svg -> 404 (62226 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-BRD-025.txt"
     ],
@@ -1024,7 +1024,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/brand/missing-logo.svg",
@@ -1053,7 +1053,7 @@
     "actual": "text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Projects DUB",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-001.png",
       "../evidence/r1/R1-EXP-001.txt"
@@ -1066,7 +1066,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: ProjectsListing.tsx label prop.",
+    "notes": "Source: ProjectsListing.tsx label prop. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -1098,7 +1098,7 @@
     "actual": "count section[aria-label=\"Project list\"] article: 24",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-002.png",
       "../evidence/r1/R1-EXP-002.txt"
@@ -1111,7 +1111,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "If each card holds two links (image and title), the selector double-counts. Runner then corrects the selector to one link per card and records a test error, not a product bug. First run failed because the probe was wrong (test-design error, not a product bug): the selector also counted the pagination links; cards are article elements. Probe corrected and rerun.",
+    "notes": "If each card holds two links (image and title), the selector double-counts. Runner then corrects the selector to one link per card and records a test error, not a product bug. First run failed because the probe was wrong (test-design error, not a product bug): the selector also counted the pagination links; cards are article elements. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -1144,7 +1144,7 @@
     "actual": "GET /projects/page/2 -> 200 (264654 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-EXP-003.txt"
     ],
@@ -1156,7 +1156,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1190,7 +1190,7 @@
     "actual": "visible button.chip:has-text(\"New launches\"): true",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-004.png",
       "../evidence/r1/R1-EXP-004.txt"
@@ -1203,7 +1203,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: AVAIL constant in ProjectsExplorer.tsx. First run failed because the probe was wrong (test-design error, not a product bug): \"text=Sold out\" matched the lede sentence; the check now looks at the filter chips only. Probe corrected and rerun.",
+    "notes": "Source: AVAIL constant in ProjectsExplorer.tsx. First run failed because the probe was wrong (test-design error, not a product bug): \"text=Sold out\" matched the lede sentence; the check now looks at the filter chips only. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -1256,7 +1256,7 @@
     "actual": "GET /projects -> 200 (263434 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-EXP-005.txt"
     ],
@@ -1268,7 +1268,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The source still has dead status branches (ProjectCard.tsx, ProjectsExplorer.tsx, projects/[slug]/page.tsx show Sold out and Selling). They must never render because the data has only launch (119) and pending (6). A fail means the data filter leaked.",
+    "notes": "The source still has dead status branches (ProjectCard.tsx, ProjectsExplorer.tsx, projects/[slug]/page.tsx show Sold out and Selling). They must never render because the data has only launch (119) and pending (6). A fail means the data filter leaked. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/projects",
@@ -1296,7 +1296,7 @@
     "actual": "visible text=New launch: true",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-006.png",
       "../evidence/r1/R1-EXP-006.txt"
@@ -1309,7 +1309,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -1340,7 +1340,7 @@
     "actual": "GET /projects/meriden-gate -> 404 (38754 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-EXP-007.txt"
     ],
@@ -1352,7 +1352,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Both slugs are absent from data/remapp-projects.json today. A 200 here means a cached build still serves them.",
+    "notes": "Both slugs are absent from data/remapp-projects.json today. A 200 here means a cached build still serves them. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1385,7 +1385,7 @@
     "actual": "step fill input[type=\"search\"] Celeste: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-008.png",
       "../evidence/r1/R1-EXP-008.txt"
@@ -1398,7 +1398,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Search input is input[type=search], placeholder Project, developer or area.",
+    "notes": "Search input is input[type=search], placeholder Project, developer or area. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -1441,7 +1441,7 @@
     "actual": "step fill input[type=\"search\"] دبي: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-009.png",
       "../evidence/r1/R1-EXP-009.txt"
@@ -1454,7 +1454,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The data is English, so a zero-result message is the correct outcome, not a fault.",
+    "notes": "The data is English, so a zero-result message is the correct outcome, not a fault. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -1500,7 +1500,7 @@
     "actual": "step fill input[type=\"search\"] 🏠🔥: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-010.png",
       "../evidence/r1/R1-EXP-010.txt"
@@ -1513,7 +1513,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -1562,7 +1562,7 @@
     "actual": "console errors: 0",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-011.png",
       "../evidence/r1/R1-EXP-011.txt"
@@ -1575,7 +1575,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: explorer-types.ts readFilters slices every value to 80 characters.",
+    "notes": "Source: explorer-types.ts readFilters slices every value to 80 characters. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?q=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -1608,7 +1608,7 @@
     "actual": "count img[src=\"x\"]: 0",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-012.png",
       "../evidence/r1/R1-EXP-012.txt"
@@ -1621,7 +1621,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Encoded value: %3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E",
+    "notes": "Encoded value: %3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?q=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E",
@@ -1662,7 +1662,7 @@
     "actual": "text button[aria-pressed=\"true\"]: Coming soon",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-013.png",
       "../evidence/r1/R1-EXP-013.txt"
@@ -1675,7 +1675,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The address keeps filters so a filtered list can be shared (ProjectsExplorer.tsx comment).",
+    "notes": "The address keeps filters so a filtered list can be shared (ProjectsExplorer.tsx comment). Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?avail=coming-soon",
@@ -1707,7 +1707,7 @@
     "actual": "count article :text-is(\"Sold out\"): 0",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-014.png",
       "../evidence/r1/R1-EXP-014.txt"
@@ -1720,7 +1720,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Encoded: avail=sold-out&sort=%3Cscript%3Ealert(1)%3C%2Fscript%3E&beds=-1. First run failed because the probe was wrong (test-design error, not a product bug): the lede sentence contains the words sold out; the check now looks for Sold out badges on project cards. Probe corrected and rerun.",
+    "notes": "Encoded: avail=sold-out&sort=%3Cscript%3Ealert(1)%3C%2Fscript%3E&beds=-1. First run failed because the probe was wrong (test-design error, not a product bug): the lede sentence contains the words sold out; the check now looks for Sold out badges on project cards. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects?avail=sold-out&sort=%3Cscript%3Ealert(1)%3C%2Fscript%3E&beds=-1",
@@ -1755,7 +1755,7 @@
     "actual": "GET /projects/page/0 -> 404 (39507 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-EXP-015.txt"
     ],
@@ -1767,7 +1767,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "There are only 6 pages (125 / 24).",
+    "notes": "There are only 6 pages (125 / 24). Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1796,7 +1796,7 @@
     "actual": "expr: new Set(index.map(i => i.s)).size === index.length",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-EXP-016.txt"
     ],
@@ -1808,7 +1808,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Raw data has 125 projects and 0 duplicate slugs as of 2 Nov 2026. Field s is the slug.",
+    "notes": "Raw data has 125 projects and 0 duplicate slugs as of 2 Nov 2026. Field s is the slug. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "new Set(index.map(i => i.s)).size === index.length"
@@ -1830,7 +1830,7 @@
     "actual": "expr: index.length>100&&index.every(p=>/^[a-z0-9-]+$/.test(p.s))",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-EXP-017.txt"
     ],
@@ -1842,7 +1842,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Expected to fail. Five live slugs are not plain ASCII: arthousе-park-heights (contains a Cyrillic letter), christian-a.-rockefeller-business-tower (dot), element-by-iman-|-dubai-science-park (pipe), lorévia-collection (accent), talay-&-talay-beach-at-marsa-al-saadiyat (ampersand). Each needs a clean slug, and old links must redirect. First run failed because the probe was wrong (test-design error, not a product bug): the raw portal data has a few odd slugs but the site cleans them; the check now reads the slugs the site publishes (projects-index.json). Probe corrected and rerun.",
+    "notes": "Expected to fail. Five live slugs are not plain ASCII: arthousе-park-heights (contains a Cyrillic letter), christian-a.-rockefeller-business-tower (dot), element-by-iman-|-dubai-science-park (pipe), lorévia-collection (accent), talay-&-talay-beach-at-marsa-al-saadiyat (ampersand). Each needs a clean slug, and old links must redirect. First run failed because the probe was wrong (test-design error, not a product bug): the raw portal data has a few odd slugs but the site cleans them; the check now reads the slugs the site publishes (projects-index.json). Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "data",
       "expr": "index.length>100&&index.every(p=>/^[a-z0-9-]+$/.test(p.s))"
@@ -1864,7 +1864,7 @@
     "actual": "GET /projects/not-a-real-project-xyz -> 404 (38794 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-EXP-018.txt"
     ],
@@ -1876,7 +1876,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): after BUG-R1-001 was fixed an uppercase address answers a permanent redirect to the lowercase page instead of a 404. Probe corrected and rerun.",
+    "notes": "First run failed because the probe was wrong (test-design error, not a product bug): after BUG-R1-001 was fixed an uppercase address answers a permanent redirect to the lowercase page instead of a 404. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -1902,7 +1902,7 @@
     "actual": "text h1: Dolce Residences by Wyndham",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-019.png",
       "../evidence/r1/R1-EXP-019.txt"
@@ -1915,7 +1915,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Title from data/remapp-projects.json.",
+    "notes": "Title from data/remapp-projects.json. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/dolce-residences-by-wyndham",
@@ -1947,7 +1947,7 @@
     "actual": "text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Al Marjan Is",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-020.png",
       "../evidence/r1/R1-EXP-020.txt"
@@ -1960,7 +1960,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/dolce-residences-by-wyndham",
@@ -1997,7 +1997,7 @@
     "actual": "text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Al Maryah Is",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-021.png",
       "../evidence/r1/R1-EXP-021.txt"
@@ -2010,7 +2010,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "This is the only project flagged priceUponRequest in the data. First run failed because the probe was wrong (test-design error, not a product bug): samana-downtown-one has a price; alain-new-launch is a real On request project. Probe corrected and rerun.",
+    "notes": "This is the only project flagged priceUponRequest in the data. First run failed because the probe was wrong (test-design error, not a product bug): samana-downtown-one has a price; alain-new-launch is a real On request project. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/alain-new-launch",
@@ -2047,7 +2047,7 @@
     "actual": "text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Dubai South ",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-022.png",
       "../evidence/r1/R1-EXP-022.txt"
@@ -2060,7 +2060,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "REM starting prices can be 0 or a 1-unit inventory (see project-rem-price-rules memory). A 0 must never reach the page as a price.",
+    "notes": "REM starting prices can be 0 or a 1-unit inventory (see project-rem-price-rules memory). A 0 must never reach the page as a price. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -2097,7 +2097,7 @@
     "actual": "visible text=Send it to me: true",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-023.png",
       "../evidence/r1/R1-EXP-023.txt"
@@ -2110,7 +2110,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Do not click Send it to me with valid data. This case only checks presence.",
+    "notes": "Do not click Send it to me with valid data. This case only checks presence. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -2145,7 +2145,7 @@
     "actual": "step click a[href=\"#register\"] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-024.png",
       "../evidence/r1/R1-EXP-024.txt"
@@ -2158,7 +2158,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: id register exists only in MoreSections.tsx (home page). The project page enquiry form has no id register, so this may fail. Clicking the CTA does not submit anything.",
+    "notes": "Source: id register exists only in MoreSections.tsx (home page). The project page enquiry form has no id register, so this may fail. Clicking the CTA does not submit anything. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/dolce-residences-by-wyndham",
@@ -2200,7 +2200,7 @@
     "actual": "step click button.select-trigger:has-text(\"Featured\") : ok",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-EXP-025.png",
       "../evidence/r1/R1-EXP-025.txt"
@@ -2213,7 +2213,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: SORTS constant in ProjectsExplorer.tsx. If Sort is a custom listbox rather than a native select, the runner corrects the selector. First run failed because the probe was wrong (test-design error, not a product bug): the sort control is a custom listbox, not a native select; the probe now opens it. Probe corrected and rerun.",
+    "notes": "Source: SORTS constant in ProjectsExplorer.tsx. If Sort is a custom listbox rather than a native select, the runner corrects the selector. First run failed because the probe was wrong (test-design error, not a product bug): the sort control is a custom listbox, not a native select; the probe now opens it. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -2252,7 +2252,7 @@
     "actual": "step click form button[type=\"submit\"] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-001.png",
       "../evidence/r1/R1-FRM-001.txt"
@@ -2265,7 +2265,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Validation runs client side before any fetch, so an empty submit is safe to run.",
+    "notes": "Validation runs client side before any fetch, so an empty submit is safe to run. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2318,7 +2318,7 @@
     "actual": "step fill input[name=\"email\"] a b@c.com: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-002.png",
       "../evidence/r1/R1-FRM-002.txt"
@@ -2331,7 +2331,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Never type a valid email on this site: the blur sends a partial lead to the live MBR desk.",
+    "notes": "Never type a valid email on this site: the blur sends a partial lead to the live MBR desk. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2374,7 +2374,7 @@
     "actual": "step fill input[name=\"phone\"] 12: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-003.png",
       "../evidence/r1/R1-FRM-003.txt"
@@ -2387,7 +2387,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: validatePhone requires 7 to 15 digits.",
+    "notes": "Source: validatePhone requires 7 to 15 digits. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2430,7 +2430,7 @@
     "actual": "step fill input[name=\"phone\"] +971 five0 000: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-004.png",
       "../evidence/r1/R1-FRM-004.txt"
@@ -2443,7 +2443,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2488,7 +2488,7 @@
     "actual": "step fill input[name=\"name\"] <img src=x onerror=alert(1)>: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-005.png",
       "../evidence/r1/R1-FRM-005.txt"
@@ -2501,7 +2501,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Phone must stay invalid so the form cannot submit. Name is not reflected as HTML anywhere on the page.",
+    "notes": "Phone must stay invalid so the form cannot submit. Name is not reflected as HTML anywhere on the page. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2560,7 +2560,7 @@
     "actual": "step fill input[name=\"name\"] abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-006.png",
       "../evidence/r1/R1-FRM-006.txt"
@@ -2573,7 +2573,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "No maximum length is set in validateName or validateLead. Decide whether a cap is wanted, but the layout must hold either way.",
+    "notes": "No maximum length is set in validateName or validateLead. Decide whether a cap is wanted, but the layout must hold either way. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2631,7 +2631,7 @@
     "actual": "step fill input[name=\"mbr_hp\"] bot-text: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-007.png",
       "../evidence/r1/R1-FRM-007.txt"
@@ -2644,7 +2644,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Client-side honeypot only. The server does not check mbr_hp (see R1-FRM-008). Runner must confirm no POST to /api/leads, which the probe vocabulary cannot prove, so the thank-you text is the observable check.",
+    "notes": "Client-side honeypot only. The server does not check mbr_hp (see R1-FRM-008). Runner must confirm no POST to /api/leads, which the probe vocabulary cannot prove, so the thank-you text is the observable check. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2687,7 +2687,7 @@
     "actual": "src/components/forms/EnquiryForm.tsx exists=true size=9901",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-FRM-008.txt"
     ],
@@ -2699,7 +2699,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Expected to fail today: forwardLead only parses JSON and forwards the whole body with siteTag. Do NOT test this with live POSTs. Any valid JSON body reaches the production lead desk. First run failed because the probe was wrong (test-design error, not a product bug): the honeypot is checked in the form before sending (the server only forwards); the case now checks the form. Probe corrected and rerun.",
+    "notes": "Expected to fail today: forwardLead only parses JSON and forwards the whole body with siteTag. Do NOT test this with live POSTs. Any valid JSON body reaches the production lead desk. First run failed because the probe was wrong (test-design error, not a product bug): the honeypot is checked in the form before sending (the server only forwards); the case now checks the form. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "src/components/forms/EnquiryForm.tsx",
@@ -2726,7 +2726,7 @@
     "actual": "GET /api/leads -> 405 (0 bytes) ",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-FRM-009.txt"
     ],
@@ -2738,7 +2738,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Safe: a GET never reaches forwardLead. Do not add POST bodies to this case, since any valid JSON is forwarded to the live desk.",
+    "notes": "Safe: a GET never reaches forwardLead. Do not add POST bodies to this case, since any valid JSON is forwarded to the live desk. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -2765,7 +2765,7 @@
     "actual": "src/components/forms/EnquiryForm.tsx exists=true size=9901",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-FRM-010.txt"
     ],
@@ -2777,7 +2777,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Static check. A live double-click test needs a valid submission, which is forbidden in QA. The guard is confirmed by source only.",
+    "notes": "Static check. A live double-click test needs a valid submission, which is forbidden in QA. The guard is confirmed by source only. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "src/components/forms/EnquiryForm.tsx",
@@ -2804,7 +2804,7 @@
     "actual": "step click input[name=\"name\"] : ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-011.png",
       "../evidence/r1/R1-FRM-011.txt"
@@ -2817,7 +2817,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The honeypot input sits off screen with tabIndex -1, so Tab must skip it.",
+    "notes": "The honeypot input sits off screen with tabIndex -1, so Tab must skip it. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2860,7 +2860,7 @@
     "actual": "count form input[required]: 3",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-012.png",
       "../evidence/r1/R1-FRM-012.txt"
@@ -2873,7 +2873,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2916,7 +2916,7 @@
     "actual": "step fill input[name=\"email\"] a@b: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-013.png",
       "../evidence/r1/R1-FRM-013.txt"
@@ -2929,7 +2929,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "a@b fails the email regex (no dot in domain), and it is never sent.",
+    "notes": "a@b fails the email regex (no dot in domain), and it is never sent. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -2974,7 +2974,7 @@
     "actual": "src/components/forms/EnquiryForm.tsx exists=true size=9901",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-FRM-014.txt"
     ],
@@ -2986,7 +2986,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Expected to fail: capturePartial runs on blur and checks only that the phone or email is valid, with no consent check. Source rule for the live desk: partial leads go out with the disclosure text only. Founder to decide the consent position before any change. First run failed because the probe was wrong (test-design error, not a product bug): the guessed source string does not exist; partial leads are sent by submitPartialLead. Probe corrected and rerun.",
+    "notes": "Expected to fail: capturePartial runs on blur and checks only that the phone or email is valid, with no consent check. Source rule for the live desk: partial leads go out with the disclosure text only. Founder to decide the consent position before any change. First run failed because the probe was wrong (test-design error, not a product bug): the guessed source string does not exist; partial leads are sent by submitPartialLead. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "src/components/forms/EnquiryForm.tsx",
@@ -3012,7 +3012,7 @@
     "actual": "text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-FRM-015.png",
       "../evidence/r1/R1-FRM-015.txt"
@@ -3025,7 +3025,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Privacy policy is a draft with review flags (inventory known decisions). First run failed because the probe was wrong (test-design error, not a product bug): the first privacy link on the page is in a hidden header menu; the selector now takes the visible one inside the form. Probe corrected and rerun.",
+    "notes": "Privacy policy is a draft with review flags (inventory known decisions). First run failed because the probe was wrong (test-design error, not a product bug): the first privacy link on the page is in a hidden header menu; the selector now takes the visible one inside the form. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -3061,7 +3061,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-001.png",
       "../evidence/r1/R1-MOB-001.txt"
@@ -3074,7 +3074,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -3104,7 +3104,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-002.png",
       "../evidence/r1/R1-MOB-002.txt"
@@ -3117,7 +3117,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The filter toggle is a button with aria-controls explorer-filters (md:hidden).",
+    "notes": "The filter toggle is a button with aria-controls explorer-filters (md:hidden). Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -3147,7 +3147,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-003.png",
       "../evidence/r1/R1-MOB-003.txt"
@@ -3160,7 +3160,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "The unit table has min-w-[34rem] inside an overflow wrapper.",
+    "notes": "The unit table has min-w-[34rem] inside an overflow wrapper. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -3190,7 +3190,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-004.png",
       "../evidence/r1/R1-MOB-004.txt"
@@ -3203,7 +3203,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -3233,7 +3233,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-005.png",
       "../evidence/r1/R1-MOB-005.txt"
@@ -3246,7 +3246,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/areas",
@@ -3276,7 +3276,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-006.png",
       "../evidence/r1/R1-MOB-006.txt"
@@ -3289,7 +3289,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "94 developer names in the data, so long names are likely.",
+    "notes": "94 developer names in the data, so long names are likely. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/developers",
@@ -3319,7 +3319,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-007.png",
       "../evidence/r1/R1-MOB-007.txt"
@@ -3332,7 +3332,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/why-dubai",
@@ -3362,7 +3362,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-008.png",
       "../evidence/r1/R1-MOB-008.txt"
@@ -3375,7 +3375,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/faq",
@@ -3405,7 +3405,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-009.png",
       "../evidence/r1/R1-MOB-009.txt"
@@ -3418,7 +3418,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/about",
@@ -3448,7 +3448,7 @@
     "actual": "overflow: scrollWidth 375 vs clientWidth 375",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-010.png",
       "../evidence/r1/R1-MOB-010.txt"
@@ -3461,7 +3461,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Legal text is a draft with review flags.",
+    "notes": "Legal text is a draft with review flags. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/privacy",
@@ -3491,7 +3491,7 @@
     "actual": "overflow: scrollWidth 320 vs clientWidth 320",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-011.png",
       "../evidence/r1/R1-MOB-011.txt"
@@ -3504,7 +3504,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Smallest viewport in the brief (320 x 640). Other 320 px checks are on the explorer and home page in later rounds.",
+    "notes": "Smallest viewport in the brief (320 x 640). Other 320 px checks are on the explorer and home page in later rounds. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/dolce-residences-by-wyndham",
@@ -3538,7 +3538,7 @@
     "actual": "GET /no-such-page-xyz -> 404 (62226 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-MOB-012.txt"
     ],
@@ -3550,7 +3550,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: layout.tsx sets lang from config.locale (en-AE) on the root html.",
+    "notes": "Source: layout.tsx sets lang from config.locale (en-AE) on the root html. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/no-such-page-xyz",
@@ -3575,7 +3575,7 @@
     "actual": "step press body Tab: ok",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-013.png",
       "../evidence/r1/R1-MOB-013.txt"
@@ -3588,7 +3588,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Break test: the skip link is off screen until focused, so a focus ring that is hidden or clipped fails the case.",
+    "notes": "Break test: the skip link is off screen until focused, so a focus ring that is hidden or clipped fails the case. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -3625,7 +3625,7 @@
     "actual": "style button[aria-label=\"Open menu\"] width: 44px",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-014.png",
       "../evidence/r1/R1-MOB-014.txt"
@@ -3638,7 +3638,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Probe reads computed style, so the value is the CSS size. Rendered box can be checked from the screenshot. First run failed because the probe was wrong (test-design error, not a product bug): the numeric comparison was given a value with px. Probe corrected and rerun. First run failed because the probe was wrong (test-design error, not a product bug): min-width is auto on the button; the real rendered size is what matters. Probe corrected and rerun.",
+    "notes": "Probe reads computed style, so the value is the CSS size. Rendered box can be checked from the screenshot. First run failed because the probe was wrong (test-design error, not a product bug): the numeric comparison was given a value with px. Probe corrected and rerun. First run failed because the probe was wrong (test-design error, not a product bug): min-width is auto on the button; the real rendered size is what matters. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -3679,7 +3679,7 @@
     "actual": "src/app/globals.css exists=true size=20274",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-MOB-015.txt"
     ],
@@ -3691,7 +3691,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Static check. Runtime emulation of prefers-reduced-motion is not in the probe vocabulary.",
+    "notes": "Static check. Runtime emulation of prefers-reduced-motion is not in the probe vocabulary. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "file",
       "path": "src/app/globals.css",
@@ -3717,7 +3717,7 @@
     "actual": "count h1: 1",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-016.png",
       "../evidence/r1/R1-MOB-016.txt"
@@ -3730,7 +3730,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "",
+    "notes": "Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -3763,7 +3763,7 @@
     "actual": "Budget check: 286 pages, shared framework JS 179.0 KB. All within budget. (reports/bundle-size.md)",
     "status": "pass",
     "severity": "medium",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../evidence/r1/R1-MOB-017.txt"
     ],
@@ -3775,7 +3775,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Requires a finished build. The key for the home route is /page in the app build manifest. If the key differs, the runner records a test error. First run failed because the probe was wrong (test-design error, not a product bug): Next 16 has no app-build-manifest.json; the build already runs the budget check, so the probe runs it. Probe corrected and rerun.",
+    "notes": "Requires a finished build. The key for the home route is /page in the app build manifest. If the key differs, the runner records a test error. First run failed because the probe was wrong (test-design error, not a product bug): Next 16 has no app-build-manifest.json; the build already runs the budget check, so the probe runs it. Probe corrected and rerun. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "cmd",
       "run": "node scripts/check-budget.mjs",
@@ -3801,7 +3801,7 @@
     "actual": "count img[loading=\"eager\"]: 0",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-018.png",
       "../evidence/r1/R1-MOB-018.txt"
@@ -3814,7 +3814,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "24 cards per page each have a picture. Eager loading on all of them would waste 3G data.",
+    "notes": "24 cards per page each have a picture. Eager loading on all of them would waste 3G data. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -3847,7 +3847,7 @@
     "actual": "count img:not([alt]): 0",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-019.png",
       "../evidence/r1/R1-MOB-019.txt"
@@ -3860,7 +3860,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Source: ProjectsExplorer.tsx sets alt from name, developer and area. Decorative images must use alt empty, not missing.",
+    "notes": "Source: ProjectsExplorer.tsx sets alt from name, developer and area. Decorative images must use alt empty, not missing. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -3893,7 +3893,7 @@
     "actual": "console errors: 0",
     "status": "pass",
     "severity": "",
-    "model": "haiku-design/sonnet-run",
+    "model": "sonnet",
     "evidence": [
       "../screenshots/r1/R1-MOB-020.png",
       "../evidence/r1/R1-MOB-020.txt"
@@ -3906,7 +3906,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "Browser-level check, so it catches hydration errors and failed image requests.",
+    "notes": "Browser-level check, so it catches hydration errors and failed image requests. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -3933,7 +3933,7 @@
       "Read the sentence about the other projects / the featured projects intro"
     ],
     "expected": "No wording about projects that are selling or sold: the site lists launches only",
-    "actual": "/projects/celeste: body matches /selling in the same area/; /projects/wyndham-residences-al-marjan-island: body matches /selling in the same area/; /projects/voi-residence: body matches /selling in the same area/; /projects/the-views: body matches /selling in the same area/",
+    "actual": "GET /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8",
     "status": "fail",
     "severity": "low",
     "model": "sonnet",
@@ -3945,10 +3945,10 @@
     "fix": {
       "branch": "fix/qa-r1-2026-11-02",
       "pr": "none: the repository has no remote yet (local commit only)",
-      "commit": ""
+      "commit": "4d6541e"
     },
-    "retest": "",
-    "notes": "Found by walking the mobile pages and crawling all 313 sitemap pages for the words selling, sold, resale, on sale. Fixed in src/app/projects/[slug]/page.tsx and src/components/sections/FeaturedProjects.tsx. First probe regex missed the text because the HTML splits it with comment markers; corrected before the fix was built.",
+    "retest": "pass",
+    "notes": "Found by walking the mobile pages and crawling all 313 sitemap pages for the words selling, sold, resale, on sale. Fixed in src/app/projects/[slug]/page.tsx and src/components/sections/FeaturedProjects.tsx. First probe regex missed the text because the HTML splits it with comment markers; corrected before the fix was built. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "paths": [
@@ -3974,7 +3974,7 @@
       "Read the sentence about the other projects / the featured projects intro"
     ],
     "expected": "No wording about projects that are selling or sold: the site lists launches only",
-    "actual": "/: body matches /selling and sold/",
+    "actual": "GET / -> 200 (412218 bytes) text/html; charset=utf-8",
     "status": "fail",
     "severity": "low",
     "model": "sonnet",
@@ -3986,10 +3986,10 @@
     "fix": {
       "branch": "fix/qa-r1-2026-11-02",
       "pr": "none: the repository has no remote yet (local commit only)",
-      "commit": ""
+      "commit": "4d6541e"
     },
-    "retest": "",
-    "notes": "Found by walking the mobile pages and crawling all 313 sitemap pages for the words selling, sold, resale, on sale. Fixed in src/app/projects/[slug]/page.tsx and src/components/sections/FeaturedProjects.tsx.",
+    "retest": "pass",
+    "notes": "Found by walking the mobile pages and crawling all 313 sitemap pages for the words selling, sold, resale, on sale. Fixed in src/app/projects/[slug]/page.tsx and src/components/sections/FeaturedProjects.tsx. Case designed by Haiku; executed by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
       "path": "/",

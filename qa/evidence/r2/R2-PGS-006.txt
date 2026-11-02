@@ -1,0 +1,13 @@
+R2-PGS-006: Sample project pages answer 200 and include the enquiry anchor
+probe: {"kind":"http","paths":["/projects/celeste","/projects/dolce-residences-by-wyndham","/projects/flora-bay-residences","/projects/elyra-residences-by-enaam","/projects/breva","/projects/alain-new-launch","/projects/mariana"],"method":"GET","expectStatus":200,"bodyIncludes":["id=\"register\""]}
+
+result: PASS
+
+
+GET /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8
+GET /projects/dolce-residences-by-wyndham -> 200 (181710 bytes) text/html; charset=utf-8
+GET /projects/flora-bay-residences -> 200 (189986 bytes) text/html; charset=utf-8
+GET /projects/elyra-residences-by-enaam -> 200 (187950 bytes) text/html; charset=utf-8
+GET /projects/breva -> 200 (205935 bytes) text/html; charset=utf-8
+GET /projects/alain-new-launch -> 200 (131759 bytes) text/html; charset=utf-8
+GET /projects/mariana -> 200 (131632 bytes) text/html; charset=utf-8

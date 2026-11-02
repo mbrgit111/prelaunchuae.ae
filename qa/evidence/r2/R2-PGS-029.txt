@@ -1,0 +1,7 @@
+R2-PGS-029: www host redirects permanently to the apex domain
+probe: {"kind":"cmd","run":"curl -s -o /dev/null -w '%{http_code} %{redirect_url}' -H 'Host: www.prelaunchuae.com' http://localhost:3450/projects","expectExit":0,"outIncludes":["301 https://prelaunchuae.com/projects"]}
+
+result: PASS
+
+
+301 https://prelaunchuae.com/projects

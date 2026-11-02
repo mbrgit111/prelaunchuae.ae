@@ -1,0 +1,9 @@
+R2-PGS-016: Double leading slash does not serve a duplicate of the projects page
+probe: {"kind":"http","path":"//projects","method":"GET","expectStatus":308,"redirectTo":"/projects"}
+
+result: PASS
+
+
+GET //projects -> 308 (9 bytes) 
+---
+/projects

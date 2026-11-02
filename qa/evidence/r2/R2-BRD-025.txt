@@ -1,0 +1,9 @@
+R2-BRD-025: A missing brand logo file returns a clean 404, not a server error
+probe: {"kind":"http","path":"/brand/missing-logo.svg","method":"GET","expectStatus":404,"bodyExcludes":["Stack","Error:","node_modules"]}
+
+result: PASS
+
+
+GET /brand/missing-logo.svg -> 404 (62226 bytes) text/html; charset=utf-8
+---
+<!DOCTYPE html><html lang="en-AE" class="serif_643f0451-module__hQpZIa__variable sans_cec71896-module__Qx8e4W__variable"><head><meta charSet="utf-8"/><link rel="preconnect" href="https://media.wellnessz.in"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><link rel="preload" href="/brand/prelaunchuae-compact.svg" as="image"/><link rel="preload" href="/brand/prelaunchuae-horizontal.svg" as="image"/><link rel="stylesheet" href="/_next/static/chunks/0n3vfxzu20eu9.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/2mh4krenxilc2.js"/><script src="/_next/static/chunks/2z-e6jheq0ftu.js" async=""></script><script src="/_next/static/chunks/3g4px251sg85e.js" async=""></script><script src="/_next/static/chunks/turbopack-1np95iswyaasp.js" async=""></script><script src="/_next/static/chunks/3fntmmi971322.js" async=""></script><script src="/_next/static/chunks/2hfa0fiezvvkk.js" async=""></script><meta name="robots" content="noindex"/><meta name="next-size-adjust" content=""/><meta name="theme-color" content="#0B1F33"/><title>Page not found | PrelaunchUAE</title><meta name="description" content="See pre-launch and new-launch projects across Dubai and the UAE before the market does: area, developer, unit types, payment plan and handover date, then register your interest with PrelaunchUAE."/><meta name="application-name" content="PrelaunchUAE"/><link rel="manifest" href="/manifest.webmanifest"/><

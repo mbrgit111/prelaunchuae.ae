@@ -1,0 +1,9 @@
+R2-VIS-005: Headline font is Sora and body font is Manrope on the contact
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","expect":[{"type":"style","sel":"h1","prop":"font-family","value":"Sora","op":"contains"},{"type":"style","sel":"body","prop":"font-family","value":"Manrope","op":"contains"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+style h1 font-family: "serif", "serif Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif
+style body font-family: sans, "sans Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif, Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif
+console errors: 0

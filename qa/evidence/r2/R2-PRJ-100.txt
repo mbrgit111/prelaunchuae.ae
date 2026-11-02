@@ -1,0 +1,9 @@
+R2-PRJ-100: Project page elyra-residences is a pre-launch page
+probe: {"kind":"http","path":"/projects/elyra-residences","expectStatus":200,"bodyRegex":"New launch|Coming soon","bodyNotRegex":">Sold out<|>Selling<|>Ready to move<","bodyIncludes":["id=\"register\"","<h1"]}
+
+result: PASS
+
+
+GET /projects/elyra-residences -> 200 (152108 bytes) text/html; charset=utf-8
+---
+<!DOCTYPE html><html lang="en-AE" class="serif_643f0451-module__hQpZIa__variable sans_cec71896-module__Qx8e4W__variable"><head><meta charSet="utf-8"/><link rel="preconnect" href="https://media.wellnessz.in"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><link rel="preload" href="/_next/static/media/Manrope_var-s.p.0d3w7ueqv9lb2.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/Sora_var-s.p.0puxm63cezw2r.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/brand/prelaunchuae-compact.svg" as="image"/><link rel="preload" href="/brand/prelaunchuae-horizontal.svg" as="image"/><link rel="stylesheet" href="/_next/static/chunks/0n3vfxzu20eu9.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/2mh4krenxilc2.js"/><script src="/_next/static/chunks/2z-e6jheq0ftu.js" async=""></script><script src="/_next/static/chunks/3g4px251sg85e.js" async=""></script><script src="/_next/static/chunks/turbopack-1np95iswyaasp.js" async=""></script><script src="/_next/static/chunks/3fntmmi971322.js" async=""></script><script src="/_next/static/chunks/2hfa0fiezvvkk.js" async=""></script><script src="/_next/static/chunks/2c-iavwbp-vqf.js" async=""></script><meta name="next-size-adjust" content=""/><meta name="theme-color" content="#0B1F33"/><title>Elyra Residences by Enaam Developers | PrelaunchUAE</title><meta name="description" content="

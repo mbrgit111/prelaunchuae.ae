@@ -1,0 +1,9 @@
+R2-BRD-012: No Google Fonts or other font CDN is requested; fonts are self-hosted
+probe: {"kind":"http","paths":["/","/projects/celeste","/contact"],"method":"GET","expectStatus":200,"bodyExcludes":["fonts.googleapis.com","fonts.gstatic.com","use.typekit.net"]}
+
+result: PASS
+
+
+GET / -> 200 (412218 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174223 bytes) text/html; charset=utf-8
+GET /contact -> 200 (75900 bytes) text/html; charset=utf-8

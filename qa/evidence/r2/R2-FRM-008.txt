@@ -1,0 +1,7 @@
+R2-FRM-008: Honeypot field is in the enquiry form and checked before sending
+probe: {"kind":"file","path":"src/components/forms/EnquiryForm.tsx","exists":true,"includes":["mbr_hp","tabIndex={-1}"]}
+
+result: PASS
+
+
+src/components/forms/EnquiryForm.tsx exists=true size=9901

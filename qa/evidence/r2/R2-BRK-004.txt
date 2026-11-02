@@ -1,0 +1,9 @@
+R2-BRK-004: project trailing slash address /projects/celeste/ never serves a second copy
+probe: {"kind":"http","path":"/projects/celeste/","expectStatus":[404,301,308]}
+
+result: PASS
+
+
+GET /projects/celeste/ -> 308 (17 bytes) 
+---
+/projects/celeste

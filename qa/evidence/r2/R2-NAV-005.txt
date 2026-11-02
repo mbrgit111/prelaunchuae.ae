@@ -1,0 +1,7 @@
+R2-NAV-005: More is marked current when a page inside it is open
+probe: {"kind":"ui","path":"/news","viewport":"desktop","expect":[{"type":"attr","sel":"nav[aria-label='Main'] summary","prop":"aria-current","value":"page"}]}
+
+result: PASS
+
+
+attr nav[aria-label='Main'] summary[aria-current]: page

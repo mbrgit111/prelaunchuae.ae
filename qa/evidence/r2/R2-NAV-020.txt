@@ -1,0 +1,9 @@
+R2-NAV-020: Keyboard Tab order reaches the first Main link after the skip link and logo
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[{"do":"press","value":"Tab"},{"do":"press","value":"Tab"},{"do":"press","value":"Tab"}],"expect":[{"type":"focusable","sel":"nav[aria-label='Main'] a[href='/projects']"}]}
+
+result: PASS
+
+
+step press  Tab: ok
+step press  Tab: ok
+step press  Tab: ok
