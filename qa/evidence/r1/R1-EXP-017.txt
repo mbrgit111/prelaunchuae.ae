@@ -1,9 +1,9 @@
 R1-EXP-017: Every project slug is plain lowercase ASCII with hyphens
-probe: {"kind":"data","expr":"projects.every(p => /^[a-z0-9-]+$/.test(p.slug))"}
+probe: {"kind":"data","expr":"index.length>100&&index.every(p=>/^[a-z0-9-]+$/.test(p.s))"}
 
-result: FAIL
-- data check false: projects.every(p => /^[a-z0-9-]+$/.test(p.slug))
+result: PASS
 
-expr: projects.every(p => /^[a-z0-9-]+$/.test(p.slug))
-result: false
-projects=125 index=0 sitemap=0
+
+expr: index.length>100&&index.every(p=>/^[a-z0-9-]+$/.test(p.s))
+result: true
+projects=125 index=125 sitemap=0

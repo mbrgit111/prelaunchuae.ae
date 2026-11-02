@@ -4,10 +4,10 @@ probe: {"kind":"http","paths":["/projects/celeste","/projects/dolce-residences-b
 result: PASS
 
 
-GET /projects/celeste -> 200 (174249 bytes) text/html; charset=utf-8
-GET /projects/dolce-residences-by-wyndham -> 200 (181736 bytes) text/html; charset=utf-8
-GET /projects/flora-bay-residences -> 200 (190012 bytes) text/html; charset=utf-8
-GET /projects/elyra-residences-by-enaam -> 200 (187978 bytes) text/html; charset=utf-8
-GET /projects/breva -> 200 (205961 bytes) text/html; charset=utf-8
-GET /projects/alain-new-launch -> 200 (131773 bytes) text/html; charset=utf-8
-GET /projects/mariana -> 200 (131658 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8
+GET /projects/dolce-residences-by-wyndham -> 200 (181722 bytes) text/html; charset=utf-8
+GET /projects/flora-bay-residences -> 200 (189998 bytes) text/html; charset=utf-8
+GET /projects/elyra-residences-by-enaam -> 200 (187964 bytes) text/html; charset=utf-8
+GET /projects/breva -> 200 (205947 bytes) text/html; charset=utf-8
+GET /projects/alain-new-launch -> 200 (131759 bytes) text/html; charset=utf-8
+GET /projects/mariana -> 200 (131644 bytes) text/html; charset=utf-8

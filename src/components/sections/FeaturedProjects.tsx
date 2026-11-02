@@ -16,7 +16,7 @@ export async function FeaturedProjects() {
       tone="sand"
       label={f.label}
       title={f.title}
-      intro={`Six to start with, one per developer. Then compare all ${(await getProjects()).length.toLocaleString('en-US')} projects, selling and sold.`}
+      intro={`Six to start with, one per developer. Then compare all ${(await getProjects()).length.toLocaleString('en-US')} launches.`}
       action={<Link href="/projects" className="link-accent">{f.action} <Icon name="arrow-right" className="size-4" /></Link>}
     >
       <ul className="swipe-row grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

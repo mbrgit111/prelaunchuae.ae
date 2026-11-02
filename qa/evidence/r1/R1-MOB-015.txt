@@ -4,4 +4,4 @@ probe: {"kind":"file","path":"src/app/globals.css","exists":true,"includes":["pr
 result: PASS
 
 
-src/app/globals.css exists=true size=20284
+src/app/globals.css exists=true size=20274

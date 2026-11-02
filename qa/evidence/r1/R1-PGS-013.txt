@@ -6,4 +6,4 @@ result: PASS
 
 GET /blog/no-such-post-xyz -> 404 (38617 bytes) text/html; charset=utf-8
 GET /news/no-such-story-xyz -> 404 (38619 bytes) text/html; charset=utf-8
-GET /category/no-such-topic-xyz -> 404 (38633 bytes) text/html; charset=utf-8
+GET /category/no-such-topic-xyz -> 404 (38590 bytes) text/html; charset=utf-8

@@ -4,8 +4,8 @@ probe: {"kind":"http","paths":["/","/projects","/projects/celeste","/contact","/
 result: PASS
 
 
-GET / -> 200 (412388 bytes) text/html; charset=utf-8
-GET /projects -> 200 (263441 bytes) text/html; charset=utf-8
-GET /projects/celeste -> 200 (174249 bytes) text/html; charset=utf-8
-GET /contact -> 200 (75907 bytes) text/html; charset=utf-8
-GET /about -> 200 (79974 bytes) text/html; charset=utf-8
+GET / -> 200 (412254 bytes) text/html; charset=utf-8
+GET /projects -> 200 (263434 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8
+GET /contact -> 200 (75900 bytes) text/html; charset=utf-8
+GET /about -> 200 (79967 bytes) text/html; charset=utf-8

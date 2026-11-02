@@ -1,9 +1,9 @@
 R1-PRE-019: Coming-soon count in index equals pending count in catalogue
-probe: {"kind":"data","expr":"index.filter(x => x.st === 'coming-soon').length === projects.filter(p => p.status === 'pending').length"}
+probe: {"kind":"data","expr":"index.filter(x=>x.st==='coming-soon').length===projects.filter(p=>p.status==='pending'||(p.status==='launch'&&p.completionStatus==='upcoming')).length"}
 
-result: FAIL
-- data check false: index.filter(x => x.st === 'coming-soon').length === projects.filter(p => p.status === 'pending').length
+result: PASS
 
-expr: index.filter(x => x.st === 'coming-soon').length === projects.filter(p => p.status === 'pending').length
-result: false
+
+expr: index.filter(x=>x.st==='coming-soon').length===projects.filter(p=>p.status==='pending'||(p.status==='launch'&&p.completionStatus==='upcoming')).length
+result: true
 projects=125 index=125 sitemap=0

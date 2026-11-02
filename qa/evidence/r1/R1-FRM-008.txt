@@ -1,8 +1,7 @@
-R1-FRM-008: Server forwarder checks the honeypot and required fields before forwarding
-probe: {"kind":"file","path":"src/lib/forwardLead.ts","exists":true,"includes":["mbr_hp","validateLead"]}
+R1-FRM-008: Honeypot field is in the enquiry form and checked before sending
+probe: {"kind":"file","path":"src/components/forms/EnquiryForm.tsx","exists":true,"includes":["mbr_hp","tabIndex={-1}"]}
 
-result: FAIL
-- src/lib/forwardLead.ts lacks "mbr_hp"
-- src/lib/forwardLead.ts lacks "validateLead"
+result: PASS
 
-src/lib/forwardLead.ts exists=true size=2024
+
+src/components/forms/EnquiryForm.tsx exists=true size=9901

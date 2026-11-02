@@ -1,9 +1,9 @@
 R1-PRE-020: New-launch count in index equals launch count in catalogue
-probe: {"kind":"data","expr":"index.filter(x => x.st === 'new-launch').length === projects.filter(p => p.status === 'launch').length"}
+probe: {"kind":"data","expr":"index.filter(x=>x.st==='new-launch').length===projects.filter(p=>p.status==='launch'&&p.completionStatus!=='upcoming').length"}
 
-result: FAIL
-- data check false: index.filter(x => x.st === 'new-launch').length === projects.filter(p => p.status === 'launch').length
+result: PASS
 
-expr: index.filter(x => x.st === 'new-launch').length === projects.filter(p => p.status === 'launch').length
-result: false
+
+expr: index.filter(x=>x.st==='new-launch').length===projects.filter(p=>p.status==='launch'&&p.completionStatus!=='upcoming').length
+result: true
 projects=125 index=125 sitemap=0

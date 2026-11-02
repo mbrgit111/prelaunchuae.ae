@@ -4,6 +4,6 @@ probe: {"kind":"http","paths":["/projects?page=999999","/projects?sort=zzz&beds=
 result: PASS
 
 
-GET /projects?page=999999 -> 200 (263441 bytes) text/html; charset=utf-8
-GET /projects?sort=zzz&beds=-1 -> 200 (263441 bytes) text/html; charset=utf-8
-GET /projects?q=%F0%9F%98%80&area[]=x -> 200 (263441 bytes) text/html; charset=utf-8
+GET /projects?page=999999 -> 200 (263434 bytes) text/html; charset=utf-8
+GET /projects?sort=zzz&beds=-1 -> 200 (263434 bytes) text/html; charset=utf-8
+GET /projects?q=%F0%9F%98%80&area[]=x -> 200 (263434 bytes) text/html; charset=utf-8

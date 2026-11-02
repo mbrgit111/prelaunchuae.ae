@@ -4,6 +4,6 @@ probe: {"kind":"http","paths":["/","/projects/celeste","/contact"],"method":"GET
 result: PASS
 
 
-GET / -> 200 (412388 bytes) text/html; charset=utf-8
-GET /projects/celeste -> 200 (174249 bytes) text/html; charset=utf-8
-GET /contact -> 200 (75907 bytes) text/html; charset=utf-8
+GET / -> 200 (412254 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174235 bytes) text/html; charset=utf-8
+GET /contact -> 200 (75900 bytes) text/html; charset=utf-8

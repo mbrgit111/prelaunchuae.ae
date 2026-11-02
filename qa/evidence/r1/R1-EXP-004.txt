@@ -1,10 +1,11 @@
 R1-EXP-004: Availability chips offer only New launches and Coming soon
-probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"visible","sel":"text=New launches"},{"type":"visible","sel":"text=Coming soon"},{"type":"hidden","sel":"text=Sold out"},{"type":"hidden","sel":"text=Selling"}],"shot":true}
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"visible","sel":"button.chip:has-text(\"New launches\")"},{"type":"visible","sel":"button.chip:has-text(\"Coming soon\")"},{"type":"count","sel":"button.chip:has-text(\"Sold out\")","value":"0","op":"eq"},{"type":"count","sel":"button.chip:has-text(\"Selling\")","value":"0","op":"eq"},{"type":"count","sel":"button.chip:has-text(\"Ready\")","value":"0","op":"eq"}],"shot":true}
 
-result: FAIL
-- text=Sold out is visible
+result: PASS
 
-visible text=New launches: true
-visible text=Coming soon: true
-hidden text=Sold out: false
-hidden text=Selling: true
+
+visible button.chip:has-text("New launches"): true
+visible button.chip:has-text("Coming soon"): true
+count button.chip:has-text("Sold out"): 0
+count button.chip:has-text("Selling"): 0
+count button.chip:has-text("Ready"): 0

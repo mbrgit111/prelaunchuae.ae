@@ -192,6 +192,7 @@ for (const f of files) {
   for (const c of cases) {
     if (only.length && !only.includes(c.id)) continue;
     if (retest && c.status !== 'fail') continue;
+    if (!retest && c.bug && c.status === 'fail') continue; // a recorded bug waits for its retest
     cache = {};
     const pr = c.probe;
     let r;

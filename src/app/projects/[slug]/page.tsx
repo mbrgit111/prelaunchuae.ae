@@ -219,7 +219,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <section aria-labelledby="h-location">
               <H2 id="h-location" label="Location">Where {p.name} is</H2>
               <p className="max-w-3xl text-[17px] text-muted">
-                {p.name} is in {p.communityName}, {p.emirate}.{area && area.projects.length > 1 ? <> {area.projects.length - 1} other off-plan project{area.projects.length === 2 ? ' is' : 's are'} selling in the same area: <Link href={`/areas/${area.slug}`} className="link-accent">compare {area.name}</Link>.</> : null}
+                {p.name} is in {p.communityName}, {p.emirate}.{area && area.projects.length > 1 ? <> {area.projects.length - 1} other new launch{area.projects.length === 2 ? ' is' : 'es are'} listed in the same area: <Link href={`/areas/${area.slug}`} className="link-accent">compare {area.name}</Link>.</> : null}
               </p>
               {p.nearby.length ? (
                 <ul className="mt-6 grid gap-2 sm:grid-cols-2">

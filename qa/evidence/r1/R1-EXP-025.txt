@@ -1,7 +1,8 @@
 R1-EXP-025: Sort menu offers the five sort options
-probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"[name=\"sort\"] option","value":"5","op":"eq"}],"shot":true}
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"click","sel":"button.select-trigger:has-text(\"Featured\")"}],"expect":[{"type":"count","sel":".select-option","value":"5","op":"eq"}],"shot":true}
 
-result: FAIL
-- count of [name="sort"] option is 0, wanted eq 5
+result: PASS
 
-count [name="sort"] option: 0
+
+step click button.select-trigger:has-text("Featured") : ok
+count .select-option: 5

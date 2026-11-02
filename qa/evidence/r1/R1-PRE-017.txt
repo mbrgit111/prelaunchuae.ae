@@ -1,8 +1,9 @@
 R1-PRE-017: Explorer URL with avail=ready never shows a sold-out label
-probe: {"kind":"ui","path":"/projects?avail=ready","viewport":"desktop","steps":[{"do":"wait","value":"1500"}],"expect":[{"type":"textNot","value":"Sold out"},{"type":"noConsoleErrors"}]}
+probe: {"kind":"ui","path":"/projects?avail=ready","viewport":"desktop","steps":[{"do":"wait","value":"1500"}],"expect":[{"type":"count","sel":"article :text-is(\"Sold out\")","value":"0","op":"eq"},{"type":"noConsoleErrors"}]}
 
-result: FAIL
-- expect textNot : locator.count: selector: expected string, got undefined
+result: PASS
+
 
 step wait  1500: ok
+count article :text-is("Sold out"): 0
 console errors: 0

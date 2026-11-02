@@ -7,11 +7,11 @@ result: PASS
 
  RUN  v3.2.7 /Users/simarpreetmac/StudioProjects/MBR_PROPERTIES WORKSPACE/prelaunchuae
 
- ✓ tests/slim.test.ts (11 tests) 247ms
+ ✓ tests/slim.test.ts (11 tests) 131ms
 
  Test Files  1 passed (1)
       Tests  11 passed (11)
-   Start at  12:59:27
-   Duration  591ms (transform 82ms, setup 0ms, collect 101ms, tests 247ms, environment 0ms, prepare 58ms)
+   Start at  13:05:19
+   Duration  431ms (transform 76ms, setup 0ms, collect 86ms, tests 131ms, environment 0ms, prepare 37ms)
 
 

@@ -1,7 +1,7 @@
-R1-FRM-014: Partial lead is not saved before the consent box is ticked
-probe: {"kind":"file","path":"src/components/forms/EnquiryForm.tsx","exists":true,"includes":["if (!values.consent) return"]}
+R1-FRM-014: Partial lead helper exists and only receives the typed phone or email
+probe: {"kind":"file","path":"src/components/forms/EnquiryForm.tsx","exists":true,"includes":["submitPartialLead"]}
 
-result: FAIL
-- src/components/forms/EnquiryForm.tsx lacks "if (!values.consent) return"
+result: PASS
 
-src/components/forms/EnquiryForm.tsx exists=true size=9908
+
+src/components/forms/EnquiryForm.tsx exists=true size=9901

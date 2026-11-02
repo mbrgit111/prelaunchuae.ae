@@ -4,9 +4,9 @@ probe: {"kind":"http","paths":["/","/projects","/areas","/developers","/why-duba
 result: PASS
 
 
-GET / -> 200 (412388 bytes) text/html; charset=utf-8
-GET /projects -> 200 (263441 bytes) text/html; charset=utf-8
-GET /areas -> 200 (216142 bytes) text/html; charset=utf-8
-GET /developers -> 200 (167865 bytes) text/html; charset=utf-8
-GET /why-dubai -> 200 (99567 bytes) text/html; charset=utf-8
-GET /golden-visa -> 200 (83860 bytes) text/html; charset=utf-8
+GET / -> 200 (412254 bytes) text/html; charset=utf-8
+GET /projects -> 200 (263434 bytes) text/html; charset=utf-8
+GET /areas -> 200 (216135 bytes) text/html; charset=utf-8
+GET /developers -> 200 (167858 bytes) text/html; charset=utf-8
+GET /why-dubai -> 200 (99560 bytes) text/html; charset=utf-8
+GET /golden-visa -> 200 (83853 bytes) text/html; charset=utf-8

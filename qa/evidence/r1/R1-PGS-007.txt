@@ -4,8 +4,8 @@ probe: {"kind":"http","paths":["/areas/dubai-south","/areas/dubai-islands","/dev
 result: PASS
 
 
-GET /areas/dubai-south -> 200 (222163 bytes) text/html; charset=utf-8
-GET /areas/dubai-islands -> 200 (204803 bytes) text/html; charset=utf-8
-GET /developers/meraki -> 200 (93947 bytes) text/html; charset=utf-8
-GET /developers/ays-developers -> 200 (109913 bytes) text/html; charset=utf-8
-GET /developers/bt-properties -> 200 (102608 bytes) text/html; charset=utf-8
+GET /areas/dubai-south -> 200 (222156 bytes) text/html; charset=utf-8
+GET /areas/dubai-islands -> 200 (204796 bytes) text/html; charset=utf-8
+GET /developers/meraki -> 200 (93940 bytes) text/html; charset=utf-8
+GET /developers/ays-developers -> 200 (109906 bytes) text/html; charset=utf-8
+GET /developers/bt-properties -> 200 (102601 bytes) text/html; charset=utf-8

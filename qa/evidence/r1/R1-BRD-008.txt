@@ -1,8 +1,8 @@
 R1-BRD-008: Web manifest carries the Ink theme colour and the Sand background
-probe: {"kind":"http","path":"/manifest.webmanifest","method":"GET","expectStatus":200,"bodyRegex":"theme_color\"\\s*:\\s*\"#0B1F33\"[\\s\\S]*background_color\"\\s*:\\s*\"#F4EFE6\""}
+probe: {"kind":"http","path":"/manifest.webmanifest","expectStatus":200,"bodyIncludes":["\"theme_color\":\"#0B1F33\"","\"background_color\":\"#F4EFE6\""]}
 
-result: FAIL
-- /manifest.webmanifest: body does not match /theme_color"\s*:\s*"#0B1F33"[\s\S]*background_color"\s*:\s*"#F4EFE6"/
+result: PASS
+
 
 GET /manifest.webmanifest -> 200 (504 bytes) application/manifest+json
 ---

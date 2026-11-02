@@ -4,11 +4,11 @@ probe: {"kind":"http","paths":["/apartments","/townhouses","/villas","/apartment
 result: PASS
 
 
-GET /apartments -> 200 (253838 bytes) text/html; charset=utf-8
-GET /townhouses -> 200 (135041 bytes) text/html; charset=utf-8
-GET /villas -> 200 (193953 bytes) text/html; charset=utf-8
-GET /apartments/studio -> 200 (242274 bytes) text/html; charset=utf-8
-GET /apartments/1-bedroom -> 200 (252169 bytes) text/html; charset=utf-8
-GET /apartments/2-bedroom -> 200 (252059 bytes) text/html; charset=utf-8
-GET /apartments/3-bedroom -> 200 (234745 bytes) text/html; charset=utf-8
-GET /apartments/4-bedroom-plus -> 200 (150660 bytes) text/html; charset=utf-8
+GET /apartments -> 200 (253831 bytes) text/html; charset=utf-8
+GET /townhouses -> 200 (135034 bytes) text/html; charset=utf-8
+GET /villas -> 200 (193946 bytes) text/html; charset=utf-8
+GET /apartments/studio -> 200 (242267 bytes) text/html; charset=utf-8
+GET /apartments/1-bedroom -> 200 (252162 bytes) text/html; charset=utf-8
+GET /apartments/2-bedroom -> 200 (252052 bytes) text/html; charset=utf-8
+GET /apartments/3-bedroom -> 200 (234738 bytes) text/html; charset=utf-8
+GET /apartments/4-bedroom-plus -> 200 (150653 bytes) text/html; charset=utf-8
