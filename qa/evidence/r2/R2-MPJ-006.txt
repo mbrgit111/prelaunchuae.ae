@@ -1,0 +1,8 @@
+R2-MPJ-006: Project page the-ritz-carlton-residences-by-saas has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/the-ritz-carlton-residences-by-saas","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0

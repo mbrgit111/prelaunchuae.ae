@@ -1,0 +1,8 @@
+R2-MPJ-015: Project page karl-lagerfeld-beach-residences has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/karl-lagerfeld-beach-residences","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0

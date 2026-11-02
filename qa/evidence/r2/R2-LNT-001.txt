@@ -1,0 +1,38 @@
+R2-LNT-001: Sitemap pages 1 to 32 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/","/projects","/areas","/developers","/why-dubai","/golden-visa","/faq","/about","/contact","/privacy","/terms","/disclaimer","/cookie-policy","/apartments","/townhouses","/villas","/apartments/studio","/apartments/1-bedroom","/apartments/2-bedroom","/apartments/3-bedroom","/apartments/4-bedroom-plus","/projects/page/2","/projects/page/3","/projects/page/4","/projects/page/5","/projects/page/6","/areas/dubai-south","/areas/dubai-islands","/areas/al-marjan-island","/areas/jvc-jumeirah-village-circle","/areas/business-bay","/areas/reem-island"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET / -> 200 (412218 bytes) text/html; charset=utf-8
+GET /projects -> 200 (263434 bytes) text/html; charset=utf-8
+GET /areas -> 200 (216135 bytes) text/html; charset=utf-8
+GET /developers -> 200 (167858 bytes) text/html; charset=utf-8
+GET /why-dubai -> 200 (99560 bytes) text/html; charset=utf-8
+GET /golden-visa -> 200 (83853 bytes) text/html; charset=utf-8
+GET /faq -> 200 (105138 bytes) text/html; charset=utf-8
+GET /about -> 200 (79967 bytes) text/html; charset=utf-8
+GET /contact -> 200 (75900 bytes) text/html; charset=utf-8
+GET /privacy -> 200 (69481 bytes) text/html; charset=utf-8
+GET /terms -> 200 (68829 bytes) text/html; charset=utf-8
+GET /disclaimer -> 200 (69004 bytes) text/html; charset=utf-8
+GET /cookie-policy -> 200 (69094 bytes) text/html; charset=utf-8
+GET /apartments -> 200 (253831 bytes) text/html; charset=utf-8
+GET /townhouses -> 200 (135034 bytes) text/html; charset=utf-8
+GET /villas -> 200 (193946 bytes) text/html; charset=utf-8
+GET /apartments/studio -> 200 (242267 bytes) text/html; charset=utf-8
+GET /apartments/1-bedroom -> 200 (252162 bytes) text/html; charset=utf-8
+GET /apartments/2-bedroom -> 200 (252052 bytes) text/html; charset=utf-8
+GET /apartments/3-bedroom -> 200 (234738 bytes) text/html; charset=utf-8
+GET /apartments/4-bedroom-plus -> 200 (150653 bytes) text/html; charset=utf-8
+GET /projects/page/2 -> 200 (264654 bytes) text/html; charset=utf-8
+GET /projects/page/3 -> 200 (264892 bytes) text/html; charset=utf-8
+GET /projects/page/4 -> 200 (265397 bytes) text/html; charset=utf-8
+GET /projects/page/5 -> 200 (261667 bytes) text/html; charset=utf-8
+GET /projects/page/6 -> 200 (133181 bytes) text/html; charset=utf-8
+GET /areas/dubai-south -> 200 (222186 bytes) text/html; charset=utf-8
+GET /areas/dubai-islands -> 200 (204826 bytes) text/html; charset=utf-8
+GET /areas/al-marjan-island -> 200 (200445 bytes) text/html; charset=utf-8
+GET /areas/jvc-jumeirah-village-circle -> 200 (200438 bytes) text/html; charset=utf-8
+GET /areas/business-bay -> 200 (193775 bytes) text/html; charset=utf-8
+GET /areas/reem-island -> 200 (187808 bytes) text/html; charset=utf-8

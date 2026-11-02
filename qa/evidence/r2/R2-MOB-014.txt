@@ -1,8 +1,8 @@
-R2-MOB-014: Project page expo-valley-views-roudah has no sideways scroll at 375 px
-probe: {"kind":"ui","path":"/projects/expo-valley-views-roudah","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+R2-MOB-014: Menu button is at least 44 px tap target at 320 px with large text
+probe: {"kind":"ui","path":"/","viewport":"small","steps":[],"expect":[{"type":"style","sel":"button[aria-label=\"Open menu\"]","prop":"width","value":"44","op":"gte"},{"type":"style","sel":"button[aria-label=\"Open menu\"]","prop":"height","value":"44","op":"gte"}],"shot":true}
 
 result: PASS
 
 
-overflow: scrollWidth 375 vs clientWidth 375
-console errors: 0
+style button[aria-label="Open menu"] width: 44px
+style button[aria-label="Open menu"] height: 44px

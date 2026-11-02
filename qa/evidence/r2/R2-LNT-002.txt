@@ -1,0 +1,38 @@
+R2-LNT-002: Sitemap pages 33 to 64 have no selling, resale or ready-to-buy wording
+probe: {"kind":"http","paths":["/areas/wadi-al-safa-5","/areas/abu-dhabi-industrial-city","/areas/liwan","/areas/warsan-4","/areas/dubailand-residence-complex","/areas/bukadra","/areas/downtown-jebel-ali","/areas/dubai-international-city","/areas/dubai-internet-city","/areas/dubai-silicon-oasis","/areas/meydan","/areas/port-de-la-mer","/areas/the-oasis","/areas/yas-island","/areas/al-jaddaf","/areas/al-saadiyat-island","/areas/dubai-production-city","/areas/jumeirah-garden-city","/areas/meydan-nad-al-sheba-1","/areas/al-amerah","/areas/al-bahyah","/areas/al-barsha-south-3","/areas/al-hamriya-hamriya-west","/areas/al-maireed","/areas/al-mamzar","/areas/al-safouh-first","/areas/al-satwa","/areas/al-wasl","/areas/al-yufrah-1","/areas/al-zorah-city","/areas/arjan","/areas/damac-islands-2"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+
+result: PASS
+
+
+GET /areas/wadi-al-safa-5 -> 200 (183674 bytes) text/html; charset=utf-8
+GET /areas/abu-dhabi-industrial-city -> 200 (178748 bytes) text/html; charset=utf-8
+GET /areas/liwan -> 200 (173301 bytes) text/html; charset=utf-8
+GET /areas/warsan-4 -> 200 (175647 bytes) text/html; charset=utf-8
+GET /areas/dubailand-residence-complex -> 200 (186871 bytes) text/html; charset=utf-8
+GET /areas/bukadra -> 200 (171489 bytes) text/html; charset=utf-8
+GET /areas/downtown-jebel-ali -> 200 (170033 bytes) text/html; charset=utf-8
+GET /areas/dubai-international-city -> 200 (161400 bytes) text/html; charset=utf-8
+GET /areas/dubai-internet-city -> 200 (166772 bytes) text/html; charset=utf-8
+GET /areas/dubai-silicon-oasis -> 200 (164774 bytes) text/html; charset=utf-8
+GET /areas/meydan -> 200 (164583 bytes) text/html; charset=utf-8
+GET /areas/port-de-la-mer -> 200 (168266 bytes) text/html; charset=utf-8
+GET /areas/the-oasis -> 200 (165872 bytes) text/html; charset=utf-8
+GET /areas/yas-island -> 200 (160701 bytes) text/html; charset=utf-8
+GET /areas/al-jaddaf -> 200 (162500 bytes) text/html; charset=utf-8
+GET /areas/al-saadiyat-island -> 200 (154105 bytes) text/html; charset=utf-8
+GET /areas/dubai-production-city -> 200 (170592 bytes) text/html; charset=utf-8
+GET /areas/jumeirah-garden-city -> 200 (154204 bytes) text/html; charset=utf-8
+GET /areas/meydan-nad-al-sheba-1 -> 200 (151926 bytes) text/html; charset=utf-8
+GET /areas/al-amerah -> 200 (146417 bytes) text/html; charset=utf-8
+GET /areas/al-bahyah -> 200 (147266 bytes) text/html; charset=utf-8
+GET /areas/al-barsha-south-3 -> 200 (156239 bytes) text/html; charset=utf-8
+GET /areas/al-hamriya-hamriya-west -> 200 (140046 bytes) text/html; charset=utf-8
+GET /areas/al-maireed -> 200 (144950 bytes) text/html; charset=utf-8
+GET /areas/al-mamzar -> 200 (146725 bytes) text/html; charset=utf-8
+GET /areas/al-safouh-first -> 200 (146139 bytes) text/html; charset=utf-8
+GET /areas/al-satwa -> 200 (129958 bytes) text/html; charset=utf-8
+GET /areas/al-wasl -> 200 (152190 bytes) text/html; charset=utf-8
+GET /areas/al-yufrah-1 -> 200 (143133 bytes) text/html; charset=utf-8
+GET /areas/al-zorah-city -> 200 (151342 bytes) text/html; charset=utf-8
+GET /areas/arjan -> 200 (150599 bytes) text/html; charset=utf-8
+GET /areas/damac-islands-2 -> 200 (147614 bytes) text/html; charset=utf-8

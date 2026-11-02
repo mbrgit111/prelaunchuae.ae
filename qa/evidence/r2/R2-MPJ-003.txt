@@ -1,0 +1,8 @@
+R2-MPJ-003: Project page the-biltmore-residences-sufouh-penthouses has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/the-biltmore-residences-sufouh-penthouses","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0

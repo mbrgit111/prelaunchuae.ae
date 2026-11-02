@@ -1,8 +1,7 @@
-R2-MOB-019: Project page elyra-residences has no sideways scroll at 375 px
-probe: {"kind":"ui","path":"/projects/elyra-residences","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+R2-MOB-019: Every image on the projects list has alt text
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"img:not([alt])","value":"0","op":"eq"}],"shot":true}
 
 result: PASS
 
 
-overflow: scrollWidth 375 vs clientWidth 375
-console errors: 0
+count img:not([alt]): 0

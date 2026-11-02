@@ -1,8 +1,7 @@
-R2-MOB-007: Project page wyndham-residences-al-marjan-island has no sideways scroll at 375 px
-probe: {"kind":"ui","path":"/projects/wyndham-residences-al-marjan-island","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+R2-MOB-007: Why Dubai page has no horizontal scroll at 375 px
+probe: {"kind":"ui","path":"/why-dubai","viewport":"mobile","steps":[],"expect":[{"type":"noOverflow"}],"shot":true}
 
 result: PASS
 
 
 overflow: scrollWidth 375 vs clientWidth 375
-console errors: 0

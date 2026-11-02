@@ -1,13 +1,8 @@
 R2-CNT-007: Sitemap pages 193 to 224 have no selling, resale or ready-to-buy wording
 probe: {"kind":"http","paths":["/projects/solaya-8","/projects/soma-residences","/projects/sorrento-tower-c","/projects/tabeer-new-launch","/projects/talay-talay-beach-at-marsa-al-saadiyat","/projects/tavora-grand","/projects/the-biltmore-residences-sufouh-penthouses","/projects/the-canopies-at-yas-point","/projects/the-central-uptown","/projects/the-edit-at-d3-tower-c","/projects/the-murex-clinic","/projects/the-one-by-rabdan","/projects/the-residences-at-sheraton-al-marjan-island-resort-phase-2","/projects/the-ritz-carlton-residences-by-saas","/projects/the-terrace-at-marsa-al-saadiyat","/projects/the-views","/projects/voi-residence","/projects/valore-b182","/projects/ajmal-makan-new-launch","/projects/vienna-house-residences-by-wyndham","/projects/vision-simplex","/projects/vista-verde","/projects/vivo-south","/projects/waterfront-by-missoni","/projects/wyndham-residences-al-marjan-island","/projects/yas-riva-reserve","/developers/aldar","/developers/damac-properties","/developers/meraas-developer","/developers/ays-developers","/developers/emaar","/developers/palladium-prime-real-estate-development"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
 
-result: FAIL
-- /developers/aldar: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
-- /developers/damac-properties: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
-- /developers/meraas-developer: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
-- /developers/ays-developers: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
-- /developers/emaar: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
-- /developers/palladium-prime-real-estate-development: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/
+result: PASS
+
 
 GET /projects/solaya-8 -> 200 (175098 bytes) text/html; charset=utf-8
 GET /projects/soma-residences -> 200 (184549 bytes) text/html; charset=utf-8
@@ -35,9 +30,9 @@ GET /projects/vivo-south -> 200 (188677 bytes) text/html; charset=utf-8
 GET /projects/waterfront-by-missoni -> 200 (170056 bytes) text/html; charset=utf-8
 GET /projects/wyndham-residences-al-marjan-island -> 200 (178300 bytes) text/html; charset=utf-8
 GET /projects/yas-riva-reserve -> 200 (190678 bytes) text/html; charset=utf-8
-GET /developers/aldar -> 200 (114670 bytes) text/html; charset=utf-8
-GET /developers/damac-properties -> 200 (116160 bytes) text/html; charset=utf-8
-GET /developers/meraas-developer -> 200 (115910 bytes) text/html; charset=utf-8
-GET /developers/ays-developers -> 200 (109906 bytes) text/html; charset=utf-8
-GET /developers/emaar -> 200 (108329 bytes) text/html; charset=utf-8
-GET /developers/palladium-prime-real-estate-development -> 200 (109486 bytes) text/html; charset=utf-8
+GET /developers/aldar -> 200 (114686 bytes) text/html; charset=utf-8
+GET /developers/damac-properties -> 200 (116176 bytes) text/html; charset=utf-8
+GET /developers/meraas-developer -> 200 (115854 bytes) text/html; charset=utf-8
+GET /developers/ays-developers -> 200 (109922 bytes) text/html; charset=utf-8
+GET /developers/emaar -> 200 (108345 bytes) text/html; charset=utf-8
+GET /developers/palladium-prime-real-estate-development -> 200 (109484 bytes) text/html; charset=utf-8

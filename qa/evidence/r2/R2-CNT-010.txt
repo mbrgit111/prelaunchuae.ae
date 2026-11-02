@@ -5,7 +5,7 @@ result: PASS
 
 
 GET /developers/meraki -> 200 (93940 bytes) text/html; charset=utf-8
-GET /developers/ohana-development -> 200 (95293 bytes) text/html; charset=utf-8
+GET /developers/ohana-development -> 200 (95271 bytes) text/html; charset=utf-8
 GET /developers/one-development -> 200 (94878 bytes) text/html; charset=utf-8
 GET /developers/one-yard -> 200 (94701 bytes) text/html; charset=utf-8
 GET /developers/origami-developer -> 200 (94965 bytes) text/html; charset=utf-8
@@ -14,12 +14,12 @@ GET /developers/radiant -> 200 (94605 bytes) text/html; charset=utf-8
 GET /developers/rak-properties -> 200 (94465 bytes) text/html; charset=utf-8
 GET /developers/reef-luxury-developments -> 200 (95281 bytes) text/html; charset=utf-8
 GET /developers/royal-group -> 200 (94356 bytes) text/html; charset=utf-8
-GET /developers/saas-properties -> 200 (95103 bytes) text/html; charset=utf-8
+GET /developers/saas-properties -> 200 (95081 bytes) text/html; charset=utf-8
 GET /developers/saba-properties -> 200 (95149 bytes) text/html; charset=utf-8
 GET /developers/saeed-tarrad-real-estate-development -> 200 (94967 bytes) text/html; charset=utf-8
-GET /developers/sol-properties -> 200 (94964 bytes) text/html; charset=utf-8
+GET /developers/sol-properties -> 200 (94942 bytes) text/html; charset=utf-8
 GET /developers/source-of-fate-properties -> 200 (95374 bytes) text/html; charset=utf-8
-GET /developers/stamn-real-estate-development -> 200 (94773 bytes) text/html; charset=utf-8
+GET /developers/stamn-real-estate-development -> 200 (94751 bytes) text/html; charset=utf-8
 GET /developers/sugee-group -> 200 (94511 bytes) text/html; charset=utf-8
 GET /developers/tabeer -> 200 (93806 bytes) text/html; charset=utf-8
 GET /developers/taraf -> 200 (94176 bytes) text/html; charset=utf-8

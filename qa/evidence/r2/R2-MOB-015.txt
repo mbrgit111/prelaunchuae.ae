@@ -1,8 +1,7 @@
-R2-MOB-015: Project page karl-lagerfeld-beach-residences has no sideways scroll at 375 px
-probe: {"kind":"ui","path":"/projects/karl-lagerfeld-beach-residences","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+R2-MOB-015: Reduced-motion users get no transform animation
+probe: {"kind":"file","path":"src/app/globals.css","exists":true,"includes":["prefers-reduced-motion"]}
 
 result: PASS
 
 
-overflow: scrollWidth 375 vs clientWidth 375
-console errors: 0
+src/app/globals.css exists=true size=20274

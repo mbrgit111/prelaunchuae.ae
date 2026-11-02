@@ -1213,7 +1213,7 @@
       "GET two area pages and three developer pages derived from the catalogue"
     ],
     "expected": "Each returns 200 with no error text.",
-    "actual": "GET /areas/dubai-south -> 200 (222156 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/dubai-south -> 200 (222186 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -1777,7 +1777,7 @@
       "pr": "",
       "commit": ""
     },
-    "retest": "",
+    "retest": "fail",
     "notes": "rerun of R1-PGS-021 Open, carried from round 1: not fixed (framework behaviour, no data effect).",
     "probe": {
       "kind": "http",
@@ -13030,7 +13030,7 @@
       "Open /areas/damac-lagoons"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/damac-lagoons -> 200 (148842 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/damac-lagoons -> 200 (148872 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13068,7 +13068,7 @@
       "Open /areas/dubai-silicon-oasis"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/dubai-silicon-oasis -> 200 (164744 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/dubai-silicon-oasis -> 200 (164774 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13106,7 +13106,7 @@
       "Open /areas/yas-island"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/yas-island -> 200 (160671 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/yas-island -> 200 (160701 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13144,7 +13144,7 @@
       "Open /areas/al-mamzar"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/al-mamzar -> 200 (146695 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/al-mamzar -> 200 (146725 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13182,7 +13182,7 @@
       "Open /areas/dubai-production-city"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/dubai-production-city -> 200 (170562 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/dubai-production-city -> 200 (170592 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13220,7 +13220,7 @@
       "Open /areas/al-marjan-island"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/al-marjan-island -> 200 (200415 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/al-marjan-island -> 200 (200445 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13258,7 +13258,7 @@
       "Open /areas/the-oasis"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/the-oasis -> 200 (165842 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/the-oasis -> 200 (165872 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13296,7 +13296,7 @@
       "Open /areas/dubai-international-city"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/dubai-international-city -> 200 (161378 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/dubai-international-city -> 200 (161400 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13334,7 +13334,7 @@
       "Open /areas/dubai-south"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/dubai-south -> 200 (222156 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/dubai-south -> 200 (222186 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13372,7 +13372,7 @@
       "Open /areas/al-hamriya-hamriya-west"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/al-hamriya-hamriya-west -> 200 (140016 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/al-hamriya-hamriya-west -> 200 (140046 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13410,7 +13410,7 @@
       "Open /areas/jvc-jumeirah-village-circle"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/jvc-jumeirah-village-circle -> 200 (200408 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/jvc-jumeirah-village-circle -> 200 (200438 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13448,7 +13448,7 @@
       "Open /areas/dubai-science-park"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/dubai-science-park -> 200 (134554 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/dubai-science-park -> 200 (134597 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13486,7 +13486,7 @@
       "Open /areas/warsan-4"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/warsan-4 -> 200 (175617 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/warsan-4 -> 200 (175647 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13524,7 +13524,7 @@
       "Open /areas/downtown-jebel-ali"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/downtown-jebel-ali -> 200 (170003 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/downtown-jebel-ali -> 200 (170033 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13562,7 +13562,7 @@
       "Open /areas/al-zorah-city"
     ],
     "expected": "Answers 200 with the launches heading and no sold-out badge",
-    "actual": "GET /areas/al-zorah-city -> 200 (151325 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/al-zorah-city -> 200 (151342 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13600,7 +13600,7 @@
       "Open /developers/damac-properties"
     ],
     "expected": "Answers 200, no sold-out badge",
-    "actual": "GET /developers/damac-properties -> 200 (116160 bytes) text/html; charset=utf-8",
+    "actual": "GET /developers/damac-properties -> 200 (116176 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13635,7 +13635,7 @@
       "Open /developers/enaam-developers"
     ],
     "expected": "Answers 200, no sold-out badge",
-    "actual": "GET /developers/enaam-developers -> 200 (100828 bytes) text/html; charset=utf-8",
+    "actual": "GET /developers/enaam-developers -> 200 (100826 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13740,7 +13740,7 @@
       "Open /developers/ays-developers"
     ],
     "expected": "Answers 200, no sold-out badge",
-    "actual": "GET /developers/ays-developers -> 200 (109906 bytes) text/html; charset=utf-8",
+    "actual": "GET /developers/ays-developers -> 200 (109922 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13810,7 +13810,7 @@
       "Open /developers/emaar"
     ],
     "expected": "Answers 200, no sold-out badge",
-    "actual": "GET /developers/emaar -> 200 (108329 bytes) text/html; charset=utf-8",
+    "actual": "GET /developers/emaar -> 200 (108345 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -13939,7 +13939,7 @@
     }
   },
   {
-    "id": "R2-MOB-001",
+    "id": "R2-MPJ-001",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page the-residences-at-sheraton-al-marjan-island-resort-phase-2 has no sideways scroll at 375 px",
@@ -13956,8 +13956,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-001.png",
-      "../evidence/r2/R2-MOB-001.txt"
+      "../screenshots/r2/R2-MPJ-001.png",
+      "../evidence/r2/R2-MPJ-001.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -13984,7 +13984,7 @@
     }
   },
   {
-    "id": "R2-MOB-002",
+    "id": "R2-MPJ-002",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page manchester-city-yas-residences-by-ohana-phase-2 has no sideways scroll at 375 px",
@@ -14001,8 +14001,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-002.png",
-      "../evidence/r2/R2-MOB-002.txt"
+      "../screenshots/r2/R2-MPJ-002.png",
+      "../evidence/r2/R2-MPJ-002.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14029,7 +14029,7 @@
     }
   },
   {
-    "id": "R2-MOB-003",
+    "id": "R2-MPJ-003",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page the-biltmore-residences-sufouh-penthouses has no sideways scroll at 375 px",
@@ -14046,8 +14046,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-003.png",
-      "../evidence/r2/R2-MOB-003.txt"
+      "../screenshots/r2/R2-MPJ-003.png",
+      "../evidence/r2/R2-MPJ-003.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14074,7 +14074,7 @@
     }
   },
   {
-    "id": "R2-MOB-004",
+    "id": "R2-MPJ-004",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page talay-talay-beach-at-marsa-al-saadiyat has no sideways scroll at 375 px",
@@ -14091,8 +14091,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-004.png",
-      "../evidence/r2/R2-MOB-004.txt"
+      "../screenshots/r2/R2-MPJ-004.png",
+      "../evidence/r2/R2-MPJ-004.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14119,7 +14119,7 @@
     }
   },
   {
-    "id": "R2-MOB-005",
+    "id": "R2-MPJ-005",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page christian-a-rockefeller-business-tower has no sideways scroll at 375 px",
@@ -14136,8 +14136,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-005.png",
-      "../evidence/r2/R2-MOB-005.txt"
+      "../screenshots/r2/R2-MPJ-005.png",
+      "../evidence/r2/R2-MPJ-005.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14164,7 +14164,7 @@
     }
   },
   {
-    "id": "R2-MOB-006",
+    "id": "R2-MPJ-006",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page the-ritz-carlton-residences-by-saas has no sideways scroll at 375 px",
@@ -14181,8 +14181,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-006.png",
-      "../evidence/r2/R2-MOB-006.txt"
+      "../screenshots/r2/R2-MPJ-006.png",
+      "../evidence/r2/R2-MPJ-006.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14209,7 +14209,7 @@
     }
   },
   {
-    "id": "R2-MOB-007",
+    "id": "R2-MPJ-007",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page wyndham-residences-al-marjan-island has no sideways scroll at 375 px",
@@ -14226,8 +14226,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-007.png",
-      "../evidence/r2/R2-MOB-007.txt"
+      "../screenshots/r2/R2-MPJ-007.png",
+      "../evidence/r2/R2-MPJ-007.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14254,7 +14254,7 @@
     }
   },
   {
-    "id": "R2-MOB-008",
+    "id": "R2-MPJ-008",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page element-by-iman-dubai-science-park has no sideways scroll at 375 px",
@@ -14271,8 +14271,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-008.png",
-      "../evidence/r2/R2-MOB-008.txt"
+      "../screenshots/r2/R2-MPJ-008.png",
+      "../evidence/r2/R2-MPJ-008.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14299,7 +14299,7 @@
     }
   },
   {
-    "id": "R2-MOB-009",
+    "id": "R2-MPJ-009",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page sorrento-tower-c has no sideways scroll at 375 px",
@@ -14316,8 +14316,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-009.png",
-      "../evidence/r2/R2-MOB-009.txt"
+      "../screenshots/r2/R2-MPJ-009.png",
+      "../evidence/r2/R2-MPJ-009.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14344,7 +14344,7 @@
     }
   },
   {
-    "id": "R2-MOB-010",
+    "id": "R2-MPJ-010",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page celeste has no sideways scroll at 375 px",
@@ -14361,8 +14361,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-010.png",
-      "../evidence/r2/R2-MOB-010.txt"
+      "../screenshots/r2/R2-MPJ-010.png",
+      "../evidence/r2/R2-MPJ-010.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14389,7 +14389,7 @@
     }
   },
   {
-    "id": "R2-MOB-011",
+    "id": "R2-MPJ-011",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page palm-01-by-binghatti has no sideways scroll at 375 px",
@@ -14406,8 +14406,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-011.png",
-      "../evidence/r2/R2-MOB-011.txt"
+      "../screenshots/r2/R2-MPJ-011.png",
+      "../evidence/r2/R2-MPJ-011.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14434,7 +14434,7 @@
     }
   },
   {
-    "id": "R2-MOB-012",
+    "id": "R2-MPJ-012",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page solaya-8 has no sideways scroll at 375 px",
@@ -14451,8 +14451,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-012.png",
-      "../evidence/r2/R2-MOB-012.txt"
+      "../screenshots/r2/R2-MPJ-012.png",
+      "../evidence/r2/R2-MPJ-012.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14479,7 +14479,7 @@
     }
   },
   {
-    "id": "R2-MOB-013",
+    "id": "R2-MPJ-013",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page sol-terra-gardens has no sideways scroll at 375 px",
@@ -14496,8 +14496,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-013.png",
-      "../evidence/r2/R2-MOB-013.txt"
+      "../screenshots/r2/R2-MPJ-013.png",
+      "../evidence/r2/R2-MPJ-013.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14524,7 +14524,7 @@
     }
   },
   {
-    "id": "R2-MOB-014",
+    "id": "R2-MPJ-014",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page expo-valley-views-roudah has no sideways scroll at 375 px",
@@ -14541,8 +14541,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-014.png",
-      "../evidence/r2/R2-MOB-014.txt"
+      "../screenshots/r2/R2-MPJ-014.png",
+      "../evidence/r2/R2-MPJ-014.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14569,7 +14569,7 @@
     }
   },
   {
-    "id": "R2-MOB-015",
+    "id": "R2-MPJ-015",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page karl-lagerfeld-beach-residences has no sideways scroll at 375 px",
@@ -14586,8 +14586,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-015.png",
-      "../evidence/r2/R2-MOB-015.txt"
+      "../screenshots/r2/R2-MPJ-015.png",
+      "../evidence/r2/R2-MPJ-015.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14614,7 +14614,7 @@
     }
   },
   {
-    "id": "R2-MOB-016",
+    "id": "R2-MPJ-016",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page raiha-stand-alone-villa-in-waada has no sideways scroll at 375 px",
@@ -14631,8 +14631,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-016.png",
-      "../evidence/r2/R2-MOB-016.txt"
+      "../screenshots/r2/R2-MPJ-016.png",
+      "../evidence/r2/R2-MPJ-016.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14659,7 +14659,7 @@
     }
   },
   {
-    "id": "R2-MOB-017",
+    "id": "R2-MPJ-017",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page mia-tower-by-stamn has no sideways scroll at 375 px",
@@ -14676,8 +14676,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-017.png",
-      "../evidence/r2/R2-MOB-017.txt"
+      "../screenshots/r2/R2-MPJ-017.png",
+      "../evidence/r2/R2-MPJ-017.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14704,7 +14704,7 @@
     }
   },
   {
-    "id": "R2-MOB-018",
+    "id": "R2-MPJ-018",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page majid-al-futtaim-new-launch has no sideways scroll at 375 px",
@@ -14721,8 +14721,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-018.png",
-      "../evidence/r2/R2-MOB-018.txt"
+      "../screenshots/r2/R2-MPJ-018.png",
+      "../evidence/r2/R2-MPJ-018.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -14749,7 +14749,7 @@
     }
   },
   {
-    "id": "R2-MOB-019",
+    "id": "R2-MPJ-019",
     "round": 2,
     "area": "Mobile project pages",
     "title": "Project page elyra-residences has no sideways scroll at 375 px",
@@ -14766,8 +14766,8 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../screenshots/r2/R2-MOB-019.png",
-      "../evidence/r2/R2-MOB-019.txt"
+      "../screenshots/r2/R2-MPJ-019.png",
+      "../evidence/r2/R2-MPJ-019.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -15022,7 +15022,7 @@
     }
   },
   {
-    "id": "R2-CNT-001",
+    "id": "R2-LNT-001",
     "round": 2,
     "area": "Wording lint (round 1 lesson)",
     "title": "Sitemap pages 1 to 32 have no selling, resale or ready-to-buy wording",
@@ -15039,7 +15039,7 @@
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../evidence/r2/R2-CNT-001.txt"
+      "../evidence/r2/R2-LNT-001.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -15091,7 +15091,7 @@
     }
   },
   {
-    "id": "R2-CNT-002",
+    "id": "R2-LNT-002",
     "round": 2,
     "area": "Wording lint (round 1 lesson)",
     "title": "Sitemap pages 33 to 64 have no selling, resale or ready-to-buy wording",
@@ -15103,12 +15103,12 @@
       "Search for selling now, resale, ready to move, ready to buy, selling in the same area"
     ],
     "expected": "None of those phrases appear",
-    "actual": "GET /areas/wadi-al-safa-5 -> 200 (183652 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/wadi-al-safa-5 -> 200 (183674 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
     "evidence": [
-      "../evidence/r2/R2-CNT-002.txt"
+      "../evidence/r2/R2-LNT-002.txt"
     ],
     "bug": "",
     "root_cause": "",
@@ -15172,7 +15172,7 @@
       "Search for selling now, resale, ready to move, ready to buy, selling in the same area"
     ],
     "expected": "None of those phrases appear",
-    "actual": "GET /areas/damac-lagoons -> 200 (148842 bytes) text/html; charset=utf-8",
+    "actual": "GET /areas/damac-lagoons -> 200 (148872 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -15448,7 +15448,7 @@
       "Search for selling now, resale, ready to move, ready to buy, selling in the same area"
     ],
     "expected": "None of those phrases appear",
-    "actual": "/developers/aldar: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/; /developers/damac-properties: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/; /developers/meraas-developer: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/; /developers/ays-developers: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready",
+    "actual": "GET /projects/solaya-8 -> 200 (175098 bytes) text/html; charset=utf-8",
     "status": "fail",
     "severity": "low",
     "model": "sonnet",
@@ -15460,9 +15460,9 @@
     "fix": {
       "branch": "fix/qa-r2-2026-11-02",
       "pr": "none: the repository has no remote yet (local commit only)",
-      "commit": "PENDING"
+      "commit": "6c74bec"
     },
-    "retest": "",
+    "retest": "pass",
     "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",
@@ -15517,7 +15517,7 @@
       "Search for selling now, resale, ready to move, ready to buy, selling in the same area"
     ],
     "expected": "None of those phrases appear",
-    "actual": "/developers/alfulaiti-development: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/; /developers/azizi-developments: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/; /developers/binghatti-developers: body matches /selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold/; /developers/bt-properties: body matches /selling now|Selling now|selling in the same area|resale|ready to mov",
+    "actual": "GET /developers/alfulaiti-development -> 200 (103048 bytes) text/html; charset=utf-8",
     "status": "fail",
     "severity": "low",
     "model": "sonnet",
@@ -15529,9 +15529,9 @@
     "fix": {
       "branch": "fix/qa-r2-2026-11-02",
       "pr": "none: the repository has no remote yet (local commit only)",
-      "commit": "PENDING"
+      "commit": "6c74bec"
     },
-    "retest": "",
+    "retest": "pass",
     "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs).",
     "probe": {
       "kind": "http",

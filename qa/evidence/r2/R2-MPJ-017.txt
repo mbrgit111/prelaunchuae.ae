@@ -1,0 +1,8 @@
+R2-MPJ-017: Project page mia-tower-by-stamn has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/mia-tower-by-stamn","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0

@@ -1,6 +1,6 @@
 # Bundle size report
 
-Generated 2026-11-02 07:43 from the production build. Sizes are gzip. Largest page per route type shown.
+Generated 2026-11-02 07:45 from the production build. Sizes are gzip. Largest page per route type shown.
 
 Budgets: total JS 195.0 KB, site-specific JS 20.0 KB, HTML 150.0 KB, inline CSS 15.0 KB.
 Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.
@@ -25,7 +25,7 @@ Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.
 | /areas/al-mamzar | 1 | 188.2 KB | 9.2 KB | 21.2 KB | 0.0 KB |
 | /areas/al-marjan-island | 1 | 188.2 KB | 9.2 KB | 25.5 KB | 0.0 KB |
 | /areas/al-maryah-island | 1 | 188.2 KB | 9.2 KB | 18.4 KB | 0.0 KB |
-| /areas/al-saadiyat-island | 1 | 188.2 KB | 9.2 KB | 21.6 KB | 0.0 KB |
+| /areas/al-saadiyat-island | 1 | 188.2 KB | 9.2 KB | 21.7 KB | 0.0 KB |
 | /areas/al-safouh-first | 1 | 188.2 KB | 9.2 KB | 21.2 KB | 0.0 KB |
 | /areas/al-satwa | 1 | 188.2 KB | 9.2 KB | 19.3 KB | 0.0 KB |
 | /areas/al-wasl | 1 | 188.2 KB | 9.2 KB | 21.3 KB | 0.0 KB |
@@ -67,7 +67,7 @@ Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.
 | /areas/mbr-district-1 | 1 | 188.2 KB | 9.2 KB | 18.3 KB | 0.0 KB |
 | /areas/mbr-district-11-meydan-south | 1 | 188.2 KB | 9.2 KB | 20.8 KB | 0.0 KB |
 | /areas/meydan-nad-al-sheba-1 | 1 | 188.2 KB | 9.2 KB | 21.7 KB | 0.0 KB |
-| /areas/meydan | 1 | 188.2 KB | 9.2 KB | 22.9 KB | 0.0 KB |
+| /areas/meydan | 1 | 188.2 KB | 9.2 KB | 22.8 KB | 0.0 KB |
 | /areas/mina-al-arab | 1 | 188.2 KB | 9.2 KB | 19.4 KB | 0.0 KB |
 | /areas/nad-al-sheba-gardens | 1 | 188.2 KB | 9.2 KB | 19.4 KB | 0.0 KB |
 | /areas/palm-jumeirah | 1 | 188.2 KB | 9.2 KB | 20.5 KB | 0.0 KB |

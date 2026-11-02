@@ -1,8 +1,7 @@
-R2-MOB-018: Project page majid-al-futtaim-new-launch has no sideways scroll at 375 px
-probe: {"kind":"ui","path":"/projects/majid-al-futtaim-new-launch","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+R2-MOB-018: Project list images below the first screen are lazy-loaded
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"img[loading=\"eager\"]","value":"4","op":"lte"}],"shot":true}
 
 result: PASS
 
 
-overflow: scrollWidth 375 vs clientWidth 375
-console errors: 0
+count img[loading="eager"]: 0

@@ -1,0 +1,8 @@
+R2-MPJ-012: Project page solaya-8 has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/solaya-8","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0

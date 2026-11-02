@@ -1,38 +1,9 @@
-R2-CNT-002: Sitemap pages 33 to 64 have no selling, resale or ready-to-buy wording
-probe: {"kind":"http","paths":["/areas/wadi-al-safa-5","/areas/abu-dhabi-industrial-city","/areas/liwan","/areas/warsan-4","/areas/dubailand-residence-complex","/areas/bukadra","/areas/downtown-jebel-ali","/areas/dubai-international-city","/areas/dubai-internet-city","/areas/dubai-silicon-oasis","/areas/meydan","/areas/port-de-la-mer","/areas/the-oasis","/areas/yas-island","/areas/al-jaddaf","/areas/al-saadiyat-island","/areas/dubai-production-city","/areas/jumeirah-garden-city","/areas/meydan-nad-al-sheba-1","/areas/al-amerah","/areas/al-bahyah","/areas/al-barsha-south-3","/areas/al-hamriya-hamriya-west","/areas/al-maireed","/areas/al-mamzar","/areas/al-safouh-first","/areas/al-satwa","/areas/al-wasl","/areas/al-yufrah-1","/areas/al-zorah-city","/areas/arjan","/areas/damac-islands-2"],"expectStatus":200,"bodyNotRegex":"selling now|Selling now|selling in the same area|resale|ready to move|Ready to move|ready to buy|selling and sold"}
+R2-CNT-002: Home featured intro does not say selling and sold
+probe: {"kind":"http","path":"/","expectStatus":200,"bodyNotRegex":"selling and sold"}
 
 result: PASS
 
 
-GET /areas/wadi-al-safa-5 -> 200 (183652 bytes) text/html; charset=utf-8
-GET /areas/abu-dhabi-industrial-city -> 200 (178718 bytes) text/html; charset=utf-8
-GET /areas/liwan -> 200 (173271 bytes) text/html; charset=utf-8
-GET /areas/warsan-4 -> 200 (175617 bytes) text/html; charset=utf-8
-GET /areas/dubailand-residence-complex -> 200 (186841 bytes) text/html; charset=utf-8
-GET /areas/bukadra -> 200 (171459 bytes) text/html; charset=utf-8
-GET /areas/downtown-jebel-ali -> 200 (170003 bytes) text/html; charset=utf-8
-GET /areas/dubai-international-city -> 200 (161378 bytes) text/html; charset=utf-8
-GET /areas/dubai-internet-city -> 200 (166734 bytes) text/html; charset=utf-8
-GET /areas/dubai-silicon-oasis -> 200 (164744 bytes) text/html; charset=utf-8
-GET /areas/meydan -> 200 (164553 bytes) text/html; charset=utf-8
-GET /areas/port-de-la-mer -> 200 (168236 bytes) text/html; charset=utf-8
-GET /areas/the-oasis -> 200 (165842 bytes) text/html; charset=utf-8
-GET /areas/yas-island -> 200 (160671 bytes) text/html; charset=utf-8
-GET /areas/al-jaddaf -> 200 (162470 bytes) text/html; charset=utf-8
-GET /areas/al-saadiyat-island -> 200 (154234 bytes) text/html; charset=utf-8
-GET /areas/dubai-production-city -> 200 (170562 bytes) text/html; charset=utf-8
-GET /areas/jumeirah-garden-city -> 200 (154174 bytes) text/html; charset=utf-8
-GET /areas/meydan-nad-al-sheba-1 -> 200 (151896 bytes) text/html; charset=utf-8
-GET /areas/al-amerah -> 200 (146387 bytes) text/html; charset=utf-8
-GET /areas/al-bahyah -> 200 (147236 bytes) text/html; charset=utf-8
-GET /areas/al-barsha-south-3 -> 200 (156209 bytes) text/html; charset=utf-8
-GET /areas/al-hamriya-hamriya-west -> 200 (140016 bytes) text/html; charset=utf-8
-GET /areas/al-maireed -> 200 (144920 bytes) text/html; charset=utf-8
-GET /areas/al-mamzar -> 200 (146695 bytes) text/html; charset=utf-8
-GET /areas/al-safouh-first -> 200 (146109 bytes) text/html; charset=utf-8
-GET /areas/al-satwa -> 200 (129928 bytes) text/html; charset=utf-8
-GET /areas/al-wasl -> 200 (152160 bytes) text/html; charset=utf-8
-GET /areas/al-yufrah-1 -> 200 (143103 bytes) text/html; charset=utf-8
-GET /areas/al-zorah-city -> 200 (151325 bytes) text/html; charset=utf-8
-GET /areas/arjan -> 200 (150569 bytes) text/html; charset=utf-8
-GET /areas/damac-islands-2 -> 200 (147584 bytes) text/html; charset=utf-8
+GET / -> 200 (412218 bytes) text/html; charset=utf-8
+---
+<!DOCTYPE html><html lang="en-AE" class="serif_643f0451-module__hQpZIa__variable sans_cec71896-module__Qx8e4W__variable"><head><meta charSet="utf-8"/><link rel="preconnect" href="https://media.wellnessz.in"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><link rel="preload" href="/_next/static/media/Manrope_var-s.p.0d3w7ueqv9lb2.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/Sora_var-s.p.0puxm63cezw2r.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/brand/prelaunchuae-compact.svg" as="image"/><link rel="preload" href="/brand/prelaunchuae-horizontal.svg" as="image"/><link rel="stylesheet" href="/_next/static/chunks/0n3vfxzu20eu9.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/2mh4krenxilc2.js"/><script src="/_next/static/chunks/2z-e6jheq0ftu.js" async=""></script><script src="/_next/static/chunks/3g4px251sg85e.js" async=""></script><script src="/_next/static/chunks/turbopack-1np95iswyaasp.js" async=""></script><script src="/_next/static/chunks/3fntmmi971322.js" async=""></script><script src="/_next/static/chunks/2hfa0fiezvvkk.js" async=""></script><script src="/_next/static/chunks/1pf5uanlwjb7e.js" async=""></script><meta name="next-size-adjust" content=""/><meta name="theme-color" content="#0B1F33"/><title>New Launch Projects in Dubai and the UAE: 125 Pre-Launches</title><meta name="description" co

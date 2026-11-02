@@ -1,8 +1,7 @@
-R2-MOB-013: Project page sol-terra-gardens has no sideways scroll at 375 px
-probe: {"kind":"ui","path":"/projects/sol-terra-gardens","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+R2-MOB-013: Skip link receives focus first and shows a visible focus ring
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[{"do":"press","sel":"body","value":"Tab"}],"expect":[{"type":"focusable","sel":"a.skip-link"}],"shot":true}
 
 result: PASS
 
 
-overflow: scrollWidth 375 vs clientWidth 375
-console errors: 0
+step press body Tab: ok

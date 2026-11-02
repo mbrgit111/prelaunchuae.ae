@@ -1,0 +1,8 @@
+R2-MPJ-016: Project page raiha-stand-alone-villa-in-waada has no sideways scroll at 375 px
+probe: {"kind":"ui","path":"/projects/raiha-stand-alone-villa-in-waada","viewport":"mobile","expect":[{"type":"noOverflow"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375
+console errors: 0
