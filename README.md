@@ -35,13 +35,13 @@ desk; in the menu from day one, empty until the first article) · legal pages ·
 The project list comes from the MBR desk. Nothing needs doing in this folder.
 
 1. In the desk, open **Update properties**, paste a REM token and run the update. It brings the desk's copy of every REM
-   project up to date (Net Capital's rule: every project on REM, all emirates) and reports what changed.
+   project up to date (PrelaunchUAE keeps only New launch and Coming soon) and reports what changed.
 2. Rebuild the site (Vercel: Deployments → the latest one → **Redeploy**, or a Deploy Hook saved in the desk). Before each
    build, `scripts/pull-catalogue.ts` copies the list from the MBR API into the two `data/` files and the picture step
    downloads anything new. The running site reads those files; it does not ask the API between builds
    (`catalogue.runtime` in `sites/prelaunchuae/site.config.ts`).
 
-The desk keeps every project whole. Net Capital's lighter cut is made in `src/data/slim.ts` on the way in: no private
+The desk keeps every project whole. PrelaunchUAE's cut is made in `src/data/slim.ts` on the way in: no private
 projects, no developer descriptions, the cover plus 4 gallery pictures and 4 floor plans for a project still selling, the
 cover only for one sold out, and a project the site's checks would reject is left out and named in `reports/catalogue.md`.
 
@@ -67,7 +67,7 @@ By hand, without the desk (needs a REM token on this computer):
 | `npm test` | Automated checks of the data, filters, forms and blog code |
 
 ## Rules this codebase keeps
-- Forms send enquiries to the MBR lead desk (`mbrbackend.wellnessz.in`), tagged as Net Capital. No analytics, pixels or third-party scripts.
+- Forms send enquiries to the MBR lead desk (`mbrbackend.wellnessz.in`), tagged as PrelaunchUAE. No analytics, pixels or third-party scripts.
 - No invented facts. Missing data shows nothing, or "On request". Developer marketing text is never published.
 - Pictures are downloaded once and served from this site. Nothing is loaded from the portal.
 - Every page is static HTML; animations use transform and opacity only and respect reduced-motion settings.
