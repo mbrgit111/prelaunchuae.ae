@@ -14,7 +14,7 @@
  * - keeps only REM's pre-launch projects: status 'launch' (New launch) or 'pending' (Coming soon). Projects already on
  *   general sale ('available', the ones ready to buy) and sold out ones are left out (MBR, 2 Nov 2026);
  * - leaves out projects marked private on the portal;
- * - blanks the description: it is the developer's marketing copy (it promises returns), and Net Capital writes its own;
+ * - blanks the description: it is the developer's marketing copy (it promises returns), and PrelaunchUAE writes its own;
  * - keeps the cover, 4 gallery pictures and 4 floor plans for a project still selling, and the cover only for one that
  *   is sold out. No amenity photos, no nearby-place photos (the site never showed them);
  * - keeps only the fields the site reads (so REM's sales staff contacts and other-language copies never travel);

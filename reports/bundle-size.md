@@ -1,6 +1,6 @@
 # Bundle size report
 
-Generated 2026-11-02 07:17 from the production build. Sizes are gzip. Largest page per route type shown.
+Generated 2026-11-02 07:19 from the production build. Sizes are gzip. Largest page per route type shown.
 
 Budgets: total JS 195.0 KB, site-specific JS 20.0 KB, HTML 150.0 KB, inline CSS 15.0 KB.
 Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.
@@ -10,8 +10,8 @@ Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.
 | /projects/[slug] | 130 | 191.1 KB | 12.1 KB | 30.4 KB | 0.0 KB |
 | /projects | 1 | 191.1 KB | 12.1 KB | 26.4 KB | 0.0 KB |
 | /site-map | 1 | 191.1 KB | 12.1 KB | 24.6 KB | 0.0 KB |
-| /developers | 1 | 188.9 KB | 9.9 KB | 21.9 KB | 0.0 KB |
-| / | 1 | 188.7 KB | 9.7 KB | 47.7 KB | 0.0 KB |
+| /developers | 1 | 188.9 KB | 9.9 KB | 21.8 KB | 0.0 KB |
+| / | 1 | 188.7 KB | 9.7 KB | 48.2 KB | 0.0 KB |
 | /why-dubai | 1 | 188.4 KB | 9.4 KB | 16.6 KB | 0.0 KB |
 | /apartments/[slug] | 5 | 188.2 KB | 9.2 KB | 23.6 KB | 0.0 KB |
 | /apartments | 1 | 188.2 KB | 9.2 KB | 23.5 KB | 0.0 KB |
@@ -54,7 +54,7 @@ Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.
 | /areas/dubai-sports-city | 1 | 188.2 KB | 9.2 KB | 20.5 KB | 0.0 KB |
 | /areas/dubailand-residence-complex | 1 | 188.2 KB | 9.2 KB | 24.3 KB | 0.0 KB |
 | /areas/emirates-living | 1 | 188.2 KB | 9.2 KB | 19.0 KB | 0.0 KB |
-| /areas/jazeerat-al-marjan | 1 | 188.2 KB | 9.2 KB | 21.6 KB | 0.0 KB |
+| /areas/jazeerat-al-marjan | 1 | 188.2 KB | 9.2 KB | 21.5 KB | 0.0 KB |
 | /areas/jebel-ali-industrial-2 | 1 | 188.2 KB | 9.2 KB | 21.4 KB | 0.0 KB |
 | /areas/jlt-jumeirah-lake-towers | 1 | 188.2 KB | 9.2 KB | 22.0 KB | 0.0 KB |
 | /areas/jumeirah-garden-city | 1 | 188.2 KB | 9.2 KB | 21.5 KB | 0.0 KB |
@@ -82,11 +82,11 @@ Shared framework chunks (React + Next.js, on every page): 7 files, 179.0 KB.
 | /areas/warsan-4 | 1 | 188.2 KB | 9.2 KB | 23.7 KB | 0.0 KB |
 | /areas/world-of-islands | 1 | 188.2 KB | 9.2 KB | 17.7 KB | 0.0 KB |
 | /areas/yas-island | 1 | 188.2 KB | 9.2 KB | 22.3 KB | 0.0 KB |
-| /areas | 1 | 188.2 KB | 9.2 KB | 24.2 KB | 0.0 KB |
+| /areas | 1 | 188.2 KB | 9.2 KB | 24.3 KB | 0.0 KB |
 | /developers/[slug] | 60 | 188.2 KB | 9.2 KB | 16.3 KB | 0.0 KB |
 | /townhouses | 1 | 188.2 KB | 9.2 KB | 18.3 KB | 0.0 KB |
 | /villas | 1 | 188.2 KB | 9.2 KB | 21.8 KB | 0.0 KB |
-| /about | 1 | 187.6 KB | 8.6 KB | 13.5 KB | 0.0 KB |
+| /about | 1 | 187.6 KB | 8.6 KB | 13.9 KB | 0.0 KB |
 | /blog | 1 | 187.6 KB | 8.6 KB | 12.5 KB | 0.0 KB |
 | /category/[slug] | 5 | 187.6 KB | 8.6 KB | 12.5 KB | 0.0 KB |
 | /faq | 1 | 187.6 KB | 8.6 KB | 15.6 KB | 0.0 KB |

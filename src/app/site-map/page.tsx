@@ -4,7 +4,7 @@ import { allRoutes, type RouteEntry } from '@/lib/routes';
 import { pageMetadata } from '@/lib/seo';
 import { PageHero } from '@/components/ui/PageHero';
 
-export const metadata = pageMetadata({ title: 'Sitemap', description: 'Every page on Net Capital: projects, areas, developers, guides and company pages.', path: '/site-map' });
+export const metadata = pageMetadata({ title: 'Sitemap', description: 'Every page on PrelaunchUAE: projects, areas, developers, guides and company pages.', path: '/site-map' });
 
 // Kept until the project list changes (the API's refresh call), and a day at the most.
 export const revalidate = 86400;

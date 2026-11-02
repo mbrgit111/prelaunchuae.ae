@@ -4,7 +4,7 @@
  * The project list is the one the MBR desk's "Update properties" keeps in step with REM. It reaches the site through the
  * files in data/: scripts/pull-catalogue.ts copies it from the MBR API before every build, slimmed by ./slim.ts, and the
  * pictures are downloaded from that same copy. site.config.ts (catalogue.runtime) says whether the running site also
- * reads the API between builds; Net Capital does (see sites/types.ts), so the daily update shows without a rebuild.
+ * reads the API between builds; PrelaunchUAE reads its saved files (see sites/types.ts), so a rebuild picks up the daily update.
  */
 import { cache } from 'react';
 import { apiSettings } from '@/lib/content/settings';

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { config } from '@/site';
 
 interface PageSeo {
-  title: string; // without the brand (the layout template adds " | Net Capital")
+  title: string; // without the brand (the layout template adds " | PrelaunchUAE")
   description: string;
   path: string; // "/" or "/projects/arche-residences"
   absoluteTitle?: boolean;
@@ -29,7 +29,7 @@ export function pageMetadata({ title, description, path, absoluteTitle, noindex,
 export const clip = (s: string, n = 158) => (s.length <= n ? s : `${s.slice(0, n - 1).replace(/\s+\S*$/, '')}…`);
 
 /**
- * Picks the most descriptive title that fits search results (about 60 characters including " | Net Capital").
+ * Picks the most descriptive title that fits search results (about 60 characters including " | PrelaunchUAE").
  * Falls back to the shortest option without the brand suffix.
  */
 export function fitTitle(options: string[], max = 62): { title: string; absoluteTitle?: boolean } {

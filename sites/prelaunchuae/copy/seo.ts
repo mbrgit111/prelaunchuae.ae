@@ -8,7 +8,7 @@ const aed = (n: number) => `AED ${n.toLocaleString('en-US')}`;
 export const seo = {
   home: (f: { projects: number; selling: number; minPrice: number | null; areas?: number }) => ({
     title: `New Launch Projects in Dubai and the UAE: ${f.projects.toLocaleString('en-US')} Pre-Launches`,
-    description: `See ${f.projects.toLocaleString('en-US')} pre-launch and new-launch projects in ${f.areas ?? 'every'} UAE areas${f.minPrice ? `, from ${aed(f.minPrice)}` : ''}. Payment plans, handover dates and floor plans from the developers, before the market sees them.`,
+    description: `See ${f.projects.toLocaleString('en-US')} pre-launch and new-launch projects in ${f.areas ?? 'every'} UAE areas${f.minPrice ? `, from ${aed(f.minPrice)}` : ''}. Payment plans, handover dates and floor plans, before the market sees them.`,
   }),
   projects: (f: { projects: number; developers: number }) => ({
     title: `All New Launch Projects in Dubai and the UAE (${year()})`,
