@@ -1,0 +1,9 @@
+R1-PGS-017: Odd query strings on /projects never cause a server error
+probe: {"kind":"http","paths":["/projects?page=999999","/projects?sort=zzz&beds=-1","/projects?q=%F0%9F%98%80&area[]=x"],"method":"GET","expectStatus":200,"bodyExcludes":["Application error","Internal Server Error"]}
+
+result: PASS
+
+
+GET /projects?page=999999 -> 200 (263441 bytes) text/html; charset=utf-8
+GET /projects?sort=zzz&beds=-1 -> 200 (263441 bytes) text/html; charset=utf-8
+GET /projects?q=%F0%9F%98%80&area[]=x -> 200 (263441 bytes) text/html; charset=utf-8

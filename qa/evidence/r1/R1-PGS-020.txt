@@ -1,0 +1,7 @@
+R1-PGS-020: HEAD request on /projects returns 200 with headers and no error
+probe: {"kind":"http","path":"/projects","method":"HEAD","expectStatus":200}
+
+result: PASS
+
+
+HEAD /projects -> 200 (0 bytes) text/html; charset=utf-8

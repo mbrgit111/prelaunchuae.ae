@@ -1,0 +1,7 @@
+R1-MOB-018: Project list images below the first screen are lazy-loaded
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"img[loading=\"eager\"]","value":"4","op":"lte"}],"shot":true}
+
+result: PASS
+
+
+count img[loading="eager"]: 0

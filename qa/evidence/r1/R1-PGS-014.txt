@@ -1,0 +1,9 @@
+R1-PGS-014: Trailing slash on a project address redirects once to the clean address
+probe: {"kind":"http","path":"/projects/celeste/","method":"GET","expectStatus":308,"redirectTo":"/projects/celeste"}
+
+result: PASS
+
+
+GET /projects/celeste/ -> 308 (17 bytes) 
+---
+/projects/celeste

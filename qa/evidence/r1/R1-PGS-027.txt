@@ -1,0 +1,9 @@
+R1-PGS-027: Share image for an unknown project answers 404, not a generic picture
+probe: {"kind":"http","path":"/projects/no-such-project-xyz/opengraph-image","method":"GET","expectStatus":404}
+
+result: PASS
+
+
+GET /projects/no-such-project-xyz/opengraph-image -> 404 (9 bytes) text/plain;charset=UTF-8
+---
+Not found

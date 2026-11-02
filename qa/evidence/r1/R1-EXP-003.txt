@@ -1,0 +1,11 @@
+R1-EXP-003: Project list pages 2 to 6 load with no sold-out or selling text
+probe: {"kind":"http","paths":["/projects/page/2","/projects/page/3","/projects/page/4","/projects/page/5","/projects/page/6"],"method":"GET","expectStatus":200,"bodyExcludes":["Sold out","Selling"]}
+
+result: PASS
+
+
+GET /projects/page/2 -> 200 (264661 bytes) text/html; charset=utf-8
+GET /projects/page/3 -> 200 (264899 bytes) text/html; charset=utf-8
+GET /projects/page/4 -> 200 (265404 bytes) text/html; charset=utf-8
+GET /projects/page/5 -> 200 (261674 bytes) text/html; charset=utf-8
+GET /projects/page/6 -> 200 (133188 bytes) text/html; charset=utf-8

@@ -1,0 +1,11 @@
+R1-NAV-008: Phone menu closes with its close button
+probe: {"kind":"ui","path":"/","viewport":"mobile","steps":[{"do":"click","sel":"button[aria-label='Open menu']"},{"do":"wait","value":"400"},{"do":"click","sel":"#site-menu button[aria-label='Close menu']"},{"do":"wait","value":"400"}],"expect":[{"type":"hidden","sel":"#site-menu"}]}
+
+result: PASS
+
+
+step click button[aria-label='Open menu'] : ok
+step wait  400: ok
+step click #site-menu button[aria-label='Close menu'] : ok
+step wait  400: ok
+hidden #site-menu: true

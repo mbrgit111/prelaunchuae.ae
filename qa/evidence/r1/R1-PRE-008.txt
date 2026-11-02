@@ -1,0 +1,9 @@
+R1-PRE-008: Catalogue data has no sold-out wording in any field
+probe: {"kind":"data","expr":"!/sold[\\s_-]?out/i.test(JSON.stringify(projects))"}
+
+result: PASS
+
+
+expr: !/sold[\s_-]?out/i.test(JSON.stringify(projects))
+result: true
+projects=125 index=0 sitemap=0

@@ -1,0 +1,7 @@
+R1-BRD-011: Body text computes to the Manrope font
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[],"expect":[{"type":"style","sel":"p","prop":"font-family","value":"Manrope","op":"contains"}],"shot":true}
+
+result: PASS
+
+
+style p font-family: sans, "sans Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif, Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif

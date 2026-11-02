@@ -1,0 +1,8 @@
+R1-PRE-010: Explorer URL with avail=selling never shows a sold-out label
+probe: {"kind":"ui","path":"/projects?avail=selling","viewport":"desktop","steps":[{"do":"wait","value":"1500"}],"expect":[{"type":"textNot","value":"Sold out"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: FAIL
+- expect textNot : locator.count: selector: expected string, got undefined
+
+step wait  1500: ok
+console errors: 0

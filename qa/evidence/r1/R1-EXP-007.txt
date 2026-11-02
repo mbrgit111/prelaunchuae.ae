@@ -1,0 +1,8 @@
+R1-EXP-007: Taken-down projects meriden-gate and avior answer 404
+probe: {"kind":"http","paths":["/projects/meriden-gate","/projects/avior"],"method":"GET","expectStatus":404,"bodyExcludes":["From AED","Enquire","Send it to me"]}
+
+result: PASS
+
+
+GET /projects/meriden-gate -> 404 (38754 bytes) text/html; charset=utf-8
+GET /projects/avior -> 404 (38726 bytes) text/html; charset=utf-8

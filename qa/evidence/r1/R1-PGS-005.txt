@@ -1,0 +1,15 @@
+R1-PGS-005: Projects pagination pages 2 to 6 answer 200
+probe: {"kind":"http","paths":["/projects/page/2","/projects/page/3","/projects/page/4","/projects/page/5","/projects/page/6"],"method":"GET","expectStatus":200,"bodyNotRegex":"[Ss]old[ _-]?[Oo]ut"}
+
+result: FAIL
+- /projects/page/2: body matches /[Ss]old[ _-]?[Oo]ut/
+- /projects/page/3: body matches /[Ss]old[ _-]?[Oo]ut/
+- /projects/page/4: body matches /[Ss]old[ _-]?[Oo]ut/
+- /projects/page/5: body matches /[Ss]old[ _-]?[Oo]ut/
+- /projects/page/6: body matches /[Ss]old[ _-]?[Oo]ut/
+
+GET /projects/page/2 -> 200 (264661 bytes) text/html; charset=utf-8
+GET /projects/page/3 -> 200 (264899 bytes) text/html; charset=utf-8
+GET /projects/page/4 -> 200 (265404 bytes) text/html; charset=utf-8
+GET /projects/page/5 -> 200 (261674 bytes) text/html; charset=utf-8
+GET /projects/page/6 -> 200 (133188 bytes) text/html; charset=utf-8

@@ -1,0 +1,8 @@
+R1-FRM-009: GET on the lead endpoints returns 405 and never forwards
+probe: {"kind":"http","paths":["/api/leads","/api/partial-leads"],"method":"GET","expectStatus":405}
+
+result: PASS
+
+
+GET /api/leads -> 405 (0 bytes) 
+GET /api/partial-leads -> 405 (0 bytes) 

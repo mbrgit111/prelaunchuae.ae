@@ -1,0 +1,10 @@
+R1-SEC-005: Unsigned refresh call to /api/revalidate is refused and not cached
+probe: {"kind":"http","path":"/api/revalidate","method":"POST","expectStatus":401,"bodyJson":{"event":"post.published","paths":["/blog"]},"headers":{"cache-control":"no-store"},"bodyIncludes":["unauthorised"]}
+
+result: FAIL
+- /api/revalidate: status 503, wanted 401
+- /api/revalidate: body lacks "unauthorised"
+
+POST /api/revalidate -> 503 (37 bytes) application/json
+---
+{"ok":false,"error":"not_configured"}

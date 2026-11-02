@@ -1,0 +1,12 @@
+R1-NAV-001: Desktop bar shows the first six pages
+probe: {"kind":"ui","path":"/","viewport":"desktop","expect":[{"type":"visible","sel":"nav[aria-label='Main'] a[href='/projects']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/areas']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/developers']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/why-dubai']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/golden-visa']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/blog']"}],"shot":true}
+
+result: PASS
+
+
+visible nav[aria-label='Main'] a[href='/projects']: true
+visible nav[aria-label='Main'] a[href='/areas']: true
+visible nav[aria-label='Main'] a[href='/developers']: true
+visible nav[aria-label='Main'] a[href='/why-dubai']: true
+visible nav[aria-label='Main'] a[href='/golden-visa']: true
+visible nav[aria-label='Main'] a[href='/blog']: true

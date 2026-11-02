@@ -1,0 +1,9 @@
+R1-NAV-019: Phone menu links are at least 44 px tall
+probe: {"kind":"ui","path":"/","viewport":"mobile","steps":[{"do":"click","sel":"button[aria-label='Open menu']"},{"do":"wait","value":"400"}],"expect":[{"type":"style","sel":"#site-menu a[href='/faq']","prop":"min-height","value":"44","op":"gte"}]}
+
+result: PASS
+
+
+step click button[aria-label='Open menu'] : ok
+step wait  400: ok
+style #site-menu a[href='/faq'] min-height: 56px

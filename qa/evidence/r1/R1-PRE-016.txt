@@ -1,0 +1,10 @@
+R1-PRE-016: Search box for sold out returns no project cards
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"fill","sel":"input[type='search']","value":"sold out"},{"do":"press","sel":"input[type='search']","value":"Enter"},{"do":"wait","value":"1000"}],"expect":[{"type":"count","sel":"a[href^='/projects/']:not([href*='/page/'])","value":"0","op":"eq"},{"type":"textNot","value":"Sold out"}],"shot":true}
+
+result: FAIL
+- expect textNot : locator.count: selector: expected string, got undefined
+
+step fill input[type='search'] sold out: ok
+step press input[type='search'] Enter: ok
+step wait  1000: ok
+count a[href^='/projects/']:not([href*='/page/']): 0

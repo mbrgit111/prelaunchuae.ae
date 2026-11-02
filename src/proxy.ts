@@ -27,10 +27,20 @@ async function rules(): Promise<RedirectRule[]> {
 }
 
 export async function proxy(request: NextRequest) {
+  // BUG-R1-001 (QA round 1): a project, area or developer address typed in capitals served the real page on its first visit
+  // and a 404 afterwards. Addresses are lowercase; any other spelling is sent to it with a permanent redirect.
+  const { pathname } = request.nextUrl;
+  if (/^\/(projects|areas|developers)\//.test(pathname)) {
+    const lower = pathname.toLowerCase();
+    if (lower === pathname) return NextResponse.next();
+    const to = request.nextUrl.clone();
+    to.pathname = lower;
+    return NextResponse.redirect(to, 308);
+  }
   const hit = matchRedirect(await rules(), request.nextUrl.pathname);
   if (!hit) return NextResponse.next();
   return NextResponse.redirect(new URL(hit.to, request.url), hit.code === 302 ? 302 : 301);
 }
 
-// Only the article paths. Everything else on the site never touches this.
-export const config = { matcher: ['/blog/:path+', '/news/:path+'] };
+// The article paths and the address-case rule above. Everything else on the site never touches this.
+export const config = { matcher: ['/blog/:path+', '/news/:path+', '/projects/:path+', '/areas/:path+', '/developers/:path+'] };

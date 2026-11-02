@@ -1,0 +1,8 @@
+R1-FRM-008: Server forwarder checks the honeypot and required fields before forwarding
+probe: {"kind":"file","path":"src/lib/forwardLead.ts","exists":true,"includes":["mbr_hp","validateLead"]}
+
+result: FAIL
+- src/lib/forwardLead.ts lacks "mbr_hp"
+- src/lib/forwardLead.ts lacks "validateLead"
+
+src/lib/forwardLead.ts exists=true size=2024

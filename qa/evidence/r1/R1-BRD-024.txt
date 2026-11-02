@@ -1,0 +1,7 @@
+R1-BRD-024: Brand line UAE · New launches shows on the home page
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"body","value":"UAE · New launches"}],"shot":true}
+
+result: PASS
+
+
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest UAE · NEW LAUNCHES 

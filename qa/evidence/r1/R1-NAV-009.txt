@@ -1,0 +1,15 @@
+R1-NAV-009: Back button after a phone menu link leaves no stale open menu
+probe: {"kind":"ui","path":"/","viewport":"mobile","steps":[{"do":"click","sel":"button[aria-label='Open menu']"},{"do":"wait","value":"400"},{"do":"click","sel":"#site-menu a[href='/faq']"},{"do":"wait","value":"1000"},{"do":"back"},{"do":"wait","value":"1000"}],"expect":[{"type":"hidden","sel":"#site-menu"},{"type":"url","value":"/","op":"eq"},{"type":"noConsoleErrors"}]}
+
+result: PASS
+
+
+step click button[aria-label='Open menu'] : ok
+step wait  400: ok
+step click #site-menu a[href='/faq'] : ok
+step wait  1000: ok
+step back  : ok
+step wait  1000: ok
+hidden #site-menu: true
+url: /
+console errors: 0

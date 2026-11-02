@@ -1,0 +1,7 @@
+R1-BRD-003: Logo component derives height from the supplied ratio so the logo is never stretched
+probe: {"kind":"file","path":"src/components/layout/Logo.tsx","exists":true,"regex":"height=\\{Math\\.round\\(width / ratio\\)\\}"}
+
+result: PASS
+
+
+src/components/layout/Logo.tsx exists=true size=1021

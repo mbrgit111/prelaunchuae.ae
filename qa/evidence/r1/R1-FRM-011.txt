@@ -1,0 +1,8 @@
+R1-FRM-011: Keyboard Tab order on /contact runs Full name, Phone, Email
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[{"do":"click","sel":"input[name=\"name\"]","value":""},{"do":"press","sel":"input[name=\"name\"]","value":"Tab"}],"expect":[{"type":"focusable","sel":"input[name=\"phone\"]"}],"shot":true}
+
+result: PASS
+
+
+step click input[name="name"] : ok
+step press input[name="name"] Tab: ok

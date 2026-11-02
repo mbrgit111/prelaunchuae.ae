@@ -1,0 +1,9 @@
+R1-PRE-004: Index has exactly one item per catalogue project
+probe: {"kind":"data","expr":"index.length > 0 && index.length === projects.length"}
+
+result: PASS
+
+
+expr: index.length > 0 && index.length === projects.length
+result: true
+projects=125 index=125 sitemap=0

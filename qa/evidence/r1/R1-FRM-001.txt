@@ -1,0 +1,11 @@
+R1-FRM-001: Empty enquiry submit on /contact shows every field error and sends nothing
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[{"do":"click","sel":"form button[type=\"submit\"]","value":""}],"expect":[{"type":"text","sel":"body","value":"Please enter your name."},{"type":"text","sel":"body","value":"Please enter your phone number."},{"type":"text","sel":"body","value":"Please enter your email address."},{"type":"text","sel":"body","value":"Please confirm we may contact you."}],"shot":true}
+
+result: PASS
+
+
+step click form button[type="submit"] : ok
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT

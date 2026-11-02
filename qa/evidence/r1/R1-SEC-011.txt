@@ -1,0 +1,8 @@
+R1-SEC-011: Home page makes no requests to third-party hosts on load
+probe: {"kind":"ui","path":"/","viewport":"desktop","expect":[{"type":"noExternalRequests"},{"type":"noConsoleErrors"}]}
+
+result: PASS
+
+
+external requests: 0
+console errors: 0

@@ -1,0 +1,10 @@
+R1-EXP-004: Availability chips offer only New launches and Coming soon
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"visible","sel":"text=New launches"},{"type":"visible","sel":"text=Coming soon"},{"type":"hidden","sel":"text=Sold out"},{"type":"hidden","sel":"text=Selling"}],"shot":true}
+
+result: FAIL
+- text=Sold out is visible
+
+visible text=New launches: true
+visible text=Coming soon: true
+hidden text=Sold out: false
+hidden text=Selling: true

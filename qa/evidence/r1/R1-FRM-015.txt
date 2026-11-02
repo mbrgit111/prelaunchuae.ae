@@ -1,0 +1,8 @@
+R1-FRM-015: Enquiry form on /contact shows the disclosure and a privacy policy link
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"body","value":"We may contact you about this enquiry using the details you enter."},{"type":"visible","sel":"a[href=\"/privacy\"]"}],"shot":true}
+
+result: FAIL
+- a[href="/privacy"] not visible
+
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT
+visible a[href="/privacy"]: false

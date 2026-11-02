@@ -1,0 +1,7 @@
+R1-BRD-014: Global stylesheet has no stale Net Capital, Newsreader or Plus Jakarta references
+probe: {"kind":"file","path":"src/app/globals.css","exists":true,"excludes":["Plus Jakarta","Newsreader","Net Capital"]}
+
+result: FAIL
+- src/app/globals.css contains "Plus Jakarta"
+
+src/app/globals.css exists=true size=20284

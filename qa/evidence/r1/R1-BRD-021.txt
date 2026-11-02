@@ -1,0 +1,7 @@
+R1-BRD-021: Amber-deep text on white meets 4.5:1 for small amber labels
+probe: {"kind":"contrast","fg":"#A4510F","bg":"#FFFFFF","min":4.5}
+
+result: PASS
+
+
+#A4510F on #FFFFFF = 5.58:1

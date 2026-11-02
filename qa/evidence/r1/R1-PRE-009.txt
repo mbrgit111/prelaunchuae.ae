@@ -1,0 +1,9 @@
+R1-PRE-009: Explorer URL with avail=sold-out shows no project cards
+probe: {"kind":"ui","path":"/projects?avail=sold-out","viewport":"desktop","steps":[{"do":"wait","value":"1500"}],"expect":[{"type":"count","sel":"a[href^='/projects/']:not([href*='/page/'])","value":"0","op":"eq"},{"type":"textNot","value":"Sold out"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: FAIL
+- expect textNot : locator.count: selector: expected string, got undefined
+
+step wait  1500: ok
+count a[href^='/projects/']:not([href*='/page/']): 0
+console errors: 0

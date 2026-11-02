@@ -1,0 +1,9 @@
+R1-SEC-002: Taken-down slugs are absent from the catalogue, index and sitemap
+probe: {"kind":"data","expr":"!projects.some(p => ['meriden-gate', 'avior'].includes(p.slug)) && !index.some(x => ['meriden-gate', 'avior'].includes(x.s)) && !sitemap.some(s => /meriden-gate|avior/i.test(s))"}
+
+result: PASS
+
+
+expr: !projects.some(p => ['meriden-gate', 'avior'].includes(p.slug)) && !index.some(x => ['meriden-gate', 'avior'].includes(x.s)) && !sitemap.some(s => /meriden-gate|avior/i.test(s))
+result: true
+projects=125 index=125 sitemap=313

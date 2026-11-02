@@ -1,0 +1,7 @@
+R1-MOB-020: Project page logs no console errors
+probe: {"kind":"ui","path":"/projects/celeste","viewport":"desktop","steps":[],"expect":[{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+console errors: 0

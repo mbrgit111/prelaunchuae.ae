@@ -1,0 +1,9 @@
+R1-MOB-014: Menu button is at least 44 px tap target at 320 px with large text
+probe: {"kind":"ui","path":"/","viewport":"small","steps":[],"expect":[{"type":"style","sel":"button[aria-label=\"Open menu\"]","prop":"min-height","value":"44px","op":"gte"},{"type":"style","sel":"button[aria-label=\"Open menu\"]","prop":"min-width","value":"44px","op":"gte"}],"shot":true}
+
+result: FAIL
+- button[aria-label="Open menu"] min-height is "44px", wanted gte 44px
+- button[aria-label="Open menu"] min-width is "auto", wanted gte 44px
+
+style button[aria-label="Open menu"] min-height: 44px
+style button[aria-label="Open menu"] min-width: auto

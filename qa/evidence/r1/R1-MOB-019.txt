@@ -1,0 +1,7 @@
+R1-MOB-019: Every image on the projects list has alt text
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"img:not([alt])","value":"0","op":"eq"}],"shot":true}
+
+result: PASS
+
+
+count img:not([alt]): 0

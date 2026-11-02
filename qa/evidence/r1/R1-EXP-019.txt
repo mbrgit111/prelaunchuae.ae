@@ -1,0 +1,7 @@
+R1-EXP-019: Project page H1 shows the project name
+probe: {"kind":"ui","path":"/projects/dolce-residences-by-wyndham","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"h1","value":"Dolce Residences by Wyndham"}],"shot":true}
+
+result: PASS
+
+
+text h1: Dolce Residences by Wyndham

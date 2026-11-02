@@ -1,0 +1,14 @@
+R1-PGS-022: robots.txt allows crawling and names the sitemap
+probe: {"kind":"http","path":"/robots.txt","method":"GET","expectStatus":200,"bodyIncludes":["Sitemap: https://prelaunchuae.com/sitemap.xml"],"bodyNotRegex":"Disallow: /projects"}
+
+result: PASS
+
+
+GET /robots.txt -> 200 (101 bytes) text/plain
+---
+User-Agent: *
+Allow: /
+
+Host: https://prelaunchuae.com
+Sitemap: https://prelaunchuae.com/sitemap.xml
+

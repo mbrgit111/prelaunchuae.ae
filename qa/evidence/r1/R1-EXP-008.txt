@@ -1,0 +1,9 @@
+R1-EXP-008: Searching Celeste finds the Celeste project
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"fill","sel":"input[type=\"search\"]","value":"Celeste"},{"do":"wait","sel":"","value":"800"}],"expect":[{"type":"visible","sel":"text=Celeste"}],"shot":true}
+
+result: PASS
+
+
+step fill input[type="search"] Celeste: ok
+step wait  800: ok
+visible text=Celeste: true

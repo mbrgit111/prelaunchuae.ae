@@ -1,0 +1,7 @@
+R1-MOB-015: Reduced-motion users get no transform animation
+probe: {"kind":"file","path":"src/app/globals.css","exists":true,"includes":["prefers-reduced-motion"]}
+
+result: PASS
+
+
+src/app/globals.css exists=true size=20284

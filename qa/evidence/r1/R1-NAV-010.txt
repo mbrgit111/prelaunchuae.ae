@@ -1,0 +1,11 @@
+R1-NAV-010: Phone menu at 320 px scrolls to the last links without sideways overflow
+probe: {"kind":"ui","path":"/","viewport":"small","steps":[{"do":"click","sel":"button[aria-label='Open menu']"},{"do":"wait","value":"400"},{"do":"scroll","sel":"#site-menu nav","value":"bottom"}],"expect":[{"type":"noOverflow"},{"type":"visible","sel":"#site-menu a[href='/contact']"}],"shot":true}
+
+result: PASS
+
+
+step click button[aria-label='Open menu'] : ok
+step wait  400: ok
+step scroll #site-menu nav bottom: ok
+overflow: scrollWidth 320 vs clientWidth 320
+visible #site-menu a[href='/contact']: true

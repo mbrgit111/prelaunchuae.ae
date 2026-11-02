@@ -1,0 +1,7 @@
+R1-EXP-002: Page 1 of the projects list shows exactly 24 project cards
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"section[aria-label=\"Project list\"] a[href^=\"/projects/\"]","value":"24","op":"eq"}],"shot":true}
+
+result: FAIL
+- count of section[aria-label="Project list"] a[href^="/projects/"] is 28, wanted eq 24
+
+count section[aria-label="Project list"] a[href^="/projects/"]: 28

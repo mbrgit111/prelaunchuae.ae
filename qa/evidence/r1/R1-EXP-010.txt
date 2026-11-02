@@ -1,0 +1,11 @@
+R1-EXP-010: Emoji search shows an empty state with Clear filters
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[{"do":"fill","sel":"input[type=\"search\"]","value":"🏠🔥"},{"do":"wait","sel":"","value":"800"}],"expect":[{"type":"visible","sel":"text=Clear filters"},{"type":"visible","sel":"[role=\"status\"]"},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+step fill input[type="search"] 🏠🔥: ok
+step wait  800: ok
+visible text=Clear filters: true
+visible [role="status"]: true
+console errors: 0

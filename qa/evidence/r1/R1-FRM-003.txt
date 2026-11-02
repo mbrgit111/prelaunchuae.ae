@@ -1,0 +1,9 @@
+R1-FRM-003: Two-digit phone number shows the country-code message
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[{"do":"fill","sel":"input[name=\"phone\"]","value":"12"},{"do":"press","sel":"input[name=\"phone\"]","value":"Tab"}],"expect":[{"type":"text","sel":"body","value":"Please enter a valid phone number, with country code."}],"shot":true}
+
+result: PASS
+
+
+step fill input[name="phone"] 12: ok
+step press input[name="phone"] Tab: ok
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT

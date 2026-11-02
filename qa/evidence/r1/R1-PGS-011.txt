@@ -1,0 +1,11 @@
+R1-PGS-011: Unknown area, developer, apartment and townhouse addresses answer 404
+probe: {"kind":"http","paths":["/areas/no-such-area-xyz","/developers/no-such-developer-xyz","/apartments/5-bedroom","/townhouses/xyz","/villas/no-such-type-xyz"],"method":"GET","expectStatus":404}
+
+result: PASS
+
+
+GET /areas/no-such-area-xyz -> 404 (62226 bytes) text/html; charset=utf-8
+GET /developers/no-such-developer-xyz -> 404 (38551 bytes) text/html; charset=utf-8
+GET /apartments/5-bedroom -> 404 (62226 bytes) text/html; charset=utf-8
+GET /townhouses/xyz -> 404 (62226 bytes) text/html; charset=utf-8
+GET /villas/no-such-type-xyz -> 404 (62226 bytes) text/html; charset=utf-8

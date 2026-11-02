@@ -1,0 +1,8 @@
+R1-PGS-012: Blog and news pages stay out of search while empty
+probe: {"kind":"http","paths":["/blog","/news"],"method":"GET","expectStatus":200,"bodyRegex":"noindex"}
+
+result: PASS
+
+
+GET /blog -> 200 (75776 bytes) text/html; charset=utf-8
+GET /news -> 200 (75704 bytes) text/html; charset=utf-8

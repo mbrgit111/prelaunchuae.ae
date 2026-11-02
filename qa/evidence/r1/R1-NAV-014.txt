@@ -1,0 +1,9 @@
+R1-NAV-014: Logo returns to the home page
+probe: {"kind":"ui","path":"/faq","viewport":"desktop","steps":[{"do":"click","sel":"header a[aria-label='PrelaunchUAE, home']"},{"do":"wait","value":"1000"}],"expect":[{"type":"url","value":"/","op":"eq"}]}
+
+result: PASS
+
+
+step click header a[aria-label='PrelaunchUAE, home'] : ok
+step wait  1000: ok
+url: /

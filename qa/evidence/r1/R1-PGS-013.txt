@@ -1,0 +1,9 @@
+R1-PGS-013: Unknown blog, news and category addresses answer 404
+probe: {"kind":"http","paths":["/blog/no-such-post-xyz","/news/no-such-story-xyz","/category/no-such-topic-xyz"],"method":"GET","expectStatus":404}
+
+result: PASS
+
+
+GET /blog/no-such-post-xyz -> 404 (38617 bytes) text/html; charset=utf-8
+GET /news/no-such-story-xyz -> 404 (38619 bytes) text/html; charset=utf-8
+GET /category/no-such-topic-xyz -> 404 (38633 bytes) text/html; charset=utf-8

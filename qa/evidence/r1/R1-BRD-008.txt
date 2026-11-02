@@ -1,0 +1,9 @@
+R1-BRD-008: Web manifest carries the Ink theme colour and the Sand background
+probe: {"kind":"http","path":"/manifest.webmanifest","method":"GET","expectStatus":200,"bodyRegex":"theme_color\"\\s*:\\s*\"#0B1F33\"[\\s\\S]*background_color\"\\s*:\\s*\"#F4EFE6\""}
+
+result: FAIL
+- /manifest.webmanifest: body does not match /theme_color"\s*:\s*"#0B1F33"[\s\S]*background_color"\s*:\s*"#F4EFE6"/
+
+GET /manifest.webmanifest -> 200 (504 bytes) application/manifest+json
+---
+{"name":"PrelaunchUAE","short_name":"PrelaunchUAE","description":"See pre-launch and new-launch projects across Dubai and the UAE before the market does: area, developer, unit types, payment plan and handover date, then register your interest with PrelaunchUAE.","start_url":"/","display":"browser","background_color":"#F4EFE6","theme_color":"#0B1F33","icons":[{"src":"/android-chrome-192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512.png","sizes":"512x512","type":"image/png"}]}

@@ -1,0 +1,9 @@
+R1-PRE-001: Raw catalogue holds only launch and pending projects
+probe: {"kind":"data","expr":"projects.length > 0 && projects.every(p => p.status === 'launch' || p.status === 'pending')"}
+
+result: PASS
+
+
+expr: projects.length > 0 && projects.every(p => p.status === 'launch' || p.status === 'pending')
+result: true
+projects=125 index=0 sitemap=0

@@ -1,0 +1,7 @@
+R1-BRD-005: Supplied horizontal logo file exists with the PrelaunchUAE name and the guideline viewBox
+probe: {"kind":"file","path":"public/brand/prelaunchuae-horizontal.svg","exists":true,"includes":["aria-label=\"PrelaunchUAE\"","viewBox=\"0 0 406.38 71.35\""]}
+
+result: PASS
+
+
+public/brand/prelaunchuae-horizontal.svg exists=true size=11957

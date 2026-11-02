@@ -1,0 +1,8 @@
+R1-BRD-015: Global stylesheet has no old Net Capital green colours
+probe: {"kind":"file","path":"src/app/globals.css","exists":true,"excludes":["#0b7a3f","#08602f"]}
+
+result: FAIL
+- src/app/globals.css contains "#0b7a3f"
+- src/app/globals.css contains "#08602f"
+
+src/app/globals.css exists=true size=20284

@@ -1,0 +1,7 @@
+R1-MOB-013: Skip link receives focus first and shows a visible focus ring
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[{"do":"press","sel":"body","value":"Tab"}],"expect":[{"type":"focusable","sel":"a.skip-link"}],"shot":true}
+
+result: PASS
+
+
+step press body Tab: ok

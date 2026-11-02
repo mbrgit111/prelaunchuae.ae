@@ -1,0 +1,9 @@
+R1-SEC-006: Security headers are sent on the home and a project page
+probe: {"kind":"http","paths":["/","/projects/celeste"],"method":"GET","expectStatus":200,"headers":{"x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","referrer-policy":"strict-origin-when-cross-origin","permissions-policy":"camera=(), microphone=(), geolocation=()"}}
+
+result: FAIL
+- /: header permissions-policy is "camera=(), microphone=(), geolocation=()", wanted /camera=(), microphone=(), geolocation=()/
+- /projects/celeste: header permissions-policy is "camera=(), microphone=(), geolocation=()", wanted /camera=(), microphone=(), geolocation=()/
+
+GET / -> 200 (412388 bytes) text/html; charset=utf-8
+GET /projects/celeste -> 200 (174249 bytes) text/html; charset=utf-8

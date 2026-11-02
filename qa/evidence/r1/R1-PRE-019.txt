@@ -1,0 +1,9 @@
+R1-PRE-019: Coming-soon count in index equals pending count in catalogue
+probe: {"kind":"data","expr":"index.filter(x => x.st === 'coming-soon').length === projects.filter(p => p.status === 'pending').length"}
+
+result: FAIL
+- data check false: index.filter(x => x.st === 'coming-soon').length === projects.filter(p => p.status === 'pending').length
+
+expr: index.filter(x => x.st === 'coming-soon').length === projects.filter(p => p.status === 'pending').length
+result: false
+projects=125 index=125 sitemap=0

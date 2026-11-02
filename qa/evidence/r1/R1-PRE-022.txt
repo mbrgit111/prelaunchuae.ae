@@ -1,0 +1,8 @@
+R1-PRE-022: Unknown avail value does not reveal sold-out projects
+probe: {"kind":"ui","path":"/projects?avail=sold_out","viewport":"desktop","steps":[{"do":"wait","value":"1500"}],"expect":[{"type":"textNot","value":"Sold out"},{"type":"noConsoleErrors"}]}
+
+result: FAIL
+- expect textNot : locator.count: selector: expected string, got undefined
+
+step wait  1500: ok
+console errors: 0

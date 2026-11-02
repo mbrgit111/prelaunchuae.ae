@@ -1,0 +1,8 @@
+R1-EXP-018: Unknown and uppercase project slugs return 404
+probe: {"kind":"http","paths":["/projects/not-a-real-project-xyz","/projects/CELESTE"],"method":"GET","expectStatus":404}
+
+result: PASS
+
+
+GET /projects/not-a-real-project-xyz -> 404 (38794 bytes) text/html; charset=utf-8
+GET /projects/CELESTE -> 404 (38734 bytes) text/html; charset=utf-8

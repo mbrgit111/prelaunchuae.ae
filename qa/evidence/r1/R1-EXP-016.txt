@@ -1,0 +1,9 @@
+R1-EXP-016: Projects index has no duplicate slugs
+probe: {"kind":"data","expr":"new Set(index.map(i => i.s)).size === index.length"}
+
+result: PASS
+
+
+expr: new Set(index.map(i => i.s)).size === index.length
+result: true
+projects=125 index=125 sitemap=0

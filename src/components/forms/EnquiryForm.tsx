@@ -187,7 +187,7 @@ export function EnquiryForm({
             className={`mt-0.5 size-5 shrink-0 ${dark ? 'accent-plot' : 'accent-survey'}`}
           />
           <span className={dark ? 'text-sand/80' : 'text-muted'}>
-            I agree to be contacted by {config.name} about off-plan properties in the {config.community.name}. See the <a href={privacyHref} className="underline underline-offset-2">privacy policy</a>.
+            I agree to be contacted by {config.name} about new launches in the {config.community.name}. See the <a href={privacyHref} className="underline underline-offset-2">privacy policy</a>.
           </span>
         </label>
         {errors.consent ? <p id={id('consent-err')} className={`text-sm ${dark ? 'text-[#FDA29B]' : 'text-[#B42318]'}`}>{errors.consent}</p> : null}

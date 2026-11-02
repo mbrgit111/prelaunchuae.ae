@@ -1,0 +1,7 @@
+R1-EXP-022: Project with no starting price shows On request, never From AED 0
+probe: {"kind":"ui","path":"/projects/celeste","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"body","value":"On request"},{"type":"textNot","sel":"body","value":"AED 0"}],"shot":true}
+
+result: PASS
+
+
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Dubai South 

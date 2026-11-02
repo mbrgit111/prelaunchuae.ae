@@ -1,0 +1,7 @@
+R1-FRM-014: Partial lead is not saved before the consent box is ticked
+probe: {"kind":"file","path":"src/components/forms/EnquiryForm.tsx","exists":true,"includes":["if (!values.consent) return"]}
+
+result: FAIL
+- src/components/forms/EnquiryForm.tsx lacks "if (!values.consent) return"
+
+src/components/forms/EnquiryForm.tsx exists=true size=9908

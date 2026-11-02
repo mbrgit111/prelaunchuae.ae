@@ -1,0 +1,11 @@
+R1-NAV-002: More dropdown lists News, FAQ, About and Contact
+probe: {"kind":"ui","path":"/","viewport":"desktop","steps":[{"do":"click","sel":"nav[aria-label='Main'] summary"}],"expect":[{"type":"visible","sel":"nav[aria-label='Main'] a[href='/news']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/faq']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/about']"},{"type":"visible","sel":"nav[aria-label='Main'] a[href='/contact']"}],"shot":true}
+
+result: PASS
+
+
+step click nav[aria-label='Main'] summary : ok
+visible nav[aria-label='Main'] a[href='/news']: true
+visible nav[aria-label='Main'] a[href='/faq']: true
+visible nav[aria-label='Main'] a[href='/about']: true
+visible nav[aria-label='Main'] a[href='/contact']: true

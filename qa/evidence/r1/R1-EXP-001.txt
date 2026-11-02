@@ -1,0 +1,7 @@
+R1-EXP-001: Projects page heading reads Dubai and the UAE · New launches
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"text","sel":"body","value":"Dubai and the UAE · New launches"}],"shot":true}
+
+result: PASS
+
+
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Projects DUB

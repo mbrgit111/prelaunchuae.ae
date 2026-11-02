@@ -1,0 +1,21 @@
+R1-PGS-024: RSS feed is valid with zero items while there are no articles
+probe: {"kind":"http","path":"/feed.xml","method":"GET","expectStatus":200,"bodyIncludes":["<rss","<channel>"],"bodyNotRegex":"<item>"}
+
+result: PASS
+
+
+GET /feed.xml -> 200 (621 bytes) application/rss+xml; charset=utf-8
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>PrelaunchUAE: articles</title>
+    <link>https://prelaunchuae.com</link>
+    <description>See pre-launch and new-launch projects across Dubai and the UAE before the market does: area, developer, unit types, payment plan and handover date, then register your interest with PrelaunchUAE.</description>
+    <language>en-AE</language>
+    
+    <atom:link href="https://prelaunchuae.com/feed.xml" rel="self" type="application/rss+xml" />
+
+  </channel>
+</rss>
+

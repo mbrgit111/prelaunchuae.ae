@@ -1,0 +1,7 @@
+R1-MOB-016: Project page has exactly one H1
+probe: {"kind":"ui","path":"/projects/celeste","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"h1","value":"1","op":"eq"}],"shot":true}
+
+result: PASS
+
+
+count h1: 1

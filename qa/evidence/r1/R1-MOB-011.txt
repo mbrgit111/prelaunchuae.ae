@@ -1,0 +1,8 @@
+R1-MOB-011: Long-name project page does not overflow at 320 px
+probe: {"kind":"ui","path":"/projects/dolce-residences-by-wyndham","viewport":"small","steps":[],"expect":[{"type":"noOverflow"},{"type":"visible","sel":"h1"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 320 vs clientWidth 320
+visible h1: true

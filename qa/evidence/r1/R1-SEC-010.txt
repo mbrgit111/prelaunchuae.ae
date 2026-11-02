@@ -1,0 +1,7 @@
+R1-SEC-010: Public output has no source maps, env files or secret names
+probe: {"kind":"cmd","run":"test -z \"$(find public .next/static -name '*.map' -o -name '.env*' 2>/dev/null)\" && ! grep -rIlE 'REVALIDATE_SECRET|CONTENT_STATUS_TOKEN|X-Site-Key|sk_live' public .next/static 2>/dev/null","expectExit":0}
+
+result: PASS
+
+
+

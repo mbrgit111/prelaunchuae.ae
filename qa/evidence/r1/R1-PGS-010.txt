@@ -1,0 +1,11 @@
+R1-PGS-010: Out-of-range or non-numeric pagination numbers answer 404
+probe: {"kind":"http","paths":["/projects/page/0","/projects/page/7","/projects/page/abc","/projects/page/-1","/projects/page/2.5"],"method":"GET","expectStatus":404}
+
+result: PASS
+
+
+GET /projects/page/0 -> 404 (39507 bytes) text/html; charset=utf-8
+GET /projects/page/7 -> 404 (39535 bytes) text/html; charset=utf-8
+GET /projects/page/abc -> 404 (39559 bytes) text/html; charset=utf-8
+GET /projects/page/-1 -> 404 (39515 bytes) text/html; charset=utf-8
+GET /projects/page/2.5 -> 404 (39559 bytes) text/html; charset=utf-8

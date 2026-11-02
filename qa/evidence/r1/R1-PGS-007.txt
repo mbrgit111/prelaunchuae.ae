@@ -1,0 +1,11 @@
+R1-PGS-007: Sample area and developer pages answer 200
+probe: {"kind":"http","paths":["/areas/dubai-south","/areas/dubai-islands","/developers/meraki","/developers/ays-developers","/developers/bt-properties"],"method":"GET","expectStatus":200,"bodyExcludes":["Application error"]}
+
+result: PASS
+
+
+GET /areas/dubai-south -> 200 (222163 bytes) text/html; charset=utf-8
+GET /areas/dubai-islands -> 200 (204803 bytes) text/html; charset=utf-8
+GET /developers/meraki -> 200 (93947 bytes) text/html; charset=utf-8
+GET /developers/ays-developers -> 200 (109913 bytes) text/html; charset=utf-8
+GET /developers/bt-properties -> 200 (102608 bytes) text/html; charset=utf-8

@@ -1,0 +1,17 @@
+R1-PRE-021: Pre-launch filter unit test passes (available and sold_out dropped)
+probe: {"kind":"cmd","run":"npx vitest run tests/slim.test.ts","expectExit":0,"outIncludes":["passed"]}
+
+result: PASS
+
+
+
+ RUN  v3.2.7 /Users/simarpreetmac/StudioProjects/MBR_PROPERTIES WORKSPACE/prelaunchuae
+
+ ✓ tests/slim.test.ts (11 tests) 247ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  12:59:27
+   Duration  591ms (transform 82ms, setup 0ms, collect 101ms, tests 247ms, environment 0ms, prepare 58ms)
+
+

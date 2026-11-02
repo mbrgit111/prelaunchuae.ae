@@ -1,0 +1,12 @@
+R1-FRM-005: Script and image payload typed into Full name does not execute or render
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[{"do":"fill","sel":"input[name=\"name\"]","value":"<img src=x onerror=alert(1)>"},{"do":"fill","sel":"input[name=\"phone\"]","value":"12"},{"do":"click","sel":"form button[type=\"submit\"]","value":""}],"expect":[{"type":"count","sel":"img[src=\"x\"]","value":"0","op":"eq"},{"type":"text","sel":"body","value":"Please enter a valid phone number, with country code."},{"type":"noConsoleErrors"}],"shot":true}
+
+result: PASS
+
+
+step fill input[name="name"] <img src=x onerror=alert(1)>: ok
+step fill input[name="phone"] 12: ok
+step click form button[type="submit"] : ok
+count img[src="x"]: 0
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT
+console errors: 0

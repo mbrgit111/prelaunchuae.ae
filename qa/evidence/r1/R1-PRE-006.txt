@@ -1,0 +1,9 @@
+R1-PRE-006: Index slugs match the site slug of every catalogue project
+probe: {"kind":"data","expr":"(() => { const sl = s => s.normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); const set = new Set(projects.map(p => sl(p.slug))); return index.length > 0 && index.every(i => set.has(i.s)); })()"}
+
+result: PASS
+
+
+expr: (() => { const sl = s => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); const set = new Set(projects.map(p => sl(p.slug))); return index.length > 0 && index.every(i => set.has(i.s)); })()
+result: true
+projects=125 index=125 sitemap=0

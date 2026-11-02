@@ -133,7 +133,7 @@
 
 @layer components {
 
-  /* ---------- Buttons: 6 px radius, Plus Jakarta Sans SemiBold 15 px, sentence case ---------- */
+  /* ---------- Buttons: 6 px radius, Manrope SemiBold 15 px, sentence case ---------- */
   .btn {
     display: inline-flex;
     align-items: center;

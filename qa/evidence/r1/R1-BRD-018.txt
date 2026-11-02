@@ -1,0 +1,7 @@
+R1-BRD-018: Midnight Ink text on Desert Sand measures at least 14.5:1
+probe: {"kind":"contrast","fg":"#0B1F33","bg":"#F4EFE6","min":14.5}
+
+result: PASS
+
+
+#0B1F33 on #F4EFE6 = 14.58:1

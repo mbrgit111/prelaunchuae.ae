@@ -1,0 +1,15 @@
+R1-PRE-015: Home, areas, developers and guide pages carry no sold-out wording
+probe: {"kind":"http","paths":["/","/areas","/developers","/why-dubai","/golden-visa","/faq","/about"],"method":"GET","expectStatus":200,"bodyNotRegex":"[Ss]old[ _-]?[Oo]ut"}
+
+result: FAIL
+- /: body matches /[Ss]old[ _-]?[Oo]ut/
+- /faq: body matches /[Ss]old[ _-]?[Oo]ut/
+- /about: body matches /[Ss]old[ _-]?[Oo]ut/
+
+GET / -> 200 (412388 bytes) text/html; charset=utf-8
+GET /areas -> 200 (216142 bytes) text/html; charset=utf-8
+GET /developers -> 200 (167865 bytes) text/html; charset=utf-8
+GET /why-dubai -> 200 (99567 bytes) text/html; charset=utf-8
+GET /golden-visa -> 200 (83860 bytes) text/html; charset=utf-8
+GET /faq -> 200 (105145 bytes) text/html; charset=utf-8
+GET /about -> 200 (79974 bytes) text/html; charset=utf-8

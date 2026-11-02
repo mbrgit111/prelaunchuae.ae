@@ -1,0 +1,13 @@
+R1-NAV-012: Footer Explore column links the navigation pages
+probe: {"kind":"ui","path":"/","viewport":"desktop","expect":[{"type":"visible","sel":"footer a[href='/projects']"},{"type":"visible","sel":"footer a[href='/golden-visa']"},{"type":"visible","sel":"footer a[href='/blog']"},{"type":"visible","sel":"footer a[href='/news']"},{"type":"visible","sel":"footer a[href='/faq']"},{"type":"visible","sel":"footer a[href='/about']"},{"type":"visible","sel":"footer a[href='/contact']"}]}
+
+result: PASS
+
+
+visible footer a[href='/projects']: true
+visible footer a[href='/golden-visa']: true
+visible footer a[href='/blog']: true
+visible footer a[href='/news']: true
+visible footer a[href='/faq']: true
+visible footer a[href='/about']: true
+visible footer a[href='/contact']: true

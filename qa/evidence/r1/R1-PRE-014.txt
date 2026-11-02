@@ -1,0 +1,10 @@
+R1-PRE-014: Sample project pages carry no sold-out wording
+probe: {"kind":"http","paths":["/projects/celeste","/projects/breva","/projects/vista-verde","/projects/mariana"],"method":"GET","expectStatus":200,"bodyNotRegex":"[Ss]old[ _-]?[Oo]ut"}
+
+result: PASS
+
+
+GET /projects/celeste -> 200 (174249 bytes) text/html; charset=utf-8
+GET /projects/breva -> 200 (205961 bytes) text/html; charset=utf-8
+GET /projects/vista-verde -> 200 (191431 bytes) text/html; charset=utf-8
+GET /projects/mariana -> 200 (131658 bytes) text/html; charset=utf-8

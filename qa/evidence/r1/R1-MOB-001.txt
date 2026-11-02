@@ -1,0 +1,7 @@
+R1-MOB-001: Home page has no horizontal scroll at 375 px
+probe: {"kind":"ui","path":"/","viewport":"mobile","steps":[],"expect":[{"type":"noOverflow"}],"shot":true}
+
+result: PASS
+
+
+overflow: scrollWidth 375 vs clientWidth 375

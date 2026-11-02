@@ -1,0 +1,8 @@
+R1-BRD-016: Primary buttons are Launch Amber fill with Midnight Ink text
+probe: {"kind":"ui","path":"/projects/celeste","viewport":"desktop","steps":[],"expect":[{"type":"style","sel":"a.btn-primary","prop":"background-color","value":"rgb(224, 122, 46)","op":"eq"},{"type":"style","sel":"a.btn-primary","prop":"color","value":"rgb(11, 31, 51)","op":"eq"}],"shot":true}
+
+result: PASS
+
+
+style a.btn-primary background-color: rgb(224, 122, 46)
+style a.btn-primary color: rgb(11, 31, 51)

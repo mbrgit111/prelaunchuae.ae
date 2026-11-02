@@ -1,0 +1,9 @@
+R1-FRM-012: Name, phone and email inputs are labelled and required
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"form input[required]","value":"3","op":"eq"},{"type":"text","sel":"form","value":"Full name"},{"type":"text","sel":"form","value":"Email"}],"shot":true}
+
+result: PASS
+
+
+count form input[required]: 3
+text form: Send an enquiry Tell us the unit type, budget and timing you have in mind. Full name Phone Email Message (optional) Leav
+text form: Send an enquiry Tell us the unit type, budget and timing you have in mind. Full name Phone Email Message (optional) Leav

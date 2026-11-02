@@ -1,0 +1,9 @@
+R1-FRM-002: Email with a space in it is rejected on blur
+probe: {"kind":"ui","path":"/contact","viewport":"desktop","steps":[{"do":"fill","sel":"input[name=\"email\"]","value":"a b@c.com"},{"do":"press","sel":"input[name=\"email\"]","value":"Tab"}],"expect":[{"type":"text","sel":"body","value":"Please enter a valid email address."}],"shot":true}
+
+result: PASS
+
+
+step fill input[name="email"] a b@c.com: ok
+step press input[name="email"] Tab: ok
+text body: Skip to content Launches Areas Developers Why Dubai Golden Visa Blog More WhatsApp Register interest Home / Contact CONT

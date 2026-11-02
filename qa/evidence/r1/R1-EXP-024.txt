@@ -1,0 +1,9 @@
+R1-EXP-024: Register interest button on a project page scrolls to the enquiry form
+probe: {"kind":"ui","path":"/projects/dolce-residences-by-wyndham","viewport":"desktop","steps":[{"do":"click","sel":"a[href=\"#register\"]","value":""}],"expect":[{"type":"url","value":"#register","op":"contains"},{"type":"visible","sel":"#register"}],"shot":true}
+
+result: PASS
+
+
+step click a[href="#register"] : ok
+url: /projects/dolce-residences-by-wyndham#register
+visible #register: true

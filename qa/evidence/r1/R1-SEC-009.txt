@@ -1,0 +1,10 @@
+R1-SEC-009: Path traversal through the media folder finds no files
+probe: {"kind":"http","paths":["/media/..%2F..%2Fpackage.json","/media/..%2F..%2F.env","/media/%2e%2e%2f%2e%2e%2f.env","/media/..%2F..%2Fnext.config.ts"],"method":"GET","expectStatus":404,"bodyExcludes":["\"scripts\"","NEXT_","REVALIDATE_SECRET","CONTENT_STATUS_TOKEN"]}
+
+result: PASS
+
+
+GET /media/..%2F..%2Fpackage.json -> 404 (62226 bytes) text/html; charset=utf-8
+GET /media/..%2F..%2F.env -> 404 (62226 bytes) text/html; charset=utf-8
+GET /media/%2e%2e%2f%2e%2e%2f.env -> 404 (62226 bytes) text/html; charset=utf-8
+GET /media/..%2F..%2Fnext.config.ts -> 404 (62226 bytes) text/html; charset=utf-8

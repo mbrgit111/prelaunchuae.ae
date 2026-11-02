@@ -1,0 +1,9 @@
+R1-BRD-002: Phone header uses the compact logo at 320 px, at least 100 px wide and never stretched
+probe: {"kind":"ui","path":"/","viewport":"small","steps":[],"expect":[{"type":"attr","sel":"header img[alt=\"PrelaunchUAE\"]","prop":"width","value":"100","op":"gte"},{"type":"attr","sel":"header img[alt=\"PrelaunchUAE\"]","prop":"src","value":"compact","op":"contains"},{"type":"noOverflow"}],"shot":true}
+
+result: PASS
+
+
+attr header img[alt="PrelaunchUAE"][width]: 150
+attr header img[alt="PrelaunchUAE"][src]: /brand/prelaunchuae-compact.svg
+overflow: scrollWidth 320 vs clientWidth 320

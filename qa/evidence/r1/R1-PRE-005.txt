@@ -1,0 +1,9 @@
+R1-PRE-005: Index status values are only new-launch and coming-soon, and coming-soon appears
+probe: {"kind":"data","expr":"index.every(x => x.st === 'new-launch' || x.st === 'coming-soon') && index.some(x => x.st === 'coming-soon')"}
+
+result: PASS
+
+
+expr: index.every(x => x.st === 'new-launch' || x.st === 'coming-soon') && index.some(x => x.st === 'coming-soon')
+result: true
+projects=125 index=125 sitemap=0

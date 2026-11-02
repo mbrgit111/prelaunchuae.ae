@@ -1,0 +1,7 @@
+R1-EXP-025: Sort menu offers the five sort options
+probe: {"kind":"ui","path":"/projects","viewport":"desktop","steps":[],"expect":[{"type":"count","sel":"[name=\"sort\"] option","value":"5","op":"eq"}],"shot":true}
+
+result: FAIL
+- count of [name="sort"] option is 0, wanted eq 5
+
+count [name="sort"] option: 0

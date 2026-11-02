@@ -1,0 +1,8 @@
+R1-NAV-018: Phone bottom bar offers the Register link on a project list page
+probe: {"kind":"ui","path":"/projects","viewport":"mobile","expect":[{"type":"visible","sel":"a[href='#register']"},{"type":"noOverflow"}],"shot":true}
+
+result: FAIL
+- a[href='#register'] not visible
+
+visible a[href='#register']: false
+overflow: scrollWidth 375 vs clientWidth 375
