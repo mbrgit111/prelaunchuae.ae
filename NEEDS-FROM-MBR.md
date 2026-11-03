@@ -7,8 +7,7 @@ This site is a copy of the Net Capital engine (netcapital/) in the PrelaunchUAE 
 | # | Item | Status |
 |---|------|--------|
 | 1 | **Site key in the MBR desk.** Forms send enquiries tagged `prelaunchuae`, but the desk only knows the `netcapital` key and origins. Register a site `prelaunchuae` (origins `https://prelaunchuae.com`, `https://www.prelaunchuae.com`, `http://localhost:3000`), then set `LEAD_SITE_KEY` (and `CONTENT_SITE_KEY`) in Vercel. Until then the project list is pulled with Net Capital's read-only key and enquiries from this domain would be refused | open |
-| 2 | **Email.** `admin@prelaunchuae.com` follows the other MBR sites (admin@domain). Confirm the mailbox exists | confirm |
-| 3 | Phone +971 52 341 7272 and the WhatsApp bot number are copied from Net Capital. Confirm they are right for this brand | confirm |
+| 2 | **Contact channels.** DECIDED 3 Nov 2026: no phone, WhatsApp, email or office address anywhere on the site; the enquiry form is the only way to reach PrelaunchUAE. To bring one back, fill it in sites/prelaunchuae/contact.ts (every button and footer line reappears by itself). Note: the privacy policy draft names no email address for data requests; ask the legal adviser whether one is required | decided |
 | 4 | **Domain.** `prelaunchuae.com` is the main address (as on the brand deck); `www` redirects to it. Change `url` in `site.config.ts` if you prefer www | confirm |
 | 5 | **Takedowns.** Meriden Gate and Avior stay hidden (developer notice of 30 Oct 2026, `compliance.hiddenSlugs`), even though "show everything" was asked. Remove them from that list only if MBR says so | decided |
 | 6 | **Pictures.** Renders and logos come from the REM portal. Confirm MBR may publish them on prelaunchuae.com | open |

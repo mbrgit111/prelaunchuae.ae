@@ -43,6 +43,7 @@ export default function ContactPage() {
               {tel ? <a href={tel} className="btn btn-dark"><Icon name="phone" className="size-[18px]" />Call us</a> : null}
               {mail ? <a href={mail} className="btn btn-secondary"><Icon name="mail" className="size-[18px]" />Email us</a> : null}
             </div>
+            {!tel && !mail ? <p className="text-lg text-muted">The enquiry form is the way to reach us. An advisor replies to the details you enter.</p> : null}
             <p className="mt-8 text-sm text-muted">{config.name} is operated by {config.operatedBy}.</p>
             <LicenceList className="mt-4 text-sm" withOffice={false} />
           </div>

@@ -79,7 +79,7 @@ export function marketFaqs(f: FaqFacts): FaqItem[] {
     },
     {
       q: 'How do I register my interest?',
-      a: 'Use any “Register interest” form on this site, or call or email us. An advisor replies with current availability, floor plans and payment plans.',
+      a: 'Use any “Register interest” form on this site. An advisor replies with current availability, floor plans and payment plans.',
     },
   );
   return items;

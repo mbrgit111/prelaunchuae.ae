@@ -59,7 +59,7 @@ export const home = {
   },
   steps: {
     label: 'How it works',
-    title: 'From first call to keys',
+    title: 'From first enquiry to keys',
     items: [
       { title: 'Consultation', body: 'Tell us your budget, timing and the kind of home you need. We shortlist the launches across the UAE that fit.' },
       { title: 'Comparison', body: 'Floor plans, payment plans and handover dates side by side, with the figures confirmed by the developer.' },

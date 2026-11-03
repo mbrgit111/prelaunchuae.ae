@@ -9,9 +9,9 @@ export interface ContactField {
 }
 
 export const contactFields: ContactField[] = [
-  { key: 'phone.display', label: 'Phone number (as shown)', required: true, value: (c) => c.phone.display },
-  { key: 'phone.e164', label: 'Phone number (dialling format, e.g. +971523417272)', required: true, value: (c) => c.phone.e164 },
-  { key: 'email', label: 'Email address', required: true, value: (c) => c.email },
+  { key: 'phone.display', label: 'Phone number (as shown)', required: false, value: (c) => c.phone.display },
+  { key: 'phone.e164', label: 'Phone number (dialling format, e.g. +971523417272)', required: false, value: (c) => c.phone.e164 },
+  { key: 'email', label: 'Email address', required: false, value: (c) => c.email },
 ];
 
 export const isFilled = (v: unknown) => v !== null && v !== undefined && v !== '' && v !== 0;

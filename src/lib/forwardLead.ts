@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { config } from '@/site';
 import { apiSettings } from '@/lib/content/settings';
 
-const FAIL = 'We could not send your details. Please try again or call us.';
+const FAIL = 'We could not send your details. Please try again in a moment.';
 
 /**
  * Same-origin forwarder: the browser posts to this site, the server passes the enquiry to the MBR lead desk with the

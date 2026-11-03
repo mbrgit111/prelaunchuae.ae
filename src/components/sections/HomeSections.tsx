@@ -154,7 +154,7 @@ export function AlertsBand() {
           <h2 id="h-alerts" className="text-h2">Hear about launches before they fill up</h2>
           <p className="text-lede text-ink/80">{h.formIntro}</p>
           <ul className="grid gap-2 text-[15px]">
-            {['Launch prices and payment plans as released', 'Floor plans and the developer’s brochure', 'No spam: one advisor, by phone or email'].map((x) => (
+            {['Launch prices and payment plans as released', 'Floor plans and the developer’s brochure', 'No spam: one advisor replies to your enquiry'].map((x) => (
               <li key={x} className="flex items-center gap-3"><Icon name="check" className="size-5 shrink-0 text-survey-deep" />{x}</li>
             ))}
           </ul>

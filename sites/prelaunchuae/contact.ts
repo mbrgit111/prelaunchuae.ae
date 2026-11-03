@@ -1,17 +1,12 @@
 import type { ContactConfig } from '../types.ts';
 
 /**
- * THE ONE FILE for the contact details of PrelaunchUAE: phone number and email, nothing else.
- * Header, footer, call and email buttons, schema markup, the contact page and the legal pages all read from here.
- * `npm run check:placeholders` lists anything still missing, and the live (production) build stops while a value is empty.
+ * Contact details of PrelaunchUAE. DECIDED 3 Nov 2026 (MBR): no phone number, no WhatsApp, no email and no office address are
+ * published. The only way to reach PrelaunchUAE is the enquiry form. Every button, footer line, schema field and legal line that
+ * reads these values hides itself while they are null, so adding a value here would bring that channel back everywhere.
  */
 export const contact: ContactConfig = {
-  phone: {
-    display: '+971 52 341 7272',
-    e164: '+971523417272',
-  },
-  // Follows the other MBR sites (admin@<domain>). The mailbox must exist on prelaunchuae.com: confirm with MBR (NEEDS-FROM-MBR.md).
-  email: 'admin@prelaunchuae.com',
-  // Bot number for website WhatsApp chats (call/phone stays separate).
-  whatsapp: { e164: '+971554308772' },
+  phone: { display: null, e164: null },
+  email: null,
+  whatsapp: { e164: null },
 };

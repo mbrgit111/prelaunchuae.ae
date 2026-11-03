@@ -44,7 +44,7 @@ export const pages = {
   contact: {
     h1: 'Contact PrelaunchUAE',
     metaTitle: 'Contact Us',
-    lede: 'Call, email or send an enquiry. An advisor replies with current availability, floor plans and payment plans.',
+    lede: 'Send an enquiry with the form. An advisor replies with current availability, floor plans and payment plans.',
   },
   faq: { h1: 'New launches in the UAE: questions', metaTitle: 'UAE New Launch Property FAQ' },
 } as const;
