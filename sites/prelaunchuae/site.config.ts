@@ -25,8 +25,10 @@ export const config: SiteConfig = {
     },
   },
   scope: 'all',
-  // A short list (about 110 projects): read once before each build; the running site reads the saved files.
-  catalogue: { runtime: 'files' },
+  // The running site asks the MBR desk for the list (and holds it, checking its version on each new page), so the daily
+  // REM update (9:00) shows without a Vercel build. The desk then calls /api/revalidate to refresh cached pages at once.
+  // Only New launch and Coming soon are kept: src/data/slim.ts cuts the API list the same way as the build does.
+  catalogue: { runtime: 'api' },
   tagline: 'UAE · New launches',
   description:
     'See pre-launch and new-launch projects across Dubai and the UAE before the market does: area, developer, unit types, payment plan and handover date, then register your interest with PrelaunchUAE.',

@@ -164,9 +164,9 @@ describe('where the running site reads the project list', () => {
   });
   const downloads = (fetchMock: ReturnType<typeof vi.fn>) => fetchMock.mock.calls.filter(([url]) => String(url).includes('/v1/public/catalogue?'));
 
-  it('PrelaunchUAE reads its saved project files while it runs (a short list, refreshed with each build)', async () => {
+  it('PrelaunchUAE reads the API while it runs, so the daily update shows without a build', async () => {
     const { config } = await import('../sites/prelaunchuae/site.config');
-    expect(config.catalogue.runtime).toBe('files');
+    expect(config.catalogue.runtime).toBe('api');
   });
 
   it('with catalogue.runtime "api", the whole list from the API is cut the same way, and downloaded again only for a new version', async () => {
