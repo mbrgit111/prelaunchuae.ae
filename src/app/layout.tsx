@@ -56,7 +56,8 @@ export const metadata: Metadata = {
     images: [{ url: config.ogImage.src, width: config.ogImage.width, height: config.ogImage.height, alt: config.name }],
   },
   twitter: { card: 'summary_large_image', images: [config.ogImage.src] },
-  // Google Search Console: add PrelaunchUAE's own token here once the property is created.
+  // Google Search Console ownership check (renders the google-site-verification meta tag in the head).
+  verification: { google: 'BvgnkqySfhA1nLQia07pcm_5F-4LY1wp3jtoat-YA2k' },
 };
 
 export const viewport: Viewport = {
