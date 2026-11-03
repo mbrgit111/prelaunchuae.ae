@@ -82,7 +82,7 @@ export function ProjectCard({ p, index = 0, headingLevel = 'h3', defer = true, s
             <span className="text-xs text-muted">{price.label}</span>
             <strong className={`text-figure font-medium ${price.value.length > 14 ? 'text-lg' : 'text-[26px] leading-tight'}`}>{price.value}</strong>
           </p>
-          <span aria-hidden="true" className="link-accent whitespace-nowrap text-sm">
+          <span aria-hidden="true" className="btn btn-primary btn-sm whitespace-nowrap group-hover:bg-survey-hover">
             View <Icon name="arrow-right" className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
           </span>
         </div>

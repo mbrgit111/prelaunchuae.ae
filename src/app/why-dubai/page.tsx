@@ -34,9 +34,9 @@ export default async function WhyDubaiPage() {
           {plans.common[0] ? ` The most common split is ${plans.common[0].split}.` : ''}
         </p>
         <p className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-          <Link href="/projects" className="link-accent">Compare the projects <Icon name="arrow-right" className="size-4" /></Link>
-          <Link href="/areas" className="link-accent">Browse by area <Icon name="arrow-right" className="size-4" /></Link>
-          <Link href="/golden-visa" className="link-accent">Golden Visa guide <Icon name="arrow-right" className="size-4" /></Link>
+          <Link href="/projects" className="btn btn-secondary btn-sm">Compare the projects <Icon name="arrow-right" className="size-4" /></Link>
+          <Link href="/areas" className="btn btn-secondary btn-sm">Browse by area <Icon name="arrow-right" className="size-4" /></Link>
+          <Link href="/golden-visa" className="btn btn-secondary btn-sm">Golden Visa guide <Icon name="arrow-right" className="size-4" /></Link>
         </p>
       </Section>
       <InvestmentAngle />

@@ -75,7 +75,7 @@ export async function TypePage({ type, bedrooms }: { type: keyof typeof TYPES; b
         tone="sand"
         label={`${ps.length} projects`}
         title={`Compare ${label.toLowerCase()}`}
-        action={ps.length > SHOWN ? <Link href={filterHref} className="link-accent">Filter all {ps.length} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
+        action={ps.length > SHOWN ? <Link href={filterHref} className="btn btn-secondary btn-sm">Filter all {ps.length} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
       >
         <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {ps.slice(0, SHOWN).map((p, i) => <li key={p.slug} className="contents"><ProjectCard p={p} index={i} /></li>)}

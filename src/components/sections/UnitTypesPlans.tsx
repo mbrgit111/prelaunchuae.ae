@@ -42,7 +42,7 @@ export async function UnitTypesPlans() {
               );
             })}
           </ul>
-          <Link href={`/projects?beds=${t.key}`} className="link-accent">See all {t.label.toLowerCase()}</Link>
+          <Link href={`/projects?beds=${t.key}`} className="btn btn-secondary btn-sm">See all {t.label.toLowerCase()}</Link>
         </div>
         {withPlans.length ? (
           <div className="overflow-x-auto rounded-brand border border-line bg-white">

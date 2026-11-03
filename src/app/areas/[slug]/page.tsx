@@ -91,7 +91,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         tone="sand"
         label={`${ps.length} launch${ps.length === 1 ? '' : 'es'}`}
         title={`Launches in ${a.name}`}
-        action={ps.length > SHOWN ? <Link href={`/projects?area=${a.slug}`} className="link-accent">All {ps.length} in {a.name} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
+        action={ps.length > SHOWN ? <Link href={`/projects?area=${a.slug}`} className="btn btn-secondary btn-sm">All {ps.length} in {a.name} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
       >
         <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {ps.slice(0, SHOWN).map((p, i) => <li key={p.slug} className="contents"><ProjectCard p={p} index={i} showArea={false} /></li>)}

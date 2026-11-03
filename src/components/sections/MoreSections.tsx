@@ -139,7 +139,7 @@ export async function FaqSection() {
   const f = copy.home.faq;
   const items = (await marketFaqsFor()).slice(0, 10);
   return (
-    <Section id="faq" tone="sand" label={f.label} title={f.title} action={<Link href="/faq" className="link-accent">{f.action} <Icon name="arrow-right" className="size-4" /></Link>}>
+    <Section id="faq" tone="sand" label={f.label} title={f.title} action={<Link href="/faq" className="btn btn-secondary btn-sm">{f.action} <Icon name="arrow-right" className="size-4" /></Link>}>
       <div className="max-w-4xl"><Faq items={items} /></div>
     </Section>
   );

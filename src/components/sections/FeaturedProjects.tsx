@@ -17,7 +17,7 @@ export async function FeaturedProjects() {
       label={f.label}
       title={f.title}
       intro={`Six to start with, one per developer. Then compare all ${(await getProjects()).length.toLocaleString('en-US')} launches.`}
-      action={<Link href="/projects" className="link-accent">{f.action} <Icon name="arrow-right" className="size-4" /></Link>}
+      action={<Link href="/projects" className="btn btn-secondary btn-sm">{f.action} <Icon name="arrow-right" className="size-4" /></Link>}
     >
       <ul className="swipe-row grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {list.map((p, i) => <li key={p.slug} className="contents"><ProjectCard p={p} index={i} defer /></li>)}

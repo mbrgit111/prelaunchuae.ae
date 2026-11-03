@@ -57,7 +57,7 @@ export default async function DeveloperPage({ params }: { params: Promise<{ slug
         tone="sand"
         label={`${projects.length} project${projects.length === 1 ? '' : 's'}${areas.length > 1 ? ` · ${areas.length} areas` : ''}`}
         title={`${d.name} projects`}
-        action={projects.length > SHOWN ? <Link href={`/projects?developer=${d.slug}`} className="link-accent">Filter all {projects.length} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
+        action={projects.length > SHOWN ? <Link href={`/projects?developer=${d.slug}`} className="btn btn-secondary btn-sm">Filter all {projects.length} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
       >
         {areas.length > 1 ? (
           <ul className="mb-8 flex flex-wrap gap-2">

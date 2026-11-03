@@ -19,7 +19,7 @@ async function safely(load: () => Promise<PostCard[]>): Promise<PostCard[]> {
 function Block({ cards, id, label, title, action = 'All articles', tone = 'white' }: Props & { cards: PostCard[] }) {
   if (cards.length === 0) return null;
   return (
-    <Section id={id} tone={tone} label={label} title={title} action={<Link href="/blog" className="link-accent">{action} <Icon name="arrow-right" className="size-4" /></Link>}>
+    <Section id={id} tone={tone} label={label} title={title} action={<Link href="/blog" className="btn btn-secondary btn-sm">{action} <Icon name="arrow-right" className="size-4" /></Link>}>
       <ArticleGrid cards={cards} headingLevel="h3" />
     </Section>
   );

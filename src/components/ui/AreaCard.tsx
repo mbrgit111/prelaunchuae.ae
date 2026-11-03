@@ -36,7 +36,7 @@ export function AreaCard({ area, index = 0, headingLevel = 'h3', defer = true }:
             <span className="text-xs text-muted">From</span>
             <strong className="font-semibold tabular-nums">{area.priceFrom ? aed(area.priceFrom) : 'On request'}</strong>
           </span>
-          <span aria-hidden="true" className="link-accent text-sm">View area <Icon name="arrow-right" className="size-4 transition-transform group-hover:translate-x-1" /></span>
+          <span aria-hidden="true" className="btn btn-primary btn-sm group-hover:bg-survey-hover">View area <Icon name="arrow-right" className="size-4 transition-transform group-hover:translate-x-1" /></span>
         </p>
       </div>
     </article>

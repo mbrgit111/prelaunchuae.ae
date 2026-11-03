@@ -264,8 +264,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <a href="#register" className="btn btn-primary w-full">{config.ctaLabel}</a>
               <a href="#brochure" className="btn btn-secondary w-full"><Icon name="file" className="size-[18px]" />Request the brochure</a>
               {tel ? <a href={tel} className="btn btn-dark w-full"><Icon name="phone" className="size-[18px]" />Call {contact.phone.display}</a> : null}
-              {dev ? <Link href={`/developers/${dev.slug}`} className="link-accent justify-self-start text-sm">More from {dev.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
-              {area && area.projects.length > 1 ? <Link href={`/areas/${area.slug}`} className="link-accent -mt-2 justify-self-start text-sm">More in {area.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
+              {dev ? <Link href={`/developers/${dev.slug}`} className="btn btn-secondary btn-sm justify-self-stretch">More from {dev.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
+              {area && area.projects.length > 1 ? <Link href={`/areas/${area.slug}`} className="btn btn-secondary btn-sm justify-self-stretch">More in {area.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
             </div>
             <PermitBox slug={p.slug} developerName={p.developerName} />
           </aside>

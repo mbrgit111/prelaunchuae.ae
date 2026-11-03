@@ -19,7 +19,7 @@ export async function DevelopersSection() {
   const rest = all.filter((x) => x.slug !== featured.slug).slice(0, 6);
   const logos = all.filter((x) => x.logo).slice(0, 24);
   return (
-    <Section id="developers" tone="sand" contain={false} label={d.label} title={d.title} action={<Link href="/developers" className="link-accent">{d.action} <Icon name="arrow-right" className="size-4" /></Link>}>
+    <Section id="developers" tone="sand" contain={false} label={d.label} title={d.title} action={<Link href="/developers" className="btn btn-secondary btn-sm">{d.action} <Icon name="arrow-right" className="size-4" /></Link>}>
       <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
         <Link href={`/developers/${featured.slug}`} data-reveal className="card card-lift group grid overflow-hidden md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-t-[inherit] bg-line md:rounded-l-[inherit] md:rounded-tr-none lg:rounded-t-[inherit] lg:rounded-bl-none xl:rounded-l-[inherit] xl:rounded-tr-none">
@@ -32,7 +32,7 @@ export async function DevelopersSection() {
             <p className="text-[15px] text-muted">
               {featuredProjects.length} project{featuredProjects.length === 1 ? '' : 's'} listed across {areasOf(featured.projectSlugs)} area{areasOf(featured.projectSlugs) === 1 ? '' : 's'}, including {featuredProjects.slice(0, 3).map((p) => p.name).join(', ')}.
             </p>
-            <span className="link-accent">View {featured.name} projects <Icon name="arrow-right" className="size-4 transition-transform group-hover:translate-x-1" /></span>
+            <span aria-hidden="true" className="btn btn-primary btn-sm justify-self-start">View {featured.name} projects <Icon name="arrow-right" className="size-4 transition-transform group-hover:translate-x-1" /></span>
           </div>
         </Link>
         <ul className="grid gap-4 sm:grid-cols-2">

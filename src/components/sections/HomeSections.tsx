@@ -48,7 +48,7 @@ export async function AreasSection() {
   const a = copy.home.areas;
   const areas = await getAreas();
   return (
-    <Section id="areas" tone="white" label={a.label} title={a.title} intro={a.intro} action={<Link href="/areas" className="link-accent">{a.action} ({areas.length}) <Icon name="arrow-right" className="size-4" /></Link>}>
+    <Section id="areas" tone="white" label={a.label} title={a.title} intro={a.intro} action={<Link href="/areas" className="btn btn-secondary btn-sm">{a.action} ({areas.length}) <Icon name="arrow-right" className="size-4" /></Link>}>
       <ul className="swipe-row grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {areas.slice(0, 6).map((x, i) => <li key={x.slug} className="contents"><AreaCard area={x} index={i} /></li>)}
       </ul>
@@ -106,7 +106,7 @@ export function WhyDubai({ linkToPage = true }: { linkToPage?: boolean }) {
       label={w.label}
       title={w.title}
       intro={w.intro}
-      action={linkToPage ? <Link href="/why-dubai" className="link-accent">Why Dubai <Icon name="arrow-right" className="size-4" /></Link> : undefined}
+      action={linkToPage ? <Link href="/why-dubai" className="btn btn-secondary btn-sm">Why Dubai <Icon name="arrow-right" className="size-4" /></Link> : undefined}
     >
       <ul className="grid gap-px overflow-hidden rounded-brand-lg border border-sage/25 bg-sage/25 sm:grid-cols-2 lg:grid-cols-3">
         {w.cards.map((c, i) => (
