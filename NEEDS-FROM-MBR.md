@@ -16,6 +16,9 @@ This site is a copy of the Net Capital engine (netcapital/) in the PrelaunchUAE 
 | 9 | **Google Search Console** property for prelaunchuae.com (send the HTML-tag code) | open |
 | 10 | **Duplicate content.** offplan.ae, netcapital.ae and prelaunch.ae carry the same REM projects. Decide whether this domain should be indexed (see prelaunch.ae's `NEXT_PUBLIC_INDEX_REM_PAGES` approach) | open |
 
+## 1b. Adding your own properties (3 Nov 2026)
+In the desk: Projects, choose the site `prelaunchuae`, **New project**. A project added there belongs to this site only, survives every REM update, and is shown whatever its status (the pre-launch rule applies to the REM list only). Pictures: use **Choose or upload a picture** (needs the desk change in mbr-lead-crm branch project-picture-picker). It appears on the site after the next desk save + refresh (the site refreshes after the 9am update, or at most daily). Needs the site registered in the desk first (item 1).
+
 ## 2. What "prelaunch" means here (decided 2 Nov 2026)
 Only REM projects with status **New launch** (`launch`) or **Coming soon** (`pending`). Left out: everything already on general sale
 (`available`, "ready to buy") and everything `sold_out`. Today: 125 projects (2,359 on REM), 67 areas, 94 developers, 5 emirates.

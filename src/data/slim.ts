@@ -12,7 +12,8 @@
  *
  * What the cut does:
  * - keeps only REM's pre-launch projects: status 'launch' (New launch) or 'pending' (Coming soon). Projects already on
- *   general sale ('available', the ones ready to buy) and sold out ones are left out (MBR, 2 Nov 2026);
+ *   general sale ('available', the ones ready to buy) and sold out ones are left out (MBR, 2 Nov 2026). Projects MBR
+ *   added by hand in the desk are always kept (isOwnProject);
  * - leaves out projects marked private on the portal;
  * - blanks the description: it is the developer's marketing copy (it promises returns), and PrelaunchUAE writes its own;
  * - keeps the cover, 4 gallery pictures and 4 floor plans for a project still selling, and the cover only for one that
@@ -28,7 +29,13 @@ import { RawListItem, RawProject } from './schema.ts';
  * buy) and 'sold_out' are not pre-launch and never reach this site.
  */
 export const PRELAUNCH_STATUSES: readonly string[] = ['launch', 'pending'];
-export const isPrelaunch = (p: { status?: unknown }): boolean => PRELAUNCH_STATUSES.includes(String(p.status));
+/**
+ * A project MBR added by hand in the desk's Projects page (its id is made as `project-<uuid>`), as opposed to one that came
+ * from REM. These are shown whatever their status: the pre-launch rule is about the REM list, and a project added on purpose
+ * must never vanish because of its status.
+ */
+export const isOwnProject = (p: { id?: unknown }): boolean => String(p.id ?? '').startsWith('project-');
+export const isPrelaunch = (p: { status?: unknown; id?: unknown }): boolean => PRELAUNCH_STATUSES.includes(String(p.status)) || isOwnProject(p);
 
 export const MAX_GALLERY = 4;
 export const MAX_PLANS = 4;

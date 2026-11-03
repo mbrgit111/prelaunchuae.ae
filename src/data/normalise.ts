@@ -129,9 +129,13 @@ export function normalise(input: NormaliseInput): SiteData {
   const gone = new Set(Array.isArray(input.unavailable) ? input.unavailable.filter((u): u is string => typeof u === 'string') : []);
   const goneProjects = new Set<string>();
   let current = '';
+  let ownProject = false;
   const media = (url: string | null | undefined, alt: string): MediaImage | null => {
     if (!url) return null;
     const m = manifest[url];
+    // A project MBR added by hand: its pictures come from the desk's picture library (or any https address MBR typed), not
+    // from REM, so nobody has downloaded or measured them. They are used as they are, in a 3:2 frame.
+    if (!m && ownProject && /^https:\/\//.test(url)) return { src: url, width: 1280, height: 853, alt };
     if (!m) {
       // Deleted or replaced at the portal since the export: nothing to download, so it is simply left out.
       if (gone.has(url)) goneProjects.add(current);
@@ -153,6 +157,7 @@ export function normalise(input: NormaliseInput): SiteData {
     const l = listById.get(r.id)!;
     const name = r.title.trim();
     current = name;
+    ownProject = r.id.startsWith('project-');
     const area = tidyArea(r.districtName, input.renameAreas);
     const developerName = r.developer.name.trim();
     let slug = slugify(r.slug) || slugify(name);

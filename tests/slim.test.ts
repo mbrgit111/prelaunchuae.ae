@@ -87,6 +87,16 @@ describe("PrelaunchUAE's cut of the project list", () => {
     expect(cut.leftOut['sold out (not pre-launch)']).toEqual(['Sold one']);
   });
 
+  it('keeps a project MBR added by hand in the desk whatever its status, and shows its pictures as they are', () => {
+    const own = whole('project-5f1c', { status: 'available', title: 'Our own villa', slug: 'our-own-villa', images: { featured: 'https://media.example.com/mine/cover.jpg', exterior: ['https://media.example.com/mine/two.jpg'], interior: [], lobby: [], architecture: [], amenities: [], general: [], other: [] } });
+    const cut = slimCatalogue([own, whole('x', { status: 'available', title: 'REM on sale' })]);
+    expect(cut.projects.map((p) => p.id)).toEqual(['project-5f1c']);
+    const base = { scope: 'all' as const, communityName: 'UAE', manifest: {}, unavailable: [] };
+    const shown = loadSiteData({ ...base, detail: { fetchedAt: '2026-11-03T00:00:00.000Z', source: 'test', count: 1, projects: cut.projects }, list: cut.list }).projects[0]!;
+    expect(shown.cover?.src).toBe('https://media.example.com/mine/cover.jpg');
+    expect(shown.gallery.length).toBe(1);
+  });
+
   it('leaves out private projects and ones the site checks would reject, names them, and keeps the rest', () => {
     const cut = slimCatalogue([
       whole('a'),
