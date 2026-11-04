@@ -9,7 +9,10 @@ const tones: Record<Tone, string> = {
 
 export const slugId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-/** One page band: tone, label + H2 heading block, optional action on the right, then content. */
+/**
+ * One page band: tone, label + H2 heading block, then content, then the optional action
+ * under the content (centred): the reader has seen the list when they reach it.
+ */
 export function Section({ id, tone = 'white', label, title, intro, action, children, className = '', headingLevel = 'h2', contain = true }: {
   id?: string;
   tone?: Tone;
@@ -36,10 +39,10 @@ export function Section({ id, tone = 'white', label, title, intro, action, child
               <Heading id={headingId} className={headingLevel === 'h1' ? 'text-display' : 'text-h2'}>{title}</Heading>
               {intro ? <p className={`text-lede mt-4 ${dark ? 'text-muted-on-deep' : 'text-muted'}`}>{intro}</p> : null}
             </div>
-            {action}
           </div>
         ) : null}
         {children}
+        {title && action ? <div className="section-more">{action}</div> : null}
       </div>
     </section>
   );

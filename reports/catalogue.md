@@ -1,21 +1,21 @@
 # Project catalogue
 
-Made by `npm run pull:catalogue` from the MBR desk's project list, last checked against REM on 2026-11-02.
+Made by `npm run pull:catalogue` from the MBR desk's project list, last checked against REM on 2026-11-03.
 
-Kept: **125** projects in **67** areas from **94** developers.
+Kept: **127** projects in **70** areas from **97** developers.
 
 | Emirate | New launch | Coming soon | All |
 |---|---|---|---|
-| Dubai | 93 | 6 | 99 |
-| Abu Dhabi | 14 | 0 | 14 |
+| Dubai | 94 | 6 | 100 |
+| Abu Dhabi | 15 | 0 | 15 |
 | Ras Al Khaimah | 9 | 0 | 9 |
 | Ajman | 2 | 0 | 2 |
 | Sharjah | 1 | 0 | 1 |
 
 ## Left out
 
-- on general sale (not pre-launch): 1254
-- sold out (not pre-launch): 1037
+- on general sale (not pre-launch): 1255
+- sold out (not pre-launch): 1038
 
 ## Areas
 
@@ -44,7 +44,6 @@ Kept: **125** projects in **67** areas from **94** developers.
 | Yas Island | 2 |
 | Dubai Internet City | 2 |
 | Dubai Production City | 2 |
-| Downtown Jebel Ali | 2 |
 | Port De La Mer | 2 |
 | Al Saadiyat island | 2 |
 | Al Maryah Island | 1 |
@@ -68,11 +67,14 @@ Kept: **125** projects in **67** areas from **94** developers.
 | Al Maireed | 1 |
 | Khalifa Industrial District | 1 |
 | Nad Al Sheba Gardens | 1 |
+| Downtown Jebel Ali | 1 |
 | Ras Al Khor | 1 |
 | Palm Jumeirah | 1 |
+| Hessyan First | 1 |
 | Al Amerah | 1 |
 | MBR District 1 | 1 |
 | al satwa | 1 |
+| Al Reem Island | 1 |
 | Emirates Living | 1 |
 | World of Islands | 1 |
 | Jumeirah Second | 1 |
@@ -85,6 +87,7 @@ Kept: **125** projects in **67** areas from **94** developers.
 | Arjan | 1 |
 | Dubai Design District | 1 |
 | Dubai Creek | 1 |
+| The Valley | 1 |
 | Al Hamriya (hamriya west) | 1 |
 | Dubai Industrial City | 1 |
 | Al Bahyah | 1 |

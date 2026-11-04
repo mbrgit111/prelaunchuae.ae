@@ -412,10 +412,19 @@
     -webkit-overflow-scrolling: touch;
   }
   .swipe-row::-webkit-scrollbar { display: none; }
+  .swipe-row + .section-more { margin-top: 14px; }
   .swipe-row > li { display: block; flex: 0 0 84%; max-width: 340px; min-width: 0; scroll-snap-align: start; }
   .swipe-row-sm { margin-inline: 0; padding-inline: 0; scroll-padding-inline: 0; }
   .swipe-row-sm > li { flex-basis: 40%; max-width: 170px; }
 }
+
+/* A band's "see all" link under the cards. */
+.section-more { display: flex; justify-content: center; margin-top: 2.5rem; }
+.section-more > a {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 30px;
+  white-space: nowrap;
+}
+@media (max-width: 639px) { .section-more > a { width: 100%; } }
 @media (min-width: 640px) and (max-width: 767px) {
   .swipe-row { margin-inline: -24px; padding-inline: 24px; scroll-padding-inline: 24px; }
   .swipe-row > li { flex-basis: 46%; }

@@ -1,13 +1,13 @@
 # Data notes
 
-Made by the data check from the portal export of 2026-11-02. **None of these stops the site or needs fixing in the code.**
+Made by the data check from the portal export of 2026-11-03. **None of these stops the site or needs fixing in the code.**
 They record how odd entries in the portal were handled, so MBR can correct them in the portal if it wants to.
 
 ## Needs attention (0)
 
 Nothing.
 
-## No price published (shown as "On request") (40)
+## No price published (shown as "On request") (41)
 
 - 06 Life Residences: no price in the data, shown as "On request"
 - AL GHURAIR NEW LAUNCH: no price in the data, shown as "On request"
@@ -35,6 +35,7 @@ Nothing.
 - Osoul Upcoming Launch: no price in the data, shown as "On request"
 - Osoul Upcoming Launch 1: no price in the data, shown as "On request"
 - Palm 01 By Binghatti: no price in the data, shown as "On request"
+- Palm Springs: no price in the data, shown as "On request"
 - Prime Rose 1: no price in the data, shown as "On request"
 - QUBE NEW LAUNCH: no price in the data, shown as "On request"
 - RABDAN DEVELOPMENTS NEW LAUNCH: no price in the data, shown as "On request"
@@ -50,7 +51,7 @@ Nothing.
 - Vienna House Residences by Wyndham: no price in the data, shown as "On request"
 - Vista Verde: no price in the data, shown as "On request"
 
-## Announced without dates or units (shown as "Coming soon") (15)
+## Announced without dates or units (shown as "Coming soon") (16)
 
 - AL GHURAIR NEW LAUNCH: announced without dates or units, shown as "Coming soon"
 - ALAIN NEW LAUNCH: announced without dates or units, shown as "Coming soon"
@@ -63,6 +64,7 @@ Nothing.
 - Nad Al Sheba Gardens Phase 12: announced without dates or units, shown as "Coming soon"
 - Osoul Upcoming Launch: announced without dates or units, shown as "Coming soon"
 - Osoul Upcoming Launch 1: announced without dates or units, shown as "Coming soon"
+- Palm Springs: announced without dates or units, shown as "Coming soon"
 - QUBE NEW LAUNCH: announced without dates or units, shown as "Coming soon"
 - Rove Home The Greens: announced without dates or units, shown as "Coming soon"
 - TABEER NEW LAUNCH: announced without dates or units, shown as "Coming soon"
