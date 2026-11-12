@@ -14,6 +14,7 @@ import { EnquiryForm } from '@/components/forms/EnquiryForm';
 import { PaymentPlans } from '@/components/project/PaymentPlans';
 import { ProjectPosts } from '@/components/content/LatestPosts';
 import { RegisterBand } from '@/components/sections/MoreSections';
+import { ArticleBody } from '@/components/ui/ArticleBody';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { DeferredImage } from '@/components/ui/DeferredImage';
 import { Disclaimer } from '@/components/ui/Disclaimer';
@@ -37,11 +38,16 @@ export const generateStaticParams = async () => (await featuredProjects()).slice
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const p = await getProject((await params).slug);
   if (!p) return {};
+  const editorial = copy.projectEditorial(p.slug);
+  const displayName = editorial?.displayName ?? p.name;
+  const titleBits = editorial?.seo
+    ? { title: editorial.seo.title, absoluteTitle: editorial.seo.absoluteTitle }
+    : fitTitle([`${p.name} by ${p.developerName}, ${p.communityName}`, `${p.name} by ${p.developerName}`, `${p.name}, ${p.communityName}`, p.name]);
   return pageMetadata({
-    ...fitTitle([`${p.name} by ${p.developerName}, ${p.communityName}`, `${p.name} by ${p.developerName}`, `${p.name}, ${p.communityName}`, p.name]),
-    description: clip(copy.projectDescription(p)),
+    ...titleBits,
+    description: editorial?.seo?.description ?? clip(copy.projectDescription(p)),
     path: `/projects/${p.slug}`,
-    image: { url: `/projects/${p.slug}/opengraph-image`, width: 1200, height: 630, alt: `${p.name}, ${p.communityName}` },
+    image: { url: `/projects/${p.slug}/opengraph-image`, width: 1200, height: 630, alt: `${displayName}, ${p.communityName}` },
   });
 }
 
@@ -77,11 +83,13 @@ function priceRange(u: Project['units'][number]) {
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const p = await getProject((await params).slug);
   if (!p) notFound();
+  const editorial = copy.projectEditorial(p.slug);
+  const displayName = editorial?.displayName ?? p.name;
   const dev = await getDeveloper(p.developerSlug);
   const area = await getArea(areaOf(p));
   const price = priceText(p);
-  const intro = copy.projectIntro(p);
-  const faqs = copy.projectFaqs(p);
+  const intro = editorial?.intro ?? copy.projectIntro(p);
+  const faqs = editorial?.faqs ?? copy.projectFaqs(p);
   const related = await relatedProjects(p);
   const tel = telHref();
   const gallery: GalleryItem[] = [
@@ -94,7 +102,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      <JsonLd data={residenceSchema({ area: p.communityName, emirate: p.emirate, name: p.name, slug: p.slug, description: copy.projectDescription(p), image: p.cover?.src ?? null, lat: p.location.lat, lng: p.location.lng, developer: p.developerName, types: p.propertyTypes, priceFrom: p.priceFrom, status: p.status })} />
+      <JsonLd data={residenceSchema({ area: p.communityName, emirate: p.emirate, name: displayName, slug: p.slug, description: editorial?.seo?.description ?? copy.projectDescription(p), image: p.cover?.src ?? null, lat: p.location.lat, lng: p.location.lng, developer: p.developerName, types: p.propertyTypes, priceFrom: p.priceFrom, status: p.status })} />
 
       <section className="on-dark relative overflow-hidden bg-datum text-sand">
         <div aria-hidden="true" className="survey-grid pointer-events-none absolute inset-0 opacity-[0.1]" />
@@ -104,13 +112,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-datum/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-datum lg:via-datum/0" />
           </div>
           <div className="container-site grid content-center gap-5 py-10 lg:ml-auto lg:mr-0 lg:max-w-[640px] lg:py-16 lg:pr-12">
-            <Breadcrumbs tone="dark" items={[{ name: 'Home', path: '/' }, ...(area ? [{ name: area.name, path: `/areas/${area.slug}` }] : [{ name: 'Projects', path: '/projects' }]), { name: p.name, path: `/projects/${p.slug}` }]} />
+            <Breadcrumbs tone="dark" items={[{ name: 'Home', path: '/' }, ...(area ? [{ name: area.name, path: `/areas/${area.slug}` }] : [{ name: 'Projects', path: '/projects' }]), { name: displayName, path: `/projects/${p.slug}` }]} />
             <div className="flex flex-wrap gap-2">
               <span className={`tag ${statusTone[p.status]}`}>{statusLabel[p.status]}</span>
               <span className="tag border border-sage/40 text-sand/85">{p.completion === 'ready' ? 'Ready' : p.completion === 'upcoming' ? 'Upcoming' : 'Under construction'}</span>
               {p.hasPostHandover && p.status !== 'sold-out' ? <span className="tag border border-sage/40 text-sand/85">Post-handover plan</span> : null}
             </div>
-            <h1 className="text-display !text-[clamp(2.5rem,1.8rem+2.4vw,3.75rem)]">{p.name}</h1>
+            <h1 className="text-display !text-[clamp(2.5rem,1.8rem+2.4vw,3.75rem)]">{displayName}</h1>
             <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sand/85">
               <span>By <Link href={`/developers/${p.developerSlug}`} className="font-semibold text-sand underline-offset-4 hover:underline">{p.developerName}</Link></span>
               <span className="flex items-center gap-1.5"><Icon name="pin" className="size-4 text-plot" /><span>{area ? <Link href={`/areas/${area.slug}`} className="underline-offset-4 hover:underline">{p.communityName}</Link> : p.communityName}, {p.emirate}</span></span>
@@ -131,15 +139,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="container-site grid grid-cols-1 gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-16">
           <div className="grid min-w-0 grid-cols-1 gap-16 md:gap-20">
             <section aria-labelledby="h-overview">
-              <H2 id="h-overview" label="Overview">About {p.name}</H2>
+              <H2 id="h-overview" label="Overview">About {displayName}</H2>
               <div className="grid max-w-3xl gap-4 text-[17px]">
                 {intro.map((para, i) => <p key={i} className={i === 0 ? 'text-lede' : 'text-muted'}>{para}</p>)}
+                {editorial?.introNote ? <Disclaimer>{editorial.introNote}</Disclaimer> : null}
               </div>
             </section>
 
             {gallery.length > 1 ? (
               <section aria-labelledby="h-gallery">
-                <H2 id="h-gallery" label="Gallery">{p.name} in pictures</H2>
+                <H2 id="h-gallery" label="Gallery">{displayName} in pictures</H2>
                 <Gallery items={gallery} />
                 <p className="mt-3 text-xs text-muted">Developer renders. The finished property may differ.</p>
               </section>
@@ -189,6 +198,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   </table>
                 </div>
                 <Disclaimer className="mt-3">Prices are from developer information, subject to availability, and can change.</Disclaimer>
+              </section>
+            ) : null}
+
+            {editorial?.abovePaymentPlan.length ? (
+              <section aria-labelledby="h-editorial" className="grid max-w-3xl gap-4 text-[17px] text-muted [&_h2]:text-ink [&_h3]:text-ink">
+                <p className="text-label">Buyer guide</p>
+                <h2 id="h-editorial" className="sr-only">{displayName} buyer guide</h2>
+                <ArticleBody blocks={editorial.abovePaymentPlan} />
               </section>
             ) : null}
 
@@ -248,7 +265,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </section>
 
             <section aria-labelledby="h-faq">
-              <H2 id="h-faq" label="FAQ">Questions about {p.name}</H2>
+              <H2 id="h-faq" label="FAQ">Questions about {displayName}</H2>
               <Faq items={faqs} />
             </section>
 
