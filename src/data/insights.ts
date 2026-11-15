@@ -209,13 +209,6 @@ export async function handoverTimeline(projects?: Project[]) {
   };
 }
 
-export const BUDGETS = [
-  { key: 'under-1m', label: 'Under AED 1M', min: 0, max: 1_000_000 },
-  { key: '1m-2m', label: 'AED 1M to 2M', min: 1_000_000, max: 2_000_000 },
-  { key: '2m-3m', label: 'AED 2M to 3M', min: 2_000_000, max: 3_000_000 },
-  { key: '3m-plus', label: 'AED 3M and above', min: 3_000_000, max: Number.POSITIVE_INFINITY },
-] as const;
-
 export async function typeCounts(projects?: Project[]) {
   const ps = projects ?? (await getProjects());
   return (['apartment', 'townhouse', 'villa', 'commercial'] as const).map((t) => ({ type: t, count: ps.filter((p) => p.propertyTypes.includes(t)).length }));

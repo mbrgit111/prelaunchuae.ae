@@ -108,29 +108,31 @@ export function EnquiryForm({
     }
   }
 
-  const box = dark ? 'on-dark bg-datum-soft text-white border-white/10' : 'bg-white text-ink border-line';
-  const input = `w-full rounded-brand-sm border px-4 py-3 text-base outline-none transition-colors placeholder:text-muted/70 focus-visible:outline-2 focus-visible:outline-offset-2 ${
-    dark ? 'border-white/20 bg-datum text-white focus-visible:outline-plot' : 'border-line-strong bg-white text-ink focus-visible:outline-survey'
-  }`;
+  // Every ground is dark: a surface card with a hairline edge and a 3px gold top border. The "dark" tone (register band)
+  // sits on the warm band, so it gets a deeper panel and a soft gold glow in its corner.
+  const box = `on-dark border border-line border-t-[3px] border-t-gold text-body ${dark ? 'bg-band/95 shadow-[0_32px_80px_-24px_rgb(0_0_0/0.8)]' : 'bg-surface'}`;
+  // Inputs: surface-2 fill, input-line edge (3:1), gold on hover and focus; errors in #FDA29B.
+  const input = 'field py-3 placeholder:text-muted';
+  const labelCls = 'text-[11px] font-bold uppercase tracking-[0.16em] text-muted';
 
   if (status === 'done') {
     const firstName = values.name.trim().split(/\s+/)[0];
     return (
-      <div ref={doneRef} tabIndex={-1} role="status" className={`rounded-brand-lg border p-6 outline-none md:p-8 ${box} ${className}`}>
-        <svg viewBox="0 0 48 48" className="size-12" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="none" stroke="#E07A2E" strokeWidth="2" /><path d="m15 25 6 6 12-14" fill="none" stroke="#E07A2E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      <div ref={doneRef} tabIndex={-1} role="status" className={`relative p-6 outline-none md:p-8 ${box} ${className}`}>
+        <svg viewBox="0 0 48 48" className="size-12 text-gold" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="none" stroke="currentColor" strokeWidth="2" /><path d="m15 25 6 6 12-14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
         <p className="text-h3 mt-4">Thank you{firstName ? `, ${firstName}` : ''}.</p>
-        <p className={`mt-2 ${dark ? 'text-white/75' : 'text-muted'}`}>An advisor will be in touch shortly with current availability, floor plans and payment plans.</p>
+        <p className="mt-2 text-muted">An advisor will be in touch shortly with current availability, floor plans and payment plans.</p>
       </div>
     );
   }
 
   const field = (f: Field, label: string, props: React.InputHTMLAttributes<HTMLInputElement>) => (
     <div className="grid gap-1.5">
-      <label htmlFor={id(f)} className="text-sm font-semibold">{label}</label>
+      <label htmlFor={id(f)} className={labelCls}>{label}</label>
       <input
         id={id(f)}
         name={f}
-        className={`${input} ${errors[f] ? '!border-[#B42318]' : ''}`}
+        className={`${input} ${errors[f] ? '!border-danger' : ''}`}
         value={values[f]}
         onChange={(e) => {
           const v = e.target.value;
@@ -146,15 +148,16 @@ export function EnquiryForm({
         required
         {...props}
       />
-      {errors[f] ? <p id={id(`${f}-err`)} className={`text-sm ${dark ? 'text-[#FDA29B]' : 'text-[#B42318]'}`}>{errors[f]}</p> : null}
+      {errors[f] ? <p id={id(`${f}-err`)} className="text-sm text-danger">{errors[f]}</p> : null}
     </div>
   );
 
   return (
-    <form noValidate onSubmit={onSubmit} className={`relative grid gap-4 rounded-brand-lg border p-6 md:p-7 ${box} ${className}`} aria-labelledby={id('title')}>
-      <div>
+    <form noValidate onSubmit={onSubmit} className={`relative grid gap-4 p-6 md:p-7 ${box} ${className}`} aria-labelledby={id('title')}>
+      {dark ? <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 size-40 bg-[radial-gradient(circle_at_100%_0%,rgb(201_168_76/0.14),transparent_70%)]" /> : null}
+      <div className="relative">
         <H id={id('title')} className="text-h3">{title}</H>
-        {intro ? <p className={`mt-1.5 text-[15px] ${dark ? 'text-white/70' : 'text-muted'}`}>{intro}</p> : null}
+        {intro ? <p className="mt-1.5 text-[14px] text-muted">{intro}</p> : null}
       </div>
       {field('name', 'Full name', { autoComplete: 'name', placeholder: 'Your name' })}
       <div className={compact ? 'grid gap-4' : 'grid gap-4 sm:grid-cols-2'}>
@@ -163,7 +166,7 @@ export function EnquiryForm({
       </div>
       {withMessage ? (
         <div className="grid gap-1.5">
-          <label htmlFor={id('message')} className="text-sm font-semibold">Message <span className={dark ? 'text-sand/80' : 'text-muted'}>(optional)</span></label>
+          <label htmlFor={id('message')} className={labelCls}>Message <span className="font-normal normal-case tracking-normal">(optional)</span></label>
           <textarea id={id('message')} name="message" rows={4} className={input} value={values.message} onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))} placeholder="Unit type, budget, timing…" />
         </div>
       ) : null}
@@ -171,7 +174,7 @@ export function EnquiryForm({
         <label htmlFor={id('mbr_hp')}>Leave blank</label>
         <input ref={hpRef} id={id('mbr_hp')} name="mbr_hp" tabIndex={-1} autoComplete="off" defaultValue="" />
       </div>
-      <p className={`text-sm ${dark ? 'text-white/70' : 'text-muted'}`}>{DISCLOSURE}</p>
+      <p className="text-[13px] text-muted">{DISCLOSURE}</p>
       <div className="grid gap-1.5">
         <label className="flex items-start gap-3 text-sm">
           <input
@@ -184,13 +187,13 @@ export function EnquiryForm({
             }}
             aria-invalid={errors.consent ? true : undefined}
             aria-describedby={errors.consent ? id('consent-err') : undefined}
-            className={`mt-0.5 size-5 shrink-0 ${dark ? 'accent-plot' : 'accent-survey'}`}
+            className="mt-0.5 size-5 shrink-0 accent-gold"
           />
-          <span className={dark ? 'text-sand/80' : 'text-muted'}>
-            I agree to be contacted by {config.name} about new launches in the {config.community.name}. See the <a href={privacyHref} className="underline underline-offset-2">privacy policy</a>.
+          <span className="text-muted">
+            I agree to be contacted by {config.name} about new launches in the {config.community.name}. See the <a href={privacyHref} className="text-gold underline underline-offset-2 hover:text-gold-hover">privacy policy</a>.
           </span>
         </label>
-        {errors.consent ? <p id={id('consent-err')} className={`text-sm ${dark ? 'text-[#FDA29B]' : 'text-[#B42318]'}`}>{errors.consent}</p> : null}
+        {errors.consent ? <p id={id('consent-err')} className="text-sm text-danger">{errors.consent}</p> : null}
       </div>
       <button type="submit" disabled={status === 'sending'} className="btn btn-primary w-full disabled:cursor-wait disabled:opacity-80">
         {status === 'sending' ? (
@@ -202,7 +205,7 @@ export function EnquiryForm({
           submitLabel
         )}
       </button>
-      {status === 'error' ? <p role="alert" className="text-sm text-[#B42318]">{error}</p> : null}
+      {status === 'error' ? <p role="alert" className="text-sm text-danger">{error}</p> : null}
       <p aria-live="polite" className="sr-only">{status === 'sending' ? 'Sending your details' : ''}</p>
     </form>
   );

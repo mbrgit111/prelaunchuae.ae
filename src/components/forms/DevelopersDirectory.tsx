@@ -51,23 +51,24 @@ export function DevelopersDirectory({ items }: { items: DirectoryItem[] }) {
     return pick === 'all' || i < FIRST;
   });
   const count = visible.filter(Boolean).length;
+  // Square gold-outline buttons; the chosen one is filled gold.
   const chip = (active: boolean) =>
-    `inline-flex min-h-10 min-w-10 shrink-0 items-center justify-center rounded-brand-sm border px-3 text-[15px] font-semibold transition-colors ${active ? 'border-ink bg-ink text-white' : 'border-line-strong bg-white text-ink hover:border-ink'} disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-line-strong`;
+    `inline-flex min-h-10 min-w-10 shrink-0 items-center justify-center border px-3 text-[14px] font-semibold transition-colors ${active ? 'border-gold bg-gold text-on-gold' : 'border-gold/45 bg-transparent text-body hover:border-gold hover:text-gold-hover'} disabled:cursor-not-allowed disabled:border-line disabled:text-muted disabled:opacity-50 disabled:hover:border-line disabled:hover:text-muted`;
   return (
     <div className="grid grid-cols-1 gap-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <label className="grid w-full max-w-md gap-1.5">
-          <span className="text-label !text-ink mb-0.5">Find a developer</span>
+          <span className="text-label mb-0.5">Find a developer</span>
           <input
             type="search"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder={`Search ${items.length} developers`}
-            className="min-h-12 w-full rounded-brand-sm border border-line-strong bg-white px-4 text-[16px] outline-none transition-colors placeholder:text-muted/80 hover:border-ink focus-visible:border-survey focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-survey"
+            className="field placeholder:text-muted"
           />
         </label>
         <p role="status" aria-live="polite" className="text-[15px] text-muted">
-          Showing <strong className="font-semibold text-ink">{count}</strong> of {items.length}
+          Showing <strong className="font-semibold text-gold">{count}</strong> of {items.length}
         </p>
       </div>
       <nav aria-label="Browse developers by letter" className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 sm:flex-wrap sm:overflow-visible">
@@ -80,10 +81,10 @@ export function DevelopersDirectory({ items }: { items: DirectoryItem[] }) {
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((d, i) => (
           <li key={d.slug} hidden={!visible[i]} style={isLetter ? { order: rank[i] } : undefined} className="min-w-0">
-            <Link href={`/developers/${d.slug}`} className="card card-lift flex h-full items-center gap-4 p-4 sm:p-5">
+            <Link href={`/developers/${d.slug}`} className="card card-lift group flex h-full items-center gap-4 p-4 sm:p-5">
               <LogoMark logo={d.logo} name={d.name} frame="card" labelled={false} />
               <span className="grid min-w-0 gap-0.5">
-                <span className="font-semibold leading-snug">{d.name}</span>
+                <span className="font-semibold leading-snug text-heading transition-colors group-hover:text-gold-hover">{d.name}</span>
                 <span className="text-sm text-muted">
                   {d.projects} launch{d.projects === 1 ? '' : 'es'}{d.from ? ` · from ${aed(d.from)}` : ''}
                 </span>
@@ -92,7 +93,7 @@ export function DevelopersDirectory({ items }: { items: DirectoryItem[] }) {
           </li>
         ))}
       </ul>
-      {count === 0 ? <p className="rounded-brand-lg border border-dashed border-line-strong p-8 text-center text-muted">No developer matches “{q}”. Check the spelling, or clear the search.</p> : null}
+      {count === 0 ? <p className="border border-dashed border-line-strong bg-surface p-8 text-center text-muted">No developer matches “{q}”. Check the spelling, or clear the search.</p> : null}
     </div>
   );
 }

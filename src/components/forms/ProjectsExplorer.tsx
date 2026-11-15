@@ -33,19 +33,22 @@ const SORTS: Option[] = [
   { value: 'handover', label: 'Completion: soonest' },
   { value: 'newest', label: 'Newest listed' },
 ];
+// Same tags as ProjectCard: square gold-tint pills, gold for a launch, body text for an announced project.
 const STATUS: Record<IndexItem['st'], [string, string]> = {
-  'new-launch': ['New launch', 'bg-survey text-datum'],
-  available: ['Selling', 'bg-white text-ink'],
-  'coming-soon': ['Coming soon', 'bg-plot text-datum'],
-  'sold-out': ['Sold out', 'bg-datum text-sand'],
+  'new-launch': ['New launch', 'border border-line-strong bg-gold-tint text-gold'],
+  available: ['Available', 'border border-line-strong bg-gold-tint text-gold'],
+  'coming-soon': ['Coming soon', 'border border-line-strong bg-gold-tint text-body'],
+  'sold-out': ['Sold out', 'border border-line bg-surface text-muted'],
 };
+const FACT_DT = 'text-[11px] font-semibold uppercase tracking-[0.12em] text-muted';
+const FACT_DD = 'mt-1 font-semibold text-body';
 const STEP = 24;
 const aed = (n: number) => `AED ${Math.round(n).toLocaleString('en-US')}`;
 
 function Chips({ label, value, options, onChange }: { label: string; value: string; options: Option[]; onChange: (v: string) => void }) {
   return (
     <fieldset className="grid content-start gap-2">
-      <legend className="text-label mb-2 !text-ink">{label}</legend>
+      <legend className="text-label mb-2">{label}</legend>
       <div className="flex flex-wrap content-start items-start gap-2">
         {[{ value: '', label: 'Any' }, ...options].map((o) => (
           <button key={o.value || 'any'} type="button" aria-pressed={value === o.value} onClick={() => onChange(o.value)} className="chip">
@@ -63,28 +66,33 @@ function Card({ it }: { it: IndexItem }) {
   const price = it.st === 'sold-out' ? ['Availability', 'Sold out'] : it.p ? ['From', aed(it.p)] : ['Price', 'On request'];
   return (
     <article className="card card-lift group flex h-full min-w-0 flex-col">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-t-[inherit] bg-plot">
-        {it.i ? <Image src={it.i} alt={`${it.n} by ${it.d}, ${it.a}`} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-700 ease-brand group-hover:scale-[1.04]" /> : <div aria-hidden="true" className="survey-grid absolute inset-0 opacity-70" />}
+      <div className="relative aspect-[4/3] overflow-hidden rounded-t-[inherit] bg-surface-2">
+        {it.i ? <Image src={it.i} alt={`${it.n} by ${it.d}, ${it.a}`} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="img-zoom object-cover" /> : <div aria-hidden="true" className="gold-grid absolute inset-0" />}
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
           <span className={`tag ${tone}`}>{status}</span>
-          {it.ph && it.st !== 'sold-out' ? <span className="tag bg-white/90 text-ink">Post-handover plan</span> : null}
+          {it.ph && it.st !== 'sold-out' ? <span className="tag border border-line-strong bg-page/85 text-body">Post-handover plan</span> : null}
         </div>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5 md:p-6">
         <p className="text-label truncate">{it.d}</p>
-        <h2 className="text-h3 -mt-1">
+        <h2 className="text-h3 -mt-1 transition-colors group-hover:text-gold-hover">
           <Link href={`/projects/${it.s}`} className="after:absolute after:inset-0 after:z-10 after:content-[''] focus-visible:outline-none">{it.n}</Link>
         </h2>
         <p className="-mt-1.5 text-sm text-muted">{it.a}</p>
         <dl className="grid grid-cols-3 gap-3 border-y border-line py-3 text-[13px] leading-snug">
-          <div><dt className="text-muted">Unit types</dt><dd className="mt-0.5 font-semibold">{it.bl ?? (it.tl || 'Details soon')}</dd></div>
-          <div><dt className="text-muted">Completion</dt><dd className="mt-0.5 font-semibold">{it.hl ?? 'To be announced'}</dd></div>
-          <div><dt className="text-muted">Payment plan</dt><dd className="mt-0.5 font-semibold">{it.pl ?? 'On request'}</dd></div>
+          <div><dt className={FACT_DT}>Unit types</dt><dd className={FACT_DD}>{it.bl ?? (it.tl || 'Details soon')}</dd></div>
+          <div><dt className={FACT_DT}>Completion</dt><dd className={FACT_DD}>{it.hl ?? 'To be announced'}</dd></div>
+          <div><dt className={FACT_DT}>Payment plan</dt><dd className={FACT_DD}>{it.pl ?? 'On request'}</dd></div>
         </dl>
-        <p className="mt-auto grid pt-1">
-          <span className="text-xs text-muted">{price[0]}</span>
-          <strong className="text-figure text-[26px] font-medium leading-tight">{price[1]}</strong>
-        </p>
+        <div className="mt-auto flex items-end justify-between gap-4 pt-1">
+          <p className="grid">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">{price[0]}</span>
+            <strong className={`text-figure text-heading ${price[1]!.length > 14 ? 'text-lg' : 'text-[24px] leading-tight'}`}>{price[1]}</strong>
+          </p>
+          <span aria-hidden="true" className="btn btn-primary btn-sm whitespace-nowrap group-hover:bg-gold-hover">
+            View <svg viewBox="0 0 24 24" className="size-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+          </span>
+        </div>
       </div>
     </article>
   );
@@ -151,17 +159,17 @@ export function ProjectsExplorer({ total, emirateOptions, areaOptions, developer
 
   return (
     <div className="grid grid-cols-1 gap-8">
-      <div className="grid gap-6 rounded-brand-lg border border-line bg-white p-5 md:p-7">
+      <div className="grid gap-6 border border-line border-t-2 border-t-gold bg-surface p-5 md:p-7">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <label className="grid gap-1.5">
-            <span className="text-label !text-ink mb-0.5">Search</span>
+            <span className="text-label mb-0.5">Search</span>
             <input
               type="search"
               value={f.q}
               onChange={(e) => update('q', e.target.value)}
               onFocus={load}
               placeholder="Project, developer or area"
-              className="min-h-12 w-full rounded-brand-sm border border-line-strong bg-white px-4 text-[15px] outline-none transition-colors placeholder:text-muted/80 hover:border-ink focus-visible:border-survey focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-survey"
+              className="field placeholder:text-muted"
             />
           </label>
           <button type="button" aria-expanded={open} aria-controls="explorer-filters" onClick={() => { setOpen((o) => !o); load(); }} className="btn btn-secondary justify-between md:hidden">
@@ -169,10 +177,10 @@ export function ProjectsExplorer({ total, emirateOptions, areaOptions, developer
             <svg viewBox="0 0 24 24" className={`size-5 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
           </button>
           <div id="explorer-filters" className={`${open ? 'grid' : 'hidden'} gap-4 md:contents`}>
-          <Select name="emirate" label="Emirate" labelClassName="text-label !text-ink mb-0.5" value={f.emirate} onChange={(v) => update('emirate', v)} options={[{ value: '', label: 'All emirates' }, ...emirateOptions]} />
-          <Select name="area" label="Area" labelClassName="text-label !text-ink mb-0.5" value={f.area} onChange={(v) => update('area', v)} options={[{ value: '', label: 'All areas' }, ...areaOptions]} />
-          <Select name="developer" label="Developer" labelClassName="text-label !text-ink mb-0.5" value={f.developer} onChange={(v) => update('developer', v)} options={[{ value: '', label: 'All developers' }, ...developerOptions]} />
-          <Select name="sort" label="Sort" labelClassName="text-label !text-ink mb-0.5" value={f.sort} onChange={(v) => update('sort', v)} options={SORTS} />
+          <Select name="emirate" label="Emirate" labelClassName="text-label mb-0.5" value={f.emirate} onChange={(v) => update('emirate', v)} options={[{ value: '', label: 'All emirates' }, ...emirateOptions]} />
+          <Select name="area" label="Area" labelClassName="text-label mb-0.5" value={f.area} onChange={(v) => update('area', v)} options={[{ value: '', label: 'All areas' }, ...areaOptions]} />
+          <Select name="developer" label="Developer" labelClassName="text-label mb-0.5" value={f.developer} onChange={(v) => update('developer', v)} options={[{ value: '', label: 'All developers' }, ...developerOptions]} />
+          <Select name="sort" label="Sort" labelClassName="text-label mb-0.5" value={f.sort} onChange={(v) => update('sort', v)} options={SORTS} />
           </div>
         </div>
         <div className={`${open ? 'grid' : 'hidden'} gap-6 border-t border-line pt-6 md:grid lg:grid-cols-2`}>
@@ -186,13 +194,13 @@ export function ProjectsExplorer({ total, emirateOptions, areaOptions, developer
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p role="status" aria-live="polite" className="text-[15px] text-muted">
-          {filtered && !index && !failed ? 'Loading the project list…' : <>Showing <strong className="font-semibold text-ink">{count.toLocaleString('en-US')}</strong> of {total.toLocaleString('en-US')} projects</>}
+          {filtered && !index && !failed ? 'Loading the project list…' : <>Showing <strong className="font-semibold text-gold">{count.toLocaleString('en-US')}</strong> of {total.toLocaleString('en-US')} projects</>}
         </p>
         {filtered ? <button type="button" onClick={clear} className="link-accent text-sm">Clear filters</button> : null}
       </div>
 
       {failed && filtered ? (
-        <p className="rounded-brand-lg border border-dashed border-line-strong p-8 text-center text-muted">The filters could not load. Check your connection and try again, or browse the pages below.</p>
+        <p className="border border-dashed border-line-strong bg-surface p-8 text-center text-muted">The filters could not load. Check your connection and try again, or browse the pages below.</p>
       ) : null}
 
       {results ? (
@@ -203,12 +211,12 @@ export function ProjectsExplorer({ total, emirateOptions, areaOptions, developer
             </ul>
             {results.length > shown ? (
               <p className="text-center">
-                <button type="button" onClick={() => setShown((n) => n + STEP)} className="btn btn-dark">Show {Math.min(STEP, results.length - shown)} more of {results.length - shown}</button>
+                <button type="button" onClick={() => setShown((n) => n + STEP)} className="btn btn-secondary">Show {Math.min(STEP, results.length - shown)} more of {results.length - shown}</button>
               </p>
             ) : null}
           </>
         ) : (
-          <div className="rounded-brand-lg border border-dashed border-line-strong p-10 text-center">
+          <div className="border border-dashed border-line-strong bg-surface p-10 text-center">
             <p className="text-h3">No projects match these filters.</p>
             <p className="mt-2 text-muted">Try a wider budget or completion year, or ask us: new launches are added as developers release them.</p>
           </div>

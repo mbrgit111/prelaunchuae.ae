@@ -58,7 +58,8 @@ export const config: SiteConfig = {
   ctaLabel: 'Register interest',
   logo: {
     // Brand kit v1.0: primary horizontal for the header, compact where the subline would fall under 7 px, stacked for
-    // the footer. Reversed versions sit on Midnight Ink. Supplied files only, never re-typeset.
+    // the footer. Reversed versions (cream letters, gold tower) sit on the black header, menu and footer; the files were
+    // recoloured to prelaunch.ae's black and gold by founder decision of 15 Nov 2026. Shapes never re-typeset.
     horizontal: '/brand/prelaunchuae-horizontal.svg',
     horizontalReverse: '/brand/prelaunchuae-horizontal-reversed.svg',
     compact: '/brand/prelaunchuae-compact.svg',
@@ -71,7 +72,7 @@ export const config: SiteConfig = {
     stackedRatio: 321.34 / 190.35,
   },
   ogImage: { src: '/og-image-1200x630.png', width: 1200, height: 630 },
-  themeColor: '#0B1F33',
+  themeColor: '#0A0A0A',
   footerAbout:
     'PrelaunchUAE shows new launches across Dubai and the UAE before they are everywhere: area, developer, unit types, payment plan and handover, side by side. A brand of MBR Properties. Every figure comes from developer information and is confirmed before you commit.',
   legalLinks: [

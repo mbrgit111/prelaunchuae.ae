@@ -5,6 +5,7 @@ import { pageMetadata } from '@/lib/seo';
 import { RegisterBand } from '@/components/sections/MoreSections';
 import { DevelopersDirectory, type DirectoryItem } from '@/components/forms/DevelopersDirectory';
 import { PageHero } from '@/components/ui/PageHero';
+import { HeroFigures } from '@/components/pages/HeroFigures';
 
 export async function generateMetadata(): Promise<Metadata> {
   const developers = await getDevelopers();
@@ -30,10 +31,20 @@ export default async function DevelopersPage() {
       logo: d.logo,
     };
   });
+  const withLaunches = items.filter((i) => i.selling).length;
+  const listed = items.reduce((n, i) => n + i.projects, 0);
   return (
     <>
-      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'Developers', path: '/developers' }]} label={`${devs.length} developers · UAE`} title="Developers with projects across the UAE" lede={`${devs.length} developers have projects listed across Dubai and the other emirates. The largest are first; search for one, or open it to compare its projects, areas and prices.`} />
-      <section aria-label="Developer list" className="on-sand bg-sand py-12 md:py-16">
+      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'Developers', path: '/developers' }]} label={`${devs.length} developers · UAE`} title="Developers with projects across the UAE" highlight="Developers" lede={`${devs.length} developers have projects listed across Dubai and the other emirates. The largest are first; search for one, or open it to compare its projects, areas and prices.`}>
+        <HeroFigures
+          items={[
+            [devs.length, devs.length === 1 ? 'developer' : 'developers'],
+            [listed.toLocaleString('en-US'), 'projects listed'],
+            [withLaunches, 'launching now'],
+          ]}
+        />
+      </PageHero>
+      <section aria-label="Developer list" className="on-white border-t border-line bg-page py-12 md:py-16">
         <div className="container-site">
           <DevelopersDirectory items={items} />
           <p className="mt-6 text-xs text-muted">Developer logos as supplied through the developers’ sales portal.</p>

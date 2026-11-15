@@ -21,7 +21,7 @@ export function LicenceLine() {
   return (
     <ul className="flex flex-wrap gap-x-5 gap-y-1">
       {items.map((i) => (
-        <li key={i.label}><span className="text-white/85">{i.label}:</span> {i.value ?? <Ph label={i.ph} />}</li>
+        <li key={i.label}><span className="text-body">{i.label}:</span> {i.value ?? <Ph label={i.ph} />}</li>
       ))}
     </ul>
   );
@@ -66,7 +66,7 @@ export function PermitBox({ slug, developerName }: { slug: string; developerName
           ))}
         </dl>
         {p?.madmounQr ? (
-          <Image src={p.madmounQr} alt={`Madmoun QR code for permit ${p.trakheesiPermit}`} width={96} height={96} className="rounded-md border border-line" />
+          <Image src={p.madmounQr} alt={`Madmoun QR code for permit ${p.trakheesiPermit}`} width={96} height={96} className="border border-line bg-white" />
         ) : showPlaceholders ? <Ph label="QR code" /> : null}
       </div>
     </section>

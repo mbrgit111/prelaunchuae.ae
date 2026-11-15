@@ -2,6 +2,7 @@ import { config, contact, copy } from '@/site';
 import { pageMetadata } from '@/lib/seo';
 import { Flag } from '@/components/ui/Flag';
 import { PageHero } from '@/components/ui/PageHero';
+import { RegisterBand } from '@/components/sections/MoreSections';
 
 type Slug = 'privacy' | 'terms' | 'disclaimer' | 'cookie-policy';
 const page = (slug: Slug) => copy.legalPages(config.operatedBy, contact.email).find((p) => p.slug === slug)!;
@@ -17,19 +18,22 @@ export function LegalPage({ slug }: { slug: Slug }) {
   return (
     <>
       <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: p.title, path: `/${slug}` }]} label="Legal" title={p.title} lede={<>{p.metaDescription}<Flag>LEGAL REVIEW REQUIRED</Flag></>} />
-      <section className="on-white bg-white py-14 md:py-20">
+      <section className="on-white bg-page py-14 md:py-20">
         <div className="container-site grid max-w-3xl gap-10">
           {p.sections.map((s, i) => (
-            <section key={s.title} aria-labelledby={`lg-${i}`} className="grid gap-3">
+            <section key={s.title} aria-labelledby={`lg-${i}`} className="grid gap-3 border-t border-line pt-8 first:border-t-0 first:pt-0">
+              <p aria-hidden="true" className="text-label tabular-nums">{String(i + 1).padStart(2, '0')}</p>
               <h2 id={`lg-${i}`} className="text-h3">{s.title}</h2>
-              {s.body.map((b, k) => <p key={k} className="text-muted">{b}</p>)}
+              {s.body.map((b, k) => <p key={k} className="text-body">{b}</p>)}
             </section>
           ))}
-          <p className="text-sm text-muted">
+          <p className="border-t border-line-strong pt-6 text-sm text-muted">
             {config.name} is operated by {config.operatedBy}.{contact.email ? ` Email ${contact.email}.` : ''}{contact.phone.display ? ` Phone ${contact.phone.display}.` : ''}
           </p>
         </div>
       </section>
+      {/* The header's "Register interest" button lands here (#register), as on every other page. */}
+      <RegisterBand />
     </>
   );
 }

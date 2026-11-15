@@ -1,3 +1,3 @@
-Static TTF instances of the brand fonts (Sora 600 and 800, Manrope 500 and 700), used ONLY at build time
-to draw the share images (next/og cannot read woff2 or variable fonts). They are never sent to visitors.
-Made with `fonttools varLib.instancer` from the variable fonts in PrelaunchUAE-Brand-Kit/fonts. Licence: SIL Open Font License 1.1.
+Static TTF instances of Plus Jakarta Sans (500 and 700), used ONLY on the server to draw the share images
+(next/og cannot read woff2 or variable fonts; there is no Outfit TTF, so share images use Plus Jakarta Sans for all text).
+They are never sent to visitors. Copied from netcapital/src/og. Licence: SIL Open Font License 1.1.

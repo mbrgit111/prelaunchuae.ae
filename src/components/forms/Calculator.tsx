@@ -8,11 +8,12 @@ export interface CalcProject { slug: string; name: string; developer: string; pr
 
 const aed = (n: number) => `AED ${Math.round(n).toLocaleString('en-US')}`;
 const toNum = (s: string) => Number(s.replace(/[^\d.]/g, '')) || 0;
+// Neighbouring stages alternate light and dark (about 2:1 between each pair), as in the project page's payment plans
 const STAGES = [
-  { key: 'booking', label: 'On booking', tone: 'bg-survey-deep' },
-  { key: 'construction', label: 'During construction', tone: 'bg-survey' },
-  { key: 'handover', label: 'On handover', tone: 'bg-plot' },
-  { key: 'postHandover', label: 'After handover', tone: 'bg-white' },
+  { key: 'booking', label: 'On booking', tone: 'bg-gold-hover' },
+  { key: 'construction', label: 'During construction', tone: 'bg-gold-deep' },
+  { key: 'handover', label: 'On handover', tone: 'bg-body' },
+  { key: 'postHandover', label: 'After handover', tone: 'bg-muted' },
 ] as const;
 
 function Slider({ id, label, value, min, max, step, onChange, display }: {
@@ -23,7 +24,7 @@ function Slider({ id, label, value, min, max, step, onChange, display }: {
     <div className="grid gap-2">
       <div className="flex items-baseline justify-between gap-3">
         <label htmlFor={id} className="text-sm font-semibold">{label}</label>
-        <output htmlFor={id} className="text-sm font-semibold tabular-nums text-survey-deep">{display}</output>
+        <output htmlFor={id} className="text-sm font-semibold tabular-nums text-gold">{display}</output>
       </div>
       <input
         id={id}
@@ -88,11 +89,11 @@ export function Calculator({ projects, presets, dldPercent }: { projects: CalcPr
     return { loan, monthly, total, interest: total - loan, balances };
   }, [price, down, rate, years]);
 
-  const tabBtn = 'min-h-11 flex-1 rounded-[8px] px-4 text-sm font-semibold transition-colors aria-pressed:bg-datum aria-pressed:text-white sm:flex-none';
+  const tabBtn = 'min-h-11 flex-1 px-4 text-[13px] font-bold uppercase tracking-[0.1em] text-body transition-colors hover:text-gold-hover aria-pressed:bg-gold aria-pressed:text-on-gold sm:flex-none';
   return (
-    <div className="grid overflow-hidden rounded-brand-lg border border-line bg-white lg:grid-cols-[1.05fr_1fr]">
+    <div className="grid overflow-hidden border border-line border-t-2 border-t-gold bg-surface lg:grid-cols-[1.05fr_1fr]">
       <div className="grid content-start gap-6 p-6 md:p-8">
-        <div role="group" aria-label="Calculator" className="flex gap-1 rounded-brand border border-line bg-sand p-1">
+        <div role="group" aria-label="Calculator" className="flex gap-1 border border-line-strong bg-band p-1">
           <button type="button" aria-pressed={mode === 'plan'} onClick={() => setMode('plan')} className={tabBtn}>Payment plan</button>
           <button type="button" aria-pressed={mode === 'mortgage'} onClick={() => setMode('mortgage')} className={tabBtn}>Mortgage</button>
         </div>
@@ -110,7 +111,7 @@ export function Calculator({ projects, presets, dldPercent }: { projects: CalcPr
             <label htmlFor={`${uid}-price`} className="text-sm font-semibold">Property price</label>
             {project ? <span className="text-xs text-muted">Starting price of {project.name}, subject to availability</span> : null}
           </div>
-          <div className="flex items-center gap-2 rounded-brand border border-line px-4 focus-within:border-survey-deep focus-within:ring-3 focus-within:ring-survey/25">
+          <div className="flex items-center gap-2 border border-input-line bg-surface-2 px-4 transition-colors hover:border-gold focus-within:border-gold focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--nc-focus)]">
             <span className="text-sm font-semibold text-muted">AED</span>
             <input
               id={`${uid}-price`}
@@ -121,7 +122,7 @@ export function Calculator({ projects, presets, dldPercent }: { projects: CalcPr
                 setPrice(toNum(e.target.value));
               }}
               onBlur={() => setPriceBoth(price)}
-              className="min-h-12 w-full bg-transparent text-lg font-semibold tabular-nums outline-none"
+              className="min-h-12 w-full bg-transparent text-lg font-semibold tabular-nums text-heading outline-none"
             />
           </div>
           <input type="range" min={300_000} max={10_000_000} step={10_000} value={Math.min(Math.max(price, 300_000), 10_000_000)} onChange={(e) => setPriceBoth(Number(e.target.value))} aria-label="Property price slider" className="calc-range" style={{ '--fill': `${((Math.min(Math.max(price, 300_000), 10_000_000) - 300_000) / 9_700_000) * 100}%` } as React.CSSProperties} />
@@ -134,7 +135,7 @@ export function Calculator({ projects, presets, dldPercent }: { projects: CalcPr
               {plans.map((pl, i) => (
                 <label key={`${pl.label}-${i}`} className="cursor-pointer">
                   <input type="radio" name={`${uid}-plan`} className="peer sr-only" checked={planIdx === i} onChange={() => setPlanIdx(i)} />
-                  <span className="inline-flex min-h-11 flex-col justify-center rounded-brand border border-line px-4 py-1.5 text-sm font-semibold tabular-nums transition-colors hover:border-ink peer-checked:border-ink peer-checked:bg-datum peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-survey-deep">
+                  <span className="inline-flex min-h-11 flex-col justify-center border border-line-strong bg-gold-tint px-4 py-1.5 text-sm font-semibold tabular-nums text-body transition-colors hover:border-gold hover:text-heading peer-checked:border-gold peer-checked:bg-gold peer-checked:text-on-gold peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gold-hover">
                     {[pl.booking, pl.construction, pl.handover, pl.postHandover].filter((n) => n > 0).map(Math.round).join('/')}
                     {project && pl.label ? <span className="max-w-[14rem] truncate text-[11px] font-normal opacity-75">{pl.label}</span> : null}
                   </span>
@@ -151,29 +152,29 @@ export function Calculator({ projects, presets, dldPercent }: { projects: CalcPr
         )}
       </div>
 
-      <div className="on-dark grid content-start gap-6 bg-datum p-6 text-white md:p-8" aria-live="polite">
+      <div className="on-dark grid content-start gap-6 border-t border-line bg-band p-6 text-body md:p-8 lg:border-l lg:border-t-0" aria-live="polite">
         {mode === 'plan' ? (
           <>
             <div className="grid gap-1">
               <p className="text-label">Your payments, stage by stage</p>
-              <p className="text-sm text-white/70">{aed(price)}{plan ? ` · ${[plan.booking, plan.construction, plan.handover, plan.postHandover].filter((n) => n > 0).map(Math.round).join('/')} plan` : ''}</p>
+              <p className="text-sm text-muted">{aed(price)}{plan ? ` · ${[plan.booking, plan.construction, plan.handover, plan.postHandover].filter((n) => n > 0).map(Math.round).join('/')} plan` : ''}</p>
             </div>
-            <div className="flex h-4 gap-[2px] overflow-hidden rounded-full" role="img" aria-label={stages.map((s) => `${s.pct}% ${s.label.toLowerCase()}`).join(', ')}>
+            <div className="flex h-4 gap-[2px] overflow-hidden" role="img" aria-label={stages.map((s) => `${s.pct}% ${s.label.toLowerCase()}`).join(', ')}>
               {stages.map((s) => <span key={s.key} className={`${s.tone} transition-[width] duration-500 ease-brand`} style={{ width: `${s.pct}%` }} />)}
             </div>
             <ul className="grid gap-3">
               {stages.map((s) => (
-                <li key={s.key} className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
-                  <span className="flex items-center gap-2.5 text-white/85"><span aria-hidden="true" className={`size-3 rounded-sm ${s.tone}`} />{s.label} <span className="tabular-nums text-sand/80">{s.pct}%</span></span>
-                  <strong className="text-lg font-semibold tabular-nums">{aed(s.amount)}</strong>
+                <li key={s.key} className="flex items-center justify-between gap-4 border-b border-line pb-3">
+                  <span className="flex items-center gap-2.5 text-body"><span aria-hidden="true" className={`size-3 ${s.tone}`} />{s.label} <span className="tabular-nums text-muted">{s.pct}%</span></span>
+                  <strong className="text-figure text-lg text-heading">{aed(s.amount)}</strong>
                 </li>
               ))}
             </ul>
             {dldPercent ? (
-              <div className="grid gap-2 rounded-brand border border-white/10 bg-datum-soft p-4 text-sm">
-                <p className="flex justify-between gap-4"><span className="text-white/75">Dubai Land Department fee ({dldPercent}%)</span><strong className="tabular-nums">{aed(dld)}</strong></p>
-                <p className="flex justify-between gap-4 border-t border-white/10 pt-2"><span className="font-semibold text-plot">Due at booking, with the fee</span><strong className="tabular-nums text-plot">{aed(booking + dld)}</strong></p>
-                <p className="text-xs text-sand/80">The fee rate is the one listed in the developers’ payment schedules. Other fees vary by developer.</p>
+              <div className="grid gap-2 border border-line bg-surface p-4 text-sm">
+                <p className="flex justify-between gap-4"><span className="text-body">Dubai Land Department fee ({dldPercent}%)</span><strong className="tabular-nums text-heading">{aed(dld)}</strong></p>
+                <p className="flex justify-between gap-4 border-t border-line pt-2"><span className="font-semibold text-gold">Due at booking, with the fee</span><strong className="tabular-nums text-gold">{aed(booking + dld)}</strong></p>
+                <p className="text-xs text-muted">The fee rate is the one listed in the developers’ payment schedules. Other fees vary by developer.</p>
               </div>
             ) : null}
           </>
@@ -181,36 +182,36 @@ export function Calculator({ projects, presets, dldPercent }: { projects: CalcPr
           <>
             <div className="grid gap-1">
               <p className="text-label">Estimated monthly repayment</p>
-              <p className="text-[44px] font-light leading-none tabular-nums md:text-[52px]">{aed(m.monthly)}</p>
-              <p className="text-sm text-white/70">Loan of {aed(m.loan)} over {years} years at {rate.toFixed(2)}%.</p>
+              <p className="text-figure text-[40px] leading-none text-heading md:text-[48px]">{aed(m.monthly)}</p>
+              <p className="text-sm text-muted">Loan of {aed(m.loan)} over {years} years at {rate.toFixed(2)}%.</p>
             </div>
             <div className="grid gap-2">
-              <div className="flex h-4 gap-[2px] overflow-hidden rounded-full" role="img" aria-label={`Principal ${Math.round((m.loan / m.total) * 100)}%, interest ${Math.round((m.interest / m.total) * 100)}%`}>
-                <span className="bg-plot transition-[width] duration-500 ease-brand" style={{ width: `${(m.loan / m.total) * 100}%` }} />
-                <span className="bg-survey-deep transition-[width] duration-500 ease-brand" style={{ width: `${(m.interest / m.total) * 100}%` }} />
+              <div className="flex h-4 gap-[2px] overflow-hidden" role="img" aria-label={`Principal ${Math.round((m.loan / m.total) * 100)}%, interest ${Math.round((m.interest / m.total) * 100)}%`}>
+                <span className="bg-body transition-[width] duration-500 ease-brand" style={{ width: `${(m.loan / m.total) * 100}%` }} />
+                <span className="bg-gold transition-[width] duration-500 ease-brand" style={{ width: `${(m.interest / m.total) * 100}%` }} />
               </div>
               <div className="flex flex-wrap justify-between gap-x-6 gap-y-1 text-sm">
-                <span className="flex items-center gap-2"><span aria-hidden="true" className="size-3 rounded-sm bg-plot" />Principal <strong className="tabular-nums">{aed(m.loan)}</strong></span>
-                <span className="flex items-center gap-2"><span aria-hidden="true" className="size-3 rounded-sm bg-survey-deep" />Interest <strong className="tabular-nums">{aed(m.interest)}</strong></span>
+                <span className="flex items-center gap-2"><span aria-hidden="true" className="size-3 bg-body" />Principal <strong className="tabular-nums">{aed(m.loan)}</strong></span>
+                <span className="flex items-center gap-2"><span aria-hidden="true" className="size-3 bg-gold" />Interest <strong className="tabular-nums">{aed(m.interest)}</strong></span>
               </div>
             </div>
             <div className="grid gap-2">
-              <p className="text-xs text-sand/80">Loan balance over time</p>
+              <p className="text-xs text-muted">Loan balance over time</p>
               <ul className="flex h-24 items-end gap-2" aria-label="Loan balance every five years">
                 {m.balances.map((b) => (
                   <li key={b.year} className="group relative flex flex-1 flex-col items-center gap-1" title={`Year ${b.year}: ${aed(b.balance)}`}>
-                    <span className="w-full rounded-t-[4px] bg-survey transition-[height] duration-500 ease-brand" style={{ height: `${Math.max(2, (b.balance / m.loan) * 72)}px` }} />
-                    <span className="text-[11px] tabular-nums text-sand/80">{b.year === 0 ? 'Now' : `Yr ${b.year}`}</span>
+                    <span className="w-full bg-gradient-to-t from-gold-deep to-gold transition-[height] duration-500 ease-brand" style={{ height: `${Math.max(2, (b.balance / m.loan) * 72)}px` }} />
+                    <span className="text-[11px] tabular-nums text-muted">{b.year === 0 ? 'Now' : `Yr ${b.year}`}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="grid gap-2 rounded-brand border border-white/10 bg-datum-soft p-4 text-sm">
-              <p className="flex justify-between gap-4"><span className="text-white/75">Down payment ({down}%)</span><strong className="tabular-nums">{aed((price * down) / 100)}</strong></p>
-              {dldPercent ? <p className="flex justify-between gap-4"><span className="text-white/75">Dubai Land Department fee ({dldPercent}%)</span><strong className="tabular-nums">{aed(dld)}</strong></p> : null}
-              <p className="flex justify-between gap-4 border-t border-white/10 pt-2"><span className="font-semibold text-plot">Cash needed upfront</span><strong className="tabular-nums text-plot">{aed((price * down) / 100 + dld)}</strong></p>
+            <div className="grid gap-2 border border-line bg-surface p-4 text-sm">
+              <p className="flex justify-between gap-4"><span className="text-body">Down payment ({down}%)</span><strong className="tabular-nums text-heading">{aed((price * down) / 100)}</strong></p>
+              {dldPercent ? <p className="flex justify-between gap-4"><span className="text-body">Dubai Land Department fee ({dldPercent}%)</span><strong className="tabular-nums text-heading">{aed(dld)}</strong></p> : null}
+              <p className="flex justify-between gap-4 border-t border-line pt-2"><span className="font-semibold text-gold">Cash needed upfront</span><strong className="tabular-nums text-gold">{aed((price * down) / 100 + dld)}</strong></p>
             </div>
-            <p className="text-xs text-sand/80">Lenders set the rate, the term and the maximum loan. Off-plan stages are often paid before a mortgage can begin: ask your lender.</p>
+            <p className="text-xs text-muted">Lenders set the rate, the term and the maximum loan. Off-plan stages are often paid before a mortgage can begin: ask your lender.</p>
           </>
         )}
         <a href="#register" className="btn btn-primary mt-1 justify-self-start">Send me this breakdown</a>

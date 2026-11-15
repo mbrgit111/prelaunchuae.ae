@@ -34,7 +34,7 @@ export function Tabs({ labels, panels, ariaLabel }: { labels: string[]; panels: 
               if (e.key === 'Home') move(0);
               if (e.key === 'End') move(labels.length - 1);
             }}
-            className="min-h-11 shrink-0 rounded-brand border border-line bg-white px-4 text-[15px] font-semibold text-ink transition-colors hover:border-ink aria-selected:border-ink aria-selected:bg-datum aria-selected:text-white"
+            className="min-h-11 shrink-0 border border-line-strong bg-surface px-4 text-[14px] font-semibold text-body transition-colors hover:border-gold hover:text-heading aria-selected:border-gold aria-selected:bg-gold aria-selected:text-on-gold"
           >
             {l}
           </button>

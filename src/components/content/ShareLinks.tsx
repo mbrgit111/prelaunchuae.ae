@@ -18,7 +18,7 @@ export function ShareLinks({ path, title }: { path: string; title: string }) {
       <ul className="flex flex-wrap gap-2">
         {links.map(([name, href]) => (
           <li key={name}>
-            <a href={href} {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="inline-flex min-h-11 items-center rounded-full border border-line bg-white px-4 text-sm font-semibold text-ink hover:border-ink">
+            <a href={href} {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="inline-flex min-h-11 items-center border border-line-strong bg-surface px-4 text-sm font-semibold text-body transition-colors hover:border-gold hover:text-gold-hover">
               {name}
               <span className="sr-only"> (opens a share page)</span>
             </a>

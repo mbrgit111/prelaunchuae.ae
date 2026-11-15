@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/**': ['./data/*.json', './content-snapshot.json'],
     // Share images are drawn on request: their fonts and logo travel with the function.
-    '/projects/[slug]/opengraph-image': ['./src/og/*.ttf', './public/brand/prelaunchuae-stacked-reversed.svg'],
+    '/projects/[slug]/opengraph-image': ['./src/og/*.ttf', './public/brand/prelaunchuae-horizontal-reversed.svg'],
   },
   // The bare domain prelaunchuae.com is the main address; www sends visitors and search engines to it with a permanent 301.
   // (Vercel's own domain redirect runs first when set; this is the same rule in the app.)

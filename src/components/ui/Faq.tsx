@@ -8,12 +8,14 @@ export function Faq({ items, schema = true }: { items: { q: string; a: string; f
   return (
     <>
       {schema ? <JsonLd data={faqSchema(items)} /> : null}
-      <div className="divide-y divide-line rounded-brand border border-line bg-white">
+      <div className="divide-y divide-line border border-line bg-surface">
         {items.map((f, i) => (
           <details key={f.q} className="group" open={i === 0}>
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-6 p-5 md:p-6 [&::-webkit-details-marker]:hidden">
-              <span className="text-[17px] font-semibold leading-snug">{f.q}</span>
-              <Icon name="plus" className="mt-0.5 size-5 shrink-0 text-survey-deep transition-transform duration-200 group-open:rotate-45" />
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-6 p-5 transition-colors hover:bg-surface-2 md:p-6 [&::-webkit-details-marker]:hidden">
+              <span className="text-[17px] font-semibold leading-snug text-heading transition-colors group-open:text-gold-hover">{f.q}</span>
+              <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center border border-line-strong bg-gold-tint text-gold transition-colors group-open:border-gold group-open:bg-gold group-open:text-on-gold">
+                <Icon name="plus" className="size-4 transition-transform duration-200 group-open:rotate-45" />
+              </span>
             </summary>
             <div className="-mt-1 px-5 pb-6 text-muted md:px-6">
               {f.a}

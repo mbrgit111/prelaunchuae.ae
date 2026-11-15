@@ -15,20 +15,23 @@ export default async function GoldenVisaPage() {
   const gv = (await marketFaqsFor()).filter((f) => /golden visa/i.test(f.q));
   return (
     <>
-      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'Golden Visa guide', path: '/golden-visa' }]} label="Residency" title={g.h1} lede={<>{g.lede}<Flag>{g.flag}</Flag></>} />
+      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'Golden Visa guide', path: '/golden-visa' }]} label="Residency" title={g.h1} highlight={g.highlight} lede={<>{g.lede}<Flag>{g.flag}</Flag></>} />
       <Section id="guide" tone="white">
         <div className="grid max-w-3xl gap-10">
           {g.sections.map((s, i) => (
-            <section key={s.title} aria-labelledby={`gv-${i}`} className="grid gap-3">
+            <section key={s.title} aria-labelledby={`gv-${i}`} className="grid gap-3 border-t border-line pt-8 first:border-t-0 first:pt-0">
+              <p aria-hidden="true" className="text-label tabular-nums">{String(i + 1).padStart(2, '0')}</p>
               <h2 id={`gv-${i}`} className="text-h2">{s.title}</h2>
-              <p className="text-[17px] text-muted">{s.body}</p>
+              <p className="text-[17px] text-body">{s.body}</p>
             </section>
           ))}
-          <Disclaimer>{g.disclaimer}</Disclaimer>
+          <div className="border border-line border-l-2 border-l-gold bg-surface p-5">
+            <Disclaimer>{g.disclaimer}</Disclaimer>
+          </div>
         </div>
       </Section>
       {gv.length ? (
-        <Section id="faq" tone="sand" label="FAQ" title="Golden Visa questions">
+        <Section id="faq" tone="sand" label="FAQ" title="Golden Visa questions" highlight="questions">
           <div className="max-w-4xl"><Faq items={gv} /></div>
         </Section>
       ) : null}

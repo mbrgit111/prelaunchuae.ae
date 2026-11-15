@@ -9,6 +9,7 @@ import { RegisterBand } from '@/components/sections/MoreSections';
 import { Icon } from '@/components/ui/Icon';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { PageHero } from '@/components/ui/PageHero';
+import { HeroFigures } from './HeroFigures';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 
 export const PER_PAGE = 24;
@@ -49,9 +50,19 @@ export async function ProjectsListing({ page }: { page: number }) {
         crumbs={crumbs}
         label={`Dubai and the UAE · New launches${page > 1 ? ` · Page ${page} of ${pages}` : ''}`}
         title="New launches across the UAE"
+        highlight="launches"
         lede={`${s.projects.toLocaleString('en-US')} pre-launch projects in ${s.areas} areas across ${s.emirates.length} emirates, from ${s.developers} developers: ${s.selling.toLocaleString('en-US')} launching now and ${s.comingSoon} announced. Projects already on sale or sold out are not listed. Search, or filter by emirate, area, type, budget, completion and developer.`}
-      />
-      <section aria-label="Project list" className="on-sand bg-sand py-12 md:py-16">
+      >
+        <HeroFigures
+          items={[
+            [s.projects.toLocaleString('en-US'), 'projects'],
+            [s.selling.toLocaleString('en-US'), 'launching now'],
+            [s.comingSoon.toLocaleString('en-US'), 'coming soon'],
+            [s.developers.toLocaleString('en-US'), 'developers'],
+          ]}
+        />
+      </PageHero>
+      <section aria-label="Project list" className="on-white border-t border-line bg-page py-12 md:py-16">
         <div className="container-site">
           <ProjectsExplorer
             total={all.length}

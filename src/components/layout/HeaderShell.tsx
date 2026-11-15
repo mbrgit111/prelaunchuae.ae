@@ -14,7 +14,7 @@ export function HeaderShell({ children }: { children: React.ReactNode }) {
     return () => io.disconnect();
   }, []);
   return (
-    <header ref={ref} className="site-header fixed inset-x-0 top-0 z-50 h-[72px] bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/85">
+    <header ref={ref} className="site-header fixed inset-x-0 top-0 z-50 h-[72px]">
       {children}
     </header>
   );

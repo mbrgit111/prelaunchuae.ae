@@ -11,12 +11,12 @@ import { JsonLd } from '@/components/ui/JsonLd';
 import { PageTransition } from '@/components/ui/PageTransition';
 import { RevealObserver } from '@/components/ui/RevealObserver';
 
-// The brand pair, self-hosted (src/fonts/README.md): Sora for headlines and figures, Manrope for text.
+// The brand pair, self-hosted (src/fonts/README.md): Plus Jakarta Sans for headlines and figures, Outfit for text.
 // Both are variable files trimmed to Latin. next/font generates size-adjusted fallbacks, so the swap causes no layout shift.
 const serif = localFont({
-  src: '../fonts/Sora-var.woff2',
-  variable: '--font-sora',
-  weight: '100 800',
+  src: '../fonts/PlusJakartaSans-var.woff2',
+  variable: '--font-jakarta',
+  weight: '200 800',
   style: 'normal',
   display: 'swap',
   preload: true,
@@ -24,9 +24,9 @@ const serif = localFont({
   adjustFontFallback: 'Arial',
 });
 const sans = localFont({
-  src: '../fonts/Manrope-var.woff2',
-  variable: '--font-manrope',
-  weight: '200 800',
+  src: '../fonts/Outfit-var.woff2',
+  variable: '--font-outfit',
+  weight: '100 900',
   style: 'normal',
   display: 'swap',
   preload: true,

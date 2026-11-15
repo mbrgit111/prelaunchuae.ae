@@ -215,7 +215,7 @@ export function Select({
               <div className="select-sheet" role="dialog" aria-modal="true" aria-labelledby={id.label}>
                 <div className="flex items-center justify-between px-3 pb-2 pt-1">
                   <span className="text-h3">{label}</span>
-                  <button type="button" onClick={() => hide()} className="grid size-11 place-items-center rounded-brand text-ink" aria-label="Close">
+                  <button type="button" onClick={() => hide()} className="grid size-11 place-items-center border border-line-strong text-body transition-colors hover:border-gold hover:text-gold-hover" aria-label="Close">
                     <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
                   </button>
                 </div>

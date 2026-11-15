@@ -12,7 +12,7 @@ export const metadata = pageMetadata({ title: f.metaTitle, description: 'Answers
 export default async function FaqPage() {
   return (
     <>
-      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq' }]} label="FAQ" title={f.h1} lede="Answers built from the current project data. Each project page also has its own questions." />
+      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq' }]} label="FAQ" title={f.h1} highlight={f.highlight} lede="Answers built from the current project data. Each project page also has its own questions." />
       <Section id="faq" tone="sand"><div className="max-w-4xl"><Faq items={await marketFaqsFor()} /></div></Section>
       <RegisterBand />
     </>

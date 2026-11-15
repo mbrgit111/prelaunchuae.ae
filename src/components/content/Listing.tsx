@@ -13,18 +13,18 @@ export const pagePath = (base: string, page: number) => (page <= 1 ? base : `${b
 export function CategoryChips({ categories, current, allPath, allLabel = 'All' }: { categories: Pick<Category, 'name' | 'slug' | 'count'>[]; current?: string; allPath: string; allLabel?: string }) {
   const shown = categories.filter((c) => c.count > 0);
   if (shown.length === 0) return null;
-  const chip = 'inline-flex min-h-11 items-center rounded-full border px-4 text-sm font-semibold';
+  const chip = 'inline-flex min-h-11 items-center border px-4 text-sm font-semibold transition-colors';
   return (
     <nav aria-label="Topics" className="mb-8">
       <ul className="flex flex-wrap gap-2">
         <li>
-          <Link href={allPath} aria-current={current ? undefined : 'page'} className={`${chip} ${current ? 'border-line bg-white text-ink hover:border-ink' : 'border-ink bg-datum text-white'}`}>
+          <Link href={allPath} aria-current={current ? undefined : 'page'} className={`${chip} ${current ? 'border-line-strong bg-gold-tint text-body hover:border-gold hover:text-heading' : 'border-gold bg-gold text-on-gold'}`}>
             {allLabel}
           </Link>
         </li>
         {shown.map((c) => (
           <li key={c.slug}>
-            <Link href={`/category/${c.slug}`} aria-current={current === c.slug ? 'page' : undefined} className={`${chip} ${current === c.slug ? 'border-ink bg-datum text-white' : 'border-line bg-white text-ink hover:border-ink'}`}>
+            <Link href={`/category/${c.slug}`} aria-current={current === c.slug ? 'page' : undefined} className={`${chip} ${current === c.slug ? 'border-gold bg-gold text-on-gold' : 'border-line-strong bg-gold-tint text-body hover:border-gold hover:text-heading'}`}>
               {c.name}
             </Link>
           </li>
@@ -45,7 +45,7 @@ export function Pager({ base, page, totalPages, hasNext }: { base: string; page:
         </Link>
       ) : null}
       {hasNext ? (
-        <Link href={pagePath(base, page + 1)} rel="next" prefetch={false} className="btn btn-dark">
+        <Link href={pagePath(base, page + 1)} rel="next" prefetch={false} className="btn btn-secondary">
           Load more
         </Link>
       ) : null}
@@ -90,7 +90,7 @@ export function Listing({
   return (
     <>
       <PageHero crumbs={crumbs} label={label} title={title} lede={lede} />
-      <section className="on-sand bg-sand py-14 md:py-20">
+      <section className="on-sand bg-band py-14 md:py-20">
         <div className="container-site">
           {before}
           {chips}

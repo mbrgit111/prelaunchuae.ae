@@ -106,5 +106,12 @@ export interface Site {
   testimonials: Testimonial[];
   copy: import('./prelaunchuae/copy/index.ts').SiteCopy;
   /** Project slugs whose cover pictures are used for site-wide images. Pictures always come from the data. */
-  imagery: { hero: string; guide: string; about: string; featuredDeveloper: string | null };
+  imagery: {
+    hero: string;
+    /** The home slideshow after `hero`: project slugs, or { slug, focus } where focus is a CSS object-position. A slug with no cover is skipped. */
+    heroes?: Array<string | { slug: string; focus?: string }>;
+    guide: string;
+    about: string;
+    featuredDeveloper: string | null;
+  };
 }

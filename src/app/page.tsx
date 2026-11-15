@@ -7,7 +7,7 @@ import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
 import { DevelopersSection } from '@/components/sections/DevelopersSection';
 import { UnitTypesPlans } from '@/components/sections/UnitTypesPlans';
 import { ClientStories } from '@/components/sections/ClientStories';
-import { AlertsBand, AreasSection, HandoverSection, StatsStrip, TypesSection, WhyDubai } from '@/components/sections/HomeSections';
+import { AlertsBand, AreasSection, EmiratesSection, HandoverSection, StatsStrip, TypesSection, WhyDubai } from '@/components/sections/HomeSections';
 import {
   CalculatorSection, FaqSection, GoldenVisaTeaser, HowItWorks, InvestmentAngle, NewsPreview, QuizSection, RegisterBand,
   Videos,
@@ -22,7 +22,10 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-/** Home (header and footer come from the layout). Empty sections hide themselves. */
+/**
+ * Home (header and footer come from the layout). OffPlan's order: hero, numbers, launches, alerts, emirates, areas,
+ * types, developers; then the market, plans and the enquiry form. Empty sections hide themselves.
+ */
 export default function HomePage() {
   return (
     <>
@@ -30,16 +33,17 @@ export default function HomePage() {
       <StatsStrip />
       <FeaturedProjects />
       <AlertsBand />
+      <EmiratesSection />
       <AreasSection />
       <TypesSection />
       <DevelopersSection />
-      <UnitTypesPlans />
       <WhyDubai />
       <HandoverSection />
-      <InvestmentAngle />
+      <UnitTypesPlans />
       <GoldenVisaTeaser />
       <HowItWorks />
       <ClientStories />
+      <InvestmentAngle />
       <CalculatorSection />
       <QuizSection />
       <Videos />

@@ -51,24 +51,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
+/** One hero fact: a surface card with a gold micro label over the value. */
 function Fact({ label, value, note }: { label: string; value: React.ReactNode; note?: string | null }) {
   return (
-    <div className="grid content-start gap-1">
-      <dt className="text-xs font-semibold uppercase tracking-[0.08em] text-sage">{label}</dt>
-      <dd className="text-lg font-semibold leading-snug">{value}</dd>
-      {note ? <dd className="text-xs text-muted-on-deep">{note}</dd> : null}
+    <div className="card grid content-start gap-1.5 bg-surface/90 p-4">
+      <dt className="text-label">{label}</dt>
+      <dd className="font-serif text-lg font-semibold leading-snug text-heading">{value}</dd>
+      {note ? <dd className="text-xs text-muted">{note}</dd> : null}
     </div>
   );
 }
 
+/** Block heading: gold micro label with a leading hairline, then the H2. */
 function H2({ id, label, children }: { id: string; label: string; children: React.ReactNode }) {
   return (
-    <div className="mb-6 grid gap-2">
-      <p className="text-label">{label}</p>
+    <div className="mb-7 grid justify-items-start gap-3">
+      <p className="eyebrow-line-start">{label}</p>
       <h2 id={id} className="text-h2">{children}</h2>
     </div>
   );
 }
+
+/** The one gold word of a heading. */
+const G = ({ children }: { children: React.ReactNode }) => <span className="text-strong">{children}</span>;
 
 
 function sizeRange(u: Project['units'][number]) {
@@ -104,26 +109,27 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <>
       <JsonLd data={residenceSchema({ area: p.communityName, emirate: p.emirate, name: displayName, slug: p.slug, description: editorial?.seo?.description ?? copy.projectDescription(p), image: p.cover?.src ?? null, lat: p.location.lat, lng: p.location.lng, developer: p.developerName, types: p.propertyTypes, priceFrom: p.priceFrom, status: p.status })} />
 
-      <section className="on-dark relative overflow-hidden bg-datum text-sand">
-        <div aria-hidden="true" className="survey-grid pointer-events-none absolute inset-0 opacity-[0.1]" />
+      <section className="on-dark relative overflow-hidden border-b border-line bg-page text-body">
+        <div aria-hidden="true" className="gold-grid grid-fade pointer-events-none absolute inset-0" />
+        <div aria-hidden="true" className="gold-glow pointer-events-none absolute inset-0" />
         <div className="relative lg:grid lg:grid-cols-[1fr_1fr]">
-          <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:order-2 lg:aspect-auto lg:min-h-[560px]">
-            {p.cover ? <Image src={p.cover.src} alt={p.cover.alt} fill priority fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /> : <div aria-hidden="true" className="survey-grid absolute inset-0 bg-datum-soft opacity-80" />}
-            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-datum/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-datum lg:via-datum/0" />
+          <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:order-2 lg:aspect-auto lg:min-h-[600px]">
+            {p.cover ? <Image src={p.cover.src} alt={p.cover.alt} fill priority fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /> : <div aria-hidden="true" className="gold-grid absolute inset-0 bg-surface" />}
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-page via-page/10 to-transparent lg:bg-gradient-to-r lg:from-page lg:via-page/0" />
           </div>
           <div className="container-site grid content-center gap-5 py-10 lg:ml-auto lg:mr-0 lg:max-w-[640px] lg:py-16 lg:pr-12">
             <Breadcrumbs tone="dark" items={[{ name: 'Home', path: '/' }, ...(area ? [{ name: area.name, path: `/areas/${area.slug}` }] : [{ name: 'Projects', path: '/projects' }]), { name: displayName, path: `/projects/${p.slug}` }]} />
-            <div className="flex flex-wrap gap-2">
-              <span className={`tag ${statusTone[p.status]}`}>{statusLabel[p.status]}</span>
-              <span className="tag border border-sage/40 text-sand/85">{p.completion === 'ready' ? 'Ready' : p.completion === 'upcoming' ? 'Upcoming' : 'Under construction'}</span>
-              {p.hasPostHandover && p.status !== 'sold-out' ? <span className="tag border border-sage/40 text-sand/85">Post-handover plan</span> : null}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="eyebrow-pill"><span aria-hidden="true" className="eyebrow-dot" />{statusLabel[p.status]}</span>
+              <span className="tag border border-line-strong text-body">{p.completion === 'ready' ? 'Ready' : p.completion === 'upcoming' ? 'Upcoming' : 'Under construction'}</span>
+              {p.hasPostHandover && p.status !== 'sold-out' ? <span className="tag border border-line-strong text-body">Post-handover plan</span> : null}
             </div>
             <h1 className="text-display !text-[clamp(2.5rem,1.8rem+2.4vw,3.75rem)]">{displayName}</h1>
-            <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sand/85">
-              <span>By <Link href={`/developers/${p.developerSlug}`} className="font-semibold text-sand underline-offset-4 hover:underline">{p.developerName}</Link></span>
-              <span className="flex items-center gap-1.5"><Icon name="pin" className="size-4 text-plot" /><span>{area ? <Link href={`/areas/${area.slug}`} className="underline-offset-4 hover:underline">{p.communityName}</Link> : p.communityName}, {p.emirate}</span></span>
+            <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-body">
+              <span>By <Link href={`/developers/${p.developerSlug}`} className="font-semibold text-gold underline-offset-4 hover:text-gold-hover hover:underline">{p.developerName}</Link></span>
+              <span className="flex items-center gap-1.5"><Icon name="pin" className="size-4 text-gold" /><span>{area ? <Link href={`/areas/${area.slug}`} className="underline-offset-4 hover:text-gold-hover hover:underline">{p.communityName}</Link> : p.communityName}, {p.emirate}</span></span>
             </p>
-            <dl className="mt-2 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-sage/25 pt-6 sm:grid-cols-3">
+            <dl className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
               <Fact label={price.label} value={price.value} note={price.note} />
               <Fact label="Handover" value={p.handover.label ?? 'To be announced'} />
               <Fact label="Unit types" value={p.bedroomsLabel ?? (p.propertyTypeLabels.join(', ') || 'To be announced')} />
@@ -135,63 +141,65 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <div className="on-white bg-white">
-        <div className="container-site grid grid-cols-1 gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-16">
+      <div className="on-white bg-page">
+        <div className="container-site grid grid-cols-1 gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-16">
           <div className="grid min-w-0 grid-cols-1 gap-16 md:gap-20">
             <section aria-labelledby="h-overview">
-              <H2 id="h-overview" label="Overview">About {displayName}</H2>
+              <H2 id="h-overview" label="Overview">About <G>{displayName}</G></H2>
               <div className="grid max-w-3xl gap-4 text-[17px]">
-                {intro.map((para, i) => <p key={i} className={i === 0 ? 'text-lede' : 'text-muted'}>{para}</p>)}
+                {intro.map((para, i) => <p key={i} className={i === 0 ? 'text-lede text-heading' : 'text-body'}>{para}</p>)}
                 {editorial?.introNote ? <Disclaimer>{editorial.introNote}</Disclaimer> : null}
               </div>
             </section>
 
             {gallery.length > 1 ? (
               <section aria-labelledby="h-gallery">
-                <H2 id="h-gallery" label="Gallery">{displayName} in pictures</H2>
-                <Gallery items={gallery} />
+                <H2 id="h-gallery" label="Gallery">{displayName} in <G>pictures</G></H2>
+                <div className="border border-line border-t-2 border-t-gold bg-surface p-4 md:p-6">
+                  <Gallery items={gallery} />
+                </div>
                 <p className="mt-3 text-xs text-muted">Developer renders. The finished property may differ.</p>
               </section>
             ) : null}
 
             {p.units.length ? (
               <section aria-labelledby="h-units">
-                <H2 id="h-units" label="Unit types">Sizes and prices</H2>
+                <H2 id="h-units" label="Unit types">Sizes and <G>prices</G></H2>
                 {/* Phones: one card per unit type, so the price is never off-screen. The table takes over from 768px. */}
                 <ul className="grid gap-3 md:hidden">
                   {p.units.map((u, i) => (
-                    <li key={i} className="rounded-brand border border-line p-4">
+                    <li key={i} className="card p-4">
                       <p className="flex items-baseline justify-between gap-3">
-                        <span className="font-semibold">{u.type}{u.bedrooms ? ` · ${u.bedrooms === 'Studio' ? 'Studio' : `${u.bedrooms} bed`}` : ''}</span>
-                        {u.floorPlan ? <a href="#h-gallery" className="shrink-0 text-sm font-semibold text-survey-deep underline underline-offset-4">Floor plan</a> : null}
+                        <span className="font-semibold text-heading">{u.type}{u.bedrooms ? ` · ${u.bedrooms === 'Studio' ? 'Studio' : `${u.bedrooms} bed`}` : ''}</span>
+                        {u.floorPlan ? <a href="#h-gallery" className="link-accent shrink-0 text-sm underline">Floor plan</a> : null}
                       </p>
                       <dl className="mt-3 grid grid-cols-2 gap-3 text-[15px]">
-                        <div><dt className="text-xs text-muted">Size (sq ft)</dt><dd className="mt-0.5 tabular-nums">{sizeRange(u)}</dd></div>
-                        <div><dt className="text-xs text-muted">Price (AED)</dt><dd className="mt-0.5 font-semibold tabular-nums">{p.status === 'sold-out' ? 'Sold out' : priceRange(u).replace('AED ', '')}</dd></div>
+                        <div><dt className="text-label">Size (sq ft)</dt><dd className="mt-0.5 tabular-nums">{sizeRange(u)}</dd></div>
+                        <div><dt className="text-label">Price (AED)</dt><dd className="mt-0.5 font-semibold tabular-nums text-heading">{p.status === 'sold-out' ? 'Sold out' : priceRange(u).replace('AED ', '')}</dd></div>
                       </dl>
                     </li>
                   ))}
                 </ul>
-                <div className="hidden overflow-x-auto rounded-brand border border-line md:block">
+                <div className="hidden overflow-x-auto border border-line bg-surface md:block">
                   <table className="w-full min-w-[34rem] text-left text-[15px]">
                     <caption className="sr-only">Unit types, sizes and prices at {p.name}</caption>
                     <thead>
-                      <tr className="border-b border-line bg-sand text-xs uppercase tracking-[0.12em]">
-                        <th scope="col" className="p-3 font-semibold">Type</th>
-                        <th scope="col" className="p-3 font-semibold">Bedrooms</th>
-                        <th scope="col" className="p-3 font-semibold">Size (sq ft)</th>
-                        <th scope="col" className="p-3 font-semibold">Price (AED)</th>
-                        <th scope="col" className="p-3 font-semibold">Floor plan</th>
+                      <tr className="border-b border-line-strong bg-surface-2 text-label">
+                        <th scope="col" className="p-4 font-bold">Type</th>
+                        <th scope="col" className="p-4 font-bold">Bedrooms</th>
+                        <th scope="col" className="p-4 font-bold">Size (sq ft)</th>
+                        <th scope="col" className="p-4 font-bold">Price (AED)</th>
+                        <th scope="col" className="p-4 font-bold">Floor plan</th>
                       </tr>
                     </thead>
                     <tbody>
                       {p.units.map((u, i) => (
-                        <tr key={i} className="border-b border-line last:border-0">
-                          <td className="p-3 font-semibold">{u.type}</td>
-                          <td className="p-3">{u.bedrooms ?? '—'}</td>
-                          <td className="p-3 tabular-nums">{sizeRange(u)}</td>
-                          <td className="p-3 tabular-nums">{p.status === 'sold-out' ? 'Sold out' : priceRange(u).replace('AED ', '')}</td>
-                          <td className="p-3">{u.floorPlan ? <a href="#h-gallery" className="text-sm font-semibold text-survey-deep underline underline-offset-4">In gallery</a> : <span className="text-muted">—</span>}</td>
+                        <tr key={i} className="border-b border-line transition-colors last:border-0 hover:bg-surface-2">
+                          <td className="p-4 font-semibold text-heading">{u.type}</td>
+                          <td className="p-4">{u.bedrooms ?? '—'}</td>
+                          <td className="p-4 tabular-nums">{sizeRange(u)}</td>
+                          <td className="p-4 font-semibold tabular-nums text-heading">{p.status === 'sold-out' ? 'Sold out' : priceRange(u).replace('AED ', '')}</td>
+                          <td className="p-4">{u.floorPlan ? <a href="#h-gallery" className="link-accent text-sm underline">In gallery</a> : <span className="text-muted">—</span>}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -202,8 +210,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             ) : null}
 
             {editorial?.abovePaymentPlan.length ? (
-              <section aria-labelledby="h-editorial" className="grid max-w-3xl gap-4 text-[17px] text-muted [&_h2]:text-ink [&_h3]:text-ink">
-                <p className="text-label">Buyer guide</p>
+              <section aria-labelledby="h-editorial" className="grid max-w-3xl gap-4 border-l-2 border-gold pl-5 text-[17px] text-body md:pl-8 [&_h2]:text-heading [&_h3]:text-heading">
+                <p className="eyebrow-line-start">Buyer guide</p>
                 <h2 id="h-editorial" className="sr-only">{displayName} buyer guide</h2>
                 <ArticleBody blocks={editorial.abovePaymentPlan} />
               </section>
@@ -211,21 +219,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {p.paymentPlans.length ? (
               <section aria-labelledby="h-plans">
-                <H2 id="h-plans" label="Payment">{p.paymentPlans.length > 1 ? `${p.paymentPlans.length} payment plans` : 'Payment plan'}</H2>
+                <H2 id="h-plans" label="Payment">{p.paymentPlans.length > 1 ? <>{p.paymentPlans.length} payment <G>plans</G></> : <>Payment <G>plan</G></>}</H2>
                 <PaymentPlans plans={p.paymentPlans} />
               </section>
             ) : null}
 
             {p.amenities.length ? (
               <section aria-labelledby="h-amenities">
-                <H2 id="h-amenities" label="Amenities">Inside the development</H2>
+                <H2 id="h-amenities" label="Amenities">Inside the <G>development</G></H2>
                 <ul className="grid grid-cols-2 gap-3 md:grid-cols-3">
                   {p.amenities.map((a) => (
-                    <li key={a.name} className="card overflow-hidden">
-                      {a.image ? <div className="relative aspect-[4/3] overflow-hidden rounded-t-[inherit] bg-line"><DeferredImage src={a.image.src} alt={a.image.alt} fill sizes="(min-width: 1024px) 240px, (min-width: 768px) 33vw, 50vw" className="object-cover" /></div> : null}
+                    <li key={a.name} className="card card-lift overflow-hidden">
+                      {a.image ? <div className="relative aspect-[4/3] overflow-hidden bg-surface-2"><DeferredImage src={a.image.src} alt={a.image.alt} fill sizes="(min-width: 1024px) 240px, (min-width: 768px) 33vw, 50vw" className="img-zoom object-cover" /></div> : null}
                       <div className="flex items-start gap-2 p-4">
-                        {a.image ? null : <Icon name="check" className="mt-0.5 size-4 shrink-0 text-survey-deep" />}
-                        <span className="grid gap-1"><span className="font-semibold leading-snug">{a.name}</span>{a.description ? <span className="text-sm text-muted">{a.description}</span> : null}</span>
+                        {a.image ? null : <Icon name="check" className="mt-0.5 size-4 shrink-0 text-gold" />}
+                        <span className="grid gap-1"><span className="font-semibold leading-snug text-heading">{a.name}</span>{a.description ? <span className="text-sm text-muted">{a.description}</span> : null}</span>
                       </div>
                     </li>
                   ))}
@@ -234,16 +242,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             ) : null}
 
             <section aria-labelledby="h-location">
-              <H2 id="h-location" label="Location">Where {p.name} is</H2>
-              <p className="max-w-3xl text-[17px] text-muted">
+              <H2 id="h-location" label="Location">Where <G>{p.name}</G> is</H2>
+              <p className="max-w-3xl text-[17px] text-body">
                 {p.name} is in {p.communityName}, {p.emirate}.{area && area.projects.length > 1 ? <> {area.projects.length - 1} other new launch{area.projects.length === 2 ? ' is' : 'es are'} listed in the same area: <Link href={`/areas/${area.slug}`} className="link-accent">compare {area.name}</Link>.</> : null}
               </p>
               {p.nearby.length ? (
                 <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                   {p.nearby.map((n) => (
-                    <li key={n.name} className="flex items-center justify-between gap-4 rounded-brand border border-line px-4 py-3">
-                      <span className="grid"><span className="font-semibold leading-snug">{n.name}</span>{n.category ? <span className="text-xs text-muted">{n.category}</span> : null}</span>
-                      <span className="text-right text-sm tabular-nums text-muted">{[n.time, n.distance].filter(Boolean).join(' · ')}</span>
+                    <li key={n.name} className="card flex items-center justify-between gap-4 px-4 py-3">
+                      <span className="grid"><span className="font-semibold leading-snug text-heading">{n.name}</span>{n.category ? <span className="text-xs text-muted">{n.category}</span> : null}</span>
+                      <span className="text-right text-sm font-semibold tabular-nums text-gold">{[n.time, n.distance].filter(Boolean).join(' · ')}</span>
                     </li>
                   ))}
                 </ul>
@@ -254,18 +262,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             </section>
 
-            <section id="brochure" aria-labelledby="h-brochure" className="relative grid gap-6 overflow-hidden rounded-brand-lg bg-plot p-6 md:grid-cols-2 md:p-10">
-              <div aria-hidden="true" className="survey-grid pointer-events-none absolute inset-0 opacity-40" />
-              <div className="relative grid content-start gap-3">
-                <p className="text-label !text-datum">Brochure</p>
-                <h2 id="h-brochure" className="text-h2">{docWords.length ? `Get the ${docWords.join(' and ')}` : `Get the details for ${p.name}`}</h2>
-                <p className="text-muted">{docWords.length ? `The developer’s ${docWords.join(' and ')} for ${p.name} are available. Leave your details and an advisor will send them, with current availability.` : 'Leave your details and an advisor will send what the developer has released so far.'}</p>
+            <section id="brochure" aria-labelledby="h-brochure" className="warm-band relative grid gap-6 overflow-hidden border border-line-strong p-6 md:grid-cols-2 md:p-10">
+              <div aria-hidden="true" className="gold-grid grid-fade pointer-events-none absolute inset-0" />
+              <div aria-hidden="true" className="gold-glow pointer-events-none absolute inset-0" />
+              <div className="relative grid content-start justify-items-start gap-3">
+                <p className="eyebrow-line-start">Brochure</p>
+                <h2 id="h-brochure" className="text-h2">{docWords.length ? <>Get the <G>{docWords.join(' and ')}</G></> : <>Get the details for <G>{p.name}</G></>}</h2>
+                <p className="text-body">{docWords.length ? `The developer’s ${docWords.join(' and ')} for ${p.name} are available. Leave your details and an advisor will send them, with current availability.` : 'Leave your details and an advisor will send what the developer has released so far.'}</p>
               </div>
-              <EnquiryForm source="brochure" projectSlug={p.slug} title={`Send me the ${docWords.length ? docWords.join(' and ') : 'details'}`} submitLabel="Send it to me" compact className="relative" />
+              <EnquiryForm source="brochure" projectSlug={p.slug} title={`Send me the ${docWords.length ? docWords.join(' and ') : 'details'}`} submitLabel="Send it to me" compact className="relative border-t-[3px] border-t-gold" />
             </section>
 
             <section aria-labelledby="h-faq">
-              <H2 id="h-faq" label="FAQ">Questions about {displayName}</H2>
+              <H2 id="h-faq" label="FAQ">Questions about <G>{displayName}</G></H2>
               <Faq items={faqs} />
             </section>
 
@@ -275,14 +284,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
 
           <aside aria-label={`Enquire about ${p.name}`} className="grid grid-cols-1 gap-4 lg:sticky lg:top-24 lg:self-start">
-            <div className="card grid gap-4 p-6">
-              <p className="text-label">{statusLabel[p.status]}</p>
-              <p className="grid"><span className="text-sm text-muted">{price.label}</span><strong className="text-figure text-[34px] leading-tight">{price.value}</strong>{price.note ? <span className="text-xs text-muted">{price.note}</span> : null}</p>
+            <div className="card grid gap-4 border-t-[3px] border-t-gold p-6">
+              <p className="flex items-center gap-2 text-label"><span aria-hidden="true" className="eyebrow-dot" />{statusLabel[p.status]}</p>
+              <p className="grid gap-0.5 border-b border-line pb-4"><span className="text-sm text-muted">{price.label}</span><strong className="text-figure text-[34px] leading-tight text-gold">{price.value}</strong>{price.note ? <span className="text-xs text-muted">{price.note}</span> : null}</p>
               <a href="#register" className="btn btn-primary w-full">{config.ctaLabel}</a>
               <a href="#brochure" className="btn btn-secondary w-full"><Icon name="file" className="size-[18px]" />Request the brochure</a>
               {tel ? <a href={tel} className="btn btn-dark w-full"><Icon name="phone" className="size-[18px]" />Call {contact.phone.display}</a> : null}
-              {dev ? <Link href={`/developers/${dev.slug}`} className="btn btn-secondary btn-sm justify-self-stretch">More from {dev.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
-              {area && area.projects.length > 1 ? <Link href={`/areas/${area.slug}`} className="btn btn-secondary btn-sm justify-self-stretch">More in {area.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
+              {dev || (area && area.projects.length > 1) ? (
+                <div className="grid gap-1 border-t border-line pt-3">
+                  {dev ? <Link href={`/developers/${dev.slug}`} className="arrow-link min-h-11">More from {dev.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
+                  {area && area.projects.length > 1 ? <Link href={`/areas/${area.slug}`} className="arrow-link min-h-11">More in {area.name} <Icon name="arrow-right" className="size-4" /></Link> : null}
+                </div>
+              ) : null}
             </div>
             <PermitBox slug={p.slug} developerName={p.developerName} />
           </aside>
@@ -290,7 +303,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </div>
 
       {related.length ? (
-        <Section id="related" tone="sand" label="Related" title={`More projects like ${p.name}`}>
+        <Section id="related" tone="sand" label="Related" title={`More projects like ${p.name}`} highlight={p.name}>
           <ul className="swipe-row grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {related.map((r, i) => <li key={r.slug} className="contents"><ProjectCard p={r} index={i} /></li>)}
           </ul>

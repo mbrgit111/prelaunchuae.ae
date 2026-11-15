@@ -7,6 +7,7 @@ import { Faq } from '@/components/ui/Faq';
 import { PageHero } from '@/components/ui/PageHero';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 import { Section } from '@/components/ui/Section';
+import { HeroFigures, shortAed } from './HeroFigures';
 
 export const TYPES = {
   apartment: { slug: 'apartments', plural: 'Apartments', lower: 'apartments' },
@@ -47,6 +48,7 @@ export async function TypePage({ type, bedrooms }: { type: keyof typeof TYPES; b
   const crumbs = [{ name: 'Home', path: '/' }, { name: 'Projects', path: '/projects' }, { name: t.plural, path: `/${t.slug}` }, ...(bedrooms ? [{ name: bedrooms.label, path }] : [])];
   const summary = typeSummary(label, ps);
   const prices = ps.filter((p) => p.status !== 'sold-out' && p.priceFrom).map((p) => p.priceFrom!);
+  const launching = ps.filter((p) => p.status === 'available' || p.status === 'new-launch').length;
   const byArea = [...ps.reduce((m, p) => m.set(p.communityName, (m.get(p.communityName) ?? 0) + 1), new Map<string, number>())].sort((a, b) => b[1] - a[1]);
   const faqs = [
     { q: `How many new launches offer ${label.toLowerCase()}?`, a: summary },
@@ -63,11 +65,23 @@ export async function TypePage({ type, bedrooms }: { type: keyof typeof TYPES; b
   }
   return (
     <>
-      <PageHero crumbs={crumbs} label={`${label} · Dubai and the UAE`} title={`Off-plan ${label.toLowerCase()} in the UAE`} lede={summary}>
+      <PageHero crumbs={crumbs} label={`${label} · Dubai and the UAE`} title={`Off-plan ${label.toLowerCase()} in the UAE`} highlight={label.toLowerCase()} lede={summary}>
+        {ps.length ? (
+          <HeroFigures
+            items={[
+              [ps.length, ps.length === 1 ? 'project' : 'projects'],
+              [launching, 'launching now'],
+              [byArea.length, byArea.length === 1 ? 'area' : 'areas'],
+              [prices.length ? shortAed(Math.min(...prices)) : '—', 'from, AED'],
+            ]}
+          />
+        ) : null}
         {bedroomLinks.length ? (
-          <ul className="mt-2 flex flex-wrap gap-2">
-            {bedroomLinks.map((b) => <li key={b.slug}><Link href={`/apartments/${b.slug}`} className="inline-flex min-h-10 items-center rounded-full border border-sage/50 px-4 text-sm font-semibold text-sand hover:border-plot hover:text-plot">{b.label.replace(' apartments', '')}</Link></li>)}
-          </ul>
+          <nav aria-label="Apartments by bedrooms" className="mt-1">
+            <ul className="flex flex-wrap gap-2">
+              {bedroomLinks.map((b) => <li key={b.slug}><Link href={`/apartments/${b.slug}`} className="chip">{b.label.replace(' apartments', '')}</Link></li>)}
+            </ul>
+          </nav>
         ) : null}
       </PageHero>
       <Section
@@ -75,16 +89,14 @@ export async function TypePage({ type, bedrooms }: { type: keyof typeof TYPES; b
         tone="sand"
         label={`${ps.length} projects`}
         title={`Compare ${label.toLowerCase()}`}
-        action={ps.length > SHOWN ? <Link href={filterHref} className="btn btn-secondary btn-sm">Filter all {ps.length} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
+        highlight={label.toLowerCase()}
+        action={ps.length > SHOWN ? <Link href={filterHref} className="btn btn-primary">Filter all {ps.length} projects <Icon name="arrow-right" className="size-[18px]" /></Link> : undefined}
       >
         <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {ps.slice(0, SHOWN).map((p, i) => <li key={p.slug} className="contents"><ProjectCard p={p} index={i} /></li>)}
         </ul>
-        {ps.length > SHOWN ? (
-          <p className="mt-10 text-center"><Link href={filterHref} className="btn btn-dark">Search and filter all {ps.length} projects <Icon name="arrow-right" className="size-[18px]" /></Link></p>
-        ) : null}
       </Section>
-      <Section id="faq" tone="white" label="FAQ" title={`Off-plan ${label.toLowerCase()}: questions`}>
+      <Section id="faq" tone="white" label="FAQ" title={`Off-plan ${label.toLowerCase()}: questions`} highlight="questions">
         <div className="max-w-4xl"><Faq items={faqs} /></div>
       </Section>
       <RegisterBand />

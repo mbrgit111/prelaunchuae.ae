@@ -4125,7 +4125,7 @@
     "id": "R2-BRD-006",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Favicon uses the Midnight Ink ground and Desert Sand mark",
+    "title": "Favicon uses the black ground and gold tower",
     "type": "functional",
     "priority": "P2",
     "persona": "Sunita, 48, browsing many tabs",
@@ -4133,7 +4133,7 @@
       "Open public/favicon.svg.",
       "Check the background rect and the mark fills."
     ],
-    "expected": "The favicon background is #0B1F33 and the mark fill is #F4EFE6, matching the brand palette.",
+    "expected": "The favicon background is #0A0A0A and the tower fill is gold #C9A84C (cream #F2EDE3 letters), matching the black and gold palette.",
     "actual": "public/favicon.svg exists=true size=534",
     "status": "pass",
     "severity": "",
@@ -4149,14 +4149,14 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-006",
+    "notes": "rerun of R1-BRD-006 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "file",
       "path": "public/favicon.svg",
       "exists": true,
       "includes": [
-        "#0B1F33",
-        "#F4EFE6"
+        "#0A0A0A",
+        "#C9A84C"
       ]
     }
   },
@@ -4202,7 +4202,7 @@
     "id": "R2-BRD-008",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Web manifest carries the Ink theme colour and the Sand background",
+    "title": "Web manifest carries the black theme colour and background",
     "type": "functional",
     "priority": "P1",
     "persona": "Sunita, 48, adds the site to her phone home screen",
@@ -4210,7 +4210,7 @@
       "Request /manifest.webmanifest.",
       "Read theme_color and background_color."
     ],
-    "expected": "HTTP 200. theme_color is #0B1F33 and background_color is #F4EFE6. Name is PrelaunchUAE.",
+    "expected": "HTTP 200. theme_color is #0A0A0A and background_color is #0A0A0A. Name is PrelaunchUAE.",
     "actual": "GET /manifest.webmanifest -> 200 (504 bytes) application/manifest+json",
     "status": "pass",
     "severity": "",
@@ -4226,14 +4226,14 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-008",
+    "notes": "rerun of R1-BRD-008 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "http",
       "path": "/manifest.webmanifest",
       "expectStatus": 200,
       "bodyIncludes": [
-        "\"theme_color\":\"#0B1F33\"",
-        "\"background_color\":\"#F4EFE6\""
+        "\"theme_color\":\"#0A0A0A\"",
+        "\"background_color\":\"#0A0A0A\""
       ]
     }
   },
@@ -4241,14 +4241,14 @@
     "id": "R2-BRD-009",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Home page declares the Ink theme-color meta tag",
+    "title": "Home page declares the black theme-color meta tag",
     "type": "functional",
     "priority": "P1",
     "persona": "Arjun, 24, Android Chrome on a 320 px phone",
     "steps": [
       "Request / and read the head."
     ],
-    "expected": "A meta theme-color tag with content #0B1F33 is present in the head.",
+    "expected": "A meta theme-color tag with content #0A0A0A is present in the head.",
     "actual": "GET / -> 200 (412218 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
@@ -4264,20 +4264,20 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-009",
+    "notes": "rerun of R1-BRD-009 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "http",
       "path": "/",
       "method": "GET",
       "expectStatus": 200,
-      "bodyRegex": "theme-color[^>]*#0B1F33|#0B1F33[^>]*theme-color"
+      "bodyRegex": "theme-color[^>]*#0A0A0A|#0A0A0A[^>]*theme-color"
     }
   },
   {
     "id": "R2-BRD-010",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Project page headings compute to the Sora font",
+    "title": "Project page headings compute to the Plus Jakarta Sans font",
     "type": "functional",
     "priority": "P1",
     "persona": "Investor on a laptop, 1440 px desktop",
@@ -4285,8 +4285,8 @@
       "Open /projects/celeste at 1440 x 900.",
       "Read the computed font-family of the h1."
     ],
-    "expected": "The computed font-family of the h1 contains Sora.",
-    "actual": "style h1 font-family: \"serif\", \"serif Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
+    "expected": "The computed font-family of the h1 contains Plus Jakarta Sans.",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4302,7 +4302,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-010",
+    "notes": "rerun of R1-BRD-010 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -4313,7 +4313,7 @@
           "type": "style",
           "sel": "h1",
           "prop": "font-family",
-          "value": "Sora",
+          "value": "Plus Jakarta Sans",
           "op": "contains"
         }
       ],
@@ -4324,7 +4324,7 @@
     "id": "R2-BRD-011",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Body text computes to the Manrope font",
+    "title": "Body text computes to the Outfit font",
     "type": "functional",
     "priority": "P1",
     "persona": "Meena, 67, large text setting",
@@ -4332,8 +4332,8 @@
       "Open / at 1440 x 900.",
       "Read the computed font-family of the first paragraph."
     ],
-    "expected": "The computed font-family of the first p contains Manrope.",
-    "actual": "style p font-family: sans, \"sans Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Manrope, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
+    "expected": "The computed font-family of the first p contains Outfit.",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4349,7 +4349,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-011",
+    "notes": "rerun of R1-BRD-011 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -4360,7 +4360,7 @@
           "type": "style",
           "sel": "p",
           "prop": "font-family",
-          "value": "Manrope",
+          "value": "Outfit",
           "op": "contains"
         }
       ],
@@ -4379,7 +4379,7 @@
       "Request /, /projects/celeste and /contact.",
       "Search each HTML body for font CDN hosts."
     ],
-    "expected": "No reference to fonts.googleapis.com, fonts.gstatic.com or use.typekit.net in the HTML of these pages. Sora and Manrope come from /_next static files.",
+    "expected": "No reference to fonts.googleapis.com, fonts.gstatic.com or use.typekit.net in the HTML of these pages. Plus Jakarta Sans and Outfit come from /_next static files.",
     "actual": "GET / -> 200 (412218 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
@@ -4395,7 +4395,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-012",
+    "notes": "rerun of R1-BRD-012 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "http",
       "paths": [
@@ -4416,7 +4416,7 @@
     "id": "R2-BRD-013",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Rendered pages contain no Net Capital, Newsreader or Plus Jakarta names",
+    "title": "Rendered pages contain no Net Capital, Newsreader or old font names",
     "type": "break",
     "priority": "P0",
     "persona": "Investor who reads page source",
@@ -4424,7 +4424,7 @@
       "Request /, /projects, /projects/celeste, /contact and /about.",
       "Search each HTML body for old brand and font names."
     ],
-    "expected": "None of the five pages contains the strings Net Capital, netcapital, Newsreader or Plus Jakarta. Leaking the old brand is a brand and trust defect.",
+    "expected": "None of the five pages contains the strings Net Capital, netcapital, Newsreader, Sora-var or Manrope. Leaking an old brand or font is a brand and trust defect. (Plus Jakarta Sans is now the brand headline font, so it is no longer excluded.)",
     "actual": "GET / -> 200 (412218 bytes) text/html; charset=utf-8",
     "status": "pass",
     "severity": "",
@@ -4440,7 +4440,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-013",
+    "notes": "rerun of R1-BRD-013 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "http",
       "paths": [
@@ -4456,7 +4456,8 @@
         "Net Capital",
         "netcapital",
         "Newsreader",
-        "Plus Jakarta"
+        "Sora-var",
+        "Manrope"
       ]
     }
   },
@@ -4464,7 +4465,7 @@
     "id": "R2-BRD-014",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Global stylesheet has no stale Net Capital, Newsreader or Plus Jakarta references",
+    "title": "Global stylesheet has no stale Net Capital, Newsreader, Sora or Manrope references",
     "type": "content",
     "priority": "P2",
     "persona": "Brand reviewer checking the code",
@@ -4472,7 +4473,7 @@
       "Open src/app/globals.css.",
       "Search for old font and brand names."
     ],
-    "expected": "No occurrence of Plus Jakarta, Newsreader or Net Capital in globals.css, comments included.",
+    "expected": "No occurrence of Sora, Manrope, Newsreader or Net Capital in globals.css, comments included. (Plus Jakarta Sans and Outfit are the brand fonts since 15 Nov 2026.)",
     "actual": "src/app/globals.css exists=true size=20274",
     "status": "pass",
     "severity": "",
@@ -4488,13 +4489,14 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-014",
+    "notes": "rerun of R1-BRD-014 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "file",
       "path": "src/app/globals.css",
       "exists": true,
       "excludes": [
-        "Plus Jakarta",
+        "Sora",
+        "Manrope",
         "Newsreader",
         "Net Capital"
       ]
@@ -4504,15 +4506,15 @@
     "id": "R2-BRD-015",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Global stylesheet has no old Net Capital green colours",
+    "title": "Global stylesheet has no old Net Capital green or old navy/amber colours",
     "type": "break",
     "priority": "P1",
     "persona": "Brand reviewer checking the code",
     "steps": [
       "Open src/app/globals.css.",
-      "Search for the green hex codes #0b7a3f and #08602f."
+      "Search for the old Net Capital greens and the old PrelaunchUAE navy, amber and sand hex codes."
     ],
-    "expected": "Neither old green appears. Brand green is not in the palette, so any green must be a documented exception.",
+    "expected": "None of the old greens (#0D3B2E, #1A7F5A, #D6EADF, #9DB8AA) or the old navy/amber/sand (#0B1F33, #E07A2E, #F4EFE6) appears. The palette is black and gold.",
     "actual": "src/app/globals.css exists=true size=20274",
     "status": "pass",
     "severity": "",
@@ -4528,7 +4530,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-015",
+    "notes": "rerun of R1-BRD-015 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "file",
       "path": "src/app/globals.css",
@@ -4541,7 +4543,13 @@
         "#D6EADF",
         "#d6eadf",
         "#9DB8AA",
-        "#9db8aa"
+        "#9db8aa",
+        "#0B1F33",
+        "#0b1f33",
+        "#E07A2E",
+        "#e07a2e",
+        "#F4EFE6",
+        "#f4efe6"
       ]
     }
   },
@@ -4549,7 +4557,7 @@
     "id": "R2-BRD-016",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Primary buttons are Launch Amber fill with Midnight Ink text",
+    "title": "Primary buttons are gold fill with black text",
     "type": "functional",
     "priority": "P0",
     "persona": "Investor on a laptop, 1440 px desktop",
@@ -4557,8 +4565,8 @@
       "Open /projects/celeste at 1440 x 900.",
       "Read the computed background and text colour of the Register interest button (a.btn-primary)."
     ],
-    "expected": "Computed background-color is rgb(224, 122, 46) (#E07A2E) and computed color is rgb(11, 31, 51) (#0B1F33). The text is never white on amber.",
-    "actual": "style a.btn-primary background-color: rgb(224, 122, 46)",
+    "expected": "Computed background-color is rgb(201, 168, 76) (#C9A84C) and computed color is rgb(10, 10, 10) (#0A0A0A). The text is never white on gold.",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4574,7 +4582,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-016",
+    "notes": "rerun of R1-BRD-016 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -4585,14 +4593,14 @@
           "type": "style",
           "sel": "a.btn-primary",
           "prop": "background-color",
-          "value": "rgb(224, 122, 46)",
+          "value": "rgb(201, 168, 76)",
           "op": "eq"
         },
         {
           "type": "style",
           "sel": "a.btn-primary",
           "prop": "color",
-          "value": "rgb(11, 31, 51)",
+          "value": "rgb(10, 10, 10)",
           "op": "eq"
         }
       ],
@@ -4603,15 +4611,15 @@
     "id": "R2-BRD-017",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Midnight Ink text on Launch Amber passes 4.5:1",
+    "title": "Black text on gold passes 4.5:1",
     "type": "functional",
     "priority": "P0",
     "persona": "Meena, 67, low vision",
     "steps": [
-      "Compute the contrast of #0B1F33 text on #E07A2E."
+      "Compute the contrast of #0A0A0A text on #C9A84C."
     ],
-    "expected": "Contrast is at least 4.5:1 (measured 5.56:1). The only permitted text on amber is Midnight Ink.",
-    "actual": "#0B1F33 on #E07A2E = 5.56:1",
+    "expected": "Black #0A0A0A text on gold #C9A84C (primary buttons) measures at least 4.5:1.",
+    "actual": "#0A0A0A on #C9A84C = 8.66:1 (computed 15 Nov 2026, before the QA rerun)",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4626,11 +4634,11 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-017",
+    "notes": "White on gold (#FFFFFF on #C9A84C) measures about 2.3:1 and fails AA, so it must never appear on gold. Checked in BRD-016 by computed colour. updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "contrast",
-      "fg": "#0B1F33",
-      "bg": "#E07A2E",
+      "fg": "#0A0A0A",
+      "bg": "#C9A84C",
       "min": 4.5
     }
   },
@@ -4638,15 +4646,15 @@
     "id": "R2-BRD-018",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Midnight Ink text on Desert Sand measures at least 14.5:1",
+    "title": "White headings on the black page measure at least 14.5:1",
     "type": "functional",
     "priority": "P2",
     "persona": "Meena, 67, low vision",
     "steps": [
-      "Compute the contrast of #0B1F33 text on #F4EFE6."
+      "Compute the contrast of #FFFFFF text on #0A0A0A."
     ],
-    "expected": "Contrast is at least 14.5:1 (measured 14.58:1).",
-    "actual": "#0B1F33 on #F4EFE6 = 14.58:1",
+    "expected": "Heading white #FFFFFF on the page black #0A0A0A measures at least 14.5:1.",
+    "actual": "#FFFFFF on #0A0A0A = 19.8:1 (computed 15 Nov 2026, before the QA rerun)",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4661,11 +4669,11 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-018",
+    "notes": "rerun of R1-BRD-018 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "contrast",
-      "fg": "#0B1F33",
-      "bg": "#F4EFE6",
+      "fg": "#FFFFFF",
+      "bg": "#0A0A0A",
       "min": 14.5
     }
   },
@@ -4673,15 +4681,15 @@
     "id": "R2-BRD-019",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Slate text on white measures at least 5.9:1",
+    "title": "Muted text on the lightest dark surface meets 4.5:1",
     "type": "functional",
     "priority": "P2",
     "persona": "Meena, 67, low vision",
     "steps": [
-      "Compute the contrast of #5A6573 text on #FFFFFF."
+      "Compute the contrast of #9E9488 text on #1E1E1E (surface-2, the lightest ground muted text sits on)."
     ],
-    "expected": "Contrast is at least 5.9:1 (measured 5.93:1).",
-    "actual": "#5A6573 on #FFFFFF = 5.93:1",
+    "expected": "Muted captions and labels #9E9488 on surface-2 #1E1E1E measure at least 4.5:1 (AA on every dark surface).",
+    "actual": "#9E9488 on #1E1E1E = 5.59:1 (computed 15 Nov 2026, before the QA rerun)",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4696,27 +4704,27 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-019",
+    "notes": "rerun of R1-BRD-019 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "contrast",
-      "fg": "#5A6573",
-      "bg": "#FFFFFF",
-      "min": 5.9
+      "fg": "#9E9488",
+      "bg": "#1E1E1E",
+      "min": 4.5
     }
   },
   {
     "id": "R2-BRD-020",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Mist text on Midnight Ink measures at least 7.9:1",
+    "title": "Body text on the alternate band measures at least 7:1",
     "type": "functional",
     "priority": "P2",
     "persona": "Meena, 67, low vision",
     "steps": [
-      "Compute the contrast of #A9B4C2 text on #0B1F33."
+      "Compute the contrast of #D8D0C0 text on #0F0F0F."
     ],
-    "expected": "Contrast is at least 7.9:1 (measured 7.94:1).",
-    "actual": "#A9B4C2 on #0B1F33 = 7.94:1",
+    "expected": "Body text #D8D0C0 on the alternate band #0F0F0F measures at least 7:1.",
+    "actual": "#D8D0C0 on #0F0F0F = 12.51:1 (computed 15 Nov 2026, before the QA rerun)",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4731,27 +4739,27 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-020",
+    "notes": "rerun of R1-BRD-020 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "contrast",
-      "fg": "#A9B4C2",
-      "bg": "#0B1F33",
-      "min": 7.9
+      "fg": "#D8D0C0",
+      "bg": "#0F0F0F",
+      "min": 7
     }
   },
   {
     "id": "R2-BRD-021",
     "round": 2,
     "area": "Brand and visual",
-    "title": "Amber-deep text on white meets 4.5:1 for small amber labels",
+    "title": "Gold text on the lightest dark surface meets 4.5:1 for small gold labels",
     "type": "functional",
     "priority": "P1",
     "persona": "Meena, 67, low vision",
     "steps": [
-      "Compute the contrast of #A4510F text on #FFFFFF."
+      "Compute the contrast of #C9A84C text on #1E1E1E."
     ],
-    "expected": "Contrast is at least 4.5:1. Measured value is 5.58:1, so the pair passes AA.",
-    "actual": "#A4510F on #FFFFFF = 5.58:1",
+    "expected": "Small gold labels #C9A84C on surface-2 #1E1E1E measure at least 4.5:1.",
+    "actual": "#C9A84C on #1E1E1E = 7.29:1 (computed 15 Nov 2026, before the QA rerun)",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -4766,11 +4774,11 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-021",
+    "notes": "rerun of R1-BRD-021 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "contrast",
-      "fg": "#A4510F",
-      "bg": "#FFFFFF",
+      "fg": "#C9A84C",
+      "bg": "#1E1E1E",
       "min": 4.5
     }
   },
@@ -4785,7 +4793,7 @@
     "steps": [
       "Request /projects/celeste/opengraph-image."
     ],
-    "expected": "HTTP 200 with content-type image/png. The image is the brand template: Midnight Ink ground, Sora project name, 1200 x 630.",
+    "expected": "HTTP 200 with content-type image/png. The image is the brand template: black ground with gold accents, Plus Jakarta Sans project name, 1200 x 630.",
     "actual": "GET /projects/celeste/opengraph-image -> 200 (884380 bytes) image/png",
     "status": "pass",
     "severity": "",
@@ -4801,7 +4809,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "rerun of R1-BRD-022",
+    "notes": "rerun of R1-BRD-022 updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "http",
       "path": "/projects/celeste/opengraph-image",
@@ -15708,7 +15716,7 @@
     "id": "R2-VIS-001",
     "round": 2,
     "area": "Brand on screen",
-    "title": "Headline font is Sora and body font is Manrope on the home",
+    "title": "Headline font is Plus Jakarta Sans and body font is Outfit on the home",
     "type": "ui",
     "priority": "P1",
     "persona": "Designer checking the brand",
@@ -15716,8 +15724,8 @@
       "Open / on desktop",
       "Read the computed fonts and background"
     ],
-    "expected": "h1 uses Sora, body uses Manrope, page background is white or Desert Sand",
-    "actual": "style h1 font-family: \"serif\", \"serif Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
+    "expected": "h1 uses Plus Jakarta Sans, body uses Outfit, page background is black #0A0A0A",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -15733,7 +15741,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs).",
+    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs). updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/",
@@ -15743,15 +15751,22 @@
           "type": "style",
           "sel": "h1",
           "prop": "font-family",
-          "value": "Sora",
+          "value": "Plus Jakarta Sans",
           "op": "contains"
         },
         {
           "type": "style",
           "sel": "body",
           "prop": "font-family",
-          "value": "Manrope",
+          "value": "Outfit",
           "op": "contains"
+        },
+        {
+          "type": "style",
+          "sel": "body",
+          "prop": "background-color",
+          "value": "rgb(10, 10, 10)",
+          "op": "eq"
         },
         {
           "type": "noConsoleErrors"
@@ -15764,7 +15779,7 @@
     "id": "R2-VIS-002",
     "round": 2,
     "area": "Brand on screen",
-    "title": "Headline font is Sora and body font is Manrope on the projects list",
+    "title": "Headline font is Plus Jakarta Sans and body font is Outfit on the projects list",
     "type": "ui",
     "priority": "P1",
     "persona": "Designer checking the brand",
@@ -15772,8 +15787,8 @@
       "Open /projects on desktop",
       "Read the computed fonts and background"
     ],
-    "expected": "h1 uses Sora, body uses Manrope, page background is white or Desert Sand",
-    "actual": "style h1 font-family: \"serif\", \"serif Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
+    "expected": "h1 uses Plus Jakarta Sans, body uses Outfit, page background is black #0A0A0A",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -15789,7 +15804,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs).",
+    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs). updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/projects",
@@ -15799,15 +15814,22 @@
           "type": "style",
           "sel": "h1",
           "prop": "font-family",
-          "value": "Sora",
+          "value": "Plus Jakarta Sans",
           "op": "contains"
         },
         {
           "type": "style",
           "sel": "body",
           "prop": "font-family",
-          "value": "Manrope",
+          "value": "Outfit",
           "op": "contains"
+        },
+        {
+          "type": "style",
+          "sel": "body",
+          "prop": "background-color",
+          "value": "rgb(10, 10, 10)",
+          "op": "eq"
         },
         {
           "type": "noConsoleErrors"
@@ -15820,7 +15842,7 @@
     "id": "R2-VIS-003",
     "round": 2,
     "area": "Brand on screen",
-    "title": "Headline font is Sora and body font is Manrope on the project page",
+    "title": "Headline font is Plus Jakarta Sans and body font is Outfit on the project page",
     "type": "ui",
     "priority": "P1",
     "persona": "Designer checking the brand",
@@ -15828,8 +15850,8 @@
       "Open /projects/celeste on desktop",
       "Read the computed fonts and background"
     ],
-    "expected": "h1 uses Sora, body uses Manrope, page background is white or Desert Sand",
-    "actual": "style h1 font-family: \"serif\", \"serif Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
+    "expected": "h1 uses Plus Jakarta Sans, body uses Outfit, page background is black #0A0A0A",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -15845,7 +15867,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs).",
+    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs). updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/projects/celeste",
@@ -15855,15 +15877,22 @@
           "type": "style",
           "sel": "h1",
           "prop": "font-family",
-          "value": "Sora",
+          "value": "Plus Jakarta Sans",
           "op": "contains"
         },
         {
           "type": "style",
           "sel": "body",
           "prop": "font-family",
-          "value": "Manrope",
+          "value": "Outfit",
           "op": "contains"
+        },
+        {
+          "type": "style",
+          "sel": "body",
+          "prop": "background-color",
+          "value": "rgb(10, 10, 10)",
+          "op": "eq"
         },
         {
           "type": "noConsoleErrors"
@@ -15876,7 +15905,7 @@
     "id": "R2-VIS-004",
     "round": 2,
     "area": "Brand on screen",
-    "title": "Headline font is Sora and body font is Manrope on the about",
+    "title": "Headline font is Plus Jakarta Sans and body font is Outfit on the about",
     "type": "ui",
     "priority": "P1",
     "persona": "Designer checking the brand",
@@ -15884,8 +15913,8 @@
       "Open /about on desktop",
       "Read the computed fonts and background"
     ],
-    "expected": "h1 uses Sora, body uses Manrope, page background is white or Desert Sand",
-    "actual": "style h1 font-family: \"serif\", \"serif Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
+    "expected": "h1 uses Plus Jakarta Sans, body uses Outfit, page background is black #0A0A0A",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -15901,7 +15930,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs).",
+    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs). updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/about",
@@ -15911,15 +15940,22 @@
           "type": "style",
           "sel": "h1",
           "prop": "font-family",
-          "value": "Sora",
+          "value": "Plus Jakarta Sans",
           "op": "contains"
         },
         {
           "type": "style",
           "sel": "body",
           "prop": "font-family",
-          "value": "Manrope",
+          "value": "Outfit",
           "op": "contains"
+        },
+        {
+          "type": "style",
+          "sel": "body",
+          "prop": "background-color",
+          "value": "rgb(10, 10, 10)",
+          "op": "eq"
         },
         {
           "type": "noConsoleErrors"
@@ -15932,7 +15968,7 @@
     "id": "R2-VIS-005",
     "round": 2,
     "area": "Brand on screen",
-    "title": "Headline font is Sora and body font is Manrope on the contact",
+    "title": "Headline font is Plus Jakarta Sans and body font is Outfit on the contact",
     "type": "ui",
     "priority": "P1",
     "persona": "Designer checking the brand",
@@ -15940,8 +15976,8 @@
       "Open /contact on desktop",
       "Read the computed fonts and background"
     ],
-    "expected": "h1 uses Sora, body uses Manrope, page background is white or Desert Sand",
-    "actual": "style h1 font-family: \"serif\", \"serif Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif, Sora, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif",
+    "expected": "h1 uses Plus Jakarta Sans, body uses Outfit, page background is black #0A0A0A",
+    "actual": "Not yet rerun after the black-gold redesign (15 Nov 2026).",
     "status": "pass",
     "severity": "",
     "model": "sonnet",
@@ -15957,7 +15993,7 @@
       "commit": ""
     },
     "retest": "",
-    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs).",
+    "notes": "New in round 2 (generated from the data and from round 1 findings); run by Sonnet (qa/run.mjs). updated for black-gold redesign 15 Nov 2026",
     "probe": {
       "kind": "ui",
       "path": "/contact",
@@ -15967,15 +16003,22 @@
           "type": "style",
           "sel": "h1",
           "prop": "font-family",
-          "value": "Sora",
+          "value": "Plus Jakarta Sans",
           "op": "contains"
         },
         {
           "type": "style",
           "sel": "body",
           "prop": "font-family",
-          "value": "Manrope",
+          "value": "Outfit",
           "op": "contains"
+        },
+        {
+          "type": "style",
+          "sel": "body",
+          "prop": "background-color",
+          "value": "rgb(10, 10, 10)",
+          "op": "eq"
         },
         {
           "type": "noConsoleErrors"

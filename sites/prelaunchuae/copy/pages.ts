@@ -1,16 +1,20 @@
-/** Words for the areas, why Dubai, Golden Visa, about and contact pages. Claims carry a review flag until MBR adds sources. */
+/** Words for the areas, why Dubai, Golden Visa, about and contact pages. Claims carry a review flag until MBR adds sources.
+ *  `highlight` is the part of the H1 shown in gold (one per headline). */
 export const pages = {
   areas: {
     title: 'Areas',
     h1: 'New launches by area',
+    highlight: 'area',
     lede: 'Every community with a pre-launch or new launch, across the UAE. Open an area to compare its launches, developers, prices and handover dates.',
   },
   why: {
     h1: 'Why buyers look at Dubai',
+    highlight: 'Dubai',
     metaTitle: 'Why Buy Off-Plan in Dubai',
     lede: 'The general case for buying in Dubai, kept factual. For any point you rely on, ask us for the source.',
     offPlan: {
       title: 'Why buy off-plan',
+      highlight: 'off-plan',
       points: [
         { title: 'Payments spread over construction', body: 'Off-plan payments are usually split across booking, construction milestones and handover, and some plans continue after handover. Each project publishes its own split.' },
         { title: 'Early choice of units', body: 'Developers release projects in phases. Registering early gives you sight of launch availability, floor plans and pricing as they are released.' },
@@ -20,6 +24,7 @@ export const pages = {
   },
   goldenVisa: {
     h1: 'Golden Visa guide for property buyers',
+    highlight: 'Golden Visa',
     metaTitle: 'Golden Visa Through Property: A Guide',
     lede: 'A plain overview of how property can relate to the UAE’s long-term Golden Visa, and what to check before you rely on it.',
     flag: 'VERIFY CURRENT RULES',
@@ -33,6 +38,7 @@ export const pages = {
   },
   about: {
     h1: 'About PrelaunchUAE',
+    highlight: 'PrelaunchUAE',
     metaTitle: 'About Us',
     lede: 'New launches across the UAE, shown before they are everywhere. Plain facts, developer-approved, no hype. PrelaunchUAE is a brand of MBR Properties.',
     sections: [
@@ -43,8 +49,9 @@ export const pages = {
   },
   contact: {
     h1: 'Contact PrelaunchUAE',
+    highlight: 'PrelaunchUAE',
     metaTitle: 'Contact Us',
     lede: 'Send an enquiry with the form. An advisor replies with current availability, floor plans and payment plans.',
   },
-  faq: { h1: 'New launches in the UAE: questions', metaTitle: 'UAE New Launch Property FAQ' },
+  faq: { h1: 'New launches in the UAE: questions', highlight: 'questions', metaTitle: 'UAE New Launch Property FAQ' },
 } as const;

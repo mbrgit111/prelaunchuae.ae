@@ -52,11 +52,11 @@ export function Quiz() {
   }
 
   return (
-    <div className="rounded-brand-lg border border-line bg-white p-6 md:p-8">
+    <div className="border border-line border-t-2 border-t-gold bg-surface p-6 md:p-8">
       <div className="mb-6 flex items-center justify-between gap-4">
         <p className="text-label">Question {step + 1} of {STEPS.length}</p>
         <div className="flex gap-1.5" aria-hidden="true">
-          {STEPS.map((s, i) => <span key={s.key} className={`h-1.5 w-8 rounded-full ${i <= step ? 'bg-survey' : 'bg-line'}`} />)}
+          {STEPS.map((s, i) => <span key={s.key} className={`h-1 w-8 ${i <= step ? 'bg-gold' : 'bg-line-strong'}`} />)}
         </div>
       </div>
       <fieldset>
@@ -75,7 +75,8 @@ export function Quiz() {
                   setStep((s) => s + 1);
                 }}
               />
-              <span className="flex min-h-14 items-center rounded-brand border border-line px-5 font-semibold transition-colors hover:border-ink peer-checked:border-ink peer-checked:bg-sand peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-survey-deep">
+              <span className="group flex min-h-14 items-center gap-4 border border-line-strong bg-surface-2 px-5 font-semibold text-body transition-colors hover:border-gold hover:text-heading peer-checked:border-gold peer-checked:bg-gold-tint peer-checked:text-gold peer-checked:[&>span]:bg-gold peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gold-hover">
+                <span aria-hidden="true" className="size-3 shrink-0 border border-gold/60 transition-colors group-hover:bg-gold/40" />
                 {o.l}
               </span>
             </label>

@@ -14,11 +14,11 @@ function Row({ icon, label, value, href, ph }: { icon: IconName; label: string; 
   if (!value && !showPlaceholders) return null;
   return (
     <div className="grid grid-cols-[auto_1fr] gap-4 border-b border-line py-5">
-      <span className="grid size-11 place-items-center rounded-brand bg-sand text-survey-deep"><Icon name={icon} className="size-5" /></span>
+      <span className="grid size-11 place-items-center border border-line-strong bg-gold-tint text-gold"><Icon name={icon} className="size-5" /></span>
       <div className="grid gap-1">
-        <dt className="text-sm text-muted">{label}</dt>
-        <dd className="text-lg font-semibold">
-          {value ? href ? <a href={href} className="break-all hover:text-survey-deep">{value}</a> : value : <Ph label={ph} />}
+        <dt className="text-label">{label}</dt>
+        <dd className="text-lg font-semibold text-heading">
+          {value ? href ? <a href={href} className="break-all hover:text-gold">{value}</a> : value : <Ph label={ph} />}
         </dd>
       </div>
     </div>
@@ -30,8 +30,8 @@ export default function ContactPage() {
   const mail = mailHref();
   return (
     <>
-      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]} label="Contact" title={c.h1} lede={c.lede} />
-      <section aria-label="Contact details and form" className="on-white bg-white py-14 md:py-20">
+      <PageHero crumbs={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]} label="Contact" title={c.h1} highlight={c.highlight} lede={c.lede} />
+      <section aria-label="Contact details and form" className="on-white bg-page py-14 md:py-20">
         <div className="container-site grid items-start gap-12 lg:grid-cols-2">
           <div>
             <dl>
@@ -43,11 +43,19 @@ export default function ContactPage() {
               {tel ? <a href={tel} className="btn btn-dark"><Icon name="phone" className="size-[18px]" />Call us</a> : null}
               {mail ? <a href={mail} className="btn btn-secondary"><Icon name="mail" className="size-[18px]" />Email us</a> : null}
             </div>
-            {!tel && !mail ? <p className="text-lg text-muted">The enquiry form is the way to reach us. An advisor replies to the details you enter.</p> : null}
+            {!tel && !mail ? (
+              <div className="grid justify-items-start gap-4">
+                <p className="eyebrow-line-start">How to reach us</p>
+                <p className="text-lg text-body">The enquiry form is the way to reach us. An advisor replies to the details you enter.</p>
+              </div>
+            ) : null}
             <p className="mt-8 text-sm text-muted">{config.name} is operated by {config.operatedBy}.</p>
             <LicenceList className="mt-4 text-sm" withOffice={false} />
           </div>
-          <EnquiryForm source="contact" title="Send an enquiry" intro="Tell us the unit type, budget and timing you have in mind." withMessage headingLevel="h2" submitLabel="Send enquiry" />
+          {/* id="register": the header's "Register interest" button lands on this form (there is no register band on this page). */}
+          <div id="register" className="scroll-mt-28">
+            <EnquiryForm source="contact" title="Send an enquiry" intro="Tell us the unit type, budget and timing you have in mind." withMessage headingLevel="h2" submitLabel="Send enquiry" className="border-t-[3px] border-t-gold" />
+          </div>
         </div>
       </section>
     </>

@@ -57,27 +57,41 @@ export default async function DeveloperPage({ params }: { params: Promise<{ slug
         tone="sand"
         label={`${projects.length} project${projects.length === 1 ? '' : 's'}${areas.length > 1 ? ` · ${areas.length} areas` : ''}`}
         title={`${d.name} projects`}
-        action={projects.length > SHOWN ? <Link href={`/projects?developer=${d.slug}`} className="btn btn-secondary btn-sm">Filter all {projects.length} <Icon name="arrow-right" className="size-4" /></Link> : undefined}
+        highlight="projects"
+        action={projects.length > SHOWN ? <Link href={`/projects?developer=${d.slug}`} className="btn btn-primary">See all {projects.length} projects <Icon name="arrow-right" className="size-[18px]" /></Link> : undefined}
       >
         {areas.length > 1 ? (
           <ul className="mb-8 flex flex-wrap gap-2">
-            {areas.map(([name, n]) => <li key={name}><Link href={`/projects?developer=${d.slug}&area=${slugify(name)}`} className="chip gap-2">{name}<span className="font-normal text-muted">{n}</span></Link></li>)}
+            {areas.map(([name, n]) => <li key={name}><Link href={`/projects?developer=${d.slug}&area=${slugify(name)}`} className="chip gap-2">{name}<span className="font-normal tabular-nums opacity-70">{n}</span></Link></li>)}
           </ul>
         ) : null}
         <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, SHOWN).map((p, i) => <li key={p.slug} className="contents"><ProjectCard p={p} index={i} /></li>)}
         </ul>
-        {projects.length > SHOWN ? (
-          <p className="mt-10 text-center"><Link href={`/projects?developer=${d.slug}`} className="btn btn-dark">See all {projects.length} {d.name} projects <Icon name="arrow-right" className="size-[18px]" /></Link></p>
-        ) : null}
       </Section>
-      <Section id="other-developers" tone="white" label="Developers" title="Other developers">
-        <ul className="flex flex-wrap gap-2">
-          {others.map((o) => <li key={o.slug}><Link href={`/developers/${o.slug}`} className="inline-flex min-h-10 items-center gap-2 rounded-brand-sm border border-line px-4 text-sm font-semibold hover:border-ink">{o.name}<span className="font-normal text-muted">{o.projectSlugs.length}</span></Link></li>)}
-          <li><Link href="/developers" className="inline-flex min-h-10 items-center rounded-brand-sm bg-datum px-4 text-sm font-semibold text-sand">All developers</Link></li>
+      <Section
+        id="other-developers"
+        tone="white"
+        label="Developers"
+        title="Other developers"
+        highlight="developers"
+        action={<Link href="/developers" className="btn btn-secondary">All developers <Icon name="arrow-right" className="size-[18px]" /></Link>}
+      >
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {others.map((o) => (
+            <li key={o.slug}>
+              <Link href={`/developers/${o.slug}`} className="card card-lift group flex h-full items-center gap-4 p-4">
+                <LogoMark logo={o.logo} name={o.name} frame="card" labelled={false} />
+                <span className="grid min-w-0 gap-1">
+                  <span className="truncate font-semibold text-heading transition-colors group-hover:text-gold">{o.name}</span>
+                  <span className="text-sm tabular-nums text-muted">{o.projectSlugs.length} project{o.projectSlugs.length === 1 ? '' : 's'}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </Section>
-      <LatestPosts label="Reading" title={`Guides about ${x.d.name}`} filter={{ tag: x.d.slug }} tone="sand" />
+      <LatestPosts label="Reading" title={`Guides about ${x.d.name}`} highlight={x.d.name} filter={{ tag: x.d.slug }} tone="sand" />
       <RegisterBand />
     </>
   );

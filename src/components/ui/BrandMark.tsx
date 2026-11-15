@@ -1,8 +1,8 @@
 /**
- * The PrelaunchUAE mark: three towers rising left to right, the tallest lit in amber with a spark
+ * The PrelaunchUAE mark: three towers rising left to right, the tallest lit in gold with a spark
  * (public/brand/prelaunchuae-mark.svg, brand guidelines v1.0). "solid" is the mark itself: two towers in the current
- * text colour, the tallest in Launch Amber. "outline" draws the same towers as thin lines, for large decorative use behind
- * content on Ink or Sand bands. The tallest tower and the spark fade in once on load (pure CSS).
+ * text colour, the tallest in gold (var(--nc-survey)). "outline" draws the same towers as thin lines, for large decorative use behind
+ * content on dark bands. The tallest tower and the spark fade in once on load (pure CSS).
  */
 export function BrandMark({ className = 'h-14 w-auto', variant = 'solid', animate = true }: {
   className?: string;

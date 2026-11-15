@@ -50,7 +50,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
                   setGroup(g);
                   setExpanded(false);
                 }}
-                className="inline-flex min-h-10 shrink-0 items-center gap-2 rounded-brand border border-line bg-white px-4 text-sm font-semibold transition-colors hover:border-ink aria-pressed:border-ink aria-pressed:bg-datum aria-pressed:text-white"
+                className="inline-flex min-h-10 shrink-0 items-center gap-2 border border-line-strong bg-surface px-4 text-sm font-semibold text-body transition-colors hover:border-gold hover:text-heading aria-pressed:border-gold aria-pressed:bg-gold aria-pressed:text-on-gold"
               >
                 {g}
                 <span className="tabular-nums opacity-70">{n}</span>
@@ -62,8 +62,8 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
       <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
         {shown.map((img, i) => (
           <li key={img.src}>
-            <button type="button" onClick={() => setOpen(i)} className="group relative block aspect-[4/3] w-full overflow-hidden rounded-brand border border-line bg-white" aria-label={`Open picture ${i + 1} of ${list.length}: ${img.alt}`}>
-              <DeferredImage src={img.src} alt={img.alt} fill sizes="(min-width: 1024px) 300px, (min-width: 768px) 33vw, 50vw" className={`${img.group === 'Floor plans' ? 'object-contain p-2' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.04]`} />
+            <button type="button" onClick={() => setOpen(i)} className="group relative block aspect-[4/3] w-full overflow-hidden border border-line bg-surface transition-colors hover:border-gold" aria-label={`Open picture ${i + 1} of ${list.length}: ${img.alt}`}>
+              <DeferredImage src={img.src} alt={img.alt} fill sizes="(min-width: 1024px) 300px, (min-width: 768px) 33vw, 50vw" className={`${img.group === 'Floor plans' ? 'bg-white object-contain p-2' : 'object-cover'} transition-transform duration-300 group-hover:scale-[1.03]`} />
             </button>
           </li>
         ))}
@@ -82,15 +82,15 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
           if (e.key === 'ArrowRight') step(1);
           if (e.key === 'ArrowLeft') step(-1);
         }}
-        className="m-auto w-[min(1100px,94vw)] overflow-visible bg-transparent p-0 text-white backdrop:bg-datum/85"
+        className="m-auto w-[min(1100px,94vw)] overflow-visible bg-transparent p-0 text-white backdrop:bg-page/90"
       >
         {current ? (
           <div className="grid gap-3">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-brand bg-datum">
+            <div className="relative aspect-[16/10] overflow-hidden border border-line border-t-2 border-t-gold bg-band">
               <Image key={current.src} src={current.src} alt={current.alt} fill sizes="94vw" className={current.group === 'Floor plans' ? 'bg-white object-contain p-4' : 'object-contain'} />
             </div>
             <div className="on-dark flex items-center justify-between gap-4">
-              <p className="text-sm tabular-nums">{open! + 1} / {list.length} · {current.group}</p>
+              <p className="text-sm tabular-nums text-body">{open! + 1} / {list.length} · {current.group}</p>
               <div className="flex gap-2">
                 <button type="button" onClick={() => step(-1)} className="btn btn-outline-plot btn-icon" aria-label="Previous picture"><Icon name="arrow-right" className="size-5 rotate-180" /></button>
                 <button type="button" onClick={() => step(1)} className="btn btn-outline-plot btn-icon" aria-label="Next picture"><Icon name="arrow-right" className="size-5" /></button>

@@ -25,11 +25,11 @@ export function RichText({ text }: { text: string }) {
 
 function Table({ headers, rows, caption }: { headers: string[]; rows: string[][]; caption?: string }) {
   return (
-    <div className="overflow-x-auto rounded-brand border border-line">
+    <div className="overflow-x-auto border border-line bg-surface">
       <table className="w-full min-w-[28rem] text-left text-[15px]">
-        {caption ? <caption className="border-b border-line bg-sand px-3 py-2 text-left text-sm text-muted">{caption}</caption> : null}
+        {caption ? <caption className="border-b border-line bg-band px-3 py-2 text-left text-sm text-muted">{caption}</caption> : null}
         <thead>
-          <tr className="border-b border-line bg-sand text-xs uppercase tracking-[0.12em]">
+          <tr className="border-b border-line-strong bg-band text-xs uppercase tracking-[0.12em] text-gold">
             {headers.map((header) => <th key={header} scope="col" className="p-3 font-semibold">{header}</th>)}
           </tr>
         </thead>

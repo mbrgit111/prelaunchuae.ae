@@ -4,8 +4,9 @@ import { planSplit, UNIT_TABS, unitPriceFrom, unitTabs } from '@/data/insights';
 import { aed } from '@/lib/format';
 import { Section } from '../ui/Section';
 import { Tabs } from '../ui/Tabs';
+import { Head } from './MoreSections';
 
-/** 10 · Unit types and payment plans: each tab prices that unit type, not the project's cheapest home. */
+/** Unit types and payment plans: each tab prices that unit type, not the project's cheapest home. */
 export async function UnitTypesPlans() {
   const u = copy.home.units;
   const tabs = await unitTabs();
@@ -22,35 +23,35 @@ export async function UnitTypesPlans() {
       <div key={t.key} className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
         <div className="grid content-start gap-4">
           <p className="text-[17px]">
-            <strong className="font-semibold">{t.projects.length} project{t.projects.length === 1 ? '' : 's'}</strong> list {t.label.toLowerCase()} homes.
+            <strong className="font-semibold text-heading">{t.projects.length} project{t.projects.length === 1 ? '' : 's'}</strong> list {t.label.toLowerCase()} homes.
             {t.priceFrom ? ` Listed ${t.label.toLowerCase()} prices start from ${aed(t.priceFrom)}, subject to availability.` : ''}
             {t.areaFrom ? ` Most listed sizes fall between ${t.areaFrom.toLocaleString('en-US')} and ${t.areaTo!.toLocaleString('en-US')} sq ft.` : ''}
           </p>
-          <ul className="divide-y divide-line rounded-brand border border-line bg-white">
+          <ul className="divide-y divide-line border border-line bg-surface">
             {shown.map((p) => {
               const price = priceOf(p);
               return (
                 <li key={p.slug}>
-                  <Link href={`/projects/${p.slug}`} className="flex items-center justify-between gap-4 px-4 py-3 hover:bg-sand">
+                  <Link href={`/projects/${p.slug}`} className="group flex items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-surface-2">
                     <span className="grid">
-                      <span className="font-semibold">{p.name}</span>
+                      <span className="font-semibold text-heading transition-colors group-hover:text-gold-hover">{p.name}</span>
                       <span className="text-sm text-muted">{p.developerName}</span>
                     </span>
-                    <span className="text-right text-sm tabular-nums">{price ? aed(price) : 'On request'}</span>
+                    <span className="text-right text-sm font-semibold tabular-nums text-gold">{price ? aed(price) : 'On request'}</span>
                   </Link>
                 </li>
               );
             })}
           </ul>
-          <Link href={`/projects?beds=${t.key}`} className="btn btn-secondary btn-sm">See all {t.label.toLowerCase()}</Link>
+          <Link href={`/projects?beds=${t.key}`} className="btn btn-secondary btn-sm justify-self-start">See all {t.label.toLowerCase()}</Link>
         </div>
         {withPlans.length ? (
-          <div className="overflow-x-auto rounded-brand border border-line bg-white">
+          <div className="overflow-x-auto border border-line border-t-2 border-t-gold bg-surface">
             <table className="w-full min-w-[30rem] text-left text-[15px]">
               <caption className="p-4 text-left text-label">{u.planTitle}</caption>
               <thead>
-                <tr className="border-y border-line bg-sand text-xs uppercase tracking-[0.12em] text-ink">
-                  <th scope="col" className="sticky left-0 bg-sand p-3 font-semibold">Project</th>
+                <tr className="border-y border-line bg-band text-xs uppercase tracking-label text-muted">
+                  <th scope="col" className="sticky left-0 bg-band p-3 font-semibold">Project</th>
                   <th scope="col" className="p-3 text-right font-semibold">Booking</th>
                   <th scope="col" className="p-3 text-right font-semibold">Construction</th>
                   <th scope="col" className="p-3 text-right font-semibold">Handover</th>
@@ -62,7 +63,7 @@ export async function UnitTypesPlans() {
                   const pl = p.paymentPlans[0]!;
                   return (
                     <tr key={p.slug} className="border-b border-line last:border-0">
-                      <th scope="row" className="sticky left-0 bg-white p-3 font-semibold">{p.name}{p.paymentPlans.length > 1 ? <span className="block text-xs font-normal text-muted">1 of {p.paymentPlans.length} plans ({planSplit(pl)})</span> : null}</th>
+                      <th scope="row" className="sticky left-0 bg-surface p-3 font-semibold">{p.name}{p.paymentPlans.length > 1 ? <span className="block text-xs font-normal text-muted">1 of {p.paymentPlans.length} plans ({planSplit(pl)})</span> : null}</th>
                       <td className="p-3 text-right tabular-nums">{pl.split.booking}%</td>
                       <td className="p-3 text-right tabular-nums">{pl.split.construction}%</td>
                       <td className="p-3 text-right tabular-nums">{pl.split.handover}%</td>
@@ -78,7 +79,8 @@ export async function UnitTypesPlans() {
     );
   });
   return (
-    <Section id="unit-types" tone="white" label={u.label} title={u.title}>
+    <Section id="unit-types" labelledBy="h-unit-types" tone="white">
+      <Head id="h-unit-types" label={u.label} title={u.title} accent={u.accent} />
       <Tabs ariaLabel="Unit types" labels={tabs.map((t) => t.label)} panels={panels} />
     </Section>
   );

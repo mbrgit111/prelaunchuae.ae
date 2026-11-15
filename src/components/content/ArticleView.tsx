@@ -36,12 +36,12 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
         title={post.title}
         lede={post.excerpt}
       />
-      <article className="on-white bg-white py-12 md:py-16">
+      <article className="on-white bg-page py-12 md:py-16">
         <div className="container-site grid max-w-3xl gap-6 text-[17px]">
           <p className="text-sm text-muted">
             {post.author ? (
               <>
-                By <Link href={`/author/${post.author.slug}`} className="font-semibold text-ink underline underline-offset-4">{post.author.name}</Link>
+                By <Link href={`/author/${post.author.slug}`} className="font-semibold text-body underline decoration-gold/60 underline-offset-4 hover:text-gold-hover">{post.author.name}</Link>
                 {' · '}
               </>
             ) : null}
@@ -71,7 +71,7 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
           ) : null}
 
           {toc.length >= 3 ? (
-            <nav aria-label="In this article" className="on-sand rounded-brand border border-line bg-sand p-5">
+            <nav aria-label="In this article" className="on-sand border border-line border-t-2 border-t-gold bg-surface p-5">
               <h2 className="text-label">In this article</h2>
               <ol className="mt-3 grid list-decimal gap-1 pl-5 text-[15px]">
                 {toc.map((h) => (
@@ -103,7 +103,7 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
           ) : null}
 
           {post.author ? (
-            <aside aria-label="About the author" className="grid gap-1 rounded-brand border border-line p-5">
+            <aside aria-label="About the author" className="grid gap-1 border border-line bg-surface p-5">
               <p className="font-semibold">
                 <Link href={`/author/${post.author.slug}`}>{post.author.name}</Link>
                 {post.author.title ? <span className="font-normal text-muted">, {post.author.title}</span> : null}
@@ -118,13 +118,13 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
           {post.prev || post.next ? (
             <nav aria-label="Previous and next article" className="grid gap-3 border-t border-line pt-6 sm:grid-cols-2">
               {post.prev ? (
-                <Link href={post.prev.path} rel="prev" className="rounded-brand border border-line p-4 hover:border-ink">
+                <Link href={post.prev.path} rel="prev" className="border border-line bg-surface p-4 transition-colors hover:border-gold">
                   <span className="text-label block">Older</span>
                   <span className="mt-1 block font-semibold">{post.prev.title}</span>
                 </Link>
               ) : <span />}
               {post.next ? (
-                <Link href={post.next.path} rel="next" className="rounded-brand border border-line p-4 hover:border-ink sm:text-right">
+                <Link href={post.next.path} rel="next" className="border border-line bg-surface p-4 transition-colors hover:border-gold sm:text-right">
                   <span className="text-label block">Newer</span>
                   <span className="mt-1 block font-semibold">{post.next.title}</span>
                 </Link>
@@ -135,7 +135,7 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
       </article>
 
       {related.length > 0 ? (
-        <section aria-labelledby="mentioned-projects" className="on-sand bg-sand py-12 md:py-16">
+        <section aria-labelledby="mentioned-projects" className="on-sand bg-band py-12 md:py-16">
           <div className="container-site grid gap-6">
             <h2 id="mentioned-projects" className="text-h2">Projects mentioned</h2>
             <ul className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -148,7 +148,7 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
       ) : null}
 
       {post.related.length > 0 ? (
-        <section aria-labelledby="related" className={`${related.length ? 'on-white bg-white' : 'on-sand bg-sand'} py-12 md:py-16`}>
+        <section aria-labelledby="related" className={`${related.length ? 'on-white bg-page' : 'on-sand bg-band'} py-12 md:py-16`}>
           <div className="container-site grid gap-6">
             <h2 id="related" className="text-h2">Keep reading</h2>
             <ul className="grid grid-cols-1 gap-6 md:grid-cols-3">

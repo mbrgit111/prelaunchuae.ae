@@ -1,20 +1,35 @@
-/* PrelaunchUAE: brand tokens from the Brand Guidelines v1.0 (November 2026). Source: theme/tokens.json.
-   The --nc-* names are the engine's role names (kept so every component reads the same way):
-   datum = Midnight Ink, survey = Launch Amber, sand = Desert Sand, muted = Slate, sage/muted-on-deep = Mist. */
+/* PrelaunchUAE: black + gold, after prelaunch.ae (founder decision, 15 Nov 2026). Source: theme/tokens.json.
+   Dark-first: every page, article and form sits on black. Gold is the one accent; text on gold is always black.
+   New role names (page, band, surface*, warm, body, gold*, on-gold, gold-tint, input-line, focus) are the ones to use.
+   The engine's older --nc-* names are kept and re-pointed so existing classes still read correctly on black:
+   ink = heading white, datum = dark band, survey(-deep) = gold, sand = band, plot = gold tint, sage/muted = muted. */
 :root{
-  /* colour: Ink 60%, Sand 25%, Amber 10% (shapes, large type, buttons with Ink text), Slate 4%, Mist 1% */
-  --nc-ink:#0B1F33; --nc-datum:#0B1F33; --nc-datum-soft:#163554;
-  --nc-survey:#E07A2E; --nc-survey-deep:#A4510F; --nc-survey-hover:#EB8F4A; --nc-sage:#A9B4C2; --nc-plot:#E3E8EE;
-  --nc-sand:#F4EFE6; --nc-concrete:#CDD3DB; --nc-white:#FFFFFF;
-  --nc-line:#E4DDCD; --nc-line-strong:#7A8594; --nc-muted:#5A6573; --nc-muted-on-deep:#A9B4C2;
-  --nc-danger:#B42318;
-  /* type: Sora for headlines (SemiBold; ExtraBold for the hero), Manrope for text */
-  --nc-serif:'Sora',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
-  --nc-sans:'Manrope',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
-  --nc-track-label:.12em;
-  /* shape: soft corners like the towers (rx 2 on an 11-wide tower) */
-  --nc-radius-sm:6px; --nc-radius:10px; --nc-radius-lg:16px;
-  --nc-shadow-lift:0 18px 40px -20px rgb(11 31 51 / 0.35);
-  /* motion: transform and opacity only */
+  /* grounds */
+  --nc-page:#0A0A0A; --nc-band:#0F0F0F; --nc-surface:#161616; --nc-surface-2:#1E1E1E; --nc-surface-3:#242424;
+  --nc-warm:#1A1508;
+  /* text */
+  --nc-heading:#FFFFFF; --nc-body:#D8D0C0; --nc-muted:#9E9488;
+  /* gold: 8.7:1 on black, so small gold text is fine on every dark ground. Never white on gold (2.3:1). */
+  --nc-gold:#C9A84C; --nc-gold-hover:#E8C97A; --nc-gold-deep:#A8852A; --nc-on-gold:#0A0A0A; --nc-gold-tint:#19170F;
+  /* lines: gold hairlines, never grey. input-line passes 3:1 for form field edges. */
+  --nc-line:#252013; --nc-line-strong:#342D19; --nc-input-line:#806C36;
+  --nc-focus:#E8C97A;
+  --nc-danger:#FDA29B;
+
+  /* older engine names, re-pointed */
+  --nc-ink:var(--nc-heading); --nc-white:#FFFFFF;
+  --nc-datum:var(--nc-band); --nc-datum-soft:var(--nc-surface);
+  --nc-survey:var(--nc-gold); --nc-survey-deep:var(--nc-gold); --nc-survey-hover:var(--nc-gold-hover);
+  --nc-sand:var(--nc-band); --nc-plot:var(--nc-gold-tint); --nc-concrete:var(--nc-surface-3);
+  --nc-sage:var(--nc-muted); --nc-muted-on-deep:var(--nc-muted);
+
+  /* type: Plus Jakarta Sans for headlines and figures (600 to 800, tight), Outfit for text and interface */
+  --nc-serif:'Plus Jakarta Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --nc-sans:'Outfit',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --nc-track-label:.18em;
+  /* shape: square corners (round only for dots, step circles and avatars) */
+  --nc-radius-sm:0px; --nc-radius:2px; --nc-radius-lg:2px;
+  --nc-shadow-lift:0 18px 40px -20px rgb(0 0 0 / 0.7);
+  /* motion: quiet, transform and opacity only */
   --nc-ease:cubic-bezier(.2,.7,.2,1); --nc-dur-fast:200ms; --nc-dur:600ms; --nc-dur-slow:800ms;
 }
