@@ -294,11 +294,6 @@
   /* Developer logos (components/ui/LogoMark.tsx). See-through files: white monochrome at 55%, gold on hover. The filter
      paints every visible pixel, so it is only for files with a cleared ground (a solid file would become a blank box).
      Files on their own dark plate (#161616, the tile colour): grey at rest, their own colours on hover. */
-  .logo-mono, .logo-plate { transition: opacity var(--nc-dur-fast) var(--nc-ease), filter var(--nc-dur-fast) var(--nc-ease); }
-  .logo-mono { filter: brightness(0) invert(1); opacity: 0.55; }
-  .logo-mono:hover, a:hover .logo-mono, .group:hover .logo-mono { filter: brightness(0) invert(72%) sepia(42%) saturate(560%) hue-rotate(6deg) brightness(96%); opacity: 1; }
-  .logo-plate { filter: grayscale(1); opacity: 0.75; }
-  .logo-plate:hover, a:hover .logo-plate, .group:hover .logo-plate { filter: none; opacity: 1; }
 
   /* Status and fact tags */
   .tag {
@@ -594,9 +589,9 @@
   *, *::before, *::after { background-color: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
   .site-header, nav[aria-label="Quick contact"] { position: static !important; }
   .site-header::after, .skip-link, nav[aria-label="Quick contact"] { display: none !important; }
-  /* The reversed logo (cream letters, gold tower) and the white logo silhouettes would vanish on paper: print them black */
-  .logo-reverse, .logo-mono { filter: brightness(0) !important; opacity: 1 !important; }
-  .logo-plate { filter: none !important; opacity: 1 !important; }
+  /* The reversed logo (cream letters, gold tower) would vanish on paper: print it black; logos on the dark tile print inverted */
+  .logo-reverse { filter: brightness(0) !important; }
+  .logo-on-dark { filter: invert(1) !important; }
   main { padding-top: 0 !important; }
   body { padding-bottom: 0 !important; }
   .api-prose a { text-decoration: underline; }

@@ -1,5 +1,5 @@
 import type { MediaImage } from '@/data/types';
-import { DARK_PLATE, SEE_THROUGH } from './logo-tones';
+import { ON_DARK } from './logo-tones';
 
 const frames = {
   strip: 'h-28 w-full p-3',
@@ -8,13 +8,16 @@ const frames = {
   hero: 'h-24 w-52 p-2',
 } as const;
 
-/** File id of a stored logo: /media/logo/<id>.webp */
-const fileId = (src: string) => src.slice(src.lastIndexOf('/') + 1).replace(/\.[^.]+$/, '');
+/** File id of a logo: /media/logo/<id>.webp when stored here, or the first 16 characters of <hash> in the picture service's
+ * …/rem/1/<hash>/logo.webp (the same file, read at runtime). */
+const fileId = (src: string) => {
+  const m = src.match(/\/([0-9a-f]{16,})\/logo\.[a-z]+$/);
+  return m?.[1] ? m[1].slice(0, 16) : src.slice(src.lastIndexOf('/') + 1).replace(/\.[^.]+$/, '');
+};
 
 /**
- * The whole developer mark, inside the tile. Nothing is cropped. A faint file shows the name instead.
- * See-through files show as a white silhouette, files on their own dark plate as they are, and any file not measured yet
- * in its own colours on a light tile (logo-tones.ts), so no logo can turn into a blank box.
+ * The whole developer mark, inside the tile, in its own colours. Nothing is cropped. A faint file shows the name instead.
+ * Light marks and files on their own dark plate sit on the dark tile; every other logo on a white tile (logo-tones.ts).
  */
 export function LogoMark({
   logo,
@@ -29,9 +32,9 @@ export function LogoMark({
 }) {
   const readable = Boolean(logo && !logo.weak);
   const id = readable ? fileId(logo!.src) : '';
-  const tone = SEE_THROUGH.has(id) ? 'logo-mono' : DARK_PLATE.has(id) ? 'logo-plate' : '';
+  const light = readable && !ON_DARK.has(id);
   return (
-    <span className={`flex items-center justify-center rounded-brand border border-line ${readable && !tone ? 'bg-white' : 'bg-surface'} ${frames[frame]}`}>
+    <span className={`flex items-center justify-center rounded-brand border border-line ${light ? 'bg-white' : 'bg-surface'} ${frames[frame]}`}>
       {readable ? (
         <img
           src={logo!.src}
@@ -42,7 +45,7 @@ export function LogoMark({
           // developer's own page, where the logo is in the header, loads it straight away. Width and height are set: no layout shift.
           loading={frame === 'hero' ? 'eager' : 'lazy'}
           decoding="async"
-          className={`${tone} h-auto w-auto min-h-0 min-w-0 max-h-full max-w-full object-contain object-center`}
+          className={`${light ? '' : 'logo-on-dark '}h-auto w-auto min-h-0 min-w-0 max-h-full max-w-full object-contain object-center`}
         />
       ) : (
         <span className="line-clamp-3 text-center text-[11px] font-semibold leading-tight text-ink">{name}</span>
