@@ -20,7 +20,7 @@ export const palm01ByBinghatti: ProjectEditorial = {
     'Last updated: 23 November 2026. Binghatti does not run this website. Prices, plans and dates can change; confirm every figure in the SPA and escrow papers.',
   abovePaymentPlan: [
     { type: 'h2', text: 'Evidence ladder' },
-    { type: 'h3', text: 'Repeated across broker pages' },
+    { type: 'h2', text: 'Repeated across broker pages' },
     {
       type: 'ul',
       items: [
@@ -31,7 +31,7 @@ export const palm01ByBinghatti: ProjectEditorial = {
         'Amenity claims: beach access, pool, infinity pool, gym, children’s play',
       ],
     },
-    { type: 'h3', text: 'Single data site only' },
+    { type: 'h2', text: 'Single data site only' },
     {
       type: 'ul',
       items: [
@@ -41,7 +41,7 @@ export const palm01ByBinghatti: ProjectEditorial = {
         'AED 695 million “project value” labelled as a pre-construction estimate',
       ],
     },
-    { type: 'h3', text: 'Contradictions we keep seeing' },
+    { type: 'h2', text: 'Contradictions we keep seeing' },
     {
       type: 'ul',
       items: [
@@ -52,7 +52,7 @@ export const palm01ByBinghatti: ProjectEditorial = {
         'Sale status: still launching versus already limited',
       ],
     },
-    { type: 'h3', text: 'Still blank in every public source we checked' },
+    { type: 'h2', text: 'Still blank in every public source we checked' },
     {
       type: 'ul',
       items: [
