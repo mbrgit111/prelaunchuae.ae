@@ -39,7 +39,7 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
       <article className="on-white bg-page py-12 md:py-16">
         <div className="container-site grid max-w-3xl gap-6 text-[17px]">
           <p className="text-sm text-muted">
-            {post.author ? (
+            {post.author && !/\(placeholder\)/i.test(`${post.author.name} ${post.author.title ?? ''}`) ? (
               <>
                 By <Link href={`/author/${post.author.slug}`} className="font-semibold text-body underline decoration-gold/60 underline-offset-4 hover:text-gold-hover">{post.author.name}</Link>
                 {' · '}
@@ -102,7 +102,7 @@ export function ArticleView({ post, preview = false, status, projects = [] }: { 
             </section>
           ) : null}
 
-          {post.author ? (
+          {post.author && !/\(placeholder\)/i.test(`${post.author.name} ${post.author.title ?? ''}`) ? (
             <aside aria-label="About the author" className="grid gap-1 border border-line bg-surface p-5">
               <p className="font-semibold">
                 <Link href={`/author/${post.author.slug}`}>{post.author.name}</Link>
