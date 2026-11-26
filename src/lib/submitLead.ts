@@ -28,18 +28,6 @@ export interface Lead {
   submittedAt: string; // ISO date
 }
 
-export interface PartialLead {
-  /** Set by the server (src/lib/forwardLead.ts) from the site config. */
-  siteTag?: string;
-  source: LeadSource;
-  page: string;
-  projectSlug: string | null;
-  utm: Utm;
-  name?: string;
-  phone?: string;
-  email?: string;
-  disclosureText: string;
-}
 
 export type LeadResult = { ok: true } | { ok: false; error: string };
 
@@ -63,16 +51,3 @@ export async function submitLead(lead: Lead): Promise<LeadResult> {
   }
 }
 
-/** Fire-and-forget save of a phone or email the visitor typed but did not submit. */
-export function submitPartialLead(lead: PartialLead): void {
-  try {
-    void fetch('/api/partial-leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(lead),
-      keepalive: true,
-    }).catch(() => undefined);
-  } catch {
-    // A failed partial save must not interrupt the form.
-  }
-}
