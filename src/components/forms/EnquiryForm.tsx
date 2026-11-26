@@ -1,7 +1,7 @@
 'use client';
 
 import { useId, useRef, useState } from 'react';
-import { submitLead, submitPartialLead, type LeadSource } from '@/lib/submitLead';
+import { submitLead, type LeadSource } from '@/lib/submitLead';
 import { readUtm } from '@/lib/utm';
 // The site config only (names, no copy), so the form stays small in the browser.
 import { config } from '@sites/prelaunchuae/site.config';
@@ -43,32 +43,8 @@ export function EnquiryForm({
   const doneRef = useRef<HTMLDivElement>(null);
   const hpRef = useRef<HTMLInputElement>(null);
   const finished = useRef(false);
-  const sentPartial = useRef('');
   const H = headingLevel;
   const dark = tone === 'dark';
-
-  function capturePartial(field: 'phone' | 'email') {
-    if (finished.current) return;
-    if (hpRef.current?.value.trim()) return;
-    const phone = validatePhone(values.phone) ? '' : values.phone.trim();
-    const email = validateEmail(values.email) ? '' : values.email.trim();
-    if (field === 'phone' && !phone) return;
-    if (field === 'email' && !email) return;
-    const name = values.name.trim();
-    const signature = `${phone}\n${email}\n${name}`;
-    if (signature === sentPartial.current) return;
-    sentPartial.current = signature;
-    submitPartialLead({
-      source,
-      page: window.location.href,
-      projectSlug,
-      utm: readUtm(),
-      ...(name ? { name } : {}),
-      ...(phone ? { phone } : {}),
-      ...(email ? { email } : {}),
-      disclosureText: DISCLOSURE,
-    });
-  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -141,7 +117,6 @@ export function EnquiryForm({
         }}
         onBlur={() => {
           if (values[f]) setErrors((x) => ({ ...x, [f]: checks[f](values[f]) }));
-          if (f === 'phone' || f === 'email') capturePartial(f);
         }}
         aria-invalid={errors[f] ? true : undefined}
         aria-describedby={errors[f] ? id(`${f}-err`) : undefined}
